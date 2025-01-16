@@ -1,0 +1,11 @@
+../Core/Src/sampleappl.c:62:9:APPL_AckErrorInd	1
+../Core/Src/sampleappl.c:81:8:APPL_StartMailboxHandler	1
+../Core/Src/sampleappl.c:97:8:APPL_StopMailboxHandler	1
+../Core/Src/sampleappl.c:118:8:APPL_StartInputHandler	1
+../Core/Src/sampleappl.c:134:8:APPL_StopInputHandler	1
+../Core/Src/sampleappl.c:152:8:APPL_StartOutputHandler	1
+../Core/Src/sampleappl.c:168:8:APPL_StopOutputHandler	1
+../Core/Src/sampleappl.c:182:8:APPL_GenerateMapping	8
+../Core/Src/sampleappl.c:267:6:APPL_InputMapping	4
+../Core/Src/sampleappl.c:320:6:APPL_OutputMapping	4
+../Core/Src/sampleappl.c:347:6:APPL_Application	1

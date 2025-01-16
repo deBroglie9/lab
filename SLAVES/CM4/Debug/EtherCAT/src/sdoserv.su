@@ -1,0 +1,6 @@
+../EtherCAT/src/sdoserv.c:197:14:SdoDownloadSegmentInd	48	static
+../EtherCAT/src/sdoserv.c:388:14:SdoUploadSegmentInd	40	static
+../EtherCAT/src/sdoserv.c:503:6:SdoRes	24	static
+../EtherCAT/src/sdoserv.c:590:7:SDOS_SdoInd	72	static
+../EtherCAT/src/sdoserv.c:912:6:SDOS_SdoRes	48	static
+../EtherCAT/src/sdoserv.c:978:7:SDOS_SdoInfoInd	72	static

@@ -1,0 +1,11 @@
+../EtherCAT/src/ecatappl.c:179:6:PDO_InputMapping	8	static
+../EtherCAT/src/ecatappl.c:190:6:PDO_OutputMapping	8	static
+../EtherCAT/src/ecatappl.c:206:6:ECAT_CheckTimer	8	static
+../EtherCAT/src/ecatappl.c:230:6:HandleBusCycleCalculation	24	static
+../EtherCAT/src/ecatappl.c:281:6:PDI_Isr	16	static
+../EtherCAT/src/ecatappl.c:371:6:Sync0_Isr	16	static
+../EtherCAT/src/ecatappl.c:459:6:Sync1_Isr	8	static
+../EtherCAT/src/ecatappl.c:481:6:ECAT_SetLedIndication	16	static
+../EtherCAT/src/ecatappl.c:638:8:MainInit	16	static
+../EtherCAT/src/ecatappl.c:675:6:MainLoop	16	static
+../EtherCAT/src/ecatappl.c:752:6:ECAT_Application	8	static

@@ -1,0 +1,15 @@
+../Core/Src/samplehw.c:189:13:GetInterruptRegister	1
+../Core/Src/samplehw.c:220:13:ISR_GetInterruptRegister	1
+../Core/Src/samplehw.c:241:13:AddressingEsc	1
+../Core/Src/samplehw.c:276:13:ISR_AddressingEsc	1
+../Core/Src/samplehw.c:316:13:MX_TIM2_Init	4
+../Core/Src/samplehw.c:402:7:HW_Init	2
+../Core/Src/samplehw.c:475:6:HW_Release	1
+../Core/Src/samplehw.c:486:8:HW_GetALEventRegister	1
+../Core/Src/samplehw.c:504:8:HW_GetALEventRegister_Isr	1
+../Core/Src/samplehw.c:520:6:HW_SetLed	1
+../Core/Src/samplehw.c:536:6:HW_EscRead	2
+../Core/Src/samplehw.c:592:6:HW_EscReadIsr	3
+../Core/Src/samplehw.c:626:6:HW_EscWrite	2
+../Core/Src/samplehw.c:672:6:HW_EscWriteIsr	2
+../Core/Src/samplehw.c:784:6:TimerIsr	1

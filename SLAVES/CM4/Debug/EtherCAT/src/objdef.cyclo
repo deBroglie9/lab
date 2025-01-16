@@ -1,0 +1,12 @@
+../EtherCAT/src/objdef.c:167:28:OBJ_GetObjectHandle	3
+../EtherCAT/src/objdef.c:194:8:OBJ_GetObjectLength	10
+../EtherCAT/src/objdef.c:282:6:OBJ_CopyNumberToString	1
+../EtherCAT/src/objdef.c:304:11:OBJ_GetNoOfObjects	8
+../EtherCAT/src/objdef.c:363:11:OBJ_GetObjectList	14
+../EtherCAT/src/objdef.c:466:8:OBJ_GetDesc	13
+../EtherCAT/src/objdef.c:554:37:OBJ_GetEntryDesc	3
+../EtherCAT/src/objdef.c:593:35:OBJ_GetObjDesc	1
+../EtherCAT/src/objdef.c:609:8:OBJ_GetEntryOffset	24
+../EtherCAT/src/objdef.c:722:7:CheckSyncTypeValue	24
+../EtherCAT/src/objdef.c:807:7:OBJ_Read	67
+../EtherCAT/src/objdef.c:1261:7:OBJ_Write	90

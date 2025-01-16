@@ -1,0 +1,15 @@
+../Core/Src/samplehw.c:189:13:GetInterruptRegister	8	static,ignoring_inline_asm
+../Core/Src/samplehw.c:220:13:ISR_GetInterruptRegister	8	static
+../Core/Src/samplehw.c:241:13:AddressingEsc	24	static
+../Core/Src/samplehw.c:276:13:ISR_AddressingEsc	24	static
+../Core/Src/samplehw.c:316:13:MX_TIM2_Init	40	static
+../Core/Src/samplehw.c:402:7:HW_Init	16	static,ignoring_inline_asm
+../Core/Src/samplehw.c:475:6:HW_Release	4	static
+../Core/Src/samplehw.c:486:8:HW_GetALEventRegister	8	static
+../Core/Src/samplehw.c:504:8:HW_GetALEventRegister_Isr	8	static
+../Core/Src/samplehw.c:520:6:HW_SetLed	16	static
+../Core/Src/samplehw.c:536:6:HW_EscRead	24	static,ignoring_inline_asm
+../Core/Src/samplehw.c:592:6:HW_EscReadIsr	24	static
+../Core/Src/samplehw.c:626:6:HW_EscWrite	32	static,ignoring_inline_asm
+../Core/Src/samplehw.c:672:6:HW_EscWriteIsr	32	static
+../Core/Src/samplehw.c:784:6:TimerIsr	4	static
