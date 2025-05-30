@@ -69,10 +69,24 @@ include CMakeFiles/master.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/master.dir/flags.make
 
+CMakeFiles/master.dir/EtherCAT/EtherCAT.cpp.o: CMakeFiles/master.dir/flags.make
+CMakeFiles/master.dir/EtherCAT/EtherCAT.cpp.o: ../EtherCAT/EtherCAT.cpp
+CMakeFiles/master.dir/EtherCAT/EtherCAT.cpp.o: CMakeFiles/master.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/master45/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/master.dir/EtherCAT/EtherCAT.cpp.o"
+	/usr/local/arm/gcc-linaro-4.9.4-2017.01-x86_64_arm-linux-gnueabihf/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/master.dir/EtherCAT/EtherCAT.cpp.o -MF CMakeFiles/master.dir/EtherCAT/EtherCAT.cpp.o.d -o CMakeFiles/master.dir/EtherCAT/EtherCAT.cpp.o -c /root/master45/EtherCAT/EtherCAT.cpp
+
+CMakeFiles/master.dir/EtherCAT/EtherCAT.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/master.dir/EtherCAT/EtherCAT.cpp.i"
+	/usr/local/arm/gcc-linaro-4.9.4-2017.01-x86_64_arm-linux-gnueabihf/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/master45/EtherCAT/EtherCAT.cpp > CMakeFiles/master.dir/EtherCAT/EtherCAT.cpp.i
+
+CMakeFiles/master.dir/EtherCAT/EtherCAT.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/master.dir/EtherCAT/EtherCAT.cpp.s"
+	/usr/local/arm/gcc-linaro-4.9.4-2017.01-x86_64_arm-linux-gnueabihf/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/master45/EtherCAT/EtherCAT.cpp -o CMakeFiles/master.dir/EtherCAT/EtherCAT.cpp.s
+
 CMakeFiles/master.dir/IK_7DOF/IK_7DOF.c.o: CMakeFiles/master.dir/flags.make
 CMakeFiles/master.dir/IK_7DOF/IK_7DOF.c.o: ../IK_7DOF/IK_7DOF.c
 CMakeFiles/master.dir/IK_7DOF/IK_7DOF.c.o: CMakeFiles/master.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/master45/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/master.dir/IK_7DOF/IK_7DOF.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/master45/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/master.dir/IK_7DOF/IK_7DOF.c.o"
 	/usr/local/arm/gcc-linaro-4.9.4-2017.01-x86_64_arm-linux-gnueabihf/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/master.dir/IK_7DOF/IK_7DOF.c.o -MF CMakeFiles/master.dir/IK_7DOF/IK_7DOF.c.o.d -o CMakeFiles/master.dir/IK_7DOF/IK_7DOF.c.o -c /root/master45/IK_7DOF/IK_7DOF.c
 
 CMakeFiles/master.dir/IK_7DOF/IK_7DOF.c.i: cmake_force
@@ -86,7 +100,7 @@ CMakeFiles/master.dir/IK_7DOF/IK_7DOF.c.s: cmake_force
 CMakeFiles/master.dir/IK_7DOF/IK_7DOF_data.c.o: CMakeFiles/master.dir/flags.make
 CMakeFiles/master.dir/IK_7DOF/IK_7DOF_data.c.o: ../IK_7DOF/IK_7DOF_data.c
 CMakeFiles/master.dir/IK_7DOF/IK_7DOF_data.c.o: CMakeFiles/master.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/master45/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/master.dir/IK_7DOF/IK_7DOF_data.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/master45/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/master.dir/IK_7DOF/IK_7DOF_data.c.o"
 	/usr/local/arm/gcc-linaro-4.9.4-2017.01-x86_64_arm-linux-gnueabihf/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/master.dir/IK_7DOF/IK_7DOF_data.c.o -MF CMakeFiles/master.dir/IK_7DOF/IK_7DOF_data.c.o.d -o CMakeFiles/master.dir/IK_7DOF/IK_7DOF_data.c.o -c /root/master45/IK_7DOF/IK_7DOF_data.c
 
 CMakeFiles/master.dir/IK_7DOF/IK_7DOF_data.c.i: cmake_force
@@ -100,7 +114,7 @@ CMakeFiles/master.dir/IK_7DOF/IK_7DOF_data.c.s: cmake_force
 CMakeFiles/master.dir/IK_7DOF/IK_7DOF_initialize.c.o: CMakeFiles/master.dir/flags.make
 CMakeFiles/master.dir/IK_7DOF/IK_7DOF_initialize.c.o: ../IK_7DOF/IK_7DOF_initialize.c
 CMakeFiles/master.dir/IK_7DOF/IK_7DOF_initialize.c.o: CMakeFiles/master.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/master45/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/master.dir/IK_7DOF/IK_7DOF_initialize.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/master45/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/master.dir/IK_7DOF/IK_7DOF_initialize.c.o"
 	/usr/local/arm/gcc-linaro-4.9.4-2017.01-x86_64_arm-linux-gnueabihf/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/master.dir/IK_7DOF/IK_7DOF_initialize.c.o -MF CMakeFiles/master.dir/IK_7DOF/IK_7DOF_initialize.c.o.d -o CMakeFiles/master.dir/IK_7DOF/IK_7DOF_initialize.c.o -c /root/master45/IK_7DOF/IK_7DOF_initialize.c
 
 CMakeFiles/master.dir/IK_7DOF/IK_7DOF_initialize.c.i: cmake_force
@@ -114,7 +128,7 @@ CMakeFiles/master.dir/IK_7DOF/IK_7DOF_initialize.c.s: cmake_force
 CMakeFiles/master.dir/IK_7DOF/IK_7DOF_rtwutil.c.o: CMakeFiles/master.dir/flags.make
 CMakeFiles/master.dir/IK_7DOF/IK_7DOF_rtwutil.c.o: ../IK_7DOF/IK_7DOF_rtwutil.c
 CMakeFiles/master.dir/IK_7DOF/IK_7DOF_rtwutil.c.o: CMakeFiles/master.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/master45/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/master.dir/IK_7DOF/IK_7DOF_rtwutil.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/master45/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/master.dir/IK_7DOF/IK_7DOF_rtwutil.c.o"
 	/usr/local/arm/gcc-linaro-4.9.4-2017.01-x86_64_arm-linux-gnueabihf/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/master.dir/IK_7DOF/IK_7DOF_rtwutil.c.o -MF CMakeFiles/master.dir/IK_7DOF/IK_7DOF_rtwutil.c.o.d -o CMakeFiles/master.dir/IK_7DOF/IK_7DOF_rtwutil.c.o -c /root/master45/IK_7DOF/IK_7DOF_rtwutil.c
 
 CMakeFiles/master.dir/IK_7DOF/IK_7DOF_rtwutil.c.i: cmake_force
@@ -128,7 +142,7 @@ CMakeFiles/master.dir/IK_7DOF/IK_7DOF_rtwutil.c.s: cmake_force
 CMakeFiles/master.dir/IK_7DOF/IK_7DOF_terminate.c.o: CMakeFiles/master.dir/flags.make
 CMakeFiles/master.dir/IK_7DOF/IK_7DOF_terminate.c.o: ../IK_7DOF/IK_7DOF_terminate.c
 CMakeFiles/master.dir/IK_7DOF/IK_7DOF_terminate.c.o: CMakeFiles/master.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/master45/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/master.dir/IK_7DOF/IK_7DOF_terminate.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/master45/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/master.dir/IK_7DOF/IK_7DOF_terminate.c.o"
 	/usr/local/arm/gcc-linaro-4.9.4-2017.01-x86_64_arm-linux-gnueabihf/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/master.dir/IK_7DOF/IK_7DOF_terminate.c.o -MF CMakeFiles/master.dir/IK_7DOF/IK_7DOF_terminate.c.o.d -o CMakeFiles/master.dir/IK_7DOF/IK_7DOF_terminate.c.o -c /root/master45/IK_7DOF/IK_7DOF_terminate.c
 
 CMakeFiles/master.dir/IK_7DOF/IK_7DOF_terminate.c.i: cmake_force
@@ -142,7 +156,7 @@ CMakeFiles/master.dir/IK_7DOF/IK_7DOF_terminate.c.s: cmake_force
 CMakeFiles/master.dir/IK_7DOF/exp.c.o: CMakeFiles/master.dir/flags.make
 CMakeFiles/master.dir/IK_7DOF/exp.c.o: ../IK_7DOF/exp.c
 CMakeFiles/master.dir/IK_7DOF/exp.c.o: CMakeFiles/master.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/master45/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/master.dir/IK_7DOF/exp.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/master45/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/master.dir/IK_7DOF/exp.c.o"
 	/usr/local/arm/gcc-linaro-4.9.4-2017.01-x86_64_arm-linux-gnueabihf/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/master.dir/IK_7DOF/exp.c.o -MF CMakeFiles/master.dir/IK_7DOF/exp.c.o.d -o CMakeFiles/master.dir/IK_7DOF/exp.c.o -c /root/master45/IK_7DOF/exp.c
 
 CMakeFiles/master.dir/IK_7DOF/exp.c.i: cmake_force
@@ -156,7 +170,7 @@ CMakeFiles/master.dir/IK_7DOF/exp.c.s: cmake_force
 CMakeFiles/master.dir/IK_7DOF/log.c.o: CMakeFiles/master.dir/flags.make
 CMakeFiles/master.dir/IK_7DOF/log.c.o: ../IK_7DOF/log.c
 CMakeFiles/master.dir/IK_7DOF/log.c.o: CMakeFiles/master.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/master45/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/master.dir/IK_7DOF/log.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/master45/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/master.dir/IK_7DOF/log.c.o"
 	/usr/local/arm/gcc-linaro-4.9.4-2017.01-x86_64_arm-linux-gnueabihf/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/master.dir/IK_7DOF/log.c.o -MF CMakeFiles/master.dir/IK_7DOF/log.c.o.d -o CMakeFiles/master.dir/IK_7DOF/log.c.o -c /root/master45/IK_7DOF/log.c
 
 CMakeFiles/master.dir/IK_7DOF/log.c.i: cmake_force
@@ -170,7 +184,7 @@ CMakeFiles/master.dir/IK_7DOF/log.c.s: cmake_force
 CMakeFiles/master.dir/IK_7DOF/norm.c.o: CMakeFiles/master.dir/flags.make
 CMakeFiles/master.dir/IK_7DOF/norm.c.o: ../IK_7DOF/norm.c
 CMakeFiles/master.dir/IK_7DOF/norm.c.o: CMakeFiles/master.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/master45/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/master.dir/IK_7DOF/norm.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/master45/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/master.dir/IK_7DOF/norm.c.o"
 	/usr/local/arm/gcc-linaro-4.9.4-2017.01-x86_64_arm-linux-gnueabihf/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/master.dir/IK_7DOF/norm.c.o -MF CMakeFiles/master.dir/IK_7DOF/norm.c.o.d -o CMakeFiles/master.dir/IK_7DOF/norm.c.o -c /root/master45/IK_7DOF/norm.c
 
 CMakeFiles/master.dir/IK_7DOF/norm.c.i: cmake_force
@@ -184,7 +198,7 @@ CMakeFiles/master.dir/IK_7DOF/norm.c.s: cmake_force
 CMakeFiles/master.dir/IK_7DOF/power.c.o: CMakeFiles/master.dir/flags.make
 CMakeFiles/master.dir/IK_7DOF/power.c.o: ../IK_7DOF/power.c
 CMakeFiles/master.dir/IK_7DOF/power.c.o: CMakeFiles/master.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/master45/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/master.dir/IK_7DOF/power.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/master45/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/master.dir/IK_7DOF/power.c.o"
 	/usr/local/arm/gcc-linaro-4.9.4-2017.01-x86_64_arm-linux-gnueabihf/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/master.dir/IK_7DOF/power.c.o -MF CMakeFiles/master.dir/IK_7DOF/power.c.o.d -o CMakeFiles/master.dir/IK_7DOF/power.c.o -c /root/master45/IK_7DOF/power.c
 
 CMakeFiles/master.dir/IK_7DOF/power.c.i: cmake_force
@@ -198,7 +212,7 @@ CMakeFiles/master.dir/IK_7DOF/power.c.s: cmake_force
 CMakeFiles/master.dir/IK_7DOF/rtGetInf.c.o: CMakeFiles/master.dir/flags.make
 CMakeFiles/master.dir/IK_7DOF/rtGetInf.c.o: ../IK_7DOF/rtGetInf.c
 CMakeFiles/master.dir/IK_7DOF/rtGetInf.c.o: CMakeFiles/master.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/master45/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/master.dir/IK_7DOF/rtGetInf.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/master45/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/master.dir/IK_7DOF/rtGetInf.c.o"
 	/usr/local/arm/gcc-linaro-4.9.4-2017.01-x86_64_arm-linux-gnueabihf/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/master.dir/IK_7DOF/rtGetInf.c.o -MF CMakeFiles/master.dir/IK_7DOF/rtGetInf.c.o.d -o CMakeFiles/master.dir/IK_7DOF/rtGetInf.c.o -c /root/master45/IK_7DOF/rtGetInf.c
 
 CMakeFiles/master.dir/IK_7DOF/rtGetInf.c.i: cmake_force
@@ -212,7 +226,7 @@ CMakeFiles/master.dir/IK_7DOF/rtGetInf.c.s: cmake_force
 CMakeFiles/master.dir/IK_7DOF/rtGetNaN.c.o: CMakeFiles/master.dir/flags.make
 CMakeFiles/master.dir/IK_7DOF/rtGetNaN.c.o: ../IK_7DOF/rtGetNaN.c
 CMakeFiles/master.dir/IK_7DOF/rtGetNaN.c.o: CMakeFiles/master.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/master45/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/master.dir/IK_7DOF/rtGetNaN.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/master45/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/master.dir/IK_7DOF/rtGetNaN.c.o"
 	/usr/local/arm/gcc-linaro-4.9.4-2017.01-x86_64_arm-linux-gnueabihf/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/master.dir/IK_7DOF/rtGetNaN.c.o -MF CMakeFiles/master.dir/IK_7DOF/rtGetNaN.c.o.d -o CMakeFiles/master.dir/IK_7DOF/rtGetNaN.c.o -c /root/master45/IK_7DOF/rtGetNaN.c
 
 CMakeFiles/master.dir/IK_7DOF/rtGetNaN.c.i: cmake_force
@@ -226,7 +240,7 @@ CMakeFiles/master.dir/IK_7DOF/rtGetNaN.c.s: cmake_force
 CMakeFiles/master.dir/IK_7DOF/rt_nonfinite.c.o: CMakeFiles/master.dir/flags.make
 CMakeFiles/master.dir/IK_7DOF/rt_nonfinite.c.o: ../IK_7DOF/rt_nonfinite.c
 CMakeFiles/master.dir/IK_7DOF/rt_nonfinite.c.o: CMakeFiles/master.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/master45/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/master.dir/IK_7DOF/rt_nonfinite.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/master45/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/master.dir/IK_7DOF/rt_nonfinite.c.o"
 	/usr/local/arm/gcc-linaro-4.9.4-2017.01-x86_64_arm-linux-gnueabihf/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/master.dir/IK_7DOF/rt_nonfinite.c.o -MF CMakeFiles/master.dir/IK_7DOF/rt_nonfinite.c.o.d -o CMakeFiles/master.dir/IK_7DOF/rt_nonfinite.c.o -c /root/master45/IK_7DOF/rt_nonfinite.c
 
 CMakeFiles/master.dir/IK_7DOF/rt_nonfinite.c.i: cmake_force
@@ -240,7 +254,7 @@ CMakeFiles/master.dir/IK_7DOF/rt_nonfinite.c.s: cmake_force
 CMakeFiles/master.dir/demo.c.o: CMakeFiles/master.dir/flags.make
 CMakeFiles/master.dir/demo.c.o: ../demo.c
 CMakeFiles/master.dir/demo.c.o: CMakeFiles/master.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/master45/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/master.dir/demo.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/master45/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/master.dir/demo.c.o"
 	/usr/local/arm/gcc-linaro-4.9.4-2017.01-x86_64_arm-linux-gnueabihf/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/master.dir/demo.c.o -MF CMakeFiles/master.dir/demo.c.o.d -o CMakeFiles/master.dir/demo.c.o -c /root/master45/demo.c
 
 CMakeFiles/master.dir/demo.c.i: cmake_force
@@ -254,7 +268,7 @@ CMakeFiles/master.dir/demo.c.s: cmake_force
 CMakeFiles/master.dir/interface/cmdpanel.cpp.o: CMakeFiles/master.dir/flags.make
 CMakeFiles/master.dir/interface/cmdpanel.cpp.o: ../interface/cmdpanel.cpp
 CMakeFiles/master.dir/interface/cmdpanel.cpp.o: CMakeFiles/master.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/master45/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/master.dir/interface/cmdpanel.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/master45/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/master.dir/interface/cmdpanel.cpp.o"
 	/usr/local/arm/gcc-linaro-4.9.4-2017.01-x86_64_arm-linux-gnueabihf/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/master.dir/interface/cmdpanel.cpp.o -MF CMakeFiles/master.dir/interface/cmdpanel.cpp.o.d -o CMakeFiles/master.dir/interface/cmdpanel.cpp.o -c /root/master45/interface/cmdpanel.cpp
 
 CMakeFiles/master.dir/interface/cmdpanel.cpp.i: cmake_force
@@ -268,7 +282,7 @@ CMakeFiles/master.dir/interface/cmdpanel.cpp.s: cmake_force
 CMakeFiles/master.dir/main.cpp.o: CMakeFiles/master.dir/flags.make
 CMakeFiles/master.dir/main.cpp.o: ../main.cpp
 CMakeFiles/master.dir/main.cpp.o: CMakeFiles/master.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/master45/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/master.dir/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/master45/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/master.dir/main.cpp.o"
 	/usr/local/arm/gcc-linaro-4.9.4-2017.01-x86_64_arm-linux-gnueabihf/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/master.dir/main.cpp.o -MF CMakeFiles/master.dir/main.cpp.o.d -o CMakeFiles/master.dir/main.cpp.o -c /root/master45/main.cpp
 
 CMakeFiles/master.dir/main.cpp.i: cmake_force
@@ -281,6 +295,7 @@ CMakeFiles/master.dir/main.cpp.s: cmake_force
 
 # Object files for target master
 master_OBJECTS = \
+"CMakeFiles/master.dir/EtherCAT/EtherCAT.cpp.o" \
 "CMakeFiles/master.dir/IK_7DOF/IK_7DOF.c.o" \
 "CMakeFiles/master.dir/IK_7DOF/IK_7DOF_data.c.o" \
 "CMakeFiles/master.dir/IK_7DOF/IK_7DOF_initialize.c.o" \
@@ -300,6 +315,7 @@ master_OBJECTS = \
 # External object files for target master
 master_EXTERNAL_OBJECTS =
 
+master: CMakeFiles/master.dir/EtherCAT/EtherCAT.cpp.o
 master: CMakeFiles/master.dir/IK_7DOF/IK_7DOF.c.o
 master: CMakeFiles/master.dir/IK_7DOF/IK_7DOF_data.c.o
 master: CMakeFiles/master.dir/IK_7DOF/IK_7DOF_initialize.c.o
@@ -318,7 +334,7 @@ master: CMakeFiles/master.dir/main.cpp.o
 master: CMakeFiles/master.dir/build.make
 master: /root/output/lib/libethercat.so
 master: CMakeFiles/master.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/root/master45/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Linking CXX executable master"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/root/master45/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Linking CXX executable master"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/master.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

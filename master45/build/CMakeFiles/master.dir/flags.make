@@ -5,13 +5,13 @@
 # compile CXX with /usr/local/arm/gcc-linaro-4.9.4-2017.01-x86_64_arm-linux-gnueabihf/bin/arm-linux-gnueabihf-g++
 C_DEFINES = 
 
-C_INCLUDES = -I/root/master45/interface -I/root/master45/IK_7DOF -I/root/output/include -I/root/output/lib
+C_INCLUDES = -I/root/master45/interface -I/root/master45/IK_7DOF -I/root/master45/EtherCAT -I/root/output/include -I/root/output/lib
 
 C_FLAGS = 
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/root/master45/interface -I/root/master45/IK_7DOF -I/root/output/include -I/root/output/lib
+CXX_INCLUDES = -I/root/master45/interface -I/root/master45/IK_7DOF -I/root/master45/EtherCAT -I/root/output/include -I/root/output/lib
 
 CXX_FLAGS = 
 

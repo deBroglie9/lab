@@ -129,6 +129,30 @@ master/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/build
 .PHONY : master/fast
 
+EtherCAT/EtherCAT.o: EtherCAT/EtherCAT.cpp.o
+.PHONY : EtherCAT/EtherCAT.o
+
+# target to build an object file
+EtherCAT/EtherCAT.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/EtherCAT/EtherCAT.cpp.o
+.PHONY : EtherCAT/EtherCAT.cpp.o
+
+EtherCAT/EtherCAT.i: EtherCAT/EtherCAT.cpp.i
+.PHONY : EtherCAT/EtherCAT.i
+
+# target to preprocess a source file
+EtherCAT/EtherCAT.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/EtherCAT/EtherCAT.cpp.i
+.PHONY : EtherCAT/EtherCAT.cpp.i
+
+EtherCAT/EtherCAT.s: EtherCAT/EtherCAT.cpp.s
+.PHONY : EtherCAT/EtherCAT.s
+
+# target to generate assembly for a file
+EtherCAT/EtherCAT.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/EtherCAT/EtherCAT.cpp.s
+.PHONY : EtherCAT/EtherCAT.cpp.s
+
 IK_7DOF/IK_7DOF.o: IK_7DOF/IK_7DOF.c.o
 .PHONY : IK_7DOF/IK_7DOF.o
 
@@ -498,6 +522,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... master"
+	@echo "... EtherCAT/EtherCAT.o"
+	@echo "... EtherCAT/EtherCAT.i"
+	@echo "... EtherCAT/EtherCAT.s"
 	@echo "... IK_7DOF/IK_7DOF.o"
 	@echo "... IK_7DOF/IK_7DOF.i"
 	@echo "... IK_7DOF/IK_7DOF.s"

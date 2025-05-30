@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/master.dir/EtherCAT/EtherCAT.cpp.o"
+  "CMakeFiles/master.dir/EtherCAT/EtherCAT.cpp.o.d"
   "CMakeFiles/master.dir/IK_7DOF/IK_7DOF.c.o"
   "CMakeFiles/master.dir/IK_7DOF/IK_7DOF.c.o.d"
   "CMakeFiles/master.dir/IK_7DOF/IK_7DOF_data.c.o"

@@ -95,7 +95,7 @@ CMakeFiles/master.dir/main.cpp.o: /root/master45/main.cpp \
  /root/master45/IK_7DOF/IK_7DOF.h /root/master45/IK_7DOF/rtwtypes.h \
  /root/master45/IK_7DOF/IK_7DOF_terminate.h \
  /root/master45/IK_7DOF/rt_nonfinite.h /root/output/include/ecrt.h \
- /root/master45/interface/EtherCAT.h /root/master45/interface/cmdpanel.h \
+ /root/master45/EtherCAT/EtherCAT.h /root/master45/interface/cmdpanel.h \
  /usr/local/arm/gcc-linaro-4.9.4-2017.01-x86_64_arm-linux-gnueabihf/arm-linux-gnueabihf/libc/usr/include/fcntl.h \
  /usr/local/arm/gcc-linaro-4.9.4-2017.01-x86_64_arm-linux-gnueabihf/arm-linux-gnueabihf/libc/usr/include/bits/fcntl.h \
  /usr/local/arm/gcc-linaro-4.9.4-2017.01-x86_64_arm-linux-gnueabihf/arm-linux-gnueabihf/libc/usr/include/bits/fcntl-linux.h \

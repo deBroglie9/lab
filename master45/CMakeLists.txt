@@ -20,7 +20,10 @@ set(CMAKE_C_COMPILER "${CROSS_CHAIN_PATH}/bin/arm-linux-gnueabihf-gcc")
 # 指定C++编译器
 set(CMAKE_CXX_COMPILER "${CROSS_CHAIN_PATH}/bin/arm-linux-gnueabihf-g++")
 
-list(APPEND INCLUDE_DIRS "${CMAKE_CURRENT_SOURCE_DIR}/interface" "${CMAKE_CURRENT_SOURCE_DIR}/IK_7DOF")
+list(APPEND INCLUDE_DIRS 
+    "${CMAKE_CURRENT_SOURCE_DIR}/interface" 
+    "${CMAKE_CURRENT_SOURCE_DIR}/IK_7DOF"
+    "${CMAKE_CURRENT_SOURCE_DIR}/EtherCAT")
 message("包含目录：" "${INCLUDE_DIRS}")
 
 include_directories("${INCLUDE_DIRS}")
