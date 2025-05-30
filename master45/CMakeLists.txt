@@ -20,17 +20,27 @@ set(CMAKE_C_COMPILER "${CROSS_CHAIN_PATH}/bin/arm-linux-gnueabihf-gcc")
 # 指定C++编译器
 set(CMAKE_CXX_COMPILER "${CROSS_CHAIN_PATH}/bin/arm-linux-gnueabihf-g++")
 
-aux_source_directory(src SRC_LIST)
+list(APPEND INCLUDE_DIRS "${CMAKE_CURRENT_SOURCE_DIR}/interface" "${CMAKE_CURRENT_SOURCE_DIR}/IK_7DOF")
+message("包含目录：" "${INCLUDE_DIRS}")
+
+include_directories("${INCLUDE_DIRS}")
 
 include_directories(/root/output/include)
 include_directories(/root/output/lib)
-include_directories(/root/master45/inc)
+
+aux_source_directory(. SRC_LIST)
+file(GLOB_RECURSE SRC_FILE "*.cpp" "*.c")
+file(GLOB_RECURSE BUILD_CPP_FILES "build/*.cpp" "build/*.c")
+list(REMOVE_ITEM SRC_FILE ${BUILD_CPP_FILES})
+# list(APPEND SRC_LIST "${CMAKE_CURRENT_SOURCE_DIR}/interface" "${CMAKE_CURRENT_SOURCE_DIR}/IK_7DOF")
+
+message("包含文件：" "${SRC_FILE}")
 
 LINK_LIBRARIES(m)
 
-add_executable(master main.c ${SRC_LIST})
+add_executable(master ${SRC_FILE})
 
 link_directories("/home/debian/output/lib")
 
-target_link_libraries(master /root/output/lib/libethercat.so)
+target_link_libraries(master /root/output/lib/libethercat.so -pthread)
 

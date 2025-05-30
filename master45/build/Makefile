@@ -129,317 +129,365 @@ master/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/build
 .PHONY : master/fast
 
-main.o: main.c.o
+IK_7DOF/IK_7DOF.o: IK_7DOF/IK_7DOF.c.o
+.PHONY : IK_7DOF/IK_7DOF.o
+
+# target to build an object file
+IK_7DOF/IK_7DOF.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/IK_7DOF/IK_7DOF.c.o
+.PHONY : IK_7DOF/IK_7DOF.c.o
+
+IK_7DOF/IK_7DOF.i: IK_7DOF/IK_7DOF.c.i
+.PHONY : IK_7DOF/IK_7DOF.i
+
+# target to preprocess a source file
+IK_7DOF/IK_7DOF.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/IK_7DOF/IK_7DOF.c.i
+.PHONY : IK_7DOF/IK_7DOF.c.i
+
+IK_7DOF/IK_7DOF.s: IK_7DOF/IK_7DOF.c.s
+.PHONY : IK_7DOF/IK_7DOF.s
+
+# target to generate assembly for a file
+IK_7DOF/IK_7DOF.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/IK_7DOF/IK_7DOF.c.s
+.PHONY : IK_7DOF/IK_7DOF.c.s
+
+IK_7DOF/IK_7DOF_data.o: IK_7DOF/IK_7DOF_data.c.o
+.PHONY : IK_7DOF/IK_7DOF_data.o
+
+# target to build an object file
+IK_7DOF/IK_7DOF_data.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/IK_7DOF/IK_7DOF_data.c.o
+.PHONY : IK_7DOF/IK_7DOF_data.c.o
+
+IK_7DOF/IK_7DOF_data.i: IK_7DOF/IK_7DOF_data.c.i
+.PHONY : IK_7DOF/IK_7DOF_data.i
+
+# target to preprocess a source file
+IK_7DOF/IK_7DOF_data.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/IK_7DOF/IK_7DOF_data.c.i
+.PHONY : IK_7DOF/IK_7DOF_data.c.i
+
+IK_7DOF/IK_7DOF_data.s: IK_7DOF/IK_7DOF_data.c.s
+.PHONY : IK_7DOF/IK_7DOF_data.s
+
+# target to generate assembly for a file
+IK_7DOF/IK_7DOF_data.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/IK_7DOF/IK_7DOF_data.c.s
+.PHONY : IK_7DOF/IK_7DOF_data.c.s
+
+IK_7DOF/IK_7DOF_initialize.o: IK_7DOF/IK_7DOF_initialize.c.o
+.PHONY : IK_7DOF/IK_7DOF_initialize.o
+
+# target to build an object file
+IK_7DOF/IK_7DOF_initialize.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/IK_7DOF/IK_7DOF_initialize.c.o
+.PHONY : IK_7DOF/IK_7DOF_initialize.c.o
+
+IK_7DOF/IK_7DOF_initialize.i: IK_7DOF/IK_7DOF_initialize.c.i
+.PHONY : IK_7DOF/IK_7DOF_initialize.i
+
+# target to preprocess a source file
+IK_7DOF/IK_7DOF_initialize.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/IK_7DOF/IK_7DOF_initialize.c.i
+.PHONY : IK_7DOF/IK_7DOF_initialize.c.i
+
+IK_7DOF/IK_7DOF_initialize.s: IK_7DOF/IK_7DOF_initialize.c.s
+.PHONY : IK_7DOF/IK_7DOF_initialize.s
+
+# target to generate assembly for a file
+IK_7DOF/IK_7DOF_initialize.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/IK_7DOF/IK_7DOF_initialize.c.s
+.PHONY : IK_7DOF/IK_7DOF_initialize.c.s
+
+IK_7DOF/IK_7DOF_rtwutil.o: IK_7DOF/IK_7DOF_rtwutil.c.o
+.PHONY : IK_7DOF/IK_7DOF_rtwutil.o
+
+# target to build an object file
+IK_7DOF/IK_7DOF_rtwutil.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/IK_7DOF/IK_7DOF_rtwutil.c.o
+.PHONY : IK_7DOF/IK_7DOF_rtwutil.c.o
+
+IK_7DOF/IK_7DOF_rtwutil.i: IK_7DOF/IK_7DOF_rtwutil.c.i
+.PHONY : IK_7DOF/IK_7DOF_rtwutil.i
+
+# target to preprocess a source file
+IK_7DOF/IK_7DOF_rtwutil.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/IK_7DOF/IK_7DOF_rtwutil.c.i
+.PHONY : IK_7DOF/IK_7DOF_rtwutil.c.i
+
+IK_7DOF/IK_7DOF_rtwutil.s: IK_7DOF/IK_7DOF_rtwutil.c.s
+.PHONY : IK_7DOF/IK_7DOF_rtwutil.s
+
+# target to generate assembly for a file
+IK_7DOF/IK_7DOF_rtwutil.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/IK_7DOF/IK_7DOF_rtwutil.c.s
+.PHONY : IK_7DOF/IK_7DOF_rtwutil.c.s
+
+IK_7DOF/IK_7DOF_terminate.o: IK_7DOF/IK_7DOF_terminate.c.o
+.PHONY : IK_7DOF/IK_7DOF_terminate.o
+
+# target to build an object file
+IK_7DOF/IK_7DOF_terminate.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/IK_7DOF/IK_7DOF_terminate.c.o
+.PHONY : IK_7DOF/IK_7DOF_terminate.c.o
+
+IK_7DOF/IK_7DOF_terminate.i: IK_7DOF/IK_7DOF_terminate.c.i
+.PHONY : IK_7DOF/IK_7DOF_terminate.i
+
+# target to preprocess a source file
+IK_7DOF/IK_7DOF_terminate.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/IK_7DOF/IK_7DOF_terminate.c.i
+.PHONY : IK_7DOF/IK_7DOF_terminate.c.i
+
+IK_7DOF/IK_7DOF_terminate.s: IK_7DOF/IK_7DOF_terminate.c.s
+.PHONY : IK_7DOF/IK_7DOF_terminate.s
+
+# target to generate assembly for a file
+IK_7DOF/IK_7DOF_terminate.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/IK_7DOF/IK_7DOF_terminate.c.s
+.PHONY : IK_7DOF/IK_7DOF_terminate.c.s
+
+IK_7DOF/exp.o: IK_7DOF/exp.c.o
+.PHONY : IK_7DOF/exp.o
+
+# target to build an object file
+IK_7DOF/exp.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/IK_7DOF/exp.c.o
+.PHONY : IK_7DOF/exp.c.o
+
+IK_7DOF/exp.i: IK_7DOF/exp.c.i
+.PHONY : IK_7DOF/exp.i
+
+# target to preprocess a source file
+IK_7DOF/exp.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/IK_7DOF/exp.c.i
+.PHONY : IK_7DOF/exp.c.i
+
+IK_7DOF/exp.s: IK_7DOF/exp.c.s
+.PHONY : IK_7DOF/exp.s
+
+# target to generate assembly for a file
+IK_7DOF/exp.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/IK_7DOF/exp.c.s
+.PHONY : IK_7DOF/exp.c.s
+
+IK_7DOF/log.o: IK_7DOF/log.c.o
+.PHONY : IK_7DOF/log.o
+
+# target to build an object file
+IK_7DOF/log.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/IK_7DOF/log.c.o
+.PHONY : IK_7DOF/log.c.o
+
+IK_7DOF/log.i: IK_7DOF/log.c.i
+.PHONY : IK_7DOF/log.i
+
+# target to preprocess a source file
+IK_7DOF/log.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/IK_7DOF/log.c.i
+.PHONY : IK_7DOF/log.c.i
+
+IK_7DOF/log.s: IK_7DOF/log.c.s
+.PHONY : IK_7DOF/log.s
+
+# target to generate assembly for a file
+IK_7DOF/log.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/IK_7DOF/log.c.s
+.PHONY : IK_7DOF/log.c.s
+
+IK_7DOF/norm.o: IK_7DOF/norm.c.o
+.PHONY : IK_7DOF/norm.o
+
+# target to build an object file
+IK_7DOF/norm.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/IK_7DOF/norm.c.o
+.PHONY : IK_7DOF/norm.c.o
+
+IK_7DOF/norm.i: IK_7DOF/norm.c.i
+.PHONY : IK_7DOF/norm.i
+
+# target to preprocess a source file
+IK_7DOF/norm.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/IK_7DOF/norm.c.i
+.PHONY : IK_7DOF/norm.c.i
+
+IK_7DOF/norm.s: IK_7DOF/norm.c.s
+.PHONY : IK_7DOF/norm.s
+
+# target to generate assembly for a file
+IK_7DOF/norm.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/IK_7DOF/norm.c.s
+.PHONY : IK_7DOF/norm.c.s
+
+IK_7DOF/power.o: IK_7DOF/power.c.o
+.PHONY : IK_7DOF/power.o
+
+# target to build an object file
+IK_7DOF/power.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/IK_7DOF/power.c.o
+.PHONY : IK_7DOF/power.c.o
+
+IK_7DOF/power.i: IK_7DOF/power.c.i
+.PHONY : IK_7DOF/power.i
+
+# target to preprocess a source file
+IK_7DOF/power.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/IK_7DOF/power.c.i
+.PHONY : IK_7DOF/power.c.i
+
+IK_7DOF/power.s: IK_7DOF/power.c.s
+.PHONY : IK_7DOF/power.s
+
+# target to generate assembly for a file
+IK_7DOF/power.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/IK_7DOF/power.c.s
+.PHONY : IK_7DOF/power.c.s
+
+IK_7DOF/rtGetInf.o: IK_7DOF/rtGetInf.c.o
+.PHONY : IK_7DOF/rtGetInf.o
+
+# target to build an object file
+IK_7DOF/rtGetInf.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/IK_7DOF/rtGetInf.c.o
+.PHONY : IK_7DOF/rtGetInf.c.o
+
+IK_7DOF/rtGetInf.i: IK_7DOF/rtGetInf.c.i
+.PHONY : IK_7DOF/rtGetInf.i
+
+# target to preprocess a source file
+IK_7DOF/rtGetInf.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/IK_7DOF/rtGetInf.c.i
+.PHONY : IK_7DOF/rtGetInf.c.i
+
+IK_7DOF/rtGetInf.s: IK_7DOF/rtGetInf.c.s
+.PHONY : IK_7DOF/rtGetInf.s
+
+# target to generate assembly for a file
+IK_7DOF/rtGetInf.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/IK_7DOF/rtGetInf.c.s
+.PHONY : IK_7DOF/rtGetInf.c.s
+
+IK_7DOF/rtGetNaN.o: IK_7DOF/rtGetNaN.c.o
+.PHONY : IK_7DOF/rtGetNaN.o
+
+# target to build an object file
+IK_7DOF/rtGetNaN.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/IK_7DOF/rtGetNaN.c.o
+.PHONY : IK_7DOF/rtGetNaN.c.o
+
+IK_7DOF/rtGetNaN.i: IK_7DOF/rtGetNaN.c.i
+.PHONY : IK_7DOF/rtGetNaN.i
+
+# target to preprocess a source file
+IK_7DOF/rtGetNaN.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/IK_7DOF/rtGetNaN.c.i
+.PHONY : IK_7DOF/rtGetNaN.c.i
+
+IK_7DOF/rtGetNaN.s: IK_7DOF/rtGetNaN.c.s
+.PHONY : IK_7DOF/rtGetNaN.s
+
+# target to generate assembly for a file
+IK_7DOF/rtGetNaN.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/IK_7DOF/rtGetNaN.c.s
+.PHONY : IK_7DOF/rtGetNaN.c.s
+
+IK_7DOF/rt_nonfinite.o: IK_7DOF/rt_nonfinite.c.o
+.PHONY : IK_7DOF/rt_nonfinite.o
+
+# target to build an object file
+IK_7DOF/rt_nonfinite.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/IK_7DOF/rt_nonfinite.c.o
+.PHONY : IK_7DOF/rt_nonfinite.c.o
+
+IK_7DOF/rt_nonfinite.i: IK_7DOF/rt_nonfinite.c.i
+.PHONY : IK_7DOF/rt_nonfinite.i
+
+# target to preprocess a source file
+IK_7DOF/rt_nonfinite.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/IK_7DOF/rt_nonfinite.c.i
+.PHONY : IK_7DOF/rt_nonfinite.c.i
+
+IK_7DOF/rt_nonfinite.s: IK_7DOF/rt_nonfinite.c.s
+.PHONY : IK_7DOF/rt_nonfinite.s
+
+# target to generate assembly for a file
+IK_7DOF/rt_nonfinite.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/IK_7DOF/rt_nonfinite.c.s
+.PHONY : IK_7DOF/rt_nonfinite.c.s
+
+demo.o: demo.c.o
+.PHONY : demo.o
+
+# target to build an object file
+demo.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/demo.c.o
+.PHONY : demo.c.o
+
+demo.i: demo.c.i
+.PHONY : demo.i
+
+# target to preprocess a source file
+demo.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/demo.c.i
+.PHONY : demo.c.i
+
+demo.s: demo.c.s
+.PHONY : demo.s
+
+# target to generate assembly for a file
+demo.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/demo.c.s
+.PHONY : demo.c.s
+
+interface/cmdpanel.o: interface/cmdpanel.cpp.o
+.PHONY : interface/cmdpanel.o
+
+# target to build an object file
+interface/cmdpanel.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/interface/cmdpanel.cpp.o
+.PHONY : interface/cmdpanel.cpp.o
+
+interface/cmdpanel.i: interface/cmdpanel.cpp.i
+.PHONY : interface/cmdpanel.i
+
+# target to preprocess a source file
+interface/cmdpanel.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/interface/cmdpanel.cpp.i
+.PHONY : interface/cmdpanel.cpp.i
+
+interface/cmdpanel.s: interface/cmdpanel.cpp.s
+.PHONY : interface/cmdpanel.s
+
+# target to generate assembly for a file
+interface/cmdpanel.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/interface/cmdpanel.cpp.s
+.PHONY : interface/cmdpanel.cpp.s
+
+main.o: main.cpp.o
 .PHONY : main.o
 
 # target to build an object file
-main.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/main.c.o
-.PHONY : main.c.o
+main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/main.cpp.o
+.PHONY : main.cpp.o
 
-main.i: main.c.i
+main.i: main.cpp.i
 .PHONY : main.i
 
 # target to preprocess a source file
-main.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/main.c.i
-.PHONY : main.c.i
+main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/main.cpp.i
+.PHONY : main.cpp.i
 
-main.s: main.c.s
+main.s: main.cpp.s
 .PHONY : main.s
 
 # target to generate assembly for a file
-main.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/main.c.s
-.PHONY : main.c.s
-
-src/IK_7DOF.o: src/IK_7DOF.c.o
-.PHONY : src/IK_7DOF.o
-
-# target to build an object file
-src/IK_7DOF.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/src/IK_7DOF.c.o
-.PHONY : src/IK_7DOF.c.o
-
-src/IK_7DOF.i: src/IK_7DOF.c.i
-.PHONY : src/IK_7DOF.i
-
-# target to preprocess a source file
-src/IK_7DOF.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/src/IK_7DOF.c.i
-.PHONY : src/IK_7DOF.c.i
-
-src/IK_7DOF.s: src/IK_7DOF.c.s
-.PHONY : src/IK_7DOF.s
-
-# target to generate assembly for a file
-src/IK_7DOF.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/src/IK_7DOF.c.s
-.PHONY : src/IK_7DOF.c.s
-
-src/IK_7DOF_data.o: src/IK_7DOF_data.c.o
-.PHONY : src/IK_7DOF_data.o
-
-# target to build an object file
-src/IK_7DOF_data.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/src/IK_7DOF_data.c.o
-.PHONY : src/IK_7DOF_data.c.o
-
-src/IK_7DOF_data.i: src/IK_7DOF_data.c.i
-.PHONY : src/IK_7DOF_data.i
-
-# target to preprocess a source file
-src/IK_7DOF_data.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/src/IK_7DOF_data.c.i
-.PHONY : src/IK_7DOF_data.c.i
-
-src/IK_7DOF_data.s: src/IK_7DOF_data.c.s
-.PHONY : src/IK_7DOF_data.s
-
-# target to generate assembly for a file
-src/IK_7DOF_data.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/src/IK_7DOF_data.c.s
-.PHONY : src/IK_7DOF_data.c.s
-
-src/IK_7DOF_initialize.o: src/IK_7DOF_initialize.c.o
-.PHONY : src/IK_7DOF_initialize.o
-
-# target to build an object file
-src/IK_7DOF_initialize.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/src/IK_7DOF_initialize.c.o
-.PHONY : src/IK_7DOF_initialize.c.o
-
-src/IK_7DOF_initialize.i: src/IK_7DOF_initialize.c.i
-.PHONY : src/IK_7DOF_initialize.i
-
-# target to preprocess a source file
-src/IK_7DOF_initialize.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/src/IK_7DOF_initialize.c.i
-.PHONY : src/IK_7DOF_initialize.c.i
-
-src/IK_7DOF_initialize.s: src/IK_7DOF_initialize.c.s
-.PHONY : src/IK_7DOF_initialize.s
-
-# target to generate assembly for a file
-src/IK_7DOF_initialize.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/src/IK_7DOF_initialize.c.s
-.PHONY : src/IK_7DOF_initialize.c.s
-
-src/IK_7DOF_rtwutil.o: src/IK_7DOF_rtwutil.c.o
-.PHONY : src/IK_7DOF_rtwutil.o
-
-# target to build an object file
-src/IK_7DOF_rtwutil.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/src/IK_7DOF_rtwutil.c.o
-.PHONY : src/IK_7DOF_rtwutil.c.o
-
-src/IK_7DOF_rtwutil.i: src/IK_7DOF_rtwutil.c.i
-.PHONY : src/IK_7DOF_rtwutil.i
-
-# target to preprocess a source file
-src/IK_7DOF_rtwutil.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/src/IK_7DOF_rtwutil.c.i
-.PHONY : src/IK_7DOF_rtwutil.c.i
-
-src/IK_7DOF_rtwutil.s: src/IK_7DOF_rtwutil.c.s
-.PHONY : src/IK_7DOF_rtwutil.s
-
-# target to generate assembly for a file
-src/IK_7DOF_rtwutil.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/src/IK_7DOF_rtwutil.c.s
-.PHONY : src/IK_7DOF_rtwutil.c.s
-
-src/IK_7DOF_terminate.o: src/IK_7DOF_terminate.c.o
-.PHONY : src/IK_7DOF_terminate.o
-
-# target to build an object file
-src/IK_7DOF_terminate.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/src/IK_7DOF_terminate.c.o
-.PHONY : src/IK_7DOF_terminate.c.o
-
-src/IK_7DOF_terminate.i: src/IK_7DOF_terminate.c.i
-.PHONY : src/IK_7DOF_terminate.i
-
-# target to preprocess a source file
-src/IK_7DOF_terminate.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/src/IK_7DOF_terminate.c.i
-.PHONY : src/IK_7DOF_terminate.c.i
-
-src/IK_7DOF_terminate.s: src/IK_7DOF_terminate.c.s
-.PHONY : src/IK_7DOF_terminate.s
-
-# target to generate assembly for a file
-src/IK_7DOF_terminate.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/src/IK_7DOF_terminate.c.s
-.PHONY : src/IK_7DOF_terminate.c.s
-
-src/exp.o: src/exp.c.o
-.PHONY : src/exp.o
-
-# target to build an object file
-src/exp.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/src/exp.c.o
-.PHONY : src/exp.c.o
-
-src/exp.i: src/exp.c.i
-.PHONY : src/exp.i
-
-# target to preprocess a source file
-src/exp.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/src/exp.c.i
-.PHONY : src/exp.c.i
-
-src/exp.s: src/exp.c.s
-.PHONY : src/exp.s
-
-# target to generate assembly for a file
-src/exp.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/src/exp.c.s
-.PHONY : src/exp.c.s
-
-src/log.o: src/log.c.o
-.PHONY : src/log.o
-
-# target to build an object file
-src/log.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/src/log.c.o
-.PHONY : src/log.c.o
-
-src/log.i: src/log.c.i
-.PHONY : src/log.i
-
-# target to preprocess a source file
-src/log.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/src/log.c.i
-.PHONY : src/log.c.i
-
-src/log.s: src/log.c.s
-.PHONY : src/log.s
-
-# target to generate assembly for a file
-src/log.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/src/log.c.s
-.PHONY : src/log.c.s
-
-src/norm.o: src/norm.c.o
-.PHONY : src/norm.o
-
-# target to build an object file
-src/norm.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/src/norm.c.o
-.PHONY : src/norm.c.o
-
-src/norm.i: src/norm.c.i
-.PHONY : src/norm.i
-
-# target to preprocess a source file
-src/norm.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/src/norm.c.i
-.PHONY : src/norm.c.i
-
-src/norm.s: src/norm.c.s
-.PHONY : src/norm.s
-
-# target to generate assembly for a file
-src/norm.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/src/norm.c.s
-.PHONY : src/norm.c.s
-
-src/power.o: src/power.c.o
-.PHONY : src/power.o
-
-# target to build an object file
-src/power.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/src/power.c.o
-.PHONY : src/power.c.o
-
-src/power.i: src/power.c.i
-.PHONY : src/power.i
-
-# target to preprocess a source file
-src/power.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/src/power.c.i
-.PHONY : src/power.c.i
-
-src/power.s: src/power.c.s
-.PHONY : src/power.s
-
-# target to generate assembly for a file
-src/power.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/src/power.c.s
-.PHONY : src/power.c.s
-
-src/rtGetInf.o: src/rtGetInf.c.o
-.PHONY : src/rtGetInf.o
-
-# target to build an object file
-src/rtGetInf.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/src/rtGetInf.c.o
-.PHONY : src/rtGetInf.c.o
-
-src/rtGetInf.i: src/rtGetInf.c.i
-.PHONY : src/rtGetInf.i
-
-# target to preprocess a source file
-src/rtGetInf.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/src/rtGetInf.c.i
-.PHONY : src/rtGetInf.c.i
-
-src/rtGetInf.s: src/rtGetInf.c.s
-.PHONY : src/rtGetInf.s
-
-# target to generate assembly for a file
-src/rtGetInf.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/src/rtGetInf.c.s
-.PHONY : src/rtGetInf.c.s
-
-src/rtGetNaN.o: src/rtGetNaN.c.o
-.PHONY : src/rtGetNaN.o
-
-# target to build an object file
-src/rtGetNaN.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/src/rtGetNaN.c.o
-.PHONY : src/rtGetNaN.c.o
-
-src/rtGetNaN.i: src/rtGetNaN.c.i
-.PHONY : src/rtGetNaN.i
-
-# target to preprocess a source file
-src/rtGetNaN.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/src/rtGetNaN.c.i
-.PHONY : src/rtGetNaN.c.i
-
-src/rtGetNaN.s: src/rtGetNaN.c.s
-.PHONY : src/rtGetNaN.s
-
-# target to generate assembly for a file
-src/rtGetNaN.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/src/rtGetNaN.c.s
-.PHONY : src/rtGetNaN.c.s
-
-src/rt_nonfinite.o: src/rt_nonfinite.c.o
-.PHONY : src/rt_nonfinite.o
-
-# target to build an object file
-src/rt_nonfinite.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/src/rt_nonfinite.c.o
-.PHONY : src/rt_nonfinite.c.o
-
-src/rt_nonfinite.i: src/rt_nonfinite.c.i
-.PHONY : src/rt_nonfinite.i
-
-# target to preprocess a source file
-src/rt_nonfinite.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/src/rt_nonfinite.c.i
-.PHONY : src/rt_nonfinite.c.i
-
-src/rt_nonfinite.s: src/rt_nonfinite.c.s
-.PHONY : src/rt_nonfinite.s
-
-# target to generate assembly for a file
-src/rt_nonfinite.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/src/rt_nonfinite.c.s
-.PHONY : src/rt_nonfinite.c.s
+main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/main.cpp.s
+.PHONY : main.cpp.s
 
 # Help Target
 help:
@@ -450,45 +498,51 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... master"
+	@echo "... IK_7DOF/IK_7DOF.o"
+	@echo "... IK_7DOF/IK_7DOF.i"
+	@echo "... IK_7DOF/IK_7DOF.s"
+	@echo "... IK_7DOF/IK_7DOF_data.o"
+	@echo "... IK_7DOF/IK_7DOF_data.i"
+	@echo "... IK_7DOF/IK_7DOF_data.s"
+	@echo "... IK_7DOF/IK_7DOF_initialize.o"
+	@echo "... IK_7DOF/IK_7DOF_initialize.i"
+	@echo "... IK_7DOF/IK_7DOF_initialize.s"
+	@echo "... IK_7DOF/IK_7DOF_rtwutil.o"
+	@echo "... IK_7DOF/IK_7DOF_rtwutil.i"
+	@echo "... IK_7DOF/IK_7DOF_rtwutil.s"
+	@echo "... IK_7DOF/IK_7DOF_terminate.o"
+	@echo "... IK_7DOF/IK_7DOF_terminate.i"
+	@echo "... IK_7DOF/IK_7DOF_terminate.s"
+	@echo "... IK_7DOF/exp.o"
+	@echo "... IK_7DOF/exp.i"
+	@echo "... IK_7DOF/exp.s"
+	@echo "... IK_7DOF/log.o"
+	@echo "... IK_7DOF/log.i"
+	@echo "... IK_7DOF/log.s"
+	@echo "... IK_7DOF/norm.o"
+	@echo "... IK_7DOF/norm.i"
+	@echo "... IK_7DOF/norm.s"
+	@echo "... IK_7DOF/power.o"
+	@echo "... IK_7DOF/power.i"
+	@echo "... IK_7DOF/power.s"
+	@echo "... IK_7DOF/rtGetInf.o"
+	@echo "... IK_7DOF/rtGetInf.i"
+	@echo "... IK_7DOF/rtGetInf.s"
+	@echo "... IK_7DOF/rtGetNaN.o"
+	@echo "... IK_7DOF/rtGetNaN.i"
+	@echo "... IK_7DOF/rtGetNaN.s"
+	@echo "... IK_7DOF/rt_nonfinite.o"
+	@echo "... IK_7DOF/rt_nonfinite.i"
+	@echo "... IK_7DOF/rt_nonfinite.s"
+	@echo "... demo.o"
+	@echo "... demo.i"
+	@echo "... demo.s"
+	@echo "... interface/cmdpanel.o"
+	@echo "... interface/cmdpanel.i"
+	@echo "... interface/cmdpanel.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... src/IK_7DOF.o"
-	@echo "... src/IK_7DOF.i"
-	@echo "... src/IK_7DOF.s"
-	@echo "... src/IK_7DOF_data.o"
-	@echo "... src/IK_7DOF_data.i"
-	@echo "... src/IK_7DOF_data.s"
-	@echo "... src/IK_7DOF_initialize.o"
-	@echo "... src/IK_7DOF_initialize.i"
-	@echo "... src/IK_7DOF_initialize.s"
-	@echo "... src/IK_7DOF_rtwutil.o"
-	@echo "... src/IK_7DOF_rtwutil.i"
-	@echo "... src/IK_7DOF_rtwutil.s"
-	@echo "... src/IK_7DOF_terminate.o"
-	@echo "... src/IK_7DOF_terminate.i"
-	@echo "... src/IK_7DOF_terminate.s"
-	@echo "... src/exp.o"
-	@echo "... src/exp.i"
-	@echo "... src/exp.s"
-	@echo "... src/log.o"
-	@echo "... src/log.i"
-	@echo "... src/log.s"
-	@echo "... src/norm.o"
-	@echo "... src/norm.i"
-	@echo "... src/norm.s"
-	@echo "... src/power.o"
-	@echo "... src/power.i"
-	@echo "... src/power.s"
-	@echo "... src/rtGetInf.o"
-	@echo "... src/rtGetInf.i"
-	@echo "... src/rtGetInf.s"
-	@echo "... src/rtGetNaN.o"
-	@echo "... src/rtGetNaN.i"
-	@echo "... src/rtGetNaN.s"
-	@echo "... src/rt_nonfinite.o"
-	@echo "... src/rt_nonfinite.i"
-	@echo "... src/rt_nonfinite.s"
 .PHONY : help
 
 

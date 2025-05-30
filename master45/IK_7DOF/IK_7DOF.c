@@ -146,8 +146,8 @@ void IK_7DOF(const double R[16], double phi, double l1, double l2, double Px,
   double ccr0;
   double cp01_idx_0;
   double cp02_idx_0;
-  double cphi;
   double cps;
+  double cpw;
   double crs;
   double crw;
   double cys;
@@ -298,13 +298,13 @@ void IK_7DOF(const double R[16], double phi, double l1, double l2, double Px,
   /*  Px=T17(1,4); */
   /*  Py=T17(2,4); */
   /*  Pz=T17(3,4); */
-  crw = Px * Px;
-  cphi = l2 * l2;
-  cp01_idx_0 = l1 * l1;
-  cc4_tmp = (crw + Py * Py) + Pz * Pz;
-  cc4 = ((cc4_tmp - cp01_idx_0) - cphi) / (2.0 * l1 * l2);
-  cp02_idx_0 = cc4 * cc4;
-  sc4 = sqrt(1.0 - cp02_idx_0);
+  crw = Py * Py;
+  cpw = l2 * l2;
+  cp02_idx_0 = l1 * l1;
+  cc4_tmp = (Px * Px + crw) + Pz * Pz;
+  cc4 = ((cc4_tmp - cp02_idx_0) - cpw) / (2.0 * l1 * l2);
+  cp01_idx_0 = cc4 * cc4;
+  sc4 = sqrt(1.0 - cp01_idx_0);
   scr0 = -Pz / (l1 + l2 * cc4);
   ccr0 = sqrt(1.0 - scr0 * scr0);
   /*  T150=[ccp0,-scp0,0,0;scp0,ccp,0,0;0,0,1,0;0,0,0,1]*[ccr0,0,scr0,0;0,1,0,0;-scr0,0,ccr0,0;0,0,0,1]*[1,0,0,0;0,1,0,0;0,0,1,0;0,0,0,1]*[1,0,0,l1;0,1,0,0;0,0,1,0;0,0,0,1]*[cc4,-sc4,0,0;sc4,cc4,0,0;0,0,1,0;0,0,0,1]*[1,0,0,l2;0,1,0,0;0,0,1,0;0,0,0,1];
@@ -315,38 +315,36 @@ void IK_7DOF(const double R[16], double phi, double l1, double l2, double Px,
   /*   */
   /*  [scp0,ccp0]=solve(eq1,eq2,[scp0,ccp0]); */
   scp0_idx_0_tmp = ccr0 * ccr0;
-  b_scp0_idx_0_tmp = cp02_idx_0 * scp0_idx_0_tmp * cphi;
-  c_scp0_idx_0_tmp = 2.0 * cc4 * scp0_idx_0_tmp * l1 * l2;
-  scp0_idx_0_tmp *= cp01_idx_0;
-  d_scp0_idx_0_tmp = cphi * (sc4 * sc4);
-  scp0_idx_0_tmp_tmp = l2 * sc4;
-  b_scp0_idx_0_tmp_tmp = Px * ccr0 * l1;
-  c_scp0_idx_0_tmp_tmp =
-      scp0_idx_0_tmp_tmp *
-      sqrt((((-crw + b_scp0_idx_0_tmp) + c_scp0_idx_0_tmp) + scp0_idx_0_tmp) +
-           d_scp0_idx_0_tmp);
-  d_scp0_idx_0_tmp_tmp = Px * cc4 * ccr0 * l2;
-  e_scp0_idx_0_tmp =
-      (c_scp0_idx_0_tmp_tmp + b_scp0_idx_0_tmp_tmp) + d_scp0_idx_0_tmp_tmp;
-  scp0_idx_0_tmp = ((b_scp0_idx_0_tmp + c_scp0_idx_0_tmp) + scp0_idx_0_tmp) +
-                   d_scp0_idx_0_tmp;
+  scp0_idx_0_tmp_tmp = cp01_idx_0 * scp0_idx_0_tmp * cpw;
+  b_scp0_idx_0_tmp_tmp = 2.0 * cc4 * scp0_idx_0_tmp * l1 * l2;
+  c_scp0_idx_0_tmp_tmp = scp0_idx_0_tmp * cp02_idx_0;
+  d_scp0_idx_0_tmp_tmp = cpw * (sc4 * sc4);
+  scp0_idx_0_tmp = sqrt((((-crw + scp0_idx_0_tmp_tmp) + b_scp0_idx_0_tmp_tmp) +
+                         c_scp0_idx_0_tmp_tmp) +
+                        d_scp0_idx_0_tmp_tmp);
   b_scp0_idx_0_tmp = ccr0 * l1;
   c_scp0_idx_0_tmp = cc4 * ccr0 * l2;
-  *c5 = ((b_scp0_idx_0_tmp * e_scp0_idx_0_tmp / scp0_idx_0_tmp - Px) +
-         c_scp0_idx_0_tmp * e_scp0_idx_0_tmp / scp0_idx_0_tmp) /
-        scp0_idx_0_tmp_tmp;
-  cphi = (b_scp0_idx_0_tmp_tmp - c_scp0_idx_0_tmp_tmp) + d_scp0_idx_0_tmp_tmp;
-  *c6 = e_scp0_idx_0_tmp / scp0_idx_0_tmp;
+  d_scp0_idx_0_tmp = l2 * sc4;
+  e_scp0_idx_0_tmp = b_scp0_idx_0_tmp * scp0_idx_0_tmp;
+  f_scp0_idx_0_tmp = Py * l2 * sc4;
+  scp0_idx_0_tmp *= c_scp0_idx_0_tmp;
+  g_scp0_idx_0_tmp =
+      ((scp0_idx_0_tmp_tmp + b_scp0_idx_0_tmp_tmp) + c_scp0_idx_0_tmp_tmp) +
+      d_scp0_idx_0_tmp_tmp;
+  b_scp0_idx_0_tmp += c_scp0_idx_0_tmp;
+  c_scp0_idx_0_tmp = (f_scp0_idx_0_tmp + e_scp0_idx_0_tmp) + scp0_idx_0_tmp;
+  *c5 = (Py - d_scp0_idx_0_tmp * c_scp0_idx_0_tmp / g_scp0_idx_0_tmp) /
+        b_scp0_idx_0_tmp;
+  cpw = (e_scp0_idx_0_tmp - f_scp0_idx_0_tmp) + scp0_idx_0_tmp;
+  *c6 = c_scp0_idx_0_tmp / g_scp0_idx_0_tmp;
   cp01_idx_0 = acos(*c6);
   cp02_idx_0 = asin(*c5);
   if ((!(cp01_idx_0 >= -0.43633231299858238)) ||
       (!(cp01_idx_0 <= 3.1415926535897931)) ||
       (!(cp02_idx_0 >= -0.43633231299858238)) ||
       (!(cp02_idx_0 <= 3.1415926535897931))) {
-    *c6 = cphi / scp0_idx_0_tmp;
-    *c5 = ((b_scp0_idx_0_tmp * cphi / scp0_idx_0_tmp - Px) +
-           c_scp0_idx_0_tmp * cphi / scp0_idx_0_tmp) /
-          scp0_idx_0_tmp_tmp;
+    *c6 = -cpw / g_scp0_idx_0_tmp;
+    *c5 = (Py + d_scp0_idx_0_tmp * cpw / g_scp0_idx_0_tmp) / b_scp0_idx_0_tmp;
   }
   Pskew[0] = *c6;
   Pskew[3] = -*c5;
@@ -386,16 +384,16 @@ void IK_7DOF(const double R[16], double phi, double l1, double l2, double Px,
   }
   /*  Pskew=[0,-Pz/(Px^2+Py^2+Pz^2)^0.5,Py/(Px^2+Py^2+Pz^2)^0.5;Pz/(Px^2+Py^2+Pz^2)^0.5,0,-Px/(Px^2+Py^2+Pz^2)^0.5;-Py/(Px^2+Py^2+Pz^2)^0.5,Px/(Px^2+Py^2+Pz^2)^0.5,0];
    */
-  cp02_idx_0 = sqrt(cc4_tmp);
-  Pskew[0] = 0.0 / cp02_idx_0;
-  Pskew[3] = -Pz / cp02_idx_0;
-  Pskew[6] = Py / cp02_idx_0;
-  Pskew[1] = Pz / cp02_idx_0;
-  Pskew[4] = 0.0 / cp02_idx_0;
-  Pskew[7] = -Px / cp02_idx_0;
-  Pskew[2] = -Py / cp02_idx_0;
-  Pskew[5] = Px / cp02_idx_0;
-  Pskew[8] = 0.0 / cp02_idx_0;
+  cp01_idx_0 = sqrt(cc4_tmp);
+  Pskew[0] = 0.0 / cp01_idx_0;
+  Pskew[3] = -Pz / cp01_idx_0;
+  Pskew[6] = Py / cp01_idx_0;
+  Pskew[1] = Pz / cp01_idx_0;
+  Pskew[4] = 0.0 / cp01_idx_0;
+  Pskew[7] = -Px / cp01_idx_0;
+  Pskew[2] = -Py / cp01_idx_0;
+  Pskew[5] = Px / cp01_idx_0;
+  Pskew[8] = 0.0 / cp01_idx_0;
   for (IL = 0; IL < 3; IL++) {
     e_scp0_idx_0_tmp_tmp = Pskew[IL + 3];
     f_scp0_idx_0_tmp_tmp = Pskew[IL + 6];
@@ -427,8 +425,8 @@ void IK_7DOF(const double R[16], double phi, double l1, double l2, double Px,
   for (IL = 0; IL < 9; IL++) {
     a_tmp[IL] += (double)b[IL];
   }
-  cp02_idx_0 = sin(phi);
-  cphi = cos(phi);
+  cp01_idx_0 = sin(phi);
+  cp02_idx_0 = cos(phi);
   /*  cp=atan(tcp); */
   /*  ccp=cos(cp);scp=sin(cp); */
   /*  ccr=(1-scr^2)^0.5; */
@@ -526,32 +524,32 @@ void IK_7DOF(const double R[16], double phi, double l1, double l2, double Px,
                            g_scp0_idx_0_tmp_tmp * R130[3 * IM + 2];
     }
   }
-  cps = atan(((As[1] * cp02_idx_0 + Bs[1] * cphi) + Cs[1]) /
-             ((As[0] * cp02_idx_0 + Bs[0] * cphi) + Cs[0]));
-  crs = asin((-As[2] * cp02_idx_0 - Bs[2] * cphi) - Cs[2]);
-  cys = atan(((As[5] * cp02_idx_0 + Bs[5] * cphi) + Cs[5]) /
-             ((As[8] * cp02_idx_0 + Bs[8] * cphi) + Cs[8]));
-  cp01_idx_0 = atan(((Aw[1] * cp02_idx_0 + Bw[1] * cphi) + Pskew[1]) /
-                    ((Aw[0] * cp02_idx_0 + Bw[0] * cphi) + Pskew[0]));
-  crw = asin((-Aw[2] * cp02_idx_0 - Bw[2] * cphi) - Pskew[2]);
-  *c7 = atan(((Aw[5] * cp02_idx_0 + Bw[5] * cphi) + Pskew[5]) /
-             ((Aw[8] * cp02_idx_0 + Bw[8] * cphi) + Pskew[8]));
+  cps = atan(((As[1] * cp01_idx_0 + Bs[1] * cp02_idx_0) + Cs[1]) /
+             ((As[0] * cp01_idx_0 + Bs[0] * cp02_idx_0) + Cs[0]));
+  crs = asin((-As[2] * cp01_idx_0 - Bs[2] * cp02_idx_0) - Cs[2]);
+  cys = atan(((As[5] * cp01_idx_0 + Bs[5] * cp02_idx_0) + Cs[5]) /
+             ((As[8] * cp01_idx_0 + Bs[8] * cp02_idx_0) + Cs[8]));
+  cpw = atan(((Aw[1] * cp01_idx_0 + Bw[1] * cp02_idx_0) + Pskew[1]) /
+             ((Aw[0] * cp01_idx_0 + Bw[0] * cp02_idx_0) + Pskew[0]));
+  crw = asin((-Aw[2] * cp01_idx_0 - Bw[2] * cp02_idx_0) - Pskew[2]);
+  *c7 = atan(((Aw[5] * cp01_idx_0 + Bw[5] * cp02_idx_0) + Pskew[5]) /
+             ((Aw[8] * cp01_idx_0 + Bw[8] * cp02_idx_0) + Pskew[8]));
   *c4 = acos(cc4);
   sc5_tmp_tmp = cos(crw);
-  b_sc5_tmp_tmp = cos(cp01_idx_0);
+  b_sc5_tmp_tmp = cos(cpw);
   c_sc5_tmp_tmp = sin(crw);
-  d_sc5_tmp_tmp = sin(cp01_idx_0);
-  cc4_tmp = cos(2.0 * cp01_idx_0);
+  d_sc5_tmp_tmp = sin(cpw);
+  cc4_tmp = cos(2.0 * cpw);
   e_sc5_tmp_tmp = cos(2.0 * crw);
-  sc4 = sin(2.0 * cp01_idx_0);
+  sc4 = sin(2.0 * cpw);
   f_sc5_tmp_tmp = sin(2.0 * crw);
-  e_scp0_idx_0_tmp_tmp = cos(3.0 * cp01_idx_0);
+  e_scp0_idx_0_tmp_tmp = cos(3.0 * cpw);
   f_scp0_idx_0_tmp_tmp = cos(3.0 * crw);
-  g_scp0_idx_0_tmp_tmp = cos(4.0 * cp01_idx_0);
+  g_scp0_idx_0_tmp_tmp = cos(4.0 * cpw);
   h_scp0_idx_0_tmp_tmp = cos(4.0 * crw);
-  cp02_idx_0 = sin(3.0 * cp01_idx_0);
+  cp02_idx_0 = sin(3.0 * cpw);
   ccr0 = sin(3.0 * crw);
-  cp01_idx_0 = sin(4.0 * cp01_idx_0);
+  cpw = sin(4.0 * cpw);
   d = 5.8381403164454094E+31 * h_scp0_idx_0_tmp_tmp;
   d1 = 4.7577974638953085E+33 * e_scp0_idx_0_tmp_tmp;
   d2 = 1.3165759884703893E+33 * g_scp0_idx_0_tmp_tmp;
@@ -560,13 +558,13 @@ void IK_7DOF(const double R[16], double phi, double l1, double l2, double Px,
   d5 = 1.2013213277109155E+34 * cc4_tmp;
   d6 = 4.2421596723753285E+33 * sc4;
   d7 = 6.248394006115564E+33 * cp02_idx_0;
-  d8 = 2.2805102969368449E+33 * cp01_idx_0;
+  d8 = 2.2805102969368449E+33 * cpw;
   d9 = 5.755069824220681E+33 * f_sc5_tmp_tmp;
   d10 = 6.8604407893722155E+33 * ccr0;
   scr0 = sin(4.0 * crw);
   im = 7.4666930876448766E+31 * scr0;
   re = 5.3827097350021916E+33 * b_sc5_tmp_tmp;
-  cphi = 3.320119296E+32 * h_scp0_idx_0_tmp_tmp;
+  cp01_idx_0 = 3.320119296E+32 * h_scp0_idx_0_tmp_tmp;
   b_im = 5.4585717593756787E+34 * sc5_tmp_tmp;
   b_re = 5.7836147512096631E+34 * d_sc5_tmp_tmp;
   c_im = 3.4116073496097991E+34 * c_sc5_tmp_tmp;
@@ -586,14 +584,14 @@ void IK_7DOF(const double R[16], double phi, double l1, double l2, double Px,
   l_re = 7.290286633136127E+33 * cp02_idx_0 * sc5_tmp_tmp;
   m_re = 1.0050559156466503E+33 * ccr0 * b_sc5_tmp_tmp;
   n_re = 4.561745383296445E+32 * g_scp0_idx_0_tmp_tmp * c_sc5_tmp_tmp;
-  o_re = cphi * d_sc5_tmp_tmp;
-  p_re = 1.6459815060994205E+32 * cp01_idx_0 * sc5_tmp_tmp;
+  o_re = cp01_idx_0 * d_sc5_tmp_tmp;
+  p_re = 1.6459815060994205E+32 * cpw * sc5_tmp_tmp;
   OBL_tmp = 7.4937483091968E+32 * scr0 * b_sc5_tmp_tmp;
   b_OBL_tmp_tmp = 5.1448096851990978E+34 * sc4 * c_sc5_tmp_tmp;
   c_OBL_tmp_tmp = 2.7279702322102641E+33 * f_sc5_tmp_tmp * d_sc5_tmp_tmp;
   d11 = 1.197697563497588E+34 * cp02_idx_0 * c_sc5_tmp_tmp;
   d12 = 2.3986669841642266E+33 * ccr0 * d_sc5_tmp_tmp;
-  d13 = 2.6335704097590729E+32 * cp01_idx_0 * c_sc5_tmp_tmp;
+  d13 = 2.6335704097590729E+32 * cpw * c_sc5_tmp_tmp;
   d14 = 2.5959714816E+32 * scr0 * d_sc5_tmp_tmp;
   d15 = 7.6013589615016022E+33 * cc4_tmp * e_sc5_tmp_tmp;
   d16 = 1.2652334671024526E+33 * cc4_tmp * f_scp0_idx_0_tmp_tmp;
@@ -613,25 +611,24 @@ void IK_7DOF(const double R[16], double phi, double l1, double l2, double Px,
   d30 = 2.7715429305955123E+32 * cc4_tmp * scr0;
   d31 = 2.579873238604677E+33 * e_scp0_idx_0_tmp_tmp * ccr0;
   d32 = 1.6633396795941595E+33 * g_scp0_idx_0_tmp_tmp * f_sc5_tmp_tmp;
-  d33 = 1.4045644601378208E+33 * e_sc5_tmp_tmp * cp01_idx_0;
+  d33 = 1.4045644601378208E+33 * e_sc5_tmp_tmp * cpw;
   d34 = 2.1008624605599006E+33 * f_scp0_idx_0_tmp_tmp * cp02_idx_0;
   d35 = 1.1140092418990081E+32 * h_scp0_idx_0_tmp_tmp * sc4;
   scp0_idx_0_tmp_tmp = 1.4986969030656E+32 * e_scp0_idx_0_tmp_tmp * scr0;
   b_scp0_idx_0_tmp_tmp = 1.520594684928E+32 * g_scp0_idx_0_tmp_tmp * ccr0;
-  c_scp0_idx_0_tmp_tmp =
-      8.32973459884416E+32 * f_scp0_idx_0_tmp_tmp * cp01_idx_0;
-  d_scp0_idx_0_tmp_tmp = cphi * cp02_idx_0;
+  c_scp0_idx_0_tmp_tmp = 8.32973459884416E+32 * f_scp0_idx_0_tmp_tmp * cpw;
+  d_scp0_idx_0_tmp_tmp = cp01_idx_0 * cp02_idx_0;
   i_scp0_idx_0_tmp_tmp = 8.9848092672E+31 * g_scp0_idx_0_tmp_tmp * scr0;
-  j_scp0_idx_0_tmp_tmp = 1.216861632E+32 * h_scp0_idx_0_tmp_tmp * cp01_idx_0;
+  j_scp0_idx_0_tmp_tmp = 1.216861632E+32 * h_scp0_idx_0_tmp_tmp * cpw;
   k_scp0_idx_0_tmp_tmp = 3.7357559421952747E+33 * sc4 * f_sc5_tmp_tmp;
   l_scp0_idx_0_tmp_tmp = 4.4732281067087635E+33 * sc4 * ccr0;
   m_scp0_idx_0_tmp_tmp = 1.4315405241766194E+34 * cp02_idx_0 * f_sc5_tmp_tmp;
   n_scp0_idx_0_tmp_tmp = 1.42476279349248E+32 * sc4 * scr0;
   o_scp0_idx_0_tmp_tmp = 1.1261520652071705E+33 * cp02_idx_0 * ccr0;
-  p_scp0_idx_0_tmp_tmp = 2.8811578669493762E+33 * cp01_idx_0 * f_sc5_tmp_tmp;
+  p_scp0_idx_0_tmp_tmp = 2.8811578669493762E+33 * cpw * f_sc5_tmp_tmp;
   q_scp0_idx_0_tmp_tmp = 2.5959714816E+32 * cp02_idx_0 * scr0;
-  r_scp0_idx_0_tmp_tmp = 8.77864245147648E+31 * cp01_idx_0 * ccr0;
-  s_scp0_idx_0_tmp_tmp = 1.55630592E+32 * cp01_idx_0 * scr0;
+  r_scp0_idx_0_tmp_tmp = 8.77864245147648E+31 * cpw * ccr0;
+  s_scp0_idx_0_tmp_tmp = 1.55630592E+32 * cpw * scr0;
   t_scp0_idx_0_tmp_tmp = 5.6796146972541731E+34 * b_sc5_tmp_tmp * sc5_tmp_tmp;
   u_scp0_idx_0_tmp_tmp = 4.1449201019212249E+34 * b_sc5_tmp_tmp * c_sc5_tmp_tmp;
   v_scp0_idx_0_tmp_tmp = 6.2558774135182555E+34 * sc5_tmp_tmp * d_sc5_tmp_tmp;
@@ -644,14 +641,14 @@ void IK_7DOF(const double R[16], double phi, double l1, double l2, double Px,
   w1_idx_2 = 3.2064E+18 * f_scp0_idx_0_tmp_tmp * b_sc5_tmp_tmp;
   w1_idx_1 = 2.59391808E+18 * e_sc5_tmp_tmp * d_sc5_tmp_tmp;
   w1_idx_3 = 9.976608E+18 * sc4 * sc5_tmp_tmp;
-  cphi = 3.3792E+17 * ccr0 * b_sc5_tmp_tmp;
-  cp01_idx_0 = 1.59625728E+19 * sc4 * c_sc5_tmp_tmp;
-  cp02_idx_0 = 5.3208576E+18 * f_sc5_tmp_tmp * d_sc5_tmp_tmp;
+  cp01_idx_0 = 3.3792E+17 * ccr0 * b_sc5_tmp_tmp;
+  cp02_idx_0 = 1.59625728E+19 * sc4 * c_sc5_tmp_tmp;
+  cpw = 5.3208576E+18 * f_sc5_tmp_tmp * d_sc5_tmp_tmp;
   scr0 = 2.2464E+18 * cc4_tmp * e_sc5_tmp_tmp;
   ccr0 = 4.608E+18 * cc4_tmp * f_sc5_tmp_tmp;
-  cc4 = 2.81663946288E+19 * b_sc5_tmp_tmp * sc5_tmp_tmp;
-  crw = 4.506623140608E+19 * b_sc5_tmp_tmp * c_sc5_tmp_tmp;
-    scp0_idx_0_tmp = sqrt(((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((d5 + d1) + d2) + d3) + d4) - d) + d6) - d7) + d8) - d9) + d10) - im) + re) + b_im) - b_re) - c_im) - c_re) - d_im) + d_re) + e_im) + e_re) - f_re) - g_re) + h_re) + i_re) - j_re) + f_im) + OBL_tmp_tmp) - k_re) + l_re) - m_re) - n_re) - o_re) + p_re) + OBL_tmp) - b_OBL_tmp_tmp) + c_OBL_tmp_tmp) + d11) + d12) + d13) + d14) - d15) + d16) - d17) + d18) + d19) - d20) - d21) - d22) + d23) - d24) + d25) + d26) + d27) + d28) + d29) + d30) - d31) + d32) - d33) + d34) - d35) + scp0_idx_0_tmp_tmp) + b_scp0_idx_0_tmp_tmp) + c_scp0_idx_0_tmp_tmp) - d_scp0_idx_0_tmp_tmp) + i_scp0_idx_0_tmp_tmp) + j_scp0_idx_0_tmp_tmp) + k_scp0_idx_0_tmp_tmp) + l_scp0_idx_0_tmp_tmp) - m_scp0_idx_0_tmp_tmp) - n_scp0_idx_0_tmp_tmp) + o_scp0_idx_0_tmp_tmp) + p_scp0_idx_0_tmp_tmp) + q_scp0_idx_0_tmp_tmp) - r_scp0_idx_0_tmp_tmp) + s_scp0_idx_0_tmp_tmp) - t_scp0_idx_0_tmp_tmp) - u_scp0_idx_0_tmp_tmp) + v_scp0_idx_0_tmp_tmp) - 3.9051323059259638E+34) / ((((((((((((((((ab_scp0_idx_0_tmp_tmp - x_scp0_idx_0_tmp_tmp) - y_scp0_idx_0_tmp_tmp) - w_scp0_idx_0_tmp_tmp) - v2_idx_1) + v2_idx_2) - w1_idx_2) - w1_idx_1) + w1_idx_3) + cphi) + cp01_idx_0) + cp02_idx_0) - scr0) + ccr0) + cc4) + crw) + 4.440199560734525E+19));
+  crw = 2.81663946288E+19 * b_sc5_tmp_tmp * sc5_tmp_tmp;
+  cc4 = 4.506623140608E+19 * b_sc5_tmp_tmp * c_sc5_tmp_tmp;
+    scp0_idx_0_tmp = sqrt(((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((d5 + d1) + d2) + d3) + d4) - d) + d6) - d7) + d8) - d9) + d10) - im) + re) + b_im) - b_re) - c_im) - c_re) - d_im) + d_re) + e_im) + e_re) - f_re) - g_re) + h_re) + i_re) - j_re) + f_im) + OBL_tmp_tmp) - k_re) + l_re) - m_re) - n_re) - o_re) + p_re) + OBL_tmp) - b_OBL_tmp_tmp) + c_OBL_tmp_tmp) + d11) + d12) + d13) + d14) - d15) + d16) - d17) + d18) + d19) - d20) - d21) - d22) + d23) - d24) + d25) + d26) + d27) + d28) + d29) + d30) - d31) + d32) - d33) + d34) - d35) + scp0_idx_0_tmp_tmp) + b_scp0_idx_0_tmp_tmp) + c_scp0_idx_0_tmp_tmp) - d_scp0_idx_0_tmp_tmp) + i_scp0_idx_0_tmp_tmp) + j_scp0_idx_0_tmp_tmp) + k_scp0_idx_0_tmp_tmp) + l_scp0_idx_0_tmp_tmp) - m_scp0_idx_0_tmp_tmp) - n_scp0_idx_0_tmp_tmp) + o_scp0_idx_0_tmp_tmp) + p_scp0_idx_0_tmp_tmp) + q_scp0_idx_0_tmp_tmp) - r_scp0_idx_0_tmp_tmp) + s_scp0_idx_0_tmp_tmp) - t_scp0_idx_0_tmp_tmp) - u_scp0_idx_0_tmp_tmp) + v_scp0_idx_0_tmp_tmp) - 3.9051323059259638E+34) / ((((((((((((((((ab_scp0_idx_0_tmp_tmp - x_scp0_idx_0_tmp_tmp) - y_scp0_idx_0_tmp_tmp) - w_scp0_idx_0_tmp_tmp) - v2_idx_1) + v2_idx_2) - w1_idx_2) - w1_idx_1) + w1_idx_3) + cp01_idx_0) + cp02_idx_0) + cpw) - scr0) + ccr0) + crw) + cc4) + 4.440199560734525E+19));
     b_scp0_idx_0_tmp = 2.4E+9 * b_sc5_tmp_tmp * sc5_tmp_tmp;
     c_scp0_idx_0_tmp = 3.84E+9 * b_sc5_tmp_tmp * c_sc5_tmp_tmp;
     bb_scp0_idx_0_tmp_tmp =
@@ -743,8 +740,8 @@ void IK_7DOF(const double R[16], double phi, double l1, double l2, double Px,
            nb_scp0_idx_0_tmp_tmp) +
           ob_scp0_idx_0_tmp_tmp) +
          2.598E+7);
-    w1_idx_2 = sqrt(((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((d - d1) - d2) - d3) - d4) - d5) - d6) + d7) - d8) - d9) + d10) - im) - re) - b_im) + b_re) - c_im) - c_re) + d_im) - d_re) - e_im) - e_re) + f_re) + g_re) + h_re) - i_re) + j_re) + f_im) + OBL_tmp_tmp) + k_re) - l_re) - m_re) - n_re) + o_re) - p_re) + OBL_tmp) - b_OBL_tmp_tmp) + c_OBL_tmp_tmp) + d11) + d12) + d13) + d14) + d15) - d16) + d17) - d18) - d19) + d20) + d21) + d22) - d23) - d24) - d25) + d26) + d27) - d28) - d29) + d30) - d31) + d32) + d33) - d34) + d35) + scp0_idx_0_tmp_tmp) + b_scp0_idx_0_tmp_tmp) - c_scp0_idx_0_tmp_tmp) + d_scp0_idx_0_tmp_tmp) + i_scp0_idx_0_tmp_tmp) - j_scp0_idx_0_tmp_tmp) + k_scp0_idx_0_tmp_tmp) + l_scp0_idx_0_tmp_tmp) - m_scp0_idx_0_tmp_tmp) - n_scp0_idx_0_tmp_tmp) + o_scp0_idx_0_tmp_tmp) + p_scp0_idx_0_tmp_tmp) + q_scp0_idx_0_tmp_tmp) - r_scp0_idx_0_tmp_tmp) + s_scp0_idx_0_tmp_tmp) + t_scp0_idx_0_tmp_tmp) - u_scp0_idx_0_tmp_tmp) - v_scp0_idx_0_tmp_tmp) + 3.9051323059259638E+34) / ((((((((((((((((w_scp0_idx_0_tmp_tmp + x_scp0_idx_0_tmp_tmp) + y_scp0_idx_0_tmp_tmp) + ab_scp0_idx_0_tmp_tmp) - v2_idx_1) - v2_idx_2) + w1_idx_2) + w1_idx_1) - w1_idx_3) + cphi) + cp01_idx_0) + cp02_idx_0) + scr0) + ccr0) - cc4) + crw) - 4.440199560734525E+19));
-    crw = 1.5625E+15 *
+    w1_idx_2 = sqrt(((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((d - d1) - d2) - d3) - d4) - d5) - d6) + d7) - d8) - d9) + d10) - im) - re) - b_im) + b_re) - c_im) - c_re) + d_im) - d_re) - e_im) - e_re) + f_re) + g_re) + h_re) - i_re) + j_re) + f_im) + OBL_tmp_tmp) + k_re) - l_re) - m_re) - n_re) + o_re) - p_re) + OBL_tmp) - b_OBL_tmp_tmp) + c_OBL_tmp_tmp) + d11) + d12) + d13) + d14) + d15) - d16) + d17) - d18) - d19) + d20) + d21) + d22) - d23) - d24) - d25) + d26) + d27) - d28) - d29) + d30) - d31) + d32) + d33) - d34) + d35) + scp0_idx_0_tmp_tmp) + b_scp0_idx_0_tmp_tmp) - c_scp0_idx_0_tmp_tmp) + d_scp0_idx_0_tmp_tmp) + i_scp0_idx_0_tmp_tmp) - j_scp0_idx_0_tmp_tmp) + k_scp0_idx_0_tmp_tmp) + l_scp0_idx_0_tmp_tmp) - m_scp0_idx_0_tmp_tmp) - n_scp0_idx_0_tmp_tmp) + o_scp0_idx_0_tmp_tmp) + p_scp0_idx_0_tmp_tmp) + q_scp0_idx_0_tmp_tmp) - r_scp0_idx_0_tmp_tmp) + s_scp0_idx_0_tmp_tmp) + t_scp0_idx_0_tmp_tmp) - u_scp0_idx_0_tmp_tmp) - v_scp0_idx_0_tmp_tmp) + 3.9051323059259638E+34) / ((((((((((((((((w_scp0_idx_0_tmp_tmp + x_scp0_idx_0_tmp_tmp) + y_scp0_idx_0_tmp_tmp) + ab_scp0_idx_0_tmp_tmp) - v2_idx_1) - v2_idx_2) + w1_idx_2) + w1_idx_1) - w1_idx_3) + cp01_idx_0) + cp02_idx_0) + cpw) + scr0) + ccr0) - crw) + cc4) - 4.440199560734525E+19));
+    cc4 = 1.5625E+15 *
           (((((w2_idx_0 + w2_idx_2) + w2_idx_1) - w2_idx_3) - v2_idx_0) + 30.0);
     sc4 = (((((((v3_idx_0 + 9360.0 * e_sc5_tmp_tmp) - e_scp0_idx_0_tmp_tmp) +
                19200.0 * f_sc5_tmp_tmp) -
@@ -753,13 +750,13 @@ void IK_7DOF(const double R[16], double phi, double l1, double l2, double Px,
             h_scp0_idx_0_tmp_tmp) +
            38400.0 * c_sc5_tmp_tmp) -
           f_scp0_idx_0_tmp_tmp;
-    cc4 = 7.7951435732955246E+9 * w1_idx_2 / 1.0E+12;
+    crw = 7.7951435732955246E+9 * w1_idx_2 / 1.0E+12;
     cc4_tmp = 55.154328932550712 * e_sc5_tmp_tmp * w1_idx_2 / 125000.0;
     ccr0 = 2.8284271247461903 * f_sc5_tmp_tmp * w1_idx_2 / 3125.0;
     scr0 = 146969.31604249918 * d_sc5_tmp_tmp * w1_idx_2 / 2.5E+7;
-    cp02_idx_0 = gb_scp0_idx_0_tmp_tmp * w1_idx_2 / 1250.0;
+    cpw = gb_scp0_idx_0_tmp_tmp * w1_idx_2 / 1250.0;
     w1_idx_2 = hb_scp0_idx_0_tmp_tmp * w1_idx_2 / 3125.0;
-    cp01_idx_0 =
+    cp02_idx_0 =
         249989.0 *
         (((ib_scp0_idx_0_tmp_tmp - c_scp0_idx_0_tmp) - jb_scp0_idx_0_tmp_tmp) +
          5.823998881E+9) *
@@ -768,16 +765,16 @@ void IK_7DOF(const double R[16], double phi, double l1, double l2, double Px,
            nb_scp0_idx_0_tmp_tmp) +
           ob_scp0_idx_0_tmp_tmp) +
          2.598E+7);
-    cphi = (((((2.048E+9 * sc5_tmp_tmp - scp0_idx_0_tmp_tmp_tmp) +
-               1.28E+9 * c_sc5_tmp_tmp) -
-              b_scp0_idx_0_tmp) +
-             c_scp0_idx_0_tmp) -
-            5.247928481E+9) /
-           (80.0 * (((((bb_scp0_idx_0_tmp_tmp - cb_scp0_idx_0_tmp_tmp) +
-                       db_scp0_idx_0_tmp_tmp) -
-                      eb_scp0_idx_0_tmp_tmp) +
-                     fb_scp0_idx_0_tmp_tmp) +
-                    5.196E+7));
+    cp01_idx_0 = (((((2.048E+9 * sc5_tmp_tmp - scp0_idx_0_tmp_tmp_tmp) +
+                     1.28E+9 * c_sc5_tmp_tmp) -
+                    b_scp0_idx_0_tmp) +
+                   c_scp0_idx_0_tmp) -
+                  5.247928481E+9) /
+                 (80.0 * (((((bb_scp0_idx_0_tmp_tmp - cb_scp0_idx_0_tmp_tmp) +
+                             db_scp0_idx_0_tmp_tmp) -
+                            eb_scp0_idx_0_tmp_tmp) +
+                           fb_scp0_idx_0_tmp_tmp) +
+                          5.196E+7));
     *c5 = asin(d_scp0_idx_0_tmp -
                e_scp0_idx_0_tmp *
                    ((((((((((((((((((((((f_scp0_idx_0_tmp + g_scp0_idx_0_tmp) +
@@ -803,8 +800,8 @@ void IK_7DOF(const double R[16], double phi, double l1, double l2, double Px,
                      scp0_idx_0_tmp) +
                     214797.82086) /
                    b_sc5_tmp_tmp);
-    *c6 = asin(crw *
-                   ((((((((((((((((((((((sc4 - cc4) - h_scp0_idx_0_tmp) +
+    *c6 = asin(cc4 *
+                   ((((((((((((((((((((((sc4 - crw) - h_scp0_idx_0_tmp) +
                                        i_scp0_idx_0_tmp) +
                                       j_scp0_idx_0_tmp) -
                                      k_scp0_idx_0_tmp) -
@@ -822,11 +819,11 @@ void IK_7DOF(const double R[16], double phi, double l1, double l2, double Px,
                          cc4_tmp) +
                         ccr0) -
                        scr0) -
-                      cp02_idx_0) +
+                      cpw) +
                      w1_idx_2) -
                     214797.82086) /
-                   cp01_idx_0 -
-               cphi);
+                   cp02_idx_0 -
+               cp01_idx_0);
     if ((!(*c5 >= -1.0471975511965976)) || (!(*c5 <= 0.47123889803846897))) {
       *c5 =
           asin(d_scp0_idx_0_tmp -
@@ -856,8 +853,8 @@ void IK_7DOF(const double R[16], double phi, double l1, double l2, double Px,
                    b_sc5_tmp_tmp);
     }
     if ((!(*c6 >= -1.0471975511965976)) || (!(*c6 <= 0.47123889803846897))) {
-      *c6 = asin(crw *
-                     ((((((((((((((((((((((sc4 + cc4) - h_scp0_idx_0_tmp) +
+      *c6 = asin(cc4 *
+                     ((((((((((((((((((((((sc4 + crw) - h_scp0_idx_0_tmp) +
                                          i_scp0_idx_0_tmp) +
                                         j_scp0_idx_0_tmp) -
                                        k_scp0_idx_0_tmp) -
@@ -875,11 +872,11 @@ void IK_7DOF(const double R[16], double phi, double l1, double l2, double Px,
                            cc4_tmp) -
                           ccr0) +
                          scr0) +
-                        cp02_idx_0) -
+                        cpw) -
                        w1_idx_2) -
                       214797.82086) /
-                     cp01_idx_0 -
-                 cphi);
+                     cp02_idx_0 -
+                 cp01_idx_0);
     }
     /*  if round(c51(1)*1000)==round(c52(1)*1000) */
     /*      c5=c51(1); */
@@ -951,10 +948,10 @@ void IK_7DOF(const double R[16], double phi, double l1, double l2, double Px,
     dc1.re = cys * 0.0;
     dc1.im = cys;
     b_exp(&dc1);
-    cc4 = 3.6652454051681135E-12 * c10_tmp_tmp.re - 59858.0 * c10_tmp_tmp.im;
-    crw = 3.6652454051681135E-12 * c10_tmp_tmp.im + 59858.0 * c10_tmp_tmp.re;
-    m_re = cc4 * dc.re - crw * dc.im;
-    f_im = cc4 * dc.im + crw * dc.re;
+    crw = 3.6652454051681135E-12 * c10_tmp_tmp.re - 59858.0 * c10_tmp_tmp.im;
+    cc4 = 3.6652454051681135E-12 * c10_tmp_tmp.im + 59858.0 * c10_tmp_tmp.re;
+    m_re = crw * dc.re - cc4 * dc.im;
+    f_im = crw * dc.im + cc4 * dc.re;
     n_re = m_re * dc1.re - f_im * dc1.im;
     f_im = m_re * dc1.im + f_im * dc1.re;
     h_c10_tmp.re = 0.64278760968653936 *
@@ -1071,12 +1068,12 @@ void IK_7DOF(const double R[16], double phi, double l1, double l2, double Px,
     o_scp0_idx_0_tmp_tmp = 0.0 * c_c10_tmp.re;
     m_re = 0.766044443118978 * (l_scp0_idx_0_tmp_tmp - 0.0 * c10_tmp.im);
     f_im = 0.766044443118978 * (m_scp0_idx_0_tmp_tmp + 0.0 * c10_tmp.re);
-    cp01_idx_0 = 9.1631135129202838E-13 * c10_tmp_tmp.re;
-    n_re = cp01_idx_0 - 14964.5 * c10_tmp_tmp.im;
-    cphi = 9.1631135129202838E-13 * c10_tmp_tmp.im;
-    p_scp0_idx_0_tmp_tmp = cphi + 14964.5 * c10_tmp_tmp.re;
-    o_re = -7482.25 * c10_tmp_tmp.re - cphi;
-    kb_scp0_idx_0_tmp_tmp = -7482.25 * c10_tmp_tmp.im + cp01_idx_0;
+    cp02_idx_0 = 9.1631135129202838E-13 * c10_tmp_tmp.re;
+    n_re = cp02_idx_0 - 14964.5 * c10_tmp_tmp.im;
+    cp01_idx_0 = 9.1631135129202838E-13 * c10_tmp_tmp.im;
+    p_scp0_idx_0_tmp_tmp = cp01_idx_0 + 14964.5 * c10_tmp_tmp.re;
+    o_re = -7482.25 * c10_tmp_tmp.re - cp01_idx_0;
+    kb_scp0_idx_0_tmp_tmp = -7482.25 * c10_tmp_tmp.im + cp02_idx_0;
     p_re = 0.766044443118978 *
            (o_re * d_c10_tmp.re - kb_scp0_idx_0_tmp_tmp * d_c10_tmp.im);
     kb_scp0_idx_0_tmp_tmp =
@@ -1154,15 +1151,15 @@ void IK_7DOF(const double R[16], double phi, double l1, double l2, double Px,
                                     m_scp0_idx_0_tmp_tmp * b_c10_tmp_tmp.im);
     scr0 = 0.766044443118978 * (l_scp0_idx_0_tmp_tmp * b_c10_tmp_tmp.im +
                                 m_scp0_idx_0_tmp_tmp * b_c10_tmp_tmp.re);
-    cp01_idx_0 = 9.1631135129202838E-13 * c10_tmp.re;
-    i_re = cp01_idx_0 - 14964.5 * c10_tmp.im;
-    cphi = 9.1631135129202838E-13 * c10_tmp.im;
-    i_scp0_idx_0_tmp_tmp = cphi + 14964.5 * c10_tmp.re;
+    cp02_idx_0 = 9.1631135129202838E-13 * c10_tmp.re;
+    i_re = cp02_idx_0 - 14964.5 * c10_tmp.im;
+    cp01_idx_0 = 9.1631135129202838E-13 * c10_tmp.im;
+    i_scp0_idx_0_tmp_tmp = cp01_idx_0 + 14964.5 * c10_tmp.re;
     j_re = -14964.5 * c_c10_tmp.re - 1.8326227025840568E-12 * c_c10_tmp.im;
     q_scp0_idx_0_tmp_tmp =
         -14964.5 * c_c10_tmp.im + 1.8326227025840568E-12 * c_c10_tmp.re;
-    g_re = -7482.25 * c10_tmp.re - cphi;
-    y_scp0_idx_0_tmp_tmp = -7482.25 * c10_tmp.im + cp01_idx_0;
+    g_re = -7482.25 * c10_tmp.re - cp01_idx_0;
+    y_scp0_idx_0_tmp_tmp = -7482.25 * c10_tmp.im + cp02_idx_0;
     jb_scp0_idx_0_tmp_tmp =
         0.766044443118978 *
         (g_re * d_c10_tmp.re - y_scp0_idx_0_tmp_tmp * d_c10_tmp.im);
@@ -1260,33 +1257,32 @@ void IK_7DOF(const double R[16], double phi, double l1, double l2, double Px,
          (e_re * b_c10_tmp_tmp.im + hb_scp0_idx_0_tmp_tmp * b_c10_tmp_tmp.re) *
              0.766044443118978) +
         (f_re + ib_scp0_idx_0_tmp_tmp * 0.0));
-    cp02_idx_0 =
-        (((((((((((((cc4_tmp * 0.766044443118978 +
-                     (w1_idx_2 * 0.0 - w2_idx_0)) -
-                    4963.8290136870392) +
-                   (9.1631135129202838E-13 * b_c10_tmp.re -
-                    14964.5 * b_c10_tmp.im) *
-                       0.766044443118978) +
-                  (h_re * 0.0 - ob_scp0_idx_0_tmp_tmp)) -
-                 (cc4_tmp * b_c10_tmp_tmp.re - sc4 * b_c10_tmp_tmp.im) *
-                     0.766044443118978) -
-                (w1_idx_1 * 0.0 - scr0)) +
-               (i_re * b_c10_tmp.re - i_scp0_idx_0_tmp_tmp * b_c10_tmp.im) *
-                   0.766044443118978) +
-              (j_re * d_c10_tmp.re - q_scp0_idx_0_tmp_tmp * d_c10_tmp.im) *
+    cpw = (((((((((((((cc4_tmp * 0.766044443118978 +
+                       (w1_idx_2 * 0.0 - w2_idx_0)) -
+                      4963.8290136870392) +
+                     (9.1631135129202838E-13 * b_c10_tmp.re -
+                      14964.5 * b_c10_tmp.im) *
+                         0.766044443118978) +
+                    (h_re * 0.0 - ob_scp0_idx_0_tmp_tmp)) -
+                   (cc4_tmp * b_c10_tmp_tmp.re - sc4 * b_c10_tmp_tmp.im) *
+                       0.766044443118978) -
+                  (w1_idx_1 * 0.0 - scr0)) +
+                 (i_re * b_c10_tmp.re - i_scp0_idx_0_tmp_tmp * b_c10_tmp.im) *
+                     0.766044443118978) +
+                (j_re * d_c10_tmp.re - q_scp0_idx_0_tmp_tmp * d_c10_tmp.im) *
+                    0.766044443118978) -
+               (jb_scp0_idx_0_tmp_tmp * 0.0 - y_scp0_idx_0_tmp_tmp)) +
+              (g_re * b_c10_tmp_tmp.re -
+               ab_scp0_idx_0_tmp_tmp * b_c10_tmp_tmp.im) *
                   0.766044443118978) -
-             (jb_scp0_idx_0_tmp_tmp * 0.0 - y_scp0_idx_0_tmp_tmp)) +
-            (g_re * b_c10_tmp_tmp.re -
-             ab_scp0_idx_0_tmp_tmp * b_c10_tmp_tmp.im) *
+             (t_scp0_idx_0_tmp_tmp * 0.0 - s_scp0_idx_0_tmp_tmp)) +
+            (v_scp0_idx_0_tmp_tmp * b_c10_tmp_tmp.re -
+             u_scp0_idx_0_tmp_tmp * b_c10_tmp_tmp.im) *
                 0.766044443118978) -
-           (t_scp0_idx_0_tmp_tmp * 0.0 - s_scp0_idx_0_tmp_tmp)) +
-          (v_scp0_idx_0_tmp_tmp * b_c10_tmp_tmp.re -
-           u_scp0_idx_0_tmp_tmp * b_c10_tmp_tmp.im) *
-              0.766044443118978) -
-         (gb_scp0_idx_0_tmp_tmp * b_c10_tmp_tmp.re -
-          w_scp0_idx_0_tmp_tmp * b_c10_tmp_tmp.im) *
-             0.766044443118978) +
-        (r_scp0_idx_0_tmp_tmp * 0.0 - x_scp0_idx_0_tmp_tmp);
+           (gb_scp0_idx_0_tmp_tmp * b_c10_tmp_tmp.re -
+            w_scp0_idx_0_tmp_tmp * b_c10_tmp_tmp.im) *
+               0.766044443118978) +
+          (r_scp0_idx_0_tmp_tmp * 0.0 - x_scp0_idx_0_tmp_tmp);
     w2_idx_0 =
         ((((((((((((((sc4 * 0.766044443118978 - 5731.7360345269735) +
                      (w1_idx_2 + w2_idx_0 * 0.0)) +
@@ -1314,21 +1310,21 @@ void IK_7DOF(const double R[16], double phi, double l1, double l2, double Px,
           w_scp0_idx_0_tmp_tmp * b_c10_tmp_tmp.re) *
              0.766044443118978) +
         (r_scp0_idx_0_tmp_tmp + x_scp0_idx_0_tmp_tmp * 0.0);
-    cp01_idx_0 = b_a.re * b_a.re - b_a.im * b_a.im;
-    cphi = b_a.re * b_a.im;
-    cphi += cphi;
-    if (cphi == 0.0) {
-      cp01_idx_0 /= 4.0;
-      cphi = 0.0;
-    } else if (cp01_idx_0 == 0.0) {
+    cp02_idx_0 = b_a.re * b_a.re - b_a.im * b_a.im;
+    cp01_idx_0 = b_a.re * b_a.im;
+    cp01_idx_0 += cp01_idx_0;
+    if (cp01_idx_0 == 0.0) {
+      cp02_idx_0 /= 4.0;
       cp01_idx_0 = 0.0;
-      cphi /= 4.0;
-    } else {
+    } else if (cp02_idx_0 == 0.0) {
+      cp02_idx_0 = 0.0;
       cp01_idx_0 /= 4.0;
-      cphi /= 4.0;
+    } else {
+      cp02_idx_0 /= 4.0;
+      cp01_idx_0 /= 4.0;
     }
-    dc.re = (nb_scp0_idx_0_tmp_tmp * cp02_idx_0 - f_im * w2_idx_0) + cp01_idx_0;
-    dc.im = (nb_scp0_idx_0_tmp_tmp * w2_idx_0 + f_im * cp02_idx_0) + cphi;
+    dc.re = (nb_scp0_idx_0_tmp_tmp * cpw - f_im * w2_idx_0) + cp02_idx_0;
+    dc.im = (nb_scp0_idx_0_tmp_tmp * w2_idx_0 + f_im * cpw) + cp01_idx_0;
     g_c10_tmp = power(dc);
     i_c10_tmp.re = b_OBL_tmp_tmp * (0.86602540378443871 * h_c10_tmp.re);
     i_c10_tmp.im = b_OBL_tmp_tmp * (0.86602540378443871 * h_c10_tmp.im);
@@ -1350,12 +1346,12 @@ void IK_7DOF(const double R[16], double phi, double l1, double l2, double Px,
     dc1.re = cys * 0.0;
     dc1.im = cys;
     b_exp(&dc1);
-    cp01_idx_0 = -59857.999999999971 * c10_tmp_tmp.re -
+    cp02_idx_0 = -59857.999999999971 * c10_tmp_tmp.re -
                  103677.09723945787 * c10_tmp_tmp.im;
-    cphi = -59857.999999999971 * c10_tmp_tmp.im +
-           103677.09723945787 * c10_tmp_tmp.re;
-    m_re = cp01_idx_0 * dc.re - cphi * dc.im;
-    f_im = cp01_idx_0 * dc.im + cphi * dc.re;
+    cp01_idx_0 = -59857.999999999971 * c10_tmp_tmp.im +
+                 103677.09723945787 * c10_tmp_tmp.re;
+    m_re = cp02_idx_0 * dc.re - cp01_idx_0 * dc.im;
+    f_im = cp02_idx_0 * dc.im + cp01_idx_0 * dc.re;
     n_re = m_re * dc1.re - f_im * dc1.im;
     f_im = m_re * dc1.im + f_im * dc1.re;
     b_c20_tmp.re = 0.64278760968653936 *
@@ -1388,8 +1384,9 @@ void IK_7DOF(const double R[16], double phi, double l1, double l2, double Px,
     f_im = m_re * c_c10_tmp.im + f_im * c_c10_tmp.re;
     m_re = n_re * b_c10_tmp.re - f_im * b_c10_tmp.im;
     f_im = n_re * b_c10_tmp.im + f_im * b_c10_tmp.re;
-    n_re = cp01_idx_0 * c_c10_tmp.re - cphi * c_c10_tmp.im;
-    p_scp0_idx_0_tmp_tmp = cp01_idx_0 * c_c10_tmp.im + cphi * c_c10_tmp.re;
+    n_re = cp02_idx_0 * c_c10_tmp.re - cp01_idx_0 * c_c10_tmp.im;
+    p_scp0_idx_0_tmp_tmp =
+        cp02_idx_0 * c_c10_tmp.im + cp01_idx_0 * c_c10_tmp.re;
     o_re = n_re * b_c10_tmp.re - p_scp0_idx_0_tmp_tmp * b_c10_tmp.im;
     p_scp0_idx_0_tmp_tmp =
         n_re * b_c10_tmp.im + p_scp0_idx_0_tmp_tmp * b_c10_tmp.re;
@@ -1561,7 +1558,7 @@ void IK_7DOF(const double R[16], double phi, double l1, double l2, double Px,
     ob_scp0_idx_0_tmp_tmp = f_re * dc15.im + ob_scp0_idx_0_tmp_tmp * dc15.re;
     f_re = i_re * dc16.re - ob_scp0_idx_0_tmp_tmp * dc16.im;
     ob_scp0_idx_0_tmp_tmp = i_re * dc16.im + ob_scp0_idx_0_tmp_tmp * dc16.re;
-    cphi = 0.766044443118978 * j_scp0_idx_0_tmp_tmp;
+    cp01_idx_0 = 0.766044443118978 * j_scp0_idx_0_tmp_tmp;
     ccr0 = 0.766044443118978 * k_scp0_idx_0_tmp_tmp;
     i_re = 0.766044443118978 * (-3741.1250000000032 * c10_tmp.re -
                                 -6479.8185774661151 * c10_tmp.im);
@@ -1572,7 +1569,7 @@ void IK_7DOF(const double R[16], double phi, double l1, double l2, double Px,
                                     m_scp0_idx_0_tmp_tmp * d_c10_tmp.im);
     w2_idx_0 = 0.766044443118978 * (l_scp0_idx_0_tmp_tmp * d_c10_tmp.im +
                                     m_scp0_idx_0_tmp_tmp * d_c10_tmp.re);
-    cp01_idx_0 = 0.766044443118978 * (j_scp0_idx_0_tmp_tmp * b_c10_tmp_tmp.re -
+    cp02_idx_0 = 0.766044443118978 * (j_scp0_idx_0_tmp_tmp * b_c10_tmp_tmp.re -
                                       k_scp0_idx_0_tmp_tmp * b_c10_tmp_tmp.im);
     scr0 = 0.766044443118978 * (j_scp0_idx_0_tmp_tmp * b_c10_tmp_tmp.im +
                                 k_scp0_idx_0_tmp_tmp * b_c10_tmp_tmp.re);
@@ -1672,37 +1669,36 @@ void IK_7DOF(const double R[16], double phi, double l1, double l2, double Px,
          (d_re + ib_scp0_idx_0_tmp_tmp * 0.0)) +
         (f_re * b_c10_tmp_tmp.im + ob_scp0_idx_0_tmp_tmp * b_c10_tmp_tmp.re) *
             0.766044443118978);
-    cp02_idx_0 =
-        (((((((((((((((cphi * 0.0 - ccr0) - 4963.8290136870382) +
-                     (-7482.2500000000064 * c_c10_tmp.re -
-                      -12959.63715493223 * c_c10_tmp.im) *
+    cpw = (((((((((((((((cp01_idx_0 * 0.0 - ccr0) - 4963.8290136870382) +
+                       (-7482.2500000000064 * c_c10_tmp.re -
+                        -12959.63715493223 * c_c10_tmp.im) *
+                           0.766044443118978) +
+                      (i_re * 0.0 - i_scp0_idx_0_tmp_tmp)) +
+                     (-7482.2499999999964 * b_c10_tmp.re -
+                      12959.637154932234 * b_c10_tmp.im) *
                          0.766044443118978) +
-                    (i_re * 0.0 - i_scp0_idx_0_tmp_tmp)) +
-                   (-7482.2499999999964 * b_c10_tmp.re -
-                    12959.637154932234 * b_c10_tmp.im) *
-                       0.766044443118978) +
-                  4963.8290136870419) +
-                 (cc4_tmp * d_c10_tmp.re - sc4 * d_c10_tmp.im) *
-                     0.766044443118978) -
-                (w1_idx_2 * 0.0 - w2_idx_0)) -
-               (cp01_idx_0 * 0.0 - scr0)) +
-              (j_re * b_c10_tmp.re - q_scp0_idx_0_tmp_tmp * b_c10_tmp.im) *
-                  0.766044443118978) -
-             (g_re * b_c10_tmp_tmp.re -
-              y_scp0_idx_0_tmp_tmp * b_c10_tmp_tmp.im) *
+                    4963.8290136870419) +
+                   (cc4_tmp * d_c10_tmp.re - sc4 * d_c10_tmp.im) *
+                       0.766044443118978) -
+                  (w1_idx_2 * 0.0 - w2_idx_0)) -
+                 (cp02_idx_0 * 0.0 - scr0)) +
+                (j_re * b_c10_tmp.re - q_scp0_idx_0_tmp_tmp * b_c10_tmp.im) *
+                    0.766044443118978) -
+               (g_re * b_c10_tmp_tmp.re -
+                y_scp0_idx_0_tmp_tmp * b_c10_tmp_tmp.im) *
+                   0.766044443118978) -
+              (r_scp0_idx_0_tmp_tmp * 0.0 - ab_scp0_idx_0_tmp_tmp)) +
+             (jb_scp0_idx_0_tmp_tmp * b_c10_tmp_tmp.re -
+              s_scp0_idx_0_tmp_tmp * b_c10_tmp_tmp.im) *
                  0.766044443118978) -
-            (r_scp0_idx_0_tmp_tmp * 0.0 - ab_scp0_idx_0_tmp_tmp)) +
-           (jb_scp0_idx_0_tmp_tmp * b_c10_tmp_tmp.re -
-            s_scp0_idx_0_tmp_tmp * b_c10_tmp_tmp.im) *
-               0.766044443118978) -
-          (v_scp0_idx_0_tmp_tmp * b_c10_tmp_tmp.re -
-           u_scp0_idx_0_tmp_tmp * b_c10_tmp_tmp.im) *
-              0.766044443118978) +
-         (t_scp0_idx_0_tmp_tmp * 0.0 - w_scp0_idx_0_tmp_tmp)) +
-        (nb_scp0_idx_0_tmp_tmp * b_c10_tmp_tmp.re -
-         x_scp0_idx_0_tmp_tmp * b_c10_tmp_tmp.im) *
-            0.766044443118978;
-    ccr0 = (((((((((((((((cphi + ccr0 * 0.0) + 2865.868017263489) +
+            (v_scp0_idx_0_tmp_tmp * b_c10_tmp_tmp.re -
+             u_scp0_idx_0_tmp_tmp * b_c10_tmp_tmp.im) *
+                0.766044443118978) +
+           (t_scp0_idx_0_tmp_tmp * 0.0 - w_scp0_idx_0_tmp_tmp)) +
+          (nb_scp0_idx_0_tmp_tmp * b_c10_tmp_tmp.re -
+           x_scp0_idx_0_tmp_tmp * b_c10_tmp_tmp.im) *
+              0.766044443118978;
+    ccr0 = (((((((((((((((cp01_idx_0 + ccr0 * 0.0) + 2865.868017263489) +
                         (-7482.2500000000064 * c_c10_tmp.im +
                          -12959.63715493223 * c_c10_tmp.re) *
                             0.766044443118978) +
@@ -1714,7 +1710,7 @@ void IK_7DOF(const double R[16], double phi, double l1, double l2, double Px,
                     (cc4_tmp * d_c10_tmp.im + sc4 * d_c10_tmp.re) *
                         0.766044443118978) -
                    (w1_idx_2 + w2_idx_0 * 0.0)) -
-                  (cp01_idx_0 + scr0 * 0.0)) +
+                  (cp02_idx_0 + scr0 * 0.0)) +
                  (j_re * b_c10_tmp.im + q_scp0_idx_0_tmp_tmp * b_c10_tmp.re) *
                      0.766044443118978) -
                 (g_re * b_c10_tmp_tmp.im +
@@ -1731,21 +1727,21 @@ void IK_7DOF(const double R[16], double phi, double l1, double l2, double Px,
            (nb_scp0_idx_0_tmp_tmp * b_c10_tmp_tmp.im +
             x_scp0_idx_0_tmp_tmp * b_c10_tmp_tmp.re) *
                0.766044443118978;
-    cp01_idx_0 = b_a.re * b_a.re - b_a.im * b_a.im;
-    cphi = b_a.re * b_a.im;
-    cphi += cphi;
-    if (cphi == 0.0) {
-      cp01_idx_0 /= 4.0;
-      cphi = 0.0;
-    } else if (cp01_idx_0 == 0.0) {
+    cp02_idx_0 = b_a.re * b_a.re - b_a.im * b_a.im;
+    cp01_idx_0 = b_a.re * b_a.im;
+    cp01_idx_0 += cp01_idx_0;
+    if (cp01_idx_0 == 0.0) {
+      cp02_idx_0 /= 4.0;
       cp01_idx_0 = 0.0;
-      cphi /= 4.0;
-    } else {
+    } else if (cp02_idx_0 == 0.0) {
+      cp02_idx_0 = 0.0;
       cp01_idx_0 /= 4.0;
-      cphi /= 4.0;
+    } else {
+      cp02_idx_0 /= 4.0;
+      cp01_idx_0 /= 4.0;
     }
-    dc.re = (gb_scp0_idx_0_tmp_tmp * cp02_idx_0 - f_im * ccr0) + cp01_idx_0;
-    dc.im = (gb_scp0_idx_0_tmp_tmp * ccr0 + f_im * cp02_idx_0) + cphi;
+    dc.re = (gb_scp0_idx_0_tmp_tmp * cpw - f_im * ccr0) + cp02_idx_0;
+    dc.im = (gb_scp0_idx_0_tmp_tmp * ccr0 + f_im * cpw) + cp01_idx_0;
     b_c20_tmp = power(dc);
     b_a.re = b_OBL_tmp_tmp * (0.86602540378443871 * c_c20_tmp.re);
     b_a.im = b_OBL_tmp_tmp * (0.86602540378443871 * c_c20_tmp.im);
@@ -1755,9 +1751,9 @@ void IK_7DOF(const double R[16], double phi, double l1, double l2, double Px,
     e_c10_tmp.im =
         0.49999999999999994 *
         (OBL_tmp * (c_OBL_tmp_tmp * (-0.49999999999999978 * c_c20_tmp.im)));
-    cphi = OBL_tmp_tmp * (c_OBL_tmp_tmp * c_c20_tmp.re);
+    cp01_idx_0 = OBL_tmp_tmp * (c_OBL_tmp_tmp * c_c20_tmp.re);
     ccr0 = OBL_tmp_tmp * (c_OBL_tmp_tmp * c_c20_tmp.im);
-    c_c20_tmp.re = 0.49999999999999994 * (0.86602540378443871 * cphi);
+    c_c20_tmp.re = 0.49999999999999994 * (0.86602540378443871 * cp01_idx_0);
     c_c20_tmp.im = 0.49999999999999994 * (0.86602540378443871 * ccr0);
     c30_tmp.re = 1.11968130125E+8 * c10_tmp.re;
     c30_tmp.im = 1.11968130125E+8 * c10_tmp.im;
@@ -1873,8 +1869,8 @@ void IK_7DOF(const double R[16], double phi, double l1, double l2, double Px,
     f_im = m_re * c_c10_tmp.im + f_im * c_c10_tmp.re;
     m_re = n_re * b_c10_tmp.re - f_im * b_c10_tmp.im;
     f_im = n_re * b_c10_tmp.im + f_im * b_c10_tmp.re;
-    n_re = cc4 * c_c10_tmp.re - crw * c_c10_tmp.im;
-    p_scp0_idx_0_tmp_tmp = cc4 * c_c10_tmp.im + crw * c_c10_tmp.re;
+    n_re = crw * c_c10_tmp.re - cc4 * c_c10_tmp.im;
+    p_scp0_idx_0_tmp_tmp = crw * c_c10_tmp.im + cc4 * c_c10_tmp.re;
     o_re = n_re * b_c10_tmp.re - p_scp0_idx_0_tmp_tmp * b_c10_tmp.im;
     p_scp0_idx_0_tmp_tmp =
         n_re * b_c10_tmp.im + p_scp0_idx_0_tmp_tmp * b_c10_tmp.re;
@@ -1969,7 +1965,7 @@ void IK_7DOF(const double R[16], double phi, double l1, double l2, double Px,
          (i_re * b_c10_tmp_tmp.re - ob_scp0_idx_0_tmp_tmp * b_c10_tmp_tmp.im) *
              0.766044443118978) +
         (e_re * 0.0 - i_scp0_idx_0_tmp_tmp);
-    cp02_idx_0 =
+    crw =
         ((((((((((((((kb_scp0_idx_0_tmp_tmp * 0.766044443118978 -
                       5731.7360345269735) +
                      (p_re + lb_scp0_idx_0_tmp_tmp * 0.0)) +
@@ -1992,7 +1988,7 @@ void IK_7DOF(const double R[16], double phi, double l1, double l2, double Px,
          (i_re * b_c10_tmp_tmp.im + ob_scp0_idx_0_tmp_tmp * b_c10_tmp_tmp.re) *
              0.766044443118978) +
         (e_re + i_scp0_idx_0_tmp_tmp * 0.0);
-    if (cp02_idx_0 == 0.0) {
+    if (crw == 0.0) {
       if (ccr0 == 0.0) {
         dc.re = cc4_tmp / scr0;
         dc.im = 0.0;
@@ -2005,41 +2001,41 @@ void IK_7DOF(const double R[16], double phi, double l1, double l2, double Px,
       }
     } else if (scr0 == 0.0) {
       if (cc4_tmp == 0.0) {
-        dc.re = ccr0 / cp02_idx_0;
+        dc.re = ccr0 / crw;
         dc.im = 0.0;
       } else if (ccr0 == 0.0) {
         dc.re = 0.0;
-        dc.im = -(cc4_tmp / cp02_idx_0);
+        dc.im = -(cc4_tmp / crw);
       } else {
-        dc.re = ccr0 / cp02_idx_0;
-        dc.im = -(cc4_tmp / cp02_idx_0);
+        dc.re = ccr0 / crw;
+        dc.im = -(cc4_tmp / crw);
       }
     } else {
-      crw = fabs(scr0);
-      cphi = fabs(cp02_idx_0);
-      if (crw > cphi) {
-        cp01_idx_0 = cp02_idx_0 / scr0;
-        cphi = scr0 + cp01_idx_0 * cp02_idx_0;
-        dc.re = (cc4_tmp + cp01_idx_0 * ccr0) / cphi;
-        dc.im = (ccr0 - cp01_idx_0 * cc4_tmp) / cphi;
-      } else if (cphi == crw) {
+      cpw = fabs(scr0);
+      cp01_idx_0 = fabs(crw);
+      if (cpw > cp01_idx_0) {
+        cp02_idx_0 = crw / scr0;
+        cp01_idx_0 = scr0 + cp02_idx_0 * crw;
+        dc.re = (cc4_tmp + cp02_idx_0 * ccr0) / cp01_idx_0;
+        dc.im = (ccr0 - cp02_idx_0 * cc4_tmp) / cp01_idx_0;
+      } else if (cp01_idx_0 == cpw) {
         if (scr0 > 0.0) {
+          cp02_idx_0 = 0.5;
+        } else {
+          cp02_idx_0 = -0.5;
+        }
+        if (crw > 0.0) {
           cp01_idx_0 = 0.5;
         } else {
           cp01_idx_0 = -0.5;
         }
-        if (cp02_idx_0 > 0.0) {
-          cphi = 0.5;
-        } else {
-          cphi = -0.5;
-        }
-        dc.re = (cc4_tmp * cp01_idx_0 + ccr0 * cphi) / crw;
-        dc.im = (ccr0 * cp01_idx_0 - cc4_tmp * cphi) / crw;
+        dc.re = (cc4_tmp * cp02_idx_0 + ccr0 * cp01_idx_0) / cpw;
+        dc.im = (ccr0 * cp02_idx_0 - cc4_tmp * cp01_idx_0) / cpw;
       } else {
-        cp01_idx_0 = scr0 / cp02_idx_0;
-        cphi = cp02_idx_0 + cp01_idx_0 * scr0;
-        dc.re = (cp01_idx_0 * cc4_tmp + ccr0) / cphi;
-        dc.im = (cp01_idx_0 * ccr0 - cc4_tmp) / cphi;
+        cp02_idx_0 = scr0 / crw;
+        cp01_idx_0 = crw + cp02_idx_0 * scr0;
+        dc.re = (cp02_idx_0 * cc4_tmp + ccr0) / cp01_idx_0;
+        dc.im = (cp02_idx_0 * ccr0 - cc4_tmp) / cp01_idx_0;
       }
     }
     b_log(&dc);
@@ -2222,7 +2218,7 @@ void IK_7DOF(const double R[16], double phi, double l1, double l2, double Px,
          (f_re * b_c10_tmp_tmp.re - ib_scp0_idx_0_tmp_tmp * b_c10_tmp_tmp.im) *
              0.766044443118978) +
         (d_re * 0.0 - ob_scp0_idx_0_tmp_tmp);
-    cp02_idx_0 =
+    crw =
         ((((((((((((((14964.5 * dc7.im * 0.766044443118978 -
                       5731.7360345269735) +
                      (o_re + kb_scp0_idx_0_tmp_tmp * 0.0)) +
@@ -2245,7 +2241,7 @@ void IK_7DOF(const double R[16], double phi, double l1, double l2, double Px,
          (f_re * b_c10_tmp_tmp.im + ib_scp0_idx_0_tmp_tmp * b_c10_tmp_tmp.re) *
              0.766044443118978) +
         (d_re + ob_scp0_idx_0_tmp_tmp * 0.0);
-    if (cp02_idx_0 == 0.0) {
+    if (crw == 0.0) {
       if (ccr0 == 0.0) {
         dc1.re = cc4_tmp / scr0;
         dc1.im = 0.0;
@@ -2258,41 +2254,41 @@ void IK_7DOF(const double R[16], double phi, double l1, double l2, double Px,
       }
     } else if (scr0 == 0.0) {
       if (cc4_tmp == 0.0) {
-        dc1.re = ccr0 / cp02_idx_0;
+        dc1.re = ccr0 / crw;
         dc1.im = 0.0;
       } else if (ccr0 == 0.0) {
         dc1.re = 0.0;
-        dc1.im = -(cc4_tmp / cp02_idx_0);
+        dc1.im = -(cc4_tmp / crw);
       } else {
-        dc1.re = ccr0 / cp02_idx_0;
-        dc1.im = -(cc4_tmp / cp02_idx_0);
+        dc1.re = ccr0 / crw;
+        dc1.im = -(cc4_tmp / crw);
       }
     } else {
-      crw = fabs(scr0);
-      cphi = fabs(cp02_idx_0);
-      if (crw > cphi) {
-        cp01_idx_0 = cp02_idx_0 / scr0;
-        cphi = scr0 + cp01_idx_0 * cp02_idx_0;
-        dc1.re = (cc4_tmp + cp01_idx_0 * ccr0) / cphi;
-        dc1.im = (ccr0 - cp01_idx_0 * cc4_tmp) / cphi;
-      } else if (cphi == crw) {
+      cpw = fabs(scr0);
+      cp01_idx_0 = fabs(crw);
+      if (cpw > cp01_idx_0) {
+        cp02_idx_0 = crw / scr0;
+        cp01_idx_0 = scr0 + cp02_idx_0 * crw;
+        dc1.re = (cc4_tmp + cp02_idx_0 * ccr0) / cp01_idx_0;
+        dc1.im = (ccr0 - cp02_idx_0 * cc4_tmp) / cp01_idx_0;
+      } else if (cp01_idx_0 == cpw) {
         if (scr0 > 0.0) {
+          cp02_idx_0 = 0.5;
+        } else {
+          cp02_idx_0 = -0.5;
+        }
+        if (crw > 0.0) {
           cp01_idx_0 = 0.5;
         } else {
           cp01_idx_0 = -0.5;
         }
-        if (cp02_idx_0 > 0.0) {
-          cphi = 0.5;
-        } else {
-          cphi = -0.5;
-        }
-        dc1.re = (cc4_tmp * cp01_idx_0 + ccr0 * cphi) / crw;
-        dc1.im = (ccr0 * cp01_idx_0 - cc4_tmp * cphi) / crw;
+        dc1.re = (cc4_tmp * cp02_idx_0 + ccr0 * cp01_idx_0) / cpw;
+        dc1.im = (ccr0 * cp02_idx_0 - cc4_tmp * cp01_idx_0) / cpw;
       } else {
-        cp01_idx_0 = scr0 / cp02_idx_0;
-        cphi = cp02_idx_0 + cp01_idx_0 * scr0;
-        dc1.re = (cp01_idx_0 * cc4_tmp + ccr0) / cphi;
-        dc1.im = (cp01_idx_0 * ccr0 - cc4_tmp) / cphi;
+        cp02_idx_0 = scr0 / crw;
+        cp01_idx_0 = crw + cp02_idx_0 * scr0;
+        dc1.re = (cp02_idx_0 * cc4_tmp + ccr0) / cp01_idx_0;
+        dc1.im = (cp02_idx_0 * ccr0 - cc4_tmp) / cp01_idx_0;
       }
     }
     b_log(&dc1);
@@ -2458,7 +2454,7 @@ void IK_7DOF(const double R[16], double phi, double l1, double l2, double Px,
          (f_re * 0.0 - ib_scp0_idx_0_tmp_tmp)) +
         (g_re * b_c10_tmp_tmp.re - ob_scp0_idx_0_tmp_tmp * b_c10_tmp_tmp.im) *
             0.766044443118978;
-    cp02_idx_0 =
+    crw =
         (((((((((((((((p_re + kb_scp0_idx_0_tmp_tmp * 0.0) +
                       2865.868017263489) +
                      (-7482.2500000000064 * dc1.im +
@@ -2484,7 +2480,7 @@ void IK_7DOF(const double R[16], double phi, double l1, double l2, double Px,
          (f_re + ib_scp0_idx_0_tmp_tmp * 0.0)) +
         (g_re * b_c10_tmp_tmp.im + ob_scp0_idx_0_tmp_tmp * b_c10_tmp_tmp.re) *
             0.766044443118978;
-    if (cp02_idx_0 == 0.0) {
+    if (crw == 0.0) {
       if (ccr0 == 0.0) {
         dc.re = cc4_tmp / scr0;
         dc.im = 0.0;
@@ -2497,41 +2493,41 @@ void IK_7DOF(const double R[16], double phi, double l1, double l2, double Px,
       }
     } else if (scr0 == 0.0) {
       if (cc4_tmp == 0.0) {
-        dc.re = ccr0 / cp02_idx_0;
+        dc.re = ccr0 / crw;
         dc.im = 0.0;
       } else if (ccr0 == 0.0) {
         dc.re = 0.0;
-        dc.im = -(cc4_tmp / cp02_idx_0);
+        dc.im = -(cc4_tmp / crw);
       } else {
-        dc.re = ccr0 / cp02_idx_0;
-        dc.im = -(cc4_tmp / cp02_idx_0);
+        dc.re = ccr0 / crw;
+        dc.im = -(cc4_tmp / crw);
       }
     } else {
-      crw = fabs(scr0);
-      cphi = fabs(cp02_idx_0);
-      if (crw > cphi) {
-        cp01_idx_0 = cp02_idx_0 / scr0;
-        cphi = scr0 + cp01_idx_0 * cp02_idx_0;
-        dc.re = (cc4_tmp + cp01_idx_0 * ccr0) / cphi;
-        dc.im = (ccr0 - cp01_idx_0 * cc4_tmp) / cphi;
-      } else if (cphi == crw) {
+      cpw = fabs(scr0);
+      cp01_idx_0 = fabs(crw);
+      if (cpw > cp01_idx_0) {
+        cp02_idx_0 = crw / scr0;
+        cp01_idx_0 = scr0 + cp02_idx_0 * crw;
+        dc.re = (cc4_tmp + cp02_idx_0 * ccr0) / cp01_idx_0;
+        dc.im = (ccr0 - cp02_idx_0 * cc4_tmp) / cp01_idx_0;
+      } else if (cp01_idx_0 == cpw) {
         if (scr0 > 0.0) {
+          cp02_idx_0 = 0.5;
+        } else {
+          cp02_idx_0 = -0.5;
+        }
+        if (crw > 0.0) {
           cp01_idx_0 = 0.5;
         } else {
           cp01_idx_0 = -0.5;
         }
-        if (cp02_idx_0 > 0.0) {
-          cphi = 0.5;
-        } else {
-          cphi = -0.5;
-        }
-        dc.re = (cc4_tmp * cp01_idx_0 + ccr0 * cphi) / crw;
-        dc.im = (ccr0 * cp01_idx_0 - cc4_tmp * cphi) / crw;
+        dc.re = (cc4_tmp * cp02_idx_0 + ccr0 * cp01_idx_0) / cpw;
+        dc.im = (ccr0 * cp02_idx_0 - cc4_tmp * cp01_idx_0) / cpw;
       } else {
-        cp01_idx_0 = scr0 / cp02_idx_0;
-        cphi = cp02_idx_0 + cp01_idx_0 * scr0;
-        dc.re = (cp01_idx_0 * cc4_tmp + ccr0) / cphi;
-        dc.im = (cp01_idx_0 * ccr0 - cc4_tmp) / cphi;
+        cp02_idx_0 = scr0 / crw;
+        cp01_idx_0 = crw + cp02_idx_0 * scr0;
+        dc.re = (cp02_idx_0 * cc4_tmp + ccr0) / cp01_idx_0;
+        dc.im = (cp02_idx_0 * ccr0 - cc4_tmp) / cp01_idx_0;
       }
     }
     b_log(&dc);
@@ -2714,7 +2710,7 @@ void IK_7DOF(const double R[16], double phi, double l1, double l2, double Px,
          (f_re * 0.0 - ib_scp0_idx_0_tmp_tmp)) +
         (g_re * b_c10_tmp_tmp.re - ob_scp0_idx_0_tmp_tmp * b_c10_tmp_tmp.im) *
             0.766044443118978;
-    cp02_idx_0 =
+    crw =
         (((((((((((((((k_re + kb_scp0_idx_0_tmp_tmp * 0.0) +
                       2865.868017263489) +
                      (-7482.2500000000064 * dc8.im +
@@ -2740,7 +2736,7 @@ void IK_7DOF(const double R[16], double phi, double l1, double l2, double Px,
          (f_re + ib_scp0_idx_0_tmp_tmp * 0.0)) +
         (g_re * b_c10_tmp_tmp.im + ob_scp0_idx_0_tmp_tmp * b_c10_tmp_tmp.re) *
             0.766044443118978;
-    if (cp02_idx_0 == 0.0) {
+    if (crw == 0.0) {
       if (ccr0 == 0.0) {
         dc1.re = cc4_tmp / scr0;
         dc1.im = 0.0;
@@ -2753,41 +2749,41 @@ void IK_7DOF(const double R[16], double phi, double l1, double l2, double Px,
       }
     } else if (scr0 == 0.0) {
       if (cc4_tmp == 0.0) {
-        dc1.re = ccr0 / cp02_idx_0;
+        dc1.re = ccr0 / crw;
         dc1.im = 0.0;
       } else if (ccr0 == 0.0) {
         dc1.re = 0.0;
-        dc1.im = -(cc4_tmp / cp02_idx_0);
+        dc1.im = -(cc4_tmp / crw);
       } else {
-        dc1.re = ccr0 / cp02_idx_0;
-        dc1.im = -(cc4_tmp / cp02_idx_0);
+        dc1.re = ccr0 / crw;
+        dc1.im = -(cc4_tmp / crw);
       }
     } else {
-      crw = fabs(scr0);
-      cphi = fabs(cp02_idx_0);
-      if (crw > cphi) {
-        cp01_idx_0 = cp02_idx_0 / scr0;
-        cphi = scr0 + cp01_idx_0 * cp02_idx_0;
-        dc1.re = (cc4_tmp + cp01_idx_0 * ccr0) / cphi;
-        dc1.im = (ccr0 - cp01_idx_0 * cc4_tmp) / cphi;
-      } else if (cphi == crw) {
+      cpw = fabs(scr0);
+      cp01_idx_0 = fabs(crw);
+      if (cpw > cp01_idx_0) {
+        cp02_idx_0 = crw / scr0;
+        cp01_idx_0 = scr0 + cp02_idx_0 * crw;
+        dc1.re = (cc4_tmp + cp02_idx_0 * ccr0) / cp01_idx_0;
+        dc1.im = (ccr0 - cp02_idx_0 * cc4_tmp) / cp01_idx_0;
+      } else if (cp01_idx_0 == cpw) {
         if (scr0 > 0.0) {
+          cp02_idx_0 = 0.5;
+        } else {
+          cp02_idx_0 = -0.5;
+        }
+        if (crw > 0.0) {
           cp01_idx_0 = 0.5;
         } else {
           cp01_idx_0 = -0.5;
         }
-        if (cp02_idx_0 > 0.0) {
-          cphi = 0.5;
-        } else {
-          cphi = -0.5;
-        }
-        dc1.re = (cc4_tmp * cp01_idx_0 + ccr0 * cphi) / crw;
-        dc1.im = (ccr0 * cp01_idx_0 - cc4_tmp * cphi) / crw;
+        dc1.re = (cc4_tmp * cp02_idx_0 + ccr0 * cp01_idx_0) / cpw;
+        dc1.im = (ccr0 * cp02_idx_0 - cc4_tmp * cp01_idx_0) / cpw;
       } else {
-        cp01_idx_0 = scr0 / cp02_idx_0;
-        cphi = cp02_idx_0 + cp01_idx_0 * scr0;
-        dc1.re = (cp01_idx_0 * cc4_tmp + ccr0) / cphi;
-        dc1.im = (cp01_idx_0 * ccr0 - cc4_tmp) / cphi;
+        cp02_idx_0 = scr0 / crw;
+        cp01_idx_0 = crw + cp02_idx_0 * scr0;
+        dc1.re = (cp02_idx_0 * cc4_tmp + ccr0) / cp01_idx_0;
+        dc1.im = (cp02_idx_0 * ccr0 - cc4_tmp) / cp01_idx_0;
       }
     }
     b_log(&dc1);
@@ -2883,17 +2879,17 @@ void IK_7DOF(const double R[16], double phi, double l1, double l2, double Px,
     f_im = k_re * d_c10_tmp.im + f_im * d_c10_tmp.re;
     e_scp0_idx_0_tmp_tmp =
         c30_tmp.re * e_c30_tmp.re - c30_tmp.im * e_c30_tmp.im;
-    cp01_idx_0 = c30_tmp.re * e_c30_tmp.im + c30_tmp.im * e_c30_tmp.re;
-    cp02_idx_0 = c_c30_tmp.re * f_c30_tmp.re - c_c30_tmp.im * f_c30_tmp.im;
+    cp02_idx_0 = c30_tmp.re * e_c30_tmp.im + c30_tmp.im * e_c30_tmp.re;
+    cpw = c_c30_tmp.re * f_c30_tmp.re - c_c30_tmp.im * f_c30_tmp.im;
     scr0 = c_c30_tmp.re * f_c30_tmp.im + c_c30_tmp.im * f_c30_tmp.re;
-    ccr0 = cp02_idx_0 * e_c30_tmp_tmp.re - scr0 * e_c30_tmp_tmp.im;
-    scr0 = cp02_idx_0 * e_c30_tmp_tmp.im + scr0 * e_c30_tmp_tmp.re;
-    cp02_idx_0 = c_c30_tmp.re * e_c30_tmp.re - c_c30_tmp.im * e_c30_tmp.im;
+    ccr0 = cpw * e_c30_tmp_tmp.re - scr0 * e_c30_tmp_tmp.im;
+    scr0 = cpw * e_c30_tmp_tmp.im + scr0 * e_c30_tmp_tmp.re;
+    cpw = c_c30_tmp.re * e_c30_tmp.re - c_c30_tmp.im * e_c30_tmp.im;
     cc4_tmp = c_c30_tmp.re * e_c30_tmp.im + c_c30_tmp.im * e_c30_tmp.re;
     sc4 = g_c30_tmp.re * c30_tmp_tmp.re - g_c30_tmp.im * c30_tmp_tmp.im;
-    cc4 = g_c30_tmp.re * c30_tmp_tmp.im + g_c30_tmp.im * c30_tmp_tmp.re;
-    crw = sc4 * c_c30_tmp_tmp.re - cc4 * c_c30_tmp_tmp.im;
-    cc4 = sc4 * c_c30_tmp_tmp.im + cc4 * c_c30_tmp_tmp.re;
+    crw = g_c30_tmp.re * c30_tmp_tmp.im + g_c30_tmp.im * c30_tmp_tmp.re;
+    cc4 = sc4 * c_c30_tmp_tmp.re - crw * c_c30_tmp_tmp.im;
+    crw = sc4 * c_c30_tmp_tmp.im + crw * c_c30_tmp_tmp.re;
     k_re = 2.2393626025E+8 * d_c10_tmp.re;
     p_scp0_idx_0_tmp_tmp = 2.2393626025E+8 * d_c10_tmp.im;
     b_sc5_tmp_tmp =
@@ -2950,10 +2946,10 @@ void IK_7DOF(const double R[16], double phi, double l1, double l2, double Px,
     b_im = d_re * d_c10_tmp.im + b_im * d_c10_tmp.re;
     d_re = h_re * b_c10_tmp_tmp.re - b_im * b_c10_tmp_tmp.im;
     b_im = h_re * b_c10_tmp_tmp.im + b_im * b_c10_tmp_tmp.re;
-    cphi = d_c30_tmp.re * e_c30_tmp.re - d_c30_tmp.im * e_c30_tmp.im;
+    cp01_idx_0 = d_c30_tmp.re * e_c30_tmp.re - d_c30_tmp.im * e_c30_tmp.im;
     w2_idx_1 = d_c30_tmp.re * e_c30_tmp.im + d_c30_tmp.im * e_c30_tmp.re;
-    w2_idx_3 = cphi * b_c10_tmp_tmp.re - w2_idx_1 * b_c10_tmp_tmp.im;
-    w2_idx_1 = cphi * b_c10_tmp_tmp.im + w2_idx_1 * b_c10_tmp_tmp.re;
+    w2_idx_3 = cp01_idx_0 * b_c10_tmp_tmp.re - w2_idx_1 * b_c10_tmp_tmp.im;
+    w2_idx_1 = cp01_idx_0 * b_c10_tmp_tmp.im + w2_idx_1 * b_c10_tmp_tmp.re;
     h_re = 3.35904390375E+8 * dc4.re;
     c_im = 3.35904390375E+8 * dc4.im;
     f_re = h_re * dc5.re - c_im * dc5.im;
@@ -2974,10 +2970,10 @@ void IK_7DOF(const double R[16], double phi, double l1, double l2, double Px,
     e_im = j_re * c30_tmp_tmp.im + e_im * c30_tmp_tmp.re;
     j_re = i_re * e_c30_tmp_tmp.re - e_im * e_c30_tmp_tmp.im;
     e_im = i_re * e_c30_tmp_tmp.im + e_im * e_c30_tmp_tmp.re;
-    cphi = k_c30_tmp.re * e_c30_tmp.re - k_c30_tmp.im * e_c30_tmp.im;
+    cp01_idx_0 = k_c30_tmp.re * e_c30_tmp.re - k_c30_tmp.im * e_c30_tmp.im;
     v2_idx_0 = k_c30_tmp.re * e_c30_tmp.im + k_c30_tmp.im * e_c30_tmp.re;
-    v2_idx_1 = cphi * b_c10_tmp_tmp.re - v2_idx_0 * b_c10_tmp_tmp.im;
-    v2_idx_0 = cphi * b_c10_tmp_tmp.im + v2_idx_0 * b_c10_tmp_tmp.re;
+    v2_idx_1 = cp01_idx_0 * b_c10_tmp_tmp.re - v2_idx_0 * b_c10_tmp_tmp.im;
+    v2_idx_0 = cp01_idx_0 * b_c10_tmp_tmp.im + v2_idx_0 * b_c10_tmp_tmp.re;
     i_re = 5.59840650625E+7 * dc10.re;
     hb_scp0_idx_0_tmp_tmp = 5.59840650625E+7 * dc10.im;
     g_re = i_re * dc11.re - hb_scp0_idx_0_tmp_tmp * dc11.im;
@@ -3023,11 +3019,11 @@ void IK_7DOF(const double R[16], double phi, double l1, double l2, double Px,
                              (l_re * b_c30_tmp_tmp.re -
                               f_im * b_c30_tmp_tmp.im)) +
                             (e_scp0_idx_0_tmp_tmp * d_c30_tmp_tmp.re -
-                             cp01_idx_0 * d_c30_tmp_tmp.im)) +
+                             cp02_idx_0 * d_c30_tmp_tmp.im)) +
                            (ccr0 * 0.0 - scr0 * 4.0)) +
-                          (cp02_idx_0 * d_c30_tmp_tmp.re -
+                          (cpw * d_c30_tmp_tmp.re -
                            cc4_tmp * d_c30_tmp_tmp.im)) -
-                         (crw * 0.0 - cc4 * 4.0)) -
+                         (cc4 * 0.0 - crw * 4.0)) -
                         (b_sc5_tmp_tmp * b_c30_tmp_tmp.re -
                          p_scp0_idx_0_tmp_tmp * b_c30_tmp_tmp.im)) -
                        (sc4 * b_c30_tmp_tmp.re - w1_idx_2 * b_c30_tmp_tmp.im)) +
@@ -3078,11 +3074,11 @@ void IK_7DOF(const double R[16], double phi, double l1, double l2, double Px,
                              (l_re * b_c30_tmp_tmp.im +
                               f_im * b_c30_tmp_tmp.re)) +
                             (e_scp0_idx_0_tmp_tmp * d_c30_tmp_tmp.im +
-                             cp01_idx_0 * d_c30_tmp_tmp.re)) +
+                             cp02_idx_0 * d_c30_tmp_tmp.re)) +
                            (ccr0 * 4.0 + scr0 * 0.0)) +
-                          (cp02_idx_0 * d_c30_tmp_tmp.im +
+                          (cpw * d_c30_tmp_tmp.im +
                            cc4_tmp * d_c30_tmp_tmp.re)) -
-                         (crw * 4.0 + cc4 * 0.0)) -
+                         (cc4 * 4.0 + crw * 0.0)) -
                         (b_sc5_tmp_tmp * b_c30_tmp_tmp.im +
                          p_scp0_idx_0_tmp_tmp * b_c30_tmp_tmp.re)) -
                        (sc4 * b_c30_tmp_tmp.im + w1_idx_2 * b_c30_tmp_tmp.re)) +
@@ -3212,7 +3208,7 @@ void IK_7DOF(const double R[16], double phi, double l1, double l2, double Px,
           (d_re * 0.0 - scp0_idx_0_tmp_tmp_tmp * 2.0)) -
          (e_re * 0.0 - im * 2.0)) -
         (re * b_c30_tmp_tmp.re - b_im * b_c30_tmp_tmp.im);
-    cp02_idx_0 =
+    crw =
         ((((((((((((((l_c30_tmp.re * 2.0 + l_c30_tmp.im * 0.0) -
                      m_scp0_idx_0_tmp_tmp) -
                     6479.818577466116) -
@@ -3232,7 +3228,7 @@ void IK_7DOF(const double R[16], double phi, double l1, double l2, double Px,
           (d_re * 2.0 + scp0_idx_0_tmp_tmp_tmp * 0.0)) -
          (e_re * 2.0 + im * 0.0)) -
         (re * b_c30_tmp_tmp.im + b_im * b_c30_tmp_tmp.re);
-    if (cp02_idx_0 == 0.0) {
+    if (crw == 0.0) {
       if (ccr0 == 0.0) {
         dc.re = cc4_tmp / scr0;
         dc.im = 0.0;
@@ -3245,41 +3241,41 @@ void IK_7DOF(const double R[16], double phi, double l1, double l2, double Px,
       }
     } else if (scr0 == 0.0) {
       if (cc4_tmp == 0.0) {
-        dc.re = ccr0 / cp02_idx_0;
+        dc.re = ccr0 / crw;
         dc.im = 0.0;
       } else if (ccr0 == 0.0) {
         dc.re = 0.0;
-        dc.im = -(cc4_tmp / cp02_idx_0);
+        dc.im = -(cc4_tmp / crw);
       } else {
-        dc.re = ccr0 / cp02_idx_0;
-        dc.im = -(cc4_tmp / cp02_idx_0);
+        dc.re = ccr0 / crw;
+        dc.im = -(cc4_tmp / crw);
       }
     } else {
-      crw = fabs(scr0);
-      cphi = fabs(cp02_idx_0);
-      if (crw > cphi) {
-        cp01_idx_0 = cp02_idx_0 / scr0;
-        cphi = scr0 + cp01_idx_0 * cp02_idx_0;
-        dc.re = (cc4_tmp + cp01_idx_0 * ccr0) / cphi;
-        dc.im = (ccr0 - cp01_idx_0 * cc4_tmp) / cphi;
-      } else if (cphi == crw) {
+      cpw = fabs(scr0);
+      cp01_idx_0 = fabs(crw);
+      if (cpw > cp01_idx_0) {
+        cp02_idx_0 = crw / scr0;
+        cp01_idx_0 = scr0 + cp02_idx_0 * crw;
+        dc.re = (cc4_tmp + cp02_idx_0 * ccr0) / cp01_idx_0;
+        dc.im = (ccr0 - cp02_idx_0 * cc4_tmp) / cp01_idx_0;
+      } else if (cp01_idx_0 == cpw) {
         if (scr0 > 0.0) {
+          cp02_idx_0 = 0.5;
+        } else {
+          cp02_idx_0 = -0.5;
+        }
+        if (crw > 0.0) {
           cp01_idx_0 = 0.5;
         } else {
           cp01_idx_0 = -0.5;
         }
-        if (cp02_idx_0 > 0.0) {
-          cphi = 0.5;
-        } else {
-          cphi = -0.5;
-        }
-        dc.re = (cc4_tmp * cp01_idx_0 + ccr0 * cphi) / crw;
-        dc.im = (ccr0 * cp01_idx_0 - cc4_tmp * cphi) / crw;
+        dc.re = (cc4_tmp * cp02_idx_0 + ccr0 * cp01_idx_0) / cpw;
+        dc.im = (ccr0 * cp02_idx_0 - cc4_tmp * cp01_idx_0) / cpw;
       } else {
-        cp01_idx_0 = scr0 / cp02_idx_0;
-        cphi = cp02_idx_0 + cp01_idx_0 * scr0;
-        dc.re = (cp01_idx_0 * cc4_tmp + ccr0) / cphi;
-        dc.im = (cp01_idx_0 * ccr0 - cc4_tmp) / cphi;
+        cp02_idx_0 = scr0 / crw;
+        cp01_idx_0 = crw + cp02_idx_0 * scr0;
+        dc.re = (cp02_idx_0 * cc4_tmp + ccr0) / cp01_idx_0;
+        dc.im = (cp02_idx_0 * ccr0 - cc4_tmp) / cp01_idx_0;
       }
     }
     b_log(&dc);
@@ -3598,33 +3594,32 @@ void IK_7DOF(const double R[16], double phi, double l1, double l2, double Px,
                             ab_scp0_idx_0_tmp_tmp * e_c30_tmp_tmp.re;
     nb_scp0_idx_0_tmp_tmp = 1.11968130125E+8 * b_a.re;
     s_scp0_idx_0_tmp_tmp = 1.11968130125E+8 * b_a.im;
-    cphi = nb_scp0_idx_0_tmp_tmp * b_c10_tmp_tmp.re -
-           s_scp0_idx_0_tmp_tmp * b_c10_tmp_tmp.im;
+    cp01_idx_0 = nb_scp0_idx_0_tmp_tmp * b_c10_tmp_tmp.re -
+                 s_scp0_idx_0_tmp_tmp * b_c10_tmp_tmp.im;
     s_scp0_idx_0_tmp_tmp = nb_scp0_idx_0_tmp_tmp * b_c10_tmp_tmp.im +
                            s_scp0_idx_0_tmp_tmp * b_c10_tmp_tmp.re;
     nb_scp0_idx_0_tmp_tmp = 5.59840650625E+7 * e_c10_tmp.re;
     u_scp0_idx_0_tmp_tmp = 5.59840650625E+7 * e_c10_tmp.im;
-    cp01_idx_0 = nb_scp0_idx_0_tmp_tmp * c30_tmp_tmp.re -
+    cp02_idx_0 = nb_scp0_idx_0_tmp_tmp * c30_tmp_tmp.re -
                  u_scp0_idx_0_tmp_tmp * c30_tmp_tmp.im;
     u_scp0_idx_0_tmp_tmp = nb_scp0_idx_0_tmp_tmp * c30_tmp_tmp.im +
                            u_scp0_idx_0_tmp_tmp * c30_tmp_tmp.re;
     nb_scp0_idx_0_tmp_tmp = 8.957450409999994E+8 * c30_tmp.re;
     w_scp0_idx_0_tmp_tmp = 8.957450409999994E+8 * c30_tmp.im;
-    cp02_idx_0 = nb_scp0_idx_0_tmp_tmp * b_c30_tmp.re -
-                 w_scp0_idx_0_tmp_tmp * b_c30_tmp.im;
+    cpw = nb_scp0_idx_0_tmp_tmp * b_c30_tmp.re -
+          w_scp0_idx_0_tmp_tmp * b_c30_tmp.im;
     w_scp0_idx_0_tmp_tmp = nb_scp0_idx_0_tmp_tmp * b_c30_tmp.im +
                            w_scp0_idx_0_tmp_tmp * b_c30_tmp.re;
     nb_scp0_idx_0_tmp_tmp =
-        cp02_idx_0 * b_c10_tmp_tmp.re - w_scp0_idx_0_tmp_tmp * b_c10_tmp_tmp.im;
+        cpw * b_c10_tmp_tmp.re - w_scp0_idx_0_tmp_tmp * b_c10_tmp_tmp.im;
     w_scp0_idx_0_tmp_tmp =
-        cp02_idx_0 * b_c10_tmp_tmp.im + w_scp0_idx_0_tmp_tmp * b_c10_tmp_tmp.re;
-    cp02_idx_0 = 1.3436175615E+9 * c_c30_tmp.re;
+        cpw * b_c10_tmp_tmp.im + w_scp0_idx_0_tmp_tmp * b_c10_tmp_tmp.re;
+    cpw = 1.3436175615E+9 * c_c30_tmp.re;
     x_scp0_idx_0_tmp_tmp = 1.3436175615E+9 * c_c30_tmp.im;
-    scr0 = cp02_idx_0 * d_c30_tmp.re - x_scp0_idx_0_tmp_tmp * d_c30_tmp.im;
+    scr0 = cpw * d_c30_tmp.re - x_scp0_idx_0_tmp_tmp * d_c30_tmp.im;
     x_scp0_idx_0_tmp_tmp =
-        cp02_idx_0 * d_c30_tmp.im + x_scp0_idx_0_tmp_tmp * d_c30_tmp.re;
-    cp02_idx_0 =
-        scr0 * b_c10_tmp_tmp.re - x_scp0_idx_0_tmp_tmp * b_c10_tmp_tmp.im;
+        cpw * d_c30_tmp.im + x_scp0_idx_0_tmp_tmp * d_c30_tmp.re;
+    cpw = scr0 * b_c10_tmp_tmp.re - x_scp0_idx_0_tmp_tmp * b_c10_tmp_tmp.im;
     x_scp0_idx_0_tmp_tmp =
         scr0 * b_c10_tmp_tmp.im + x_scp0_idx_0_tmp_tmp * b_c10_tmp_tmp.re;
     scr0 = 2.2393626025E+8 * e_c30_tmp.re;
@@ -3635,18 +3630,18 @@ void IK_7DOF(const double R[16], double phi, double l1, double l2, double Px,
     ccr0 = cc4_tmp * c30_tmp_tmp.im + ccr0 * c30_tmp_tmp.re;
     cc4_tmp = 5.59840650625E+7 * g_c30_tmp.re;
     sc4 = 5.59840650625E+7 * g_c30_tmp.im;
-    cc4 = cc4_tmp * h_c30_tmp.re - sc4 * h_c30_tmp.im;
+    crw = cc4_tmp * h_c30_tmp.re - sc4 * h_c30_tmp.im;
     sc4 = cc4_tmp * h_c30_tmp.im + sc4 * h_c30_tmp.re;
-    cc4_tmp = cc4 * c30_tmp_tmp.re - sc4 * c30_tmp_tmp.im;
-    sc4 = cc4 * c30_tmp_tmp.im + sc4 * c30_tmp_tmp.re;
-    cc4 = cc4_tmp * c_c30_tmp_tmp.re - sc4 * c_c30_tmp_tmp.im;
+    cc4_tmp = crw * c30_tmp_tmp.re - sc4 * c30_tmp_tmp.im;
+    sc4 = crw * c30_tmp_tmp.im + sc4 * c30_tmp_tmp.re;
+    crw = cc4_tmp * c_c30_tmp_tmp.re - sc4 * c_c30_tmp_tmp.im;
     sc4 = cc4_tmp * c_c30_tmp_tmp.im + sc4 * c_c30_tmp_tmp.re;
     cc4_tmp = 2.2393626025E+8 * i_c30_tmp.re;
-    crw = 2.2393626025E+8 * i_c30_tmp.im;
-    w1_idx_2 = cc4_tmp * j_c30_tmp.re - crw * j_c30_tmp.im;
-    crw = cc4_tmp * j_c30_tmp.im + crw * j_c30_tmp.re;
-    cc4_tmp = w1_idx_2 * b_c10_tmp_tmp.re - crw * b_c10_tmp_tmp.im;
-    crw = w1_idx_2 * b_c10_tmp_tmp.im + crw * b_c10_tmp_tmp.re;
+    cc4 = 2.2393626025E+8 * i_c30_tmp.im;
+    w1_idx_2 = cc4_tmp * j_c30_tmp.re - cc4 * j_c30_tmp.im;
+    cc4 = cc4_tmp * j_c30_tmp.im + cc4 * j_c30_tmp.re;
+    cc4_tmp = w1_idx_2 * b_c10_tmp_tmp.re - cc4 * b_c10_tmp_tmp.im;
+    cc4 = w1_idx_2 * b_c10_tmp_tmp.im + cc4 * b_c10_tmp_tmp.re;
     w1_idx_2 = 2.2393626025E+8 * k_c30_tmp.re;
     w1_idx_1 = 2.2393626025E+8 * k_c30_tmp.im;
     w1_idx_3 = w1_idx_2 * l_c30_tmp.re - w1_idx_1 * l_c30_tmp.im;
@@ -3738,17 +3733,17 @@ void IK_7DOF(const double R[16], double phi, double l1, double l2, double Px,
                         y_scp0_idx_0_tmp_tmp * b_c30_tmp_tmp.im)) +
                       (t_scp0_idx_0_tmp_tmp * 0.0 -
                        ab_scp0_idx_0_tmp_tmp * 4.0)) -
-                     (cphi * d_c30_tmp_tmp.re -
+                     (cp01_idx_0 * d_c30_tmp_tmp.re -
                       s_scp0_idx_0_tmp_tmp * d_c30_tmp_tmp.im)) +
-                    (cp01_idx_0 * d_c30_tmp_tmp.re -
+                    (cp02_idx_0 * d_c30_tmp_tmp.re -
                      u_scp0_idx_0_tmp_tmp * d_c30_tmp_tmp.im)) +
                    (nb_scp0_idx_0_tmp_tmp * b_c30_tmp_tmp.re -
                     w_scp0_idx_0_tmp_tmp * b_c30_tmp_tmp.im)) +
-                  (cp02_idx_0 * b_c30_tmp_tmp.re -
+                  (cpw * b_c30_tmp_tmp.re -
                    x_scp0_idx_0_tmp_tmp * b_c30_tmp_tmp.im)) +
                  (scr0 * b_c30_tmp_tmp.re - ccr0 * b_c30_tmp_tmp.im)) +
-                (cc4 * 0.0 - sc4 * 4.0)) -
-               (cc4_tmp * b_c30_tmp_tmp.re - crw * b_c30_tmp_tmp.im)) -
+                (crw * 0.0 - sc4 * 4.0)) -
+               (cc4_tmp * b_c30_tmp_tmp.re - cc4 * b_c30_tmp_tmp.im)) -
               (w1_idx_2 * d_c30_tmp_tmp.re - w1_idx_1 * d_c30_tmp_tmp.im)) -
              (w1_idx_3 * b_c30_tmp_tmp.re - w2_idx_0 * b_c30_tmp_tmp.im)) +
             (w2_idx_2 * d_c30_tmp_tmp.re - w2_idx_1 * d_c30_tmp_tmp.im)) -
@@ -3796,17 +3791,17 @@ void IK_7DOF(const double R[16], double phi, double l1, double l2, double Px,
                         y_scp0_idx_0_tmp_tmp * b_c30_tmp_tmp.re)) +
                       (t_scp0_idx_0_tmp_tmp * 4.0 +
                        ab_scp0_idx_0_tmp_tmp * 0.0)) -
-                     (cphi * d_c30_tmp_tmp.im +
+                     (cp01_idx_0 * d_c30_tmp_tmp.im +
                       s_scp0_idx_0_tmp_tmp * d_c30_tmp_tmp.re)) +
-                    (cp01_idx_0 * d_c30_tmp_tmp.im +
+                    (cp02_idx_0 * d_c30_tmp_tmp.im +
                      u_scp0_idx_0_tmp_tmp * d_c30_tmp_tmp.re)) +
                    (nb_scp0_idx_0_tmp_tmp * b_c30_tmp_tmp.im +
                     w_scp0_idx_0_tmp_tmp * b_c30_tmp_tmp.re)) +
-                  (cp02_idx_0 * b_c30_tmp_tmp.im +
+                  (cpw * b_c30_tmp_tmp.im +
                    x_scp0_idx_0_tmp_tmp * b_c30_tmp_tmp.re)) +
                  (scr0 * b_c30_tmp_tmp.im + ccr0 * b_c30_tmp_tmp.re)) +
-                (cc4 * 4.0 + sc4 * 0.0)) -
-               (cc4_tmp * b_c30_tmp_tmp.im + crw * b_c30_tmp_tmp.re)) -
+                (crw * 4.0 + sc4 * 0.0)) -
+               (cc4_tmp * b_c30_tmp_tmp.im + cc4 * b_c30_tmp_tmp.re)) -
               (w1_idx_2 * d_c30_tmp_tmp.im + w1_idx_1 * d_c30_tmp_tmp.re)) -
              (w1_idx_3 * b_c30_tmp_tmp.im + w2_idx_0 * b_c30_tmp_tmp.re)) +
             (w2_idx_2 * d_c30_tmp_tmp.im + w2_idx_1 * d_c30_tmp_tmp.re)) -
@@ -3932,25 +3927,24 @@ void IK_7DOF(const double R[16], double phi, double l1, double l2, double Px,
              (jb_scp0_idx_0_tmp_tmp * 0.0 - ib_scp0_idx_0_tmp_tmp * 2.0)) -
             (r_scp0_idx_0_tmp_tmp * 0.0 - ob_scp0_idx_0_tmp_tmp * 2.0)) -
            (j_re * b_c30_tmp_tmp.re - i_scp0_idx_0_tmp_tmp * b_c30_tmp_tmp.im);
-    cp02_idx_0 =
-        ((((((((((((((b_sc5_tmp_tmp * 2.0 + kb_scp0_idx_0_tmp_tmp * 0.0) -
-                     7482.25 * dc31.im) -
-                    6479.818577466116) -
-                   (b_re * 2.0 + lb_scp0_idx_0_tmp_tmp * 0.0)) +
-                  (re * b_c10_tmp_tmp.im +
-                   mb_scp0_idx_0_tmp_tmp * b_c10_tmp_tmp.re)) +
-                 (d_re * 2.0 + scp0_idx_0_tmp_tmp_tmp * 0.0)) -
-                (c_re * b_c30_tmp_tmp.im + im * b_c30_tmp_tmp.re)) +
-               (e_re * 2.0 + b_im * 0.0)) +
-              (h_re * 2.0 + c_im * 0.0)) +
-             (i_re * b_c30_tmp_tmp.im + d_im * b_c30_tmp_tmp.re)) +
-            (f_re * 2.0 + e_im * 0.0)) +
-           (g_re * b_c30_tmp_tmp.im +
-            hb_scp0_idx_0_tmp_tmp * b_c30_tmp_tmp.re)) +
-          (jb_scp0_idx_0_tmp_tmp * 2.0 + ib_scp0_idx_0_tmp_tmp * 0.0)) -
-         (r_scp0_idx_0_tmp_tmp * 2.0 + ob_scp0_idx_0_tmp_tmp * 0.0)) -
-        (j_re * b_c30_tmp_tmp.im + i_scp0_idx_0_tmp_tmp * b_c30_tmp_tmp.re);
-    if (cp02_idx_0 == 0.0) {
+    crw = ((((((((((((((b_sc5_tmp_tmp * 2.0 + kb_scp0_idx_0_tmp_tmp * 0.0) -
+                       7482.25 * dc31.im) -
+                      6479.818577466116) -
+                     (b_re * 2.0 + lb_scp0_idx_0_tmp_tmp * 0.0)) +
+                    (re * b_c10_tmp_tmp.im +
+                     mb_scp0_idx_0_tmp_tmp * b_c10_tmp_tmp.re)) +
+                   (d_re * 2.0 + scp0_idx_0_tmp_tmp_tmp * 0.0)) -
+                  (c_re * b_c30_tmp_tmp.im + im * b_c30_tmp_tmp.re)) +
+                 (e_re * 2.0 + b_im * 0.0)) +
+                (h_re * 2.0 + c_im * 0.0)) +
+               (i_re * b_c30_tmp_tmp.im + d_im * b_c30_tmp_tmp.re)) +
+              (f_re * 2.0 + e_im * 0.0)) +
+             (g_re * b_c30_tmp_tmp.im +
+              hb_scp0_idx_0_tmp_tmp * b_c30_tmp_tmp.re)) +
+            (jb_scp0_idx_0_tmp_tmp * 2.0 + ib_scp0_idx_0_tmp_tmp * 0.0)) -
+           (r_scp0_idx_0_tmp_tmp * 2.0 + ob_scp0_idx_0_tmp_tmp * 0.0)) -
+          (j_re * b_c30_tmp_tmp.im + i_scp0_idx_0_tmp_tmp * b_c30_tmp_tmp.re);
+    if (crw == 0.0) {
       if (ccr0 == 0.0) {
         dc1.re = cc4_tmp / scr0;
         dc1.im = 0.0;
@@ -3963,47 +3957,47 @@ void IK_7DOF(const double R[16], double phi, double l1, double l2, double Px,
       }
     } else if (scr0 == 0.0) {
       if (cc4_tmp == 0.0) {
-        dc1.re = ccr0 / cp02_idx_0;
+        dc1.re = ccr0 / crw;
         dc1.im = 0.0;
       } else if (ccr0 == 0.0) {
         dc1.re = 0.0;
-        dc1.im = -(cc4_tmp / cp02_idx_0);
+        dc1.im = -(cc4_tmp / crw);
       } else {
-        dc1.re = ccr0 / cp02_idx_0;
-        dc1.im = -(cc4_tmp / cp02_idx_0);
+        dc1.re = ccr0 / crw;
+        dc1.im = -(cc4_tmp / crw);
       }
     } else {
-      crw = fabs(scr0);
-      cphi = fabs(cp02_idx_0);
-      if (crw > cphi) {
-        cp01_idx_0 = cp02_idx_0 / scr0;
-        cphi = scr0 + cp01_idx_0 * cp02_idx_0;
-        dc1.re = (cc4_tmp + cp01_idx_0 * ccr0) / cphi;
-        dc1.im = (ccr0 - cp01_idx_0 * cc4_tmp) / cphi;
-      } else if (cphi == crw) {
+      cpw = fabs(scr0);
+      cp01_idx_0 = fabs(crw);
+      if (cpw > cp01_idx_0) {
+        cp02_idx_0 = crw / scr0;
+        cp01_idx_0 = scr0 + cp02_idx_0 * crw;
+        dc1.re = (cc4_tmp + cp02_idx_0 * ccr0) / cp01_idx_0;
+        dc1.im = (ccr0 - cp02_idx_0 * cc4_tmp) / cp01_idx_0;
+      } else if (cp01_idx_0 == cpw) {
         if (scr0 > 0.0) {
+          cp02_idx_0 = 0.5;
+        } else {
+          cp02_idx_0 = -0.5;
+        }
+        if (crw > 0.0) {
           cp01_idx_0 = 0.5;
         } else {
           cp01_idx_0 = -0.5;
         }
-        if (cp02_idx_0 > 0.0) {
-          cphi = 0.5;
-        } else {
-          cphi = -0.5;
-        }
-        dc1.re = (cc4_tmp * cp01_idx_0 + ccr0 * cphi) / crw;
-        dc1.im = (ccr0 * cp01_idx_0 - cc4_tmp * cphi) / crw;
+        dc1.re = (cc4_tmp * cp02_idx_0 + ccr0 * cp01_idx_0) / cpw;
+        dc1.im = (ccr0 * cp02_idx_0 - cc4_tmp * cp01_idx_0) / cpw;
       } else {
-        cp01_idx_0 = scr0 / cp02_idx_0;
-        cphi = cp02_idx_0 + cp01_idx_0 * scr0;
-        dc1.re = (cp01_idx_0 * cc4_tmp + ccr0) / cphi;
-        dc1.im = (cp01_idx_0 * ccr0 - cc4_tmp) / cphi;
+        cp02_idx_0 = scr0 / crw;
+        cp01_idx_0 = crw + cp02_idx_0 * scr0;
+        dc1.re = (cp02_idx_0 * cc4_tmp + ccr0) / cp01_idx_0;
+        dc1.im = (cp02_idx_0 * ccr0 - cc4_tmp) / cp01_idx_0;
       }
     }
     b_log(&dc1);
     k_re = dc.re * 0.0 - dc.im;
     l_re = dc1.re * 0.0 - dc1.im;
-    crw =
+    cc4 =
         0.766044443118978 * cos((1.298210328476112 - m_re) - 1.298210328476112);
     w1_idx_2 =
         0.766044443118978 * sin((1.298210328476112 - m_re) - 1.298210328476112);
@@ -4011,10 +4005,9 @@ void IK_7DOF(const double R[16], double phi, double l1, double l2, double Px,
         0.766044443118978 * cos((1.298210328476112 - n_re) - 1.298210328476112);
     w1_idx_3 =
         0.766044443118978 * sin((1.298210328476112 - n_re) - 1.298210328476112);
-    cp01_idx_0 = OBL_tmp_tmp * 0.0 - b_OBL_tmp_tmp * OBL_tmp;
-    cp02_idx_0 = 0.0 * OBL_tmp + OBL_tmp_tmp * b_OBL_tmp_tmp;
-    v1[0] = -(0.49999999999999994 *
-                  (6.123233995736766E-17 * cp01_idx_0 - cp02_idx_0) -
+    cp02_idx_0 = OBL_tmp_tmp * 0.0 - b_OBL_tmp_tmp * OBL_tmp;
+    cpw = 0.0 * OBL_tmp + OBL_tmp_tmp * b_OBL_tmp_tmp;
+    v1[0] = -(0.49999999999999994 * (6.123233995736766E-17 * cp02_idx_0 - cpw) -
               c_OBL_tmp_tmp * 0.86602540378443871);
     scr0 = OBL_tmp_tmp + 0.0 * b_OBL_tmp_tmp * OBL_tmp;
     ccr0 = OBL_tmp - OBL_tmp_tmp * 0.0 * b_OBL_tmp_tmp;
@@ -4033,18 +4026,18 @@ void IK_7DOF(const double R[16], double phi, double l1, double l2, double Px,
         0.766044443118978 * cos((1.52502572060903 - p_re) - 1.52502572060903);
     w2_idx_3 =
         0.766044443118978 * sin((1.52502572060903 - p_re) - 1.52502572060903);
-    cphi = c_OBL_tmp_tmp * 0.86602540378443871;
-    v2_idx_0 = -(0.49999999999999994 * (-0.49999999999999978 * cp01_idx_0 +
-                                        0.86602540378443871 * cp02_idx_0) -
-                 cphi);
+    cp01_idx_0 = c_OBL_tmp_tmp * 0.86602540378443871;
+    v2_idx_0 = -(0.49999999999999994 * (-0.49999999999999978 * cp02_idx_0 +
+                                        0.86602540378443871 * cpw) -
+                 cp01_idx_0);
     v2_idx_1 = 0.49999999999999994 *
                    (-0.49999999999999978 * scr0 + 0.86602540378443871 * ccr0) +
                cc4_tmp;
-    cc4 = 0.86602540378443871 * b_OBL_tmp_tmp;
+    crw = 0.86602540378443871 * b_OBL_tmp_tmp;
     v2_idx_2 =
         0.49999999999999994 * (-0.49999999999999978 * c_OBL_tmp_tmp * OBL_tmp -
                                sc4 * 0.86602540378443871) -
-        cc4;
+        crw;
     e_scp0_idx_0_tmp_tmp =
         sin((0.30696770204475443 - k_re) - 0.30696770204475443);
     f_scp0_idx_0_tmp_tmp =
@@ -4060,20 +4053,20 @@ void IK_7DOF(const double R[16], double phi, double l1, double l2, double Px,
     w3[3] = h_scp0_idx_0_tmp_tmp;
     w3[5] = 0.0;
     /* %此向量本来在c3坐标系中，为了便于下面的干涉检查计算，做统一坐标系处理 */
-    v3_idx_0 = -(0.49999999999999994 * (0.50000000000000011 * cp01_idx_0 -
-                                        -0.8660254037844386 * cp02_idx_0) -
-                 cphi);
+    v3_idx_0 = -(0.49999999999999994 * (0.50000000000000011 * cp02_idx_0 -
+                                        -0.8660254037844386 * cpw) -
+                 cp01_idx_0);
     scr0 = 0.49999999999999994 *
                (0.50000000000000011 * scr0 - -0.8660254037844386 * ccr0) +
            cc4_tmp;
-    cphi =
+    cp02_idx_0 =
         0.49999999999999994 * (sc4 * -0.8660254037844386 +
                                c_OBL_tmp_tmp * OBL_tmp * 0.50000000000000011) -
-        cc4;
+        crw;
     /* 此向量本来在c3坐标系中，为了便于下面的干涉检查计算，做统一坐标系处理 */
     /*  eq1=w3(1)*v3(1)+w3(2)*v3(2)+w3(3)*v3(3)-R^2*cos(gama); */
-    if (((0.0 - w1_idx_2) * v1[0] + crw * v1[1]) +
-            (0.0 * w1_idx_2 - crw * 0.0) * v1[2] >=
+    if (((0.0 - w1_idx_2) * v1[0] + cc4 * v1[1]) +
+            (0.0 * w1_idx_2 - cc4 * 0.0) * v1[2] >=
         0.0) {
       *c1 = 1.298210328476112 - m_re;
       IL = 1;
@@ -4100,14 +4093,14 @@ void IK_7DOF(const double R[16], double phi, double l1, double l2, double Px,
       *c2 = 0.0;
       coffset = 0;
     }
-    if (((f_scp0_idx_0_tmp_tmp * cphi - scr0 * 0.0) * 0.0 +
-         (v3_idx_0 * 0.0 - -e_scp0_idx_0_tmp_tmp * cphi) * 0.0) +
+    if (((f_scp0_idx_0_tmp_tmp * cp02_idx_0 - scr0 * 0.0) * 0.0 +
+         (v3_idx_0 * 0.0 - -e_scp0_idx_0_tmp_tmp * cp02_idx_0) * 0.0) +
             (-e_scp0_idx_0_tmp_tmp * scr0 - v3_idx_0 * f_scp0_idx_0_tmp_tmp) <=
         0.0) {
       *c3 = 0.30696770204475443 - k_re;
       IM = 0;
-    } else if (((cphi * h_scp0_idx_0_tmp_tmp - scr0 * 0.0) * 0.0 +
-                (v3_idx_0 * 0.0 - -g_scp0_idx_0_tmp_tmp * cphi) * 0.0) +
+    } else if (((cp02_idx_0 * h_scp0_idx_0_tmp_tmp - scr0 * 0.0) * 0.0 +
+                (v3_idx_0 * 0.0 - -g_scp0_idx_0_tmp_tmp * cp02_idx_0) * 0.0) +
                    (scr0 * -g_scp0_idx_0_tmp_tmp -
                     v3_idx_0 * h_scp0_idx_0_tmp_tmp) <=
                0.0) {
@@ -4126,14 +4119,14 @@ void IK_7DOF(const double R[16], double phi, double l1, double l2, double Px,
       OBM[0] = 86.5 * c_OBL_tmp_tmp;
       OBM[1] = 86.5 * c_OBL_tmp_tmp * 0.0;
       OBM[2] = -86.5 * b_OBL_tmp_tmp;
-      v1[0] = scr0 * OBM[2] - OBM[1] * cphi;
-      v1[1] = OBM[0] * cphi - v3_idx_0 * OBM[2];
+      v1[0] = scr0 * OBM[2] - OBM[1] * cp02_idx_0;
+      v1[1] = OBM[0] * cp02_idx_0 - v3_idx_0 * OBM[2];
       v1[2] = v3_idx_0 * OBM[1] - OBM[0] * scr0;
-      cp01_idx_0 = w3[IM + 4];
-      cp02_idx_0 = w3[IM + 2];
-      OBM[0] = cp02_idx_0 * cphi - scr0 * cp01_idx_0;
-      OBM[1] = v3_idx_0 * cp01_idx_0 - w3[IM] * cphi;
-      OBM[2] = w3[IM] * scr0 - v3_idx_0 * cp02_idx_0;
+      cpw = w3[IM + 4];
+      cp01_idx_0 = w3[IM + 2];
+      OBM[0] = cp01_idx_0 * cp02_idx_0 - scr0 * cpw;
+      OBM[1] = v3_idx_0 * cpw - w3[IM] * cp02_idx_0;
+      OBM[2] = w3[IM] * scr0 - v3_idx_0 * cp01_idx_0;
       if (((OBM[0] * v1[0] + OBM[1] * v1[1]) + OBM[2] * v1[2]) / b_norm(OBM) /
               b_norm(v1) >=
           -0.64278760968653936) {
@@ -4150,6 +4143,32 @@ void IK_7DOF(const double R[16], double phi, double l1, double l2, double Px,
       *c2 = 0.0;
       *c3 = 0.0;
     }
+}
+
+void main_IK_7DOF(void)
+{
+double R[16]={-0.0000,1.0000,0.0000,0,-0.8819,0.0000,-0.4714,0,-0.4714,-0.0000,0.8819,0,215.7621,332.6608,-20.2120,1.0000};
+double c1;
+double c2;
+double c3;
+double c4;
+double c5;
+double c6;
+double c7;
+double phi=-0.2618;
+double l1=320;
+double l2=235;
+double Px=238.6386;       
+double Py=332.6608;
+double Pz=89.2800; 
+/* Initialize function 'IK_7DOF' input arguments. */
+/* Initialize function input argument 'R'. */
+/* Call the entry-point 'IK_7DOF'. */
+/* Call the entry-point 'IK_7DOF'. */
+IK_7DOF(R, phi, l1, l2, Px, Py, Pz, &c1, &c2,
+        &c3, &c4, &c5, &c6, &c7);
+//   printf("theta:%lf %lf %lf %lf %lf %lf %lf \n ",c1,c2,c3,c4,c5,c6,c7);
+
 }
 
 /* End of code generation (IK_7DOF.c) */
