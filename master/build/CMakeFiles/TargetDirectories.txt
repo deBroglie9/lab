@@ -1,0 +1,3 @@
+/home/debian/master/build/CMakeFiles/master.dir
+/home/debian/master/build/CMakeFiles/edit_cache.dir
+/home/debian/master/build/CMakeFiles/rebuild_cache.dir
