@@ -46,11 +46,14 @@ public:
         for(int i=0;i<6;i++)
         {
             // 导纳动力学
+            //printf("F:%f,%f,%f,%f,%f,%f\n",x_current[0],x_current[1],x_current[2],x_current[3],x_current[4],x_current[5]);
             ddx[i] = (F_ext[i] - B[i]*dx[i] - K[i]*x[i]) / M[i];
+            //printf("ddx: %f\n",ddx[i]);
 
             dx[i] += ddx[i] * dt;
+            //printf("dx: %f\n",dx[i]);
             x[i]  += dx[i] * dt;
-
+            //printf("x: %f\n",x[i]);
             // 输出目标位姿
             x_target[i] = x_current[i] + x[i];
         }

@@ -5,6 +5,8 @@
 #include <Eigen/Geometry>
 #include <vector>
 
+using namespace Eigen;
+
 #define RIGHT_ARM 0
 #define LEFT_ARM 1
 
@@ -59,7 +61,7 @@ static void IK(int arm, double R[3][3], double phi, double Px, double Py,
 };
 
 Eigen::Vector3d axis_trans(Eigen::Matrix3d R){
-  Eigen::Vector3d Posture=R.eulerAngles(2,1,0);//Z-Y-X
+  Eigen::Vector3d Posture=R.eulerAngles(2,1,0).reverse();//Z-Y-X，输出roll pitch yaw
   return Posture;
 }
 

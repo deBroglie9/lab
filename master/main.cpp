@@ -95,7 +95,7 @@ void cyclic_task()
                 gettimeofday(&tv2, NULL);
                 time_diff = (double)( tv2.tv_sec - tv1.tv_sec + (double)(tv2.tv_usec - tv1.tv_usec)/ 1000000);
                 printf("Time: %.4f s\n", time_diff);
-                reading_force_torque();
+                //reading_force_torque();
                 // reading_ssi();
                 // printf("%x\n",cmdptr->uservalue.Starttime);
                 // printf("%x\n",cmdptr->uservalue.Starttime);
@@ -114,52 +114,54 @@ void cyclic_task()
 
 
         //电机使能
-        if(cmdptr->uservalue.Preparetime && !cmdptr->uservalue.Starttime && !cmdptr->uservalue.Stoptime){
-        // printf("motors enabling\n");
-        if((time_diff < RUNNING_TIME) && (flag_init_all!=1) ){
+        // if(cmdptr->uservalue.Preparetime && !cmdptr->uservalue.Starttime && !cmdptr->uservalue.Stoptime){
+        // // printf("motors enabling\n");
+        // if((time_diff < RUNNING_TIME) && (flag_init_all!=1) ){
 
-            //!(flag_init[0]&flag_init[1]&flag_init[2]&flag_init[3]&flag_init[4]&flag_init[5]&flag_init[6]&flag_init[7]&flag_init[8]&flag_init[9]&flag_init[10]&flag_init[11]&flag_init[12]&flag_init[13])==1
-            // driver_enable(6);
-            // if((EC_READ_U16(domain_pd[0]+off_bytes_0x6041[0]) & 0x037) == 55){
-            // flag_init[6] = 1; 
-            // }
-            printf("enabled drivers: \n");
-            for(counter_slave=0;counter_slave<7;counter_slave++)
-            {   if(!flag_init[counter_slave]){
-                driver_enable(counter_slave);
-                if((EC_READ_U16(domain_pd[counter_slave]+off_bytes_0x6041[counter_slave]) & 0x037) == 55){
-                    flag_init[counter_slave] = 1; 
-                    EC_WRITE_U8(domain_pd[counter_slave]+off_bytes_0x6060[counter_slave], 0x03);
-                }
-                break;
-                }
-                printf("%d ",counter_slave);
-            }
-            printf("\n");
+        //     //!(flag_init[0]&flag_init[1]&flag_init[2]&flag_init[3]&flag_init[4]&flag_init[5]&flag_init[6]&flag_init[7]&flag_init[8]&flag_init[9]&flag_init[10]&flag_init[11]&flag_init[12]&flag_init[13])==1
+        //     // driver_enable(6);
+        //     // if((EC_READ_U16(domain_pd[0]+off_bytes_0x6041[0]) & 0x037) == 55){
+        //     // flag_init[6] = 1; 
+        //     // }
+        //     printf("enabled drivers: \n");
+        //     for(counter_slave=0;counter_slave<DRIVER_NUMBER;counter_slave++)
+        //     {   if(!flag_init[counter_slave]){
+        //         driver_enable(counter_slave);
+        //         if((EC_READ_U16(domain_pd[counter_slave]+off_bytes_0x6041[counter_slave]) & 0x037) == 55){
+        //             flag_init[counter_slave] = 1; 
+        //             EC_WRITE_U8(domain_pd[counter_slave]+off_bytes_0x6060[counter_slave], 0x03);
+        //         }
+        //         break;
+        //         }
+        //         printf("%d ",counter_slave);
+        //     }
+        //     printf("\n");
 
-            for(counter_slave=0;counter_slave<7;counter_slave++){
-                if(flag_init[counter_slave]){
-                    flag_init_all=1;
-                }
-                else{
-                    flag_init_all=0;
-                    break;
-                }
-            }
+        //     for(counter_slave=0;counter_slave<DRIVER_NUMBER;counter_slave++){
+        //         if(flag_init[counter_slave]){
+        //             flag_init_all=1;
+        //         }
+        //         else{
+        //             flag_init_all=0;
+        //             break;
+        //         }
+        //     }
 
-        }
-        else{
-            if(flag_init_all==1){
-                printf("all drivers enabled\n");
-            }
-        }
-        }
+        // }
+        // else{
+        //     if(flag_init_all==1){
+        //         printf("all drivers enabled\n");
+        //     }
+        // }
+        // }
         
         //控制部分
         if(cmdptr->uservalue.Starttime  && !cmdptr->uservalue.Stoptime){
+        //printf("test1\n");
         // printf("%d\n",cmdptr->uservalue.Stage);
+        flag_init_all=1;
         if((time_diff < RUNNING_TIME)&&(flag_init_all==1)&&(flag_stop_all!=1)){
-            
+        //printf("test2\n");
             //((flag_init[0]&flag_init[1]&flag_init[2]&flag_init[3]&flag_init[4]&flag_init[5]&flag_init[6]&flag_init[7]&flag_init[8]&flag_init[9]&flag_init[10]&flag_init[11]&flag_init[12]&flag_init[13])==1)
             
             float trans; 
@@ -188,17 +190,7 @@ void cyclic_task()
                         
                     case MODE_CARTESIAN_TRAJECTORY:
                         // 末端轨迹运动
-                        if(counter2){
-                            counter2--;
-                        }
-                        else{
-                            counter2 = PERIODS_PER_SECOND/PERIODS_PER_SECOND_L-1;
-                            handle_cartesian_trajectory();
-                        }
-                        for (counter_slave = 0; counter_slave < 7; counter_slave++) {
-                            control_pid(counter_slave);
-                            // printf("pid %d\n",counter_slave);
-                        }
+                        handle_cartesian_trajectory();
                         break;
                         
                     case MODE_MANUAL_CARTESIAN:
@@ -208,9 +200,7 @@ void cyclic_task()
                 }
             
         // printf("%f\n",Actual_Torque[3]);
-        admittance[0].update(F_ext[0], x_current[0], x_target[0], dt);
-        admittance[1].update(F_ext[1], x_current[1], x_target[1], dt);
-        write_all_velocity_to_ethercat();
+        //write_all_velocity_to_ethercat();
         //udp通信
         UDP_send();
 
@@ -292,9 +282,14 @@ void stack_prefault(void)
 int main(int argc, char **argv)
 {   
 
-    // Eigen::Vector3d pos;        // x,y,z
-    // Eigen::Matrix3d R;          // 旋转矩阵
-
+    Eigen::Vector3d posture_test={0,0,0};        // x,y,z
+    Eigen::Matrix3d R_test;          // 旋转矩阵
+    Eigen::Vector3d posture_verify;
+    R_test=axis_itrans(posture_test);
+    posture_verify=axis_trans(R_test);
+    std::cout << R_test << std::endl;
+    std::cout << posture_test << std::endl;
+    std::cout << posture_verify << std::endl;
 
     printf("test1\n");
     cmdptr = new KeyBoard();

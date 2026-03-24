@@ -329,7 +329,7 @@ void reading_force_torque(){
     F_ext[LEFT_ARM][3]=(float)EC_READ_S32(domain_pd[DRIVER_NUMBER+ENCODER_NUMBER] + off_bytes_0x4003[0])/10000.0-F_ext_offset[LEFT_ARM][3];
     F_ext[LEFT_ARM][4]=(float)EC_READ_S32(domain_pd[DRIVER_NUMBER+ENCODER_NUMBER] + off_bytes_0x4004[0])/10000.0-F_ext_offset[LEFT_ARM][4];
     F_ext[LEFT_ARM][5]=(float)EC_READ_S32(domain_pd[DRIVER_NUMBER+ENCODER_NUMBER] + off_bytes_0x4005[0])/10000.0-F_ext_offset[LEFT_ARM][5];
-    printf("%f,%f,%f,%f,%f,%f\n",F_ext[LEFT_ARM][0],F_ext[LEFT_ARM][1],F_ext[LEFT_ARM][2],F_ext[LEFT_ARM][3],F_ext[LEFT_ARM][4],F_ext[LEFT_ARM][5]);
+    //printf("%f,%f,%f,%f,%f,%f\n",F_ext[LEFT_ARM][0],F_ext[LEFT_ARM][1],F_ext[LEFT_ARM][2],F_ext[LEFT_ARM][3],F_ext[LEFT_ARM][4],F_ext[LEFT_ARM][5]);
 }
 /****************************************************************************/
 // PID控制
@@ -627,228 +627,249 @@ static int flag_running=0;
 
 // 末端轨迹运动处理函数
 void handle_cartesian_trajectory() {
-    double time1;
-    static double t = 0;
-    char input;
-    offset_temp[11]=-10;
-    if(cmdptr->uservalue.state==0){
-        for(counter_slave=0;counter_slave<7;counter_slave++){
-            pid_controller[counter_slave].setParam(1,0,0);
-        }
+    if(counter2){
+    counter2--;
     }
     else{
-        for(counter_slave=0;counter_slave<7;counter_slave++){
-            pid_controller[counter_slave].setParam(8,0,0);
-        }
-    }
-    // printf("程序将重复执行函数30次，每次执行前需要按任意键继续...\n");
-    // printf("按Ctrl+C可以提前终止程序\n\n");
-    
-    //计算时间测试
-    if(count>cmdptr->uservalue.state){
-        printf("press q to continue NO.%d loop\n",count);
-        flag_running=0;
-    }
-    else if(!flag_running){
-        gettimeofday(&tv2, NULL);
-        time_diff = (double)( tv2.tv_sec - tv1.tv_sec + (double)(tv2.tv_usec - tv1.tv_usec)/ 1000000);
-        t_start=time_diff;
-        flag_running=1;
-    }
-    else{
-        gettimeofday(&tv2, NULL);
-        time_diff = (double)( tv2.tv_sec - tv1.tv_sec + (double)(tv2.tv_usec - tv1.tv_usec)/ 1000000);
-        time1=time_diff;
-        t=time1-t_start;
-        if(count % 2 == 0){
-            // printf("set\n");
-            double phi=0*3.1415926535/180;
-            double Px=0.320;
-            double Py=0.235;
-            double Pz=0;
-            double flag=0;
-            // wrist roll
-            // double R[3][3] = { 0,     -1,      0,
-            //                   cos(20*3.1415926535/180*t/4),    0,    -sin(20*3.1415926535/180*t/4),
-            //                   sin(20*3.1415926535/180*t/4),    0,    cos(20*3.1415926535/180*t/4)};
-            // wrist pitch
-            // double R[3][3] = {-sin(-45*3.1415926535/180*t/4),   -cos(-45*3.1415926535/180*t/4),    0,
-            //                   cos(-45*3.1415926535/180*t/4),    -sin(-45*3.1415926535/180*t/4),    0,
-            //                   0,    0,    1};
-            // wrist yaw
-            // double c[7]={0,0,0,0,0,0,0};
-            // c[3]=3.1415926535/2;
-            // c[6]=3.1415926535 -3.1415926535/2 - 3.1415926535/6*t/4;
-            
-            // elbow
-            // phi=0;
-            // Px=0.3199+0.235*cos((85*t/4+5)*3.1415926535/180);
-            // Py=0.235*sin((85*t/4+5)*3.1415926535/180);
-            // Pz=0;
-            // double R[3][3] ={cos((85*t/4+5)*3.1415926535/180),    -sin((85*t/4+5)*3.1415926535/180),    0,
-            //                 sin((85*t/4+5)*3.1415926535/180),    cos((85*t/4+5)*3.1415926535/180),    0,
-            //                 0,    0,    1};
-
-            //shoulder pitch
-            double c[7]={0,0,0,0,0,0,0};
-            c[0]= 3.1415926535/6*t/4;
-            c[1]= 3.1415926535/6*t/4;
-            c[2]= 3.1415926535/6*t/4;
-            // shoulder yaw
-            // phi=-30*t/4*3.1415926535/180+10*3.1415926535/180;
-            // Px=0.320;
-            // Py=0.235*cos(-30*t/4*3.1415926535/180+10*3.1415926535/180);
-            // Pz=0.235*sin(-30*t/4*3.1415926535/180+10*3.1415926535/180);
-    
-            // double R[3][3] = { 0,     -1,      0,
-            //                   cos(-30*t/4*3.1415926535/180+10*3.1415926535/180),    0,    -sin(-30*t/4*3.1415926535/180+10*3.1415926535/180),
-            //                   sin(-30*t/4*3.1415926535/180+10*3.1415926535/180),    0,    cos(-30*t/4*3.1415926535/180+10*3.1415926535/180)};
-            // shoulder roll
-            // phi=0*3.1415926535/180;
-            // Px=0.5549*cos(10*3.1415926535/180*t/4+10*3.1415926535/180);
-            // Py=0;
-            // Pz=0.5549*sin(10*3.1415926535/180*t/4+10*3.1415926535/180);
-    
-            // double R[3][3] = {cos(10*3.1415926535/180*t/4+10*3.1415926535/180),    0,    -sin(10*3.1415926535/180*t/4+10*3.1415926535/180),
-            //                   0,    1,    0,
-            //                   sin(10*3.1415926535/180*t/4+10*3.1415926535/180),    0,    cos(10*3.1415926535/180*t/4+10*3.1415926535/180)};
-
-            // double c[7];
-
-            // IK(RIGHT_ARM, R, phi, Px, Py, Pz, c, &flag);
-
-
-
-            printf("time: %.4f s, IK flag: %.0f Joint Angles (degrees): ", t, flag);
-            
-            for (counter_slave = 0; counter_slave < 7; counter_slave++) {
-                Target_Position[counter_slave] = c[counter_slave] * 180.0 / 3.1415926535;
-                printf("%.4f ",Target_Position[counter_slave]);
+        counter2 = PERIODS_PER_SECOND/PERIODS_PER_SECOND_L-1;
+        double time1;
+        static double t = 0;
+        char input;
+        //offset_temp[11]=-10;
+        if(cmdptr->uservalue.state==0){
+            for(counter_slave=0;counter_slave<7;counter_slave++){
+                pid_controller[counter_slave].setParam(1,0,0);
             }
-            Target_Position[4]=Target_Position[4]+Target_Position[3];
-            Target_Position[5]=Target_Position[5]+Target_Position[3];
-            printf("\n");
         }
         else{
-            // printf("reset\n");
-            double phi=0*3.1415926535/180;
-            double Px=0.325;
-            double Py=0.230;
-            double Pz=0;
-            double flag=0;
-            // wrist roll
-            // double R[3][3] = { 0,     -1,      0,
-            //                   cos(20*3.1415926535/180*(4.0-t)/4),    0,    -sin(20*3.1415926535/180*(4.0-t)/4),
-            //                   sin(20*3.1415926535/180*(4.0-t)/4),    0,    cos(20*3.1415926535/180*(4.0-t)/4)};
-            // wrist pitch
-            // double R[3][3] = {-sin(-45*3.1415926535/180*(4.0-t)/4),   -cos(-45*3.1415926535/180*(4.0-t)/4),    0,
-            //                   cos(-45*3.1415926535/180*(4.0-t)/4),    -sin(-45*3.1415926535/180*(4.0-t)/4),    0,
-            //                   0,    0,    1};                              
-            // wrist yaw
-            // double c[7]={0,0,0,0,0,0,0};
-            // c[3]=3.1415926535/2;
-            // c[6]=3.1415926535 -3.1415926535/2- 3.1415926535/6*(4.0-t)/4;
-
-            // elbow
-            // phi=0;
-            // Px=0.3199+0.235*cos((85*(4.0-t)/4+5)*3.1415926535/180);
-            // Py=0.235*sin((85*(4.0-t)/4+5)*3.1415926535/180);
-            // Pz=0;
-            // double R[3][3] ={cos((85*(4.0-t)/4+5)*3.1415926535/180),    -sin((85*(4.0-t)/4+5)*3.1415926535/180),    0,
-            //                 sin((85*(4.0-t)/4+5)*3.1415926535/180),    cos((85*(4.0-t)/4+5)*3.1415926535/180),    0,
-            //                 0,    0,    1};
-
-            //shoulder pitch
-            double c[7]={0,0,0,0,0,0,0};
-            c[0]= 3.1415926535/6*(4.0-t)/4;
-            c[1]= 3.1415926535/6*(4.0-t)/4;
-            c[2]= 3.1415926535/6*(4.0-t)/4;
-            // shoulder yaw
-            // phi=-30*(4-t)/4*3.1415926535/180+10*3.1415926535/180;
-            // Px=0.320;
-            // Py=0.235*cos(-30*(4-t)/4*3.1415926535/180+10*3.1415926535/180);
-            // Pz=0.235*sin(-30*(4-t)/4*3.1415926535/180+10*3.1415926535/180);
-    
-            // double R[3][3] = { 0,     -1,      0,
-            //                   cos(-30*(4-t)/4*3.1415926535/180+10*3.1415926535/180),    0,    -sin(-30*(4-t)/4*3.1415926535/180+10*3.1415926535/180),
-            //                   sin(-30*(4-t)/4*3.1415926535/180+10*3.1415926535/180),    0,    cos(-30*(4-t)/4*3.1415926535/180+10*3.1415926535/180)};
-            // shoulder roll
-            // phi=0*3.1415926535/180;
-            // Px=0.5549*cos(10*3.1415926535/180*(4-t)/4+10*3.1415926535/180);
-            // Py=0;
-            // Pz=0.5549*sin(10*3.1415926535/180*(4-t)/4+10*3.1415926535/180);
-    
-            // double R[3][3] = {cos(10*3.1415926535/180*(4-t)/4+10*3.1415926535/180),    0,    -sin(10*3.1415926535/180*(4-t)/4+10*3.1415926535/180),
-            //                   0,    1,    0,
-            //                   sin(10*3.1415926535/180*(4-t)/4+10*3.1415926535/180),    0,    cos(10*3.1415926535/180*(4-t)/4+10*3.1415926535/180)};
-
-            // double c[7];
-
-            // IK(RIGHT_ARM, R, phi, Px, Py, Pz, c, &flag);
-
-
-
-            printf("time: %.4f s, IK flag: %.0f Joint Angles (degrees): ", t, flag);
-            
-            for (counter_slave = 0; counter_slave < 7; counter_slave++) {
-                Target_Position[counter_slave] = c[counter_slave] * 180.0 / 3.1415926535;
-                printf("%.4f ",Target_Position[counter_slave]);
+            for(counter_slave=0;counter_slave<7;counter_slave++){
+                pid_controller[counter_slave].setParam(8,0,0);
             }
-            Target_Position[4]=Target_Position[4]+Target_Position[3];
-            Target_Position[5]=Target_Position[5]+Target_Position[3];
-            printf("\n");
+        }
+        //末端导纳控制
+        std::array<double,6> x_offset;
+        std::array<double,6> x_output;
+
+        x_offset={0.555, 0, 0, 0, 0, 0};
+        double c_l[7]={Actual_Position[7]*3.1415926535/180,Actual_Position[8]*3.1415926535/180,Actual_Position[9]*3.1415926535/180,Actual_Position[10]*3.1415926535/180,Actual_Position[11]*3.1415926535/180,Actual_Position[12]*3.1415926535/180,Actual_Position[13]*3.1415926535/180};
+        //double c_l[7]={0,0,0,0,0,0,0};
+        double c_r[7]={Actual_Position[0],Actual_Position[1],Actual_Position[2],Actual_Position[3],Actual_Position[4],Actual_Position[5],Actual_Position[6]};
+        double T_l[4][4];
+        double T_r[4][4];
+        FK(RIGHT_ARM,c_l,T_l);
+        FK(RIGHT_ARM,c_r,T_r);
+        
+        printf("%f,%f,%f,%f,%f,%f,%f\n",Actual_Position[7],Actual_Position[8],Actual_Position[9],Actual_Position[10],Actual_Position[11],Actual_Position[12],Actual_Position[13]);
+        //printf("%f,%f,%f\n %f,%f,%f\n %f,%f,%f\n",T_l[0][0],T_l[0][1],T_l[0][2],T_l[1][0],T_l[1][1],T_l[1][2],T_l[2][0],T_l[2][1],T_l[2][2]);
+        // std::cout <<"joints:"<< Actual_Position[7]<<Actual_Position[8]<<Actual_Position[9]<<Actual_Position[10]<<Actual_Position[11]<<Actual_Position[12]<<Actual_Position[13] << std::endl;
+        // std::cout <<"Rotation:"<< T_l[0][0]<<T_l[0][1]<<T_l[0][2]<<T_l[1][0]<<T_l[1][1]<<T_l[1][2]<<T_l[2][0]<<T_l[2][1]<<T_l[2][2] << std::endl;
+        Eigen::Matrix3d R_trans;
+        R_trans<<T_l[0][0],T_l[0][1],T_l[0][2],T_l[1][0],T_l[1][1],T_l[1][2],T_l[2][0],T_l[2][1],T_l[2][2];
+        std::cout << R_trans << std::endl;
+        Eigen::Vector3d Posture;
+        Posture=axis_trans(R_trans);
+        for(int i = 0; i < 3; i ++)
+        {
+            x_current[1][i] = T_l[i][3]-x_offset[i]; 
+            x_current[1][i+3] = Posture(i)-x_offset[i+3]; 
+            
+        }
+        printf("%f,%f,%f,%f,%f,%f\n",x_current[1][0],x_current[1][1],x_current[1][2],x_current[1][3],x_current[1][4],x_current[1][5]);
+        R_trans<<T_r[0][0],T_r[0][1],T_r[0][2],T_r[1][0],T_r[1][1],T_r[1][2],T_r[2][0],T_r[2][1],T_r[2][2];
+        Posture=axis_trans(R_trans);
+        for(int i = 0; i < 3; i ++)
+        {
+            x_current[0][i] = T_r[i][3]-x_offset[i]; 
+            x_current[0][i+3] = Posture(i)-x_offset[i+3]; 
         }
 
-        //running code//
-        // printf("running\n");
-        if(t>4){
-            count++;
-            flag_running=0;
-            printf("finished\n");
+        //admittance[0].update(F_ext[0], x_current[0], x_target[0], dt);
+        admittance[1].update(F_ext[1], x_current[1], x_target[1], dt);
+
+        // x_output << x_current[0]+x_target[0];
+        // std::cout << x_output << std::endl;
+        printf("target:");
+        for (int i = 0; i < 6; i ++){
+            x_output[i] = x_offset[i]+x_target[1][i];
+            printf(" %f ",x_output[i]);
         }
+        printf("\n");
         
+        // std::cout << x_output << std::endl;
+
+        //重复定位精度测试
+        // printf("程序将重复执行函数30次，每次执行前需要按任意键继续...\n");
+        // printf("按Ctrl+C可以提前终止程序\n\n");
+        
+        // //计算时间测试
+        // if(count>cmdptr->uservalue.state){
+        //     printf("press q to continue NO.%d loop\n",count);
+        //     flag_running=0;
+        // }
+        // else if(!flag_running){
+        //     gettimeofday(&tv2, NULL);
+        //     time_diff = (double)( tv2.tv_sec - tv1.tv_sec + (double)(tv2.tv_usec - tv1.tv_usec)/ 1000000);
+        //     t_start=time_diff;
+        //     flag_running=1;
+        // }
+        // else{
+        //     gettimeofday(&tv2, NULL);
+        //     time_diff = (double)( tv2.tv_sec - tv1.tv_sec + (double)(tv2.tv_usec - tv1.tv_usec)/ 1000000);
+        //     time1=time_diff;
+        //     t=time1-t_start;
+        //     if(count % 2 == 0){
+        //         // printf("set\n");
+        //         double phi=0*3.1415926535/180;
+        //         double Px=0.320;
+        //         double Py=0.235;
+        //         double Pz=0;
+        //         double flag=0;
+        //         // wrist roll
+        //         // double R[3][3] = { 0,     -1,      0,
+        //         //                   cos(20*3.1415926535/180*t/4),    0,    -sin(20*3.1415926535/180*t/4),
+        //         //                   sin(20*3.1415926535/180*t/4),    0,    cos(20*3.1415926535/180*t/4)};
+        //         // wrist pitch
+        //         // double R[3][3] = {-sin(-45*3.1415926535/180*t/4),   -cos(-45*3.1415926535/180*t/4),    0,
+        //         //                   cos(-45*3.1415926535/180*t/4),    -sin(-45*3.1415926535/180*t/4),    0,
+        //         //                   0,    0,    1};
+        //         // wrist yaw
+        //         // double c[7]={0,0,0,0,0,0,0};
+        //         // c[3]=3.1415926535/2;
+        //         // c[6]=3.1415926535 -3.1415926535/2 - 3.1415926535/6*t/4;
+                
+        //         // elbow
+        //         // phi=0;
+        //         // Px=0.3199+0.235*cos((85*t/4+5)*3.1415926535/180);
+        //         // Py=0.235*sin((85*t/4+5)*3.1415926535/180);
+        //         // Pz=0;
+        //         // double R[3][3] ={cos((85*t/4+5)*3.1415926535/180),    -sin((85*t/4+5)*3.1415926535/180),    0,
+        //         //                 sin((85*t/4+5)*3.1415926535/180),    cos((85*t/4+5)*3.1415926535/180),    0,
+        //         //                 0,    0,    1};
+
+        //         //shoulder pitch
+        //         double c[7]={0,0,0,0,0,0,0};
+        //         c[0]= 3.1415926535/6*t/4;
+        //         c[1]= 3.1415926535/6*t/4;
+        //         c[2]= 3.1415926535/6*t/4;
+        //         // shoulder yaw
+        //         // phi=-30*t/4*3.1415926535/180+10*3.1415926535/180;
+        //         // Px=0.320;
+        //         // Py=0.235*cos(-30*t/4*3.1415926535/180+10*3.1415926535/180);
+        //         // Pz=0.235*sin(-30*t/4*3.1415926535/180+10*3.1415926535/180);
+        
+        //         // double R[3][3] = { 0,     -1,      0,
+        //         //                   cos(-30*t/4*3.1415926535/180+10*3.1415926535/180),    0,    -sin(-30*t/4*3.1415926535/180+10*3.1415926535/180),
+        //         //                   sin(-30*t/4*3.1415926535/180+10*3.1415926535/180),    0,    cos(-30*t/4*3.1415926535/180+10*3.1415926535/180)};
+        //         // shoulder roll
+        //         // phi=0*3.1415926535/180;
+        //         // Px=0.5549*cos(10*3.1415926535/180*t/4+10*3.1415926535/180);
+        //         // Py=0;
+        //         // Pz=0.5549*sin(10*3.1415926535/180*t/4+10*3.1415926535/180);
+        
+        //         // double R[3][3] = {cos(10*3.1415926535/180*t/4+10*3.1415926535/180),    0,    -sin(10*3.1415926535/180*t/4+10*3.1415926535/180),
+        //         //                   0,    1,    0,
+        //         //                   sin(10*3.1415926535/180*t/4+10*3.1415926535/180),    0,    cos(10*3.1415926535/180*t/4+10*3.1415926535/180)};
+
+        //         // double c[7];
+
+        //         // IK(RIGHT_ARM, R, phi, Px, Py, Pz, c, &flag);
+
+
+
+        //         printf("time: %.4f s, IK flag: %.0f Joint Angles (degrees): ", t, flag);
+                
+        //         for (counter_slave = 0; counter_slave < 7; counter_slave++) {
+        //             Target_Position[counter_slave] = c[counter_slave] * 180.0 / 3.1415926535;
+        //             printf("%.4f ",Target_Position[counter_slave]);
+        //         }
+        //         Target_Position[4]=Target_Position[4]+Target_Position[3];
+        //         Target_Position[5]=Target_Position[5]+Target_Position[3];
+        //         printf("\n");
+        //     }
+        //     else{
+        //         // printf("reset\n");
+        //         double phi=0*3.1415926535/180;
+        //         double Px=0.325;
+        //         double Py=0.230;
+        //         double Pz=0;
+        //         double flag=0;
+        //         // wrist roll
+        //         // double R[3][3] = { 0,     -1,      0,
+        //         //                   cos(20*3.1415926535/180*(4.0-t)/4),    0,    -sin(20*3.1415926535/180*(4.0-t)/4),
+        //         //                   sin(20*3.1415926535/180*(4.0-t)/4),    0,    cos(20*3.1415926535/180*(4.0-t)/4)};
+        //         // wrist pitch
+        //         // double R[3][3] = {-sin(-45*3.1415926535/180*(4.0-t)/4),   -cos(-45*3.1415926535/180*(4.0-t)/4),    0,
+        //         //                   cos(-45*3.1415926535/180*(4.0-t)/4),    -sin(-45*3.1415926535/180*(4.0-t)/4),    0,
+        //         //                   0,    0,    1};                              
+        //         // wrist yaw
+        //         // double c[7]={0,0,0,0,0,0,0};
+        //         // c[3]=3.1415926535/2;
+        //         // c[6]=3.1415926535 -3.1415926535/2- 3.1415926535/6*(4.0-t)/4;
+
+        //         // elbow
+        //         // phi=0;
+        //         // Px=0.3199+0.235*cos((85*(4.0-t)/4+5)*3.1415926535/180);
+        //         // Py=0.235*sin((85*(4.0-t)/4+5)*3.1415926535/180);
+        //         // Pz=0;
+        //         // double R[3][3] ={cos((85*(4.0-t)/4+5)*3.1415926535/180),    -sin((85*(4.0-t)/4+5)*3.1415926535/180),    0,
+        //         //                 sin((85*(4.0-t)/4+5)*3.1415926535/180),    cos((85*(4.0-t)/4+5)*3.1415926535/180),    0,
+        //         //                 0,    0,    1};
+
+        //         //shoulder pitch
+        //         double c[7]={0,0,0,0,0,0,0};
+        //         c[0]= 3.1415926535/6*(4.0-t)/4;
+        //         c[1]= 3.1415926535/6*(4.0-t)/4;
+        //         c[2]= 3.1415926535/6*(4.0-t)/4;
+        //         // shoulder yaw
+        //         // phi=-30*(4-t)/4*3.1415926535/180+10*3.1415926535/180;
+        //         // Px=0.320;
+        //         // Py=0.235*cos(-30*(4-t)/4*3.1415926535/180+10*3.1415926535/180);
+        //         // Pz=0.235*sin(-30*(4-t)/4*3.1415926535/180+10*3.1415926535/180);
+        
+        //         // double R[3][3] = { 0,     -1,      0,
+        //         //                   cos(-30*(4-t)/4*3.1415926535/180+10*3.1415926535/180),    0,    -sin(-30*(4-t)/4*3.1415926535/180+10*3.1415926535/180),
+        //         //                   sin(-30*(4-t)/4*3.1415926535/180+10*3.1415926535/180),    0,    cos(-30*(4-t)/4*3.1415926535/180+10*3.1415926535/180)};
+        //         // shoulder roll
+        //         // phi=0*3.1415926535/180;
+        //         // Px=0.5549*cos(10*3.1415926535/180*(4-t)/4+10*3.1415926535/180);
+        //         // Py=0;
+        //         // Pz=0.5549*sin(10*3.1415926535/180*(4-t)/4+10*3.1415926535/180);
+        
+        //         // double R[3][3] = {cos(10*3.1415926535/180*(4-t)/4+10*3.1415926535/180),    0,    -sin(10*3.1415926535/180*(4-t)/4+10*3.1415926535/180),
+        //         //                   0,    1,    0,
+        //         //                   sin(10*3.1415926535/180*(4-t)/4+10*3.1415926535/180),    0,    cos(10*3.1415926535/180*(4-t)/4+10*3.1415926535/180)};
+
+        //         // double c[7];
+
+        //         // IK(RIGHT_ARM, R, phi, Px, Py, Pz, c, &flag);
+
+
+
+        //         printf("time: %.4f s, IK flag: %.0f Joint Angles (degrees): ", t, flag);
+                
+        //         for (counter_slave = 0; counter_slave < 7; counter_slave++) {
+        //             Target_Position[counter_slave] = c[counter_slave] * 180.0 / 3.1415926535;
+        //             printf("%.4f ",Target_Position[counter_slave]);
+        //         }
+        //         Target_Position[4]=Target_Position[4]+Target_Position[3];
+        //         Target_Position[5]=Target_Position[5]+Target_Position[3];
+        //         printf("\n");
+        //     }
+
+        //     //running code//
+        //     // printf("running\n");
+        //     if(t>4){
+        //         count++;
+        //         flag_running=0;
+        //         printf("finished\n");
+        //     }
+        // }
     }
 
-    
-
-        // EC_WRITE_S32(domain_pd[6]+off_bytes_0x60ff[6],2000);
-        
-    
-    // printf("calculate start Time: %.4f s\n", time_diff);
-    // printf("calculate stop Time: %.4f s\n", time_diff);
-    // printf("第%d次执行\n", count + 1);
-
-    
-    // if(t>4){
-    //     counter_loop+=1;
-    //     printf("第%d次完成\n",count);
-        
-    // }
-    // if(count>cmdptr->uservalue.Stage){
-    //     printf("waiting for next stage\n");
-    // }
-    // else{
-    // double phi=0*3.1415926535/180;
-    // double Px=0.555;
-    // double Py=0;
-    // double Pz=0;
-    // double flag=0;
-    // // wrist roll
-    // double R[3][3] = {cos(25*3.1415926535/180*t/5),    0,    -sin(25*3.1415926535/180*t/5),
-    //                    0,    1,    0,
-    //                    sin(25*3.1415926535/180*t/5),    0,    cos(25*3.1415926535/180*t/5)};
-    // double c[7];
-
-    // IK(RIGHT_ARM, R, phi, Px, Py, Pz, c, &flag);
-
-
-
-    // printf("time: %.2f s, IK flag: %.0f\n", t, flag);
-    // printf("Joint Angles (degrees): ");
-    // for (int i = 0; i < 7; i++) {
-    //     Target_Position[i] = c[i] * 180.0 / M_PI;
-    // }
-    // }
+        for (counter_slave = 0; counter_slave < DRIVER_NUMBER; counter_slave++) {
+            control_pid(counter_slave);
+        // printf("pid %d\n",counter_slave);
+        }
 }
 
 
