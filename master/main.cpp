@@ -1,43 +1,23 @@
 /*****************************************************************************
- * 2025/3/18
+ * 2025/4/2
  * 重新修改架构，部分代码放入control文件夹下的h文件中，部分放入main.h文件
+ * 加入admittance_controller导纳控制，目前仅进行位置导纳
  * main.cpp仅包含初始化和循环
- * 电机可以正常使能并进行运动
+ * EtherCAT.h库可使用，不使用可设置CONFIGURE_EC 0，修改节点需要对应修改
+ * 
  * 目前接入1个六维力 2个编码器 14个驱动器 代码目前可连接17个从站，2个六维力+1个编码器+14个驱动器，需要修改 DRIVER_NUMBER ENCODER_NUMBER SENSOR_NUMBER DOMAIN_NUMBER
- * 驱动器顺序为右臂1-7 -> 左臂1-7
- * 设置driver_enable,drivesr_disable,reading_driver，reading_ssi，control_pid函数
- * 设置模式选择函数，通过ControlMode修改控制模式（待测试）
- * 加入正逆运动学求解函数，读入X,Y,Z和R(3*3逐行读入)
- * EtherCAT.h库可使用，不使用可设置CONFIGURE_EC 0
- * 
- * 给定了一组轨迹，可读入并执行（已调试），注意修改轨迹时修改对应csv的数组大小 NUMBER
- * 轨迹中1-14依次为左臂1-7、右臂1-7的关节角
- * 
- *  $Id: main.c,v 6a6dec6fc806 2012/09/19 17:46:58 fp $
+ * 驱动器顺序为右臂1-7 -> 左臂1-7 -> 采集模块 -> 左臂六维力
  *
- *  Copyright (C) 2007-2009  Florian Pose, Ingenieurgemeinschaft IgH
- *
- *  This file is part of the IgH EtherCAT Master.
- *
- *  The IgH EtherCAT Master is free software; you can redistribute it and/or
- *  modify it under the terms of the GNU General Public License version 2, as
- *  published by the Free Software Foundation.
- *
- *  The IgH EtherCAT Master is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General
- *  Public License for more details.
- *
- *  You should have received a copy of the GNU General Public License along
- *  with the IgH EtherCAT Master; if not, write to the Free Software
- *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
- *
- *  ---
- *
- *  The license mentioned above concerns the source code only. Using the
- *  EtherCAT technology and brand is only permitted in compliance with the
- *  industrial property and similar rights of Beckhoff Automation GmbH.
- *
+ * 电机可以正常使能并进行运动
+ * 设置函数
+ * driver_enable:电机使能函数
+ * drivesr_disable:电机去使能函数
+ * reading_driver:读取电机端编码器（无记忆），转换为角度degree
+ * reading_ssi:读取输出端编码器（有记忆，零位提前确定），转换为角度
+ * control_pid:PID控制，输出角度信号
+ * write_all_velocity_to_ethercat:将速度指令输出到从站驱动器
+ * 设置模式选择，通过ControlMode修改控制模式
+ * 加入正逆运动学求解函数FK IK（rad）
  ****************************************************************************/
 #include <main.h>
 
@@ -57,13 +37,8 @@ void cyclic_task()
     // gettimeofday(&tv2, NULL);
     // time_diff = (double)( tv2.tv_sec - tv1.tv_sec + (double)(tv2.tv_usec - tv1.tv_usec)/ 1000000);
     // time1=time_diff;
-    // // printf("calculate start Time: %.4f s\n", time_diff);
-    // main_IK_7DOF();
-    // gettimeofday(&tv2, NULL);
-    // time_diff = (double)( tv2.tv_sec - tv1.tv_sec + (double)(tv2.tv_usec - tv1.tv_usec)/ 1000000);
-    // time2=time_diff;
-    // // printf("calculate stop Time: %.4f s\n", time_diff);
-    // printf("calculate time: %.6f s\n", time2-time1);
+    // printf("calculate start Time: %.4f s\n", time_diff);
+
 
     // receive process data
     ecrt_master_receive(master);
@@ -114,51 +89,49 @@ void cyclic_task()
 
 
         //电机使能
-        // if(cmdptr->uservalue.Preparetime && !cmdptr->uservalue.Starttime && !cmdptr->uservalue.Stoptime){
-        // // printf("motors enabling\n");
-        // if((time_diff < RUNNING_TIME) && (flag_init_all!=1) ){
+        if(cmdptr->uservalue.Preparetime && !cmdptr->uservalue.Starttime && !cmdptr->uservalue.Stoptime){
+        // printf("motors enabling\n");
+        if((time_diff < RUNNING_TIME) && (flag_init_all!=1) ){
 
-        //     //!(flag_init[0]&flag_init[1]&flag_init[2]&flag_init[3]&flag_init[4]&flag_init[5]&flag_init[6]&flag_init[7]&flag_init[8]&flag_init[9]&flag_init[10]&flag_init[11]&flag_init[12]&flag_init[13])==1
-        //     // driver_enable(6);
-        //     // if((EC_READ_U16(domain_pd[0]+off_bytes_0x6041[0]) & 0x037) == 55){
-        //     // flag_init[6] = 1; 
-        //     // }
-        //     printf("enabled drivers: \n");
-        //     for(counter_slave=0;counter_slave<DRIVER_NUMBER;counter_slave++)
-        //     {   if(!flag_init[counter_slave]){
-        //         driver_enable(counter_slave);
-        //         if((EC_READ_U16(domain_pd[counter_slave]+off_bytes_0x6041[counter_slave]) & 0x037) == 55){
-        //             flag_init[counter_slave] = 1; 
-        //             EC_WRITE_U8(domain_pd[counter_slave]+off_bytes_0x6060[counter_slave], 0x03);
-        //         }
-        //         break;
-        //         }
-        //         printf("%d ",counter_slave);
-        //     }
-        //     printf("\n");
+            //!(flag_init[0]&flag_init[1]&flag_init[2]&flag_init[3]&flag_init[4]&flag_init[5]&flag_init[6]&flag_init[7]&flag_init[8]&flag_init[9]&flag_init[10]&flag_init[11]&flag_init[12]&flag_init[13])==1
+            // driver_enable(6);
+            // if((EC_READ_U16(domain_pd[0]+off_bytes_0x6041[0]) & 0x037) == 55){
+            // flag_init[6] = 1; 
+            // }
+            printf("enabled drivers: \n");
+            for(counter_slave=0;counter_slave<DRIVER_NUMBER;counter_slave++)
+            {   if(!flag_init[counter_slave]){
+                driver_enable(counter_slave);
+                if((EC_READ_U16(domain_pd[counter_slave]+off_bytes_0x6041[counter_slave]) & 0x037) == 55){
+                    flag_init[counter_slave] = 1; 
+                    EC_WRITE_U8(domain_pd[counter_slave]+off_bytes_0x6060[counter_slave], 0x03);
+                }
+                break;
+                }
+                printf("%d ",counter_slave);
+            }
+            printf("\n");
 
-        //     for(counter_slave=0;counter_slave<DRIVER_NUMBER;counter_slave++){
-        //         if(flag_init[counter_slave]){
-        //             flag_init_all=1;
-        //         }
-        //         else{
-        //             flag_init_all=0;
-        //             break;
-        //         }
-        //     }
+            for(counter_slave=0;counter_slave<DRIVER_NUMBER;counter_slave++){
+                if(flag_init[counter_slave]){
+                    flag_init_all=1;
+                }
+                else{
+                    flag_init_all=0;
+                    break;
+                }
+            }
 
-        // }
-        // else{
-        //     if(flag_init_all==1){
-        //         printf("all drivers enabled\n");
-        //     }
-        // }
-        // }
+        }
+        else{
+            if(flag_init_all==1){
+                printf("all drivers enabled\n");
+            }
+        }
+        }
         
         //控制部分
         if(cmdptr->uservalue.Starttime  && !cmdptr->uservalue.Stoptime){
-        //printf("test1\n");
-        // printf("%d\n",cmdptr->uservalue.Stage);
         flag_init_all=1;
         if((time_diff < RUNNING_TIME)&&(flag_init_all==1)&&(flag_stop_all!=1)){
         //printf("test2\n");
@@ -174,7 +147,7 @@ void cyclic_task()
             //reading_driver();
             reading_ssi();
             reading_force_torque();
-            // reading_current();
+            reading_current();
 
             //模式选择
             switch (current_mode) {
@@ -200,11 +173,11 @@ void cyclic_task()
                 }
             
         // printf("%f\n",Actual_Torque[3]);
-        //write_all_velocity_to_ethercat();
+        write_all_velocity_to_ethercat();
         //udp通信
         UDP_send();
 
-
+            
         
             
         }
@@ -256,6 +229,12 @@ void cyclic_task()
         ecrt_domain_queue(domain[counter_domain]);
     }
     ecrt_master_send(master);
+
+    // gettimeofday(&tv2, NULL);
+    // time_diff = (double)( tv2.tv_sec - tv1.tv_sec + (double)(tv2.tv_usec - tv1.tv_usec)/ 1000000);
+    // time2=time_diff;
+    // // printf("calculate stop Time: %.4f s\n", time_diff);
+    // printf("calculate time: %.6f s\n", time2-time1);
 }
 
 /****************************************************************************/
@@ -314,7 +293,10 @@ int main(int argc, char **argv)
     char *token;
 
     int count = 0;
-    for(i=0;i<48000;i++){angle[i]=41-40*cos(3.1415926536*i/1200);
+    // for(i=0;i<48000;i++){angle[i]=41-40*cos(3.1415926536*i/1200);
+    // angle[i]=floor(angle[i] * 1000000.000f + 0.5) / 1000000.000f;
+    // }
+    for(i=0;i<48000;i++){angle[i]=60-30*cos(3.1415926536*i/3000);
     angle[i]=floor(angle[i] * 1000000.000f + 0.5) / 1000000.000f;
     }
 
@@ -440,16 +422,16 @@ int main(int argc, char **argv)
     gettimeofday(&tv1, NULL);
 
     for(counter_slave=0;counter_slave<DRIVER_NUMBER;counter_slave++){
-        pid_controller[counter_slave].setParam(5,0,0);
+        pid_controller[counter_slave].setParam(2,0,0);
     }
     for(counter_slave=0;counter_slave<2;counter_slave++){
-        admittance[counter_slave].setParam(0,1,3,5);
-        admittance[counter_slave].setParam(1,1,3,5);
-        admittance[counter_slave].setParam(2,1,3,5);
+        admittance[counter_slave].setParam(0,2,5,250);
+        admittance[counter_slave].setParam(1,2,5,250);
+        admittance[counter_slave].setParam(2,2,5,250);
 
-        admittance[counter_slave].setParam(3,1,3,5);
-        admittance[counter_slave].setParam(4,1,3,5);
-        admittance[counter_slave].setParam(5,1,3,5);
+        admittance[counter_slave].setParam(3,99999999999,0,0);
+        admittance[counter_slave].setParam(4,99999999999,0,0);
+        admittance[counter_slave].setParam(5,99999999999,0,0);
     }
 
     //计算时间测试
@@ -487,13 +469,14 @@ int main(int argc, char **argv)
     printf("**********press p to enable**********\n");
     printf("**********press a to start**********\n");
     printf("**********press s to stop**********\n");
+    printf("**********press t to teach**********\n");
+    //handle_cartesian_trajectory();
     while (1)
     {
         pause();
         while (sig_alarms != user_alarms)
         {       
             cyclic_task();
-            //handle_cartesian_trajectory();
             // reading_force_torque();
             user_alarms++;
             if(time_diff > RUNNING_TIME || flag_stop_all){

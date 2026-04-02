@@ -46,7 +46,7 @@
 // Application parameters
 #define FREQUENCY 1000
 #define PRIORITY 1
-#define MAX_VELOCITY_1 900000
+#define MAX_VELOCITY_1 90000
 #define MAX_VELOCITY_2 160000
 #define MAX_VELOCITY_3 112000
 #define PERIODS_PER_SECOND   1000
@@ -66,10 +66,10 @@ PIDController pid_controller[DRIVER_NUMBER];
 
 AdmittanceController admittance[2];
 std::array<double,6> F_ext[2];     // Fx Fy Fz Mx My Mz
-std::array<double,6> F_ext_offset[2]={0,0,0,0,0,0,86.299900,5.113000,204.256800,-0.385200,3.826700,1.330800};
+std::array<double,6> F_ext_offset[2]={0,0,0,0,0,0,89.346200,4.520300,205.619800,-0.368600,3.729000,1.232900};
 std::array<double,6> x_current[2]; // 当前末端位姿
 std::array<double,6> x_target[2];  // 输出目标位姿
-float dt = 0.001;
+float dt = 0.02;
 
 static float max_velocity[DRIVER_NUMBER]={0.2*MAX_VELOCITY_1,0.2*MAX_VELOCITY_1,0.2*MAX_VELOCITY_1,0.2*MAX_VELOCITY_1,0.2*MAX_VELOCITY_2,0.2*MAX_VELOCITY_2,0.2*MAX_VELOCITY_3,
 0.2*MAX_VELOCITY_1,0.2*MAX_VELOCITY_1,0.2*MAX_VELOCITY_1,0.2*MAX_VELOCITY_1,0.2*MAX_VELOCITY_2,0.2*MAX_VELOCITY_2,0.2*MAX_VELOCITY_3};
@@ -142,10 +142,13 @@ typedef enum {
     MODE_JOINT_TRAJECTORY = 0,    // 模式1: 关节轨迹运动
     MODE_MANUAL_JOINT = 1,         // 模式2: 手动调节关节位置
     MODE_CARTESIAN_TRAJECTORY = 2, // 模式3: 末端轨迹运动
-    MODE_MANUAL_CARTESIAN = 3      // 模式4: 手动控制末端位姿
+    MODE_MANUAL_CARTESIAN = 3,      // 模式4: 手动控制末端位姿
+    MODE_TEACH_ = 4,                 // 模式5: 示教记录
+    MODE_TEACH_PLAY = 5              // 模式6: 示教演示
 } ControlMode;
 
-static ControlMode current_mode = MODE_CARTESIAN_TRAJECTORY;
+static ControlMode current_mode =  MODE_CARTESIAN_TRAJECTORY;
+
 static int mode_changed = 0;
 
 // 添加逆运动学参数
@@ -230,10 +233,10 @@ void reading_ssi(){
             ssi=EC_READ_U32(domain_pd[counter_slave] + off_bytes_0x606C[counter_slave]);
             Actual_Velocity[counter_slave]=(float)ssi;
     }
-
-    // printf("motor position:");
+    offset_temp[13]=-20;
+    //printf("motor position:");
     for(counter_slave=0;counter_slave<DRIVER_NUMBER;counter_slave++){
-
+        
             Actual_Position[counter_slave]=Actual_Position[counter_slave]-offset_temp[counter_slave];
         while( (Actual_Position[counter_slave]>180) || (Actual_Position[counter_slave]<-180)){
             if(Actual_Position[counter_slave]>180){
@@ -243,10 +246,10 @@ void reading_ssi(){
                 Actual_Position[counter_slave]=Actual_Position[counter_slave]+360;
             }
         }
-        // printf("%.4f  ",Actual_Position[counter_slave]);  
+        //printf("%.4f  ",Actual_Position[counter_slave]);  
     }
 
-    // printf("\n");
+    //printf("\n");
 
     // printf("target position:");
     // for(counter_slave=0;counter_slave<DRIVER_NUMBER;counter_slave++){
@@ -386,6 +389,14 @@ if (cmdptr->uservalue.Stage == 1) {
             //     Target_Position[5]=Target_Position[5]+Target_Position[3];
             //     Target_Position[11]=Target_Position[11]+Target_Position[10];
             //     Target_Position[12]=Target_Position[12]+Target_Position[10];
+
+            //举重
+            Target_Position[3]=angle[0];
+            Target_Position[4]=angle[0];
+            Target_Position[5]=angle[0];
+            Target_Position[10]=angle[0];
+            Target_Position[11]=angle[0];
+            Target_Position[12]=angle[0];
             break;
         case 1: 
         {   counter_loop++;
@@ -421,43 +432,54 @@ if (cmdptr->uservalue.Stage == 1) {
             }
         }
             break;
+        case 2:
+        {
+            for(counter_slave=0;counter_slave<DRIVER_NUMBER;counter_slave++){
+                control_pid(counter_slave);
+            }
+        }
+        default: break;
+    }
+}
+if (cmdptr->uservalue.Stage == 2) {
+    switch (stage){
         case 2: 
             printf("stage 2: %d\n",counter_loop);
-            if(cmdptr->uservalue.Stage==1){
+            if(cmdptr->uservalue.Stage==2){
                 counter_loop++;
-                if(counter_loop<9600){
+                if(counter_loop<18000){
                     //for(counter_slave=0;counter_slave<DRIVER_NUMBER;counter_slave++){
                     // Target_Position[counter_slave]=180/3.1415926536*values[14*counter_loop+counter_slave];
                     //}
 
                     //举重
-                    // Target_Position[3]=angle[counter_loop];
-                    // Target_Position[4]=angle[counter_loop];
-                    // Target_Position[5]=angle[counter_loop];
-                    // Target_Position[10]=angle[counter_loop];
-                    // Target_Position[11]=angle[counter_loop];
-                    // Target_Position[12]=angle[counter_loop];
+                    Target_Position[3]=angle[counter_loop];
+                    Target_Position[4]=angle[counter_loop];
+                    Target_Position[5]=angle[counter_loop];
+                    Target_Position[10]=angle[counter_loop];
+                    Target_Position[11]=angle[counter_loop];
+                    Target_Position[12]=angle[counter_loop];
 
                     //跑步
-                    Target_Position[3]=angle1[counter_loop];
-                    Target_Position[4]=angle1[counter_loop];
-                    Target_Position[5]=angle1[counter_loop];
-                    Target_Position[10]=angle1[counter_loop];
-                    Target_Position[11]=angle1[counter_loop];
-                    Target_Position[12]=angle1[counter_loop];
-                    Target_Position[0]=-angle2[counter_loop];
-                    Target_Position[1]=-angle2[counter_loop];
-                    Target_Position[2]=-angle2[counter_loop];
-                    Target_Position[7]=angle2[counter_loop];
-                    Target_Position[8]=angle2[counter_loop];
-                    Target_Position[9]=angle2[counter_loop];
+                    // Target_Position[3]=angle1[counter_loop];
+                    // Target_Position[4]=angle1[counter_loop];
+                    // Target_Position[5]=angle1[counter_loop];
+                    // Target_Position[10]=angle1[counter_loop];
+                    // Target_Position[11]=angle1[counter_loop];
+                    // Target_Position[12]=angle1[counter_loop];
+                    // Target_Position[0]=-angle2[counter_loop];
+                    // Target_Position[1]=-angle2[counter_loop];
+                    // Target_Position[2]=-angle2[counter_loop];
+                    // Target_Position[7]=angle2[counter_loop];
+                    // Target_Position[8]=angle2[counter_loop];
+                    // Target_Position[9]=angle2[counter_loop];
 
 
 
                     std::cout << angle[counter_loop] << std::endl;
                 }  
                 else{
-                    counter_loop=9600;
+                    counter_loop=18000;
                     for(counter_slave=0;counter_slave<DRIVER_NUMBER;counter_slave++){
                     // Target_Position[counter_slave]=180/3.1415926536*values[14*counter_loop+counter_slave];
                     }
@@ -643,59 +665,99 @@ void handle_cartesian_trajectory() {
         }
         else{
             for(counter_slave=0;counter_slave<7;counter_slave++){
-                pid_controller[counter_slave].setParam(8,0,0);
+                pid_controller[counter_slave].setParam(1,0,0);
             }
         }
         //末端导纳控制
         std::array<double,6> x_offset;
         std::array<double,6> x_output;
+        Eigen::Matrix3d R_base2end;
+        Eigen::Matrix3d R_end2tool;
+        Eigen::Matrix3d R_base2tool;
+        Eigen::Matrix3d R_90;
+        Eigen::Matrix3d R_trans;
+        Eigen::Vector3d Posture;
+        Eigen::Vector3d Position;
+        double Px=Position[0];
+        double Py=Position[1];
+        double Pz=Position[2];
+        double c[7];
+        double flag=0;
+        double phi=0;
 
-        x_offset={0.555, 0, 0, 0, 0, 0};
+        x_offset={-0.160000,-0.277128,0.235000,-1.570796,2.094395,0.000000};//90 degree
+        //x_offset={0,0,0,0,0,0};//90 degree
         double c_l[7]={Actual_Position[7]*3.1415926535/180,Actual_Position[8]*3.1415926535/180,Actual_Position[9]*3.1415926535/180,Actual_Position[10]*3.1415926535/180,Actual_Position[11]*3.1415926535/180,Actual_Position[12]*3.1415926535/180,Actual_Position[13]*3.1415926535/180};
-        //double c_l[7]={0,0,0,0,0,0,0};
+        //double c_l[7]={0,0,0,3.1415926535/2,0,0,0};
         double c_r[7]={Actual_Position[0],Actual_Position[1],Actual_Position[2],Actual_Position[3],Actual_Position[4],Actual_Position[5],Actual_Position[6]};
         double T_l[4][4];
         double T_r[4][4];
-        FK(RIGHT_ARM,c_l,T_l);
+
+        FK(LEFT_ARM,c_l,T_l);
         FK(RIGHT_ARM,c_r,T_r);
         
-        printf("%f,%f,%f,%f,%f,%f,%f\n",Actual_Position[7],Actual_Position[8],Actual_Position[9],Actual_Position[10],Actual_Position[11],Actual_Position[12],Actual_Position[13]);
+        //printf("%f,%f,%f,%f,%f,%f,%f\n",c_l[0],c_l[1],c_l[2],c_l[3],c_l[4],c_l[5],c_l[6]);
         //printf("%f,%f,%f\n %f,%f,%f\n %f,%f,%f\n",T_l[0][0],T_l[0][1],T_l[0][2],T_l[1][0],T_l[1][1],T_l[1][2],T_l[2][0],T_l[2][1],T_l[2][2]);
-        // std::cout <<"joints:"<< Actual_Position[7]<<Actual_Position[8]<<Actual_Position[9]<<Actual_Position[10]<<Actual_Position[11]<<Actual_Position[12]<<Actual_Position[13] << std::endl;
-        // std::cout <<"Rotation:"<< T_l[0][0]<<T_l[0][1]<<T_l[0][2]<<T_l[1][0]<<T_l[1][1]<<T_l[1][2]<<T_l[2][0]<<T_l[2][1]<<T_l[2][2] << std::endl;
-        Eigen::Matrix3d R_trans;
-        R_trans<<T_l[0][0],T_l[0][1],T_l[0][2],T_l[1][0],T_l[1][1],T_l[1][2],T_l[2][0],T_l[2][1],T_l[2][2];
-        std::cout << R_trans << std::endl;
-        Eigen::Vector3d Posture;
-        Posture=axis_trans(R_trans);
+        
+        R_base2end<<T_l[0][0],T_l[0][1],T_l[0][2],T_l[1][0],T_l[1][1],T_l[1][2],T_l[2][0],T_l[2][1],T_l[2][2];
+        R_end2tool<<0,0,1,sin(M_PI/6),cos(M_PI/6),0,-cos(M_PI/6),sin(M_PI/6),0;
+        R_base2tool << R_base2end * R_end2tool;//base to tool
+        R_90<<0,-1,0,1,0,0,0,0,1;
+        
+        
+        //coordinate of tool
+        Position<<T_l[0][3],T_l[1][3],T_l[2][3];
+        Position=R_base2tool.inverse()*Position;
+        Posture=axis_trans(R_base2tool);
+
+        //printf("%f,%f,%f\n",Position(0),Position(1),Position(2));
+        //printf("%f,%f,%f\n",Posture(0),Posture(1),Posture(2));
+
+        //位置导纳
         for(int i = 0; i < 3; i ++)
         {
-            x_current[1][i] = T_l[i][3]-x_offset[i]; 
-            x_current[1][i+3] = Posture(i)-x_offset[i+3]; 
+            x_current[1][i] = Position(i); 
+            x_current[1][i+3] = Posture(i); 
             
         }
-        printf("%f,%f,%f,%f,%f,%f\n",x_current[1][0],x_current[1][1],x_current[1][2],x_current[1][3],x_current[1][4],x_current[1][5]);
-        R_trans<<T_r[0][0],T_r[0][1],T_r[0][2],T_r[1][0],T_r[1][1],T_r[1][2],T_r[2][0],T_r[2][1],T_r[2][2];
-        Posture=axis_trans(R_trans);
-        for(int i = 0; i < 3; i ++)
-        {
-            x_current[0][i] = T_r[i][3]-x_offset[i]; 
-            x_current[0][i+3] = Posture(i)-x_offset[i+3]; 
-        }
+        printf("current %f,%f,%f,%f,%f,%f\n",x_current[1][0],x_current[1][1],x_current[1][2],x_current[1][3],x_current[1][4],x_current[1][5]);
+        printf("F:%f,%f,%f,%f,%f,%f\n",F_ext[1][0],F_ext[1][1],F_ext[1][2],F_ext[1][3],F_ext[1][4],F_ext[1][5]);
+        admittance[1].update(F_ext[1], x_current[1], x_target[1], dt); 
+        
 
-        //admittance[0].update(F_ext[0], x_current[0], x_target[0], dt);
-        admittance[1].update(F_ext[1], x_current[1], x_target[1], dt);
 
-        // x_output << x_current[0]+x_target[0];
-        // std::cout << x_output << std::endl;
-        printf("target:");
+        //coordinate of base
+        printf("output:");
         for (int i = 0; i < 6; i ++){
-            x_output[i] = x_offset[i]+x_target[1][i];
-            printf(" %f ",x_output[i]);
+            x_output[i] = x_target[1][i];
+            printf("%f ",x_output[i]);
         }
         printf("\n");
-        
-        // std::cout << x_output << std::endl;
+        x_output[3]=0;x_output[4]=0;x_output[5]=0;
+        Posture<<x_output[3],x_output[4],x_output[5];
+        Position<<x_output[0],x_output[1],x_output[2];
+        Position=R_base2tool*Position;
+        R_trans<<R_90;
+        double R[3][3]={R_trans(0,0),R_trans(0,1),R_trans(0,2),R_trans(1,0),R_trans(1,1),R_trans(1,2),R_trans(2,0),R_trans(2,1),R_trans(2,2)};
+
+        Px=Position[0];
+        Py=Position[1];
+        Pz=Position[2];
+        printf("INPUT\n %f,%f,%f\n",Px,Py,Pz);
+        IK(LEFT_ARM, R, phi,  Px,  Py,  Pz,  c, &flag);
+        if(flag == 1){
+            //printf("%f,%f,%f,%f,%f,%f,%f\n",c[0],c[1],c[2],c[3],c[4],c[5],c[6]);
+        }
+        else{
+            printf("no match angles\n");
+        }
+        Target_Position[7]=180/3.1415926535*c[0];
+        Target_Position[8]=180/3.1415926535*c[1];
+        Target_Position[9]=180/3.1415926535*c[2];
+        Target_Position[10]=180/3.1415926535*c[3];
+        Target_Position[11]=180/3.1415926535*c[4];
+        Target_Position[12]=180/3.1415926535*c[5];
+        Target_Position[13]=180/3.1415926535*c[6];
 
         //重复定位精度测试
         // printf("程序将重复执行函数30次，每次执行前需要按任意键继续...\n");

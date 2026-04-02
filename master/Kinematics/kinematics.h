@@ -11,6 +11,8 @@ using namespace Eigen;
 #define LEFT_ARM 1
 
 static void FK(int arm, double c[7], double T[4][4]){
+  c[5]=c[5]-c[3];
+  c[4]=c[4]-c[3];
   double T_temp[16];
   if(arm==RIGHT_ARM){
     FK_7DOF(c, T_temp);   
@@ -58,6 +60,8 @@ static void IK(int arm, double R[3][3], double phi, double Px, double Py,
     Pz=-Pz;
     IK_7DOF(R_temp, phi, Px, Py, Pz, c, flag);
   }
+  c[4]+=c[3];
+  c[5]+=c[3];
 };
 
 Eigen::Vector3d axis_trans(Eigen::Matrix3d R){

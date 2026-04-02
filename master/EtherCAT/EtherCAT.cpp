@@ -355,12 +355,12 @@ if (!(sc[15] = ecrt_master_slave_config(
     fprintf(stderr, "Failed to get slave16 configuration.\n");
     return -1;
 }     
-if (!(sc[16] = ecrt_master_slave_config(
-        master, BusCouplerPos17, SENSORICE)))
-{
-    fprintf(stderr, "Failed to get slave17 configuration.\n");
-    return -1;
-}     
+// if (!(sc[16] = ecrt_master_slave_config(
+//         master, BusCouplerPos17, SENSORICE)))
+// {
+//     fprintf(stderr, "Failed to get slave17 configuration.\n");
+//     return -1;
+// }     
 // if (!(sc[15] = ecrt_master_slave_config(
 //         master, BusCouplerPos16, ENCODERICE)))
 // {

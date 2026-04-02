@@ -5,8 +5,8 @@
 #include <stdio.h>
 #define DRIVER_NUMBER 14
 #define ENCODER_NUMBER 1
-#define SENSOR_NUMBER 2
-#define DOMAIN_NUMBER 17
+#define SENSOR_NUMBER 1
+#define DOMAIN_NUMBER 16
 
 // #define FREQUENCY 1000
 // #define PRIORITY 1
