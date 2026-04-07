@@ -72,6 +72,9 @@ void KeyBoard::changeValue(){
     case 's':case 'S':
         uservalue.Stoptime=true;
         break;
+    case 't':case 'T':
+        uservalue.Teachingtime=true;
+        break;
     case '1':
         uservalue.Stage=1;
         break;

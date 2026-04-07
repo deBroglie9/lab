@@ -18,6 +18,7 @@ struct UserValue
     bool Starttime=false;
     bool Stoptime=false;
     bool Preparetime=false;
+    bool Teachingtime=false;
     int Stage=0;
     int state=0;
 

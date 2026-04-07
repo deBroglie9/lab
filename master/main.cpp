@@ -1,9 +1,10 @@
 /*****************************************************************************
- * 2025/4/2
- * 重新修改架构，部分代码放入control文件夹下的h文件中，部分放入main.h文件
- * 加入admittance_controller导纳控制，目前仅进行位置导纳
- * main.cpp仅包含初始化和循环
+ * 2025/4/7
  * EtherCAT.h库可使用，不使用可设置CONFIGURE_EC 0，修改节点需要对应修改
+ * 重新修改架构，部分代码放入control文件夹下的h文件中，部分放入main.h文件，main.cpp仅包含初始化和循环
+ * 加入admittance_controller导纳控制，目前可以实现末端位置导纳
+ * 加入示教的读取和复现函数
+ * 
  * 
  * 目前接入1个六维力 2个编码器 14个驱动器 代码目前可连接17个从站，2个六维力+1个编码器+14个驱动器，需要修改 DRIVER_NUMBER ENCODER_NUMBER SENSOR_NUMBER DOMAIN_NUMBER
  * 驱动器顺序为右臂1-7 -> 左臂1-7 -> 采集模块 -> 左臂六维力
@@ -15,6 +16,8 @@
  * reading_driver:读取电机端编码器（无记忆），转换为角度degree
  * reading_ssi:读取输出端编码器（有记忆，零位提前确定），转换为角度
  * control_pid:PID控制，输出角度信号
+ * teaching_record:示教法读入关节轨迹，停止时储存到csv文件下
+ * replay_record:读取示教csv文件中关节轨迹并进行跟踪
  * write_all_velocity_to_ethercat:将速度指令输出到从站驱动器
  * 设置模式选择，通过ControlMode修改控制模式
  * 加入正逆运动学求解函数FK IK（rad）
@@ -49,6 +52,7 @@ void cyclic_task()
         check_domain_state(counter_domain);
     }
 
+    //循环部分
     if (counter)
     {
         counter--;
@@ -58,24 +62,22 @@ void cyclic_task()
 
         counter = FREQUENCY/PERIODS_PER_SECOND-1;
         // calculate new process data
-        // blink++;
         // main_IK_7DOF();
 
+        //每秒输打印时间
         if(counter1){
                 counter1--;
         }
         else{
                 counter1 = PERIODS_PER_SECOND-1;
-                //每秒输打印时间
+                
                 gettimeofday(&tv2, NULL);
                 time_diff = (double)( tv2.tv_sec - tv1.tv_sec + (double)(tv2.tv_usec - tv1.tv_usec)/ 1000000);
                 printf("Time: %.4f s\n", time_diff);
                 //reading_force_torque();
                 // reading_ssi();
                 // printf("%x\n",cmdptr->uservalue.Starttime);
-                // printf("%x\n",cmdptr->uservalue.Starttime);
         }
-
 
 
         //初始化通信
@@ -91,116 +93,118 @@ void cyclic_task()
         //电机使能
         if(cmdptr->uservalue.Preparetime && !cmdptr->uservalue.Starttime && !cmdptr->uservalue.Stoptime){
         // printf("motors enabling\n");
-        if((time_diff < RUNNING_TIME) && (flag_init_all!=1) ){
+            if((time_diff < RUNNING_TIME) && (flag_init_all!=1) ){
 
-            //!(flag_init[0]&flag_init[1]&flag_init[2]&flag_init[3]&flag_init[4]&flag_init[5]&flag_init[6]&flag_init[7]&flag_init[8]&flag_init[9]&flag_init[10]&flag_init[11]&flag_init[12]&flag_init[13])==1
-            // driver_enable(6);
-            // if((EC_READ_U16(domain_pd[0]+off_bytes_0x6041[0]) & 0x037) == 55){
-            // flag_init[6] = 1; 
-            // }
-            printf("enabled drivers: \n");
-            for(counter_slave=0;counter_slave<DRIVER_NUMBER;counter_slave++)
-            {   if(!flag_init[counter_slave]){
-                driver_enable(counter_slave);
-                if((EC_READ_U16(domain_pd[counter_slave]+off_bytes_0x6041[counter_slave]) & 0x037) == 55){
-                    flag_init[counter_slave] = 1; 
-                    EC_WRITE_U8(domain_pd[counter_slave]+off_bytes_0x6060[counter_slave], 0x03);
-                }
-                break;
-                }
-                printf("%d ",counter_slave);
-            }
-            printf("\n");
-
-            for(counter_slave=0;counter_slave<DRIVER_NUMBER;counter_slave++){
-                if(flag_init[counter_slave]){
-                    flag_init_all=1;
-                }
-                else{
-                    flag_init_all=0;
+                //!(flag_init[0]&flag_init[1]&flag_init[2]&flag_init[3]&flag_init[4]&flag_init[5]&flag_init[6]&flag_init[7]&flag_init[8]&flag_init[9]&flag_init[10]&flag_init[11]&flag_init[12]&flag_init[13])==1
+                // driver_enable(6);
+                // if((EC_READ_U16(domain_pd[0]+off_bytes_0x6041[0]) & 0x037) == 55){
+                // flag_init[6] = 1; 
+                // }
+                printf("enabled drivers: \n");
+                for(counter_slave=0;counter_slave<DRIVER_NUMBER;counter_slave++)
+                {   if(!flag_init[counter_slave]){
+                    driver_enable(counter_slave);
+                    if((EC_READ_U16(domain_pd[counter_slave]+off_bytes_0x6041[counter_slave]) & 0x037) == 55){
+                        flag_init[counter_slave] = 1; 
+                        EC_WRITE_U8(domain_pd[counter_slave]+off_bytes_0x6060[counter_slave], 0x03);
+                    }
                     break;
+                    }
+                    printf("%d ",counter_slave);
+                }
+                printf("\n");
+
+                for(counter_slave=0;counter_slave<DRIVER_NUMBER;counter_slave++){
+                    if(flag_init[counter_slave]){
+                        flag_init_all=1;
+                    }
+                    else{
+                        flag_init_all=0;
+                        break;
+                    }
+                }
+
+            }
+            else{
+                if(flag_init_all==1){
+                    printf("all drivers enabled\n");
                 }
             }
-
-        }
-        else{
-            if(flag_init_all==1){
-                printf("all drivers enabled\n");
-            }
-        }
         }
         
+
         //控制部分
         if(cmdptr->uservalue.Starttime  && !cmdptr->uservalue.Stoptime){
-        flag_init_all=1;
-        if((time_diff < RUNNING_TIME)&&(flag_init_all==1)&&(flag_stop_all!=1)){
-        //printf("test2\n");
-            //((flag_init[0]&flag_init[1]&flag_init[2]&flag_init[3]&flag_init[4]&flag_init[5]&flag_init[6]&flag_init[7]&flag_init[8]&flag_init[9]&flag_init[10]&flag_init[11]&flag_init[12]&flag_init[13])==1)
-            
-            float trans; 
-            for(counter_slave=0;counter_slave<DRIVER_NUMBER;counter_slave++)
-            {   
-                EC_WRITE_U8(domain_pd[counter_slave]+off_bytes_0x6060[counter_slave], 0x03);
-            }
-
-            //读取反馈
-            //reading_driver();
-            reading_ssi();
-            reading_force_torque();
-            reading_current();
-
-            //模式选择
-            switch (current_mode) {
-                    case MODE_JOINT_TRAJECTORY:
-                        // 关节轨迹运动
-                        handle_joint_trajectory();
-                        break;
-                        
-                    case MODE_MANUAL_JOINT:
-                        // 手动关节控制
-                        handle_manual_joint_control();
-                        break;
-                        
-                    case MODE_CARTESIAN_TRAJECTORY:
-                        // 末端轨迹运动
-                        handle_cartesian_trajectory();
-                        break;
-                        
-                    case MODE_MANUAL_CARTESIAN:
-                        // 手动末端控制
-                        handle_manual_cartesian_control();
-                        break;
+            flag_init_all=1;
+            if((time_diff < RUNNING_TIME)&&(flag_stop_all!=1)){
+                //printf("test2\n");
+                //((flag_init[0]&flag_init[1]&flag_init[2]&flag_init[3]&flag_init[4]&flag_init[5]&flag_init[6]&flag_init[7]&flag_init[8]&flag_init[9]&flag_init[10]&flag_init[11]&flag_init[12]&flag_init[13])==1)
+                
+                float trans; 
+                for(counter_slave=0;counter_slave<DRIVER_NUMBER;counter_slave++)
+                {   
+                    EC_WRITE_U8(domain_pd[counter_slave]+off_bytes_0x6060[counter_slave], 0x03);
                 }
-            
-        // printf("%f\n",Actual_Torque[3]);
-        write_all_velocity_to_ethercat();
-        //udp通信
-        UDP_send();
 
-            
-        
-            
-        }
-        else if((time_diff > RUNNING_TIME) && (flag_stop_all==1)){
-                // fclose(fp);
-            for(counter_slave=0;counter_slave<DRIVER_NUMBER;counter_slave++)
-            {
-                driver_disable(counter_slave);
-                printf("%d stop\n",counter_slave);
-            }
-        }  
-            //频率测试部分
-            if(time_test1==0){
-                gettimeofday(&tv2, NULL);
-                time_test1 = (double)( tv2.tv_sec - tv1.tv_sec + (double)(tv2.tv_usec - tv1.tv_usec)/ 1000000);
-            }
-            else if((time_test1==0)){
-                gettimeofday(&tv2, NULL);
-                time_test2 = (double)( tv2.tv_sec - tv1.tv_sec + (double)(tv2.tv_usec - tv1.tv_usec)/ 1000000);
-            }
-        }
+                //读取反馈
+                //reading_driver();
+                reading_ssi();
+                reading_force_torque();
+                reading_current();
 
+                //模式选择
+                switch (current_mode) {
+                        case MODE_JOINT_TRAJECTORY:
+                            // 关节轨迹运动
+                            handle_joint_trajectory();
+                            break;
+                            
+                        case MODE_MANUAL_JOINT:
+                            // 手动关节控制
+                            handle_manual_joint_control();
+                            break;
+                            
+                        case MODE_CARTESIAN_TRAJECTORY:
+                            // 末端轨迹运动
+                            handle_cartesian_trajectory();
+                            break;
+                            
+                        case MODE_MANUAL_CARTESIAN:
+                            // 手动末端控制
+                            handle_manual_cartesian_control();
+                            break;
+
+                        case MODE_TEACH_REPLAY:
+                            // 示教轨迹复现
+                            replay_record();
+                            break;
+                    }
+                
+                // printf("%f\n",Actual_Torque[3]);
+                write_all_velocity_to_ethercat();
+                //udp通信
+                UDP_send();
+            }
+
+            else if((time_diff > RUNNING_TIME) || (flag_stop_all==1)){
+                    // fclose(fp);
+                for(counter_slave=0;counter_slave<DRIVER_NUMBER;counter_slave++)
+                {
+                    driver_disable(counter_slave);
+                    printf("%d stop\n",counter_slave);
+                }
+            }  
+        }
+        //示教部分
+        if(cmdptr->uservalue.Teachingtime && !cmdptr->uservalue.Stoptime){
+            reading_ssi();
+            teaching_record();
+        }
         if(cmdptr->uservalue.Stoptime){
+            if(cmdptr->uservalue.Teachingtime){
+                saveTrajectoryToCSV(joint_trajectory, "trajectory.csv");
+            }
+
             for(counter_slave=0;counter_slave<DRIVER_NUMBER;counter_slave++)
             {
                 driver_disable(counter_slave);
@@ -208,23 +212,24 @@ void cyclic_task()
                 flag_stop[counter_slave]=1;
             }
             for(counter_slave=0;counter_slave<DRIVER_NUMBER;counter_slave++){
-                        if(flag_stop[counter_slave]){
-                            flag_stop_all=1;
-                        }
-                        else{
-                            flag_stop_all=0;
-                            break;
-                        }
+                if(flag_stop[counter_slave]){
+                    flag_stop_all=1;
+                }
+                else{
+                    flag_stop_all=0;
+                    break;
+                }
             }
         }
 
-        check_master_state();
-            for(counter_slave=0;counter_slave<DOMAIN_NUMBER;counter_slave++){
-                check_slave_config_states(counter_slave);
-            }
-        }
+        
+    }
     
     //  send process data
+    check_master_state();
+    for(counter_slave=0;counter_slave<DOMAIN_NUMBER;counter_slave++){
+        check_slave_config_states(counter_slave);
+    }
     for(counter_domain=0;counter_domain<DOMAIN_NUMBER;counter_domain++){
         ecrt_domain_queue(domain[counter_domain]);
     }
@@ -320,6 +325,9 @@ int main(int argc, char **argv)
 
     }
 
+    //示教轨迹读取
+    loadTrajectoryFromCSV(joint_trajectory, "trajectory.csv");
+    printf("%d\n",joint_trajectory.size());
     // 打开文件
     // file = fopen("traj_lift.csv", "r");
     // if (file == NULL) {

@@ -31,6 +31,7 @@
 #include "cmdpanel.h"
 #include "lpf.h"
 #include "poly_traj.h"
+#include "teaching.h"
 #include <vector>
 #include <Eigen/Dense>
 #include <Eigen/Geometry>
@@ -70,6 +71,7 @@ std::array<double,6> F_ext_offset[2]={0,0,0,0,0,0,89.346200,4.520300,205.619800,
 std::array<double,6> x_current[2]; // 当前末端位姿
 std::array<double,6> x_target[2];  // 输出目标位姿
 float dt = 0.02;
+std::vector<std::array<double, 7>> joint_trajectory;
 
 static float max_velocity[DRIVER_NUMBER]={0.2*MAX_VELOCITY_1,0.2*MAX_VELOCITY_1,0.2*MAX_VELOCITY_1,0.2*MAX_VELOCITY_1,0.2*MAX_VELOCITY_2,0.2*MAX_VELOCITY_2,0.2*MAX_VELOCITY_3,
 0.2*MAX_VELOCITY_1,0.2*MAX_VELOCITY_1,0.2*MAX_VELOCITY_1,0.2*MAX_VELOCITY_1,0.2*MAX_VELOCITY_2,0.2*MAX_VELOCITY_2,0.2*MAX_VELOCITY_3};
@@ -142,12 +144,11 @@ typedef enum {
     MODE_JOINT_TRAJECTORY = 0,    // 模式1: 关节轨迹运动
     MODE_MANUAL_JOINT = 1,         // 模式2: 手动调节关节位置
     MODE_CARTESIAN_TRAJECTORY = 2, // 模式3: 末端轨迹运动
-    MODE_MANUAL_CARTESIAN = 3,      // 模式4: 手动控制末端位姿
-    MODE_TEACH_ = 4,                 // 模式5: 示教记录
-    MODE_TEACH_PLAY = 5              // 模式6: 示教演示
+    MODE_MANUAL_CARTESIAN = 3,      // 模式4: 手动控制末端位姿           
+    MODE_TEACH_REPLAY = 4              // 模式5: 示教演示
 } ControlMode;
 
-static ControlMode current_mode =  MODE_CARTESIAN_TRAJECTORY;
+static ControlMode current_mode =  MODE_TEACH_REPLAY;
 
 static int mode_changed = 0;
 
@@ -168,7 +169,7 @@ static float rotation_increment = 5.0;    // 旋转增量(度)
 //vofa通信输出数据
 void UDP_send(){
         char sendBuf[1024];
-        sprintf(sendBuf, "d:%f,%f,%f,%f,%f,%f,%f,  %f,%f,%f,%f,%f,%f,%f,  %f,%f,%f,%f,%f,%f,%f,  %f,%f,%f,%f,%f,%f,%f,  %f,%f,%f,%f,%f,%f,%f,  %f,%f,%f,%f,%f,%f,%f,  %f,%f,%f,%f,%f,%f,%f,  %f,%f,%f,%f,%f,%f,%f,  %f,%f,%f,%f,%f,%f,%f,  %f,%f,%f,%f,%f,%f,%f\n",
+        sprintf(sendBuf, "d:%f,%f,%f,%f,%f,%f,%f,  %f,%f,%f,%f,%f,%f,%f,  %f,%f,%f,%f,%f,%f,%f,  %f,%f,%f,%f,%f,%f,%f,  %f,%f,%f,%f,%f,%f,%f,  %f,%f,%f,%f,%f,%f,%f,  %f,%f,%f,%f,%f,%f,%f,  %f,%f,%f,%f,%f,%f,%f,  %f,%f,%f,%f,%f,%f,%f,  %f,%f,%f,%f,%f,%f,%f,  %f,%f,%f, %f,%f,%f, %f,%f,%f\n",
             Actual_Position[0],Actual_Position[1],Actual_Position[2],Actual_Position[3],Actual_Position[4],Actual_Position[5],Actual_Position[6],
             Actual_Position[7],Actual_Position[8],Actual_Position[9],Actual_Position[10],Actual_Position[11],Actual_Position[12],Actual_Position[13],
             Target_Position[0],Target_Position[1],Target_Position[2],Target_Position[3],Target_Position[4],Target_Position[5],Target_Position[6],
@@ -178,7 +179,10 @@ void UDP_send(){
             Actual_Velocity[0],Actual_Velocity[1],Actual_Velocity[2],Actual_Velocity[3],Actual_Velocity[4],Actual_Velocity[5],Actual_Velocity[6],
             Actual_Velocity[7],Actual_Velocity[8],Actual_Velocity[9],Actual_Velocity[10],Actual_Velocity[11],Actual_Velocity[12],Actual_Velocity[13],
             Actual_Torque[0],Actual_Torque[1],Actual_Torque[2],Actual_Torque[3],Actual_Torque[4],Actual_Torque[5],Actual_Torque[6],
-            Actual_Torque[7],Actual_Torque[8],Actual_Torque[9],Actual_Torque[10],Actual_Torque[11],Actual_Torque[12],Actual_Torque[13]);
+            Actual_Torque[7],Actual_Torque[8],Actual_Torque[9],Actual_Torque[10],Actual_Torque[11],Actual_Torque[12],Actual_Torque[13],
+            F_ext[LEFT_ARM][0],F_ext[LEFT_ARM][1],F_ext[LEFT_ARM][2],
+            x_current[LEFT_ARM][0],x_current[LEFT_ARM][1],x_current[LEFT_ARM][2],
+            x_target[LEFT_ARM][0],x_target[LEFT_ARM][1],x_target[LEFT_ARM][2]);
         sendto(fd, sendBuf, strlen(sendBuf) + 1, 0, (struct sockaddr *)&saddr, sizeof(saddr));
 }
 
@@ -375,225 +379,225 @@ void write_all_velocity_to_ethercat()
 }
 
 void handle_joint_trajectory(){
-if (cmdptr->uservalue.Stage == 1) {
-    switch (stage){
-        case 0: printf("initialization finished, start to reset the position\n");
-            // scanf("%s",command);
-            stage = 1; 
-            counter_loop=0;
-            // for(counter_slave=0;counter_slave<DRIVER_NUMBER;counter_slave++){
-            //     Position_Kp[counter_slave]=2;
-            //     Target_Position[counter_slave]=180/3.1415926536*values[14*2000+counter_slave];
-            // }
-            //     Target_Position[4]=Target_Position[4]+Target_Position[3];
-            //     Target_Position[5]=Target_Position[5]+Target_Position[3];
-            //     Target_Position[11]=Target_Position[11]+Target_Position[10];
-            //     Target_Position[12]=Target_Position[12]+Target_Position[10];
+    if (cmdptr->uservalue.Stage == 1) {
+        switch (stage){
+            case 0: printf("initialization finished, start to reset the position\n");
+                // scanf("%s",command);
+                stage = 1; 
+                counter_loop=0;
+                // for(counter_slave=0;counter_slave<DRIVER_NUMBER;counter_slave++){
+                //     Position_Kp[counter_slave]=2;
+                //     Target_Position[counter_slave]=180/3.1415926536*values[14*2000+counter_slave];
+                // }
+                //     Target_Position[4]=Target_Position[4]+Target_Position[3];
+                //     Target_Position[5]=Target_Position[5]+Target_Position[3];
+                //     Target_Position[11]=Target_Position[11]+Target_Position[10];
+                //     Target_Position[12]=Target_Position[12]+Target_Position[10];
 
-            //举重
-            Target_Position[3]=angle[0];
-            Target_Position[4]=angle[0];
-            Target_Position[5]=angle[0];
-            Target_Position[10]=angle[0];
-            Target_Position[11]=angle[0];
-            Target_Position[12]=angle[0];
-            break;
-        case 1: 
-        {   counter_loop++;
-            // EC_WRITE_S32(domain_pd[13]+off_bytes_0x60ff[13],1000);
-            // if(counter_loop>5000){
-            //     counter_loop=0;
-            //     stage = 2;
-            // }
-            // control_pid(0);
-            for(counter_slave=0;counter_slave<DRIVER_NUMBER;counter_slave++){
-                control_pid(counter_slave);
-            }
+                //举重
+                Target_Position[3]=angle[0];
+                Target_Position[4]=angle[0];
+                Target_Position[5]=angle[0];
+                Target_Position[10]=angle[0];
+                Target_Position[11]=angle[0];
+                Target_Position[12]=angle[0];
+                break;
+            case 1: 
+            {   counter_loop++;
+                // EC_WRITE_S32(domain_pd[13]+off_bytes_0x60ff[13],1000);
+                // if(counter_loop>5000){
+                //     counter_loop=0;
+                //     stage = 2;
+                // }
+                // control_pid(0);
+                for(counter_slave=0;counter_slave<DRIVER_NUMBER;counter_slave++){
+                    control_pid(counter_slave);
+                }
 
-            bool reach_target = true;
-            for(int i=0;i<DRIVER_NUMBER;i++)
-            {
-                if(fabs(pid_controller[i].getError()) > ERROR)
+                bool reach_target = true;
+                for(int i=0;i<DRIVER_NUMBER;i++)
                 {
-                    reach_target = false;
-                    break;
-                }
-            }
-
-            if(reach_target)
-            {
-                // 到达目标
-                printf("reset finished, start moving\n");
-                for(counter_slave=0;counter_slave<DRIVER_NUMBER;counter_slave++){
-                pid_controller[counter_slave].setParam(5,0,0);
-                counter_loop=0;
-                stage = 2;
-                }
-            }
-        }
-            break;
-        case 2:
-        {
-            for(counter_slave=0;counter_slave<DRIVER_NUMBER;counter_slave++){
-                control_pid(counter_slave);
-            }
-        }
-        default: break;
-    }
-}
-if (cmdptr->uservalue.Stage == 2) {
-    switch (stage){
-        case 2: 
-            printf("stage 2: %d\n",counter_loop);
-            if(cmdptr->uservalue.Stage==2){
-                counter_loop++;
-                if(counter_loop<18000){
-                    //for(counter_slave=0;counter_slave<DRIVER_NUMBER;counter_slave++){
-                    // Target_Position[counter_slave]=180/3.1415926536*values[14*counter_loop+counter_slave];
-                    //}
-
-                    //举重
-                    Target_Position[3]=angle[counter_loop];
-                    Target_Position[4]=angle[counter_loop];
-                    Target_Position[5]=angle[counter_loop];
-                    Target_Position[10]=angle[counter_loop];
-                    Target_Position[11]=angle[counter_loop];
-                    Target_Position[12]=angle[counter_loop];
-
-                    //跑步
-                    // Target_Position[3]=angle1[counter_loop];
-                    // Target_Position[4]=angle1[counter_loop];
-                    // Target_Position[5]=angle1[counter_loop];
-                    // Target_Position[10]=angle1[counter_loop];
-                    // Target_Position[11]=angle1[counter_loop];
-                    // Target_Position[12]=angle1[counter_loop];
-                    // Target_Position[0]=-angle2[counter_loop];
-                    // Target_Position[1]=-angle2[counter_loop];
-                    // Target_Position[2]=-angle2[counter_loop];
-                    // Target_Position[7]=angle2[counter_loop];
-                    // Target_Position[8]=angle2[counter_loop];
-                    // Target_Position[9]=angle2[counter_loop];
-
-
-
-                    std::cout << angle[counter_loop] << std::endl;
-                }  
-                else{
-                    counter_loop=18000;
-                    for(counter_slave=0;counter_slave<DRIVER_NUMBER;counter_slave++){
-                    // Target_Position[counter_slave]=180/3.1415926536*values[14*counter_loop+counter_slave];
-                    }
-                }
-
-                // Target_Position[4]=Target_Position[4]+Target_Position[3];
-                // Target_Position[5]=Target_Position[5]+Target_Position[3];
-                // Target_Position[11]=Target_Position[11]+Target_Position[10];
-                // Target_Position[12]=Target_Position[12]+Target_Position[10];
-                // if(counter_loop % 10 == 0){
-                for(counter_slave=0;counter_slave<DRIVER_NUMBER;counter_slave++){
-                    control_pid(counter_slave);
-                }
-                //}
-            }
-            // else if(cmdptr->uservalue.Stage==2){
-            //     counter_loop+=2;
-            //     if(counter_loop<10000){
-            // // printf(" target %f %f %f %f %f %f %f\n",values[7*counter_loop],values[7*counter_loop+1],values[7*counter_loop+2]
-            // //        ,values[7*counter_loop+3],values[7*counter_loop+4],values[7*counter_loop+5],values[7*counter_loop+6]);
-            //         for(counter_slave=0;counter_slave<DRIVER_NUMBER;counter_slave++){
-            //         Target_Position[counter_slave]=180/3.1415926536*values[14*(12000-counter_loop)+counter_slave];
-            //         }
-            //     }
-            //     else if(counter_loop<14000){
-            //         for(counter_slave=0;counter_slave<DRIVER_NUMBER;counter_slave++){
-            //         Target_Position[counter_slave]=180/3.1415926536*values[14*(counter_loop-8000)+counter_slave];
-            //         }
-            //     }
-            //     else if(counter_loop<18000){
-            //         for(counter_slave=0;counter_slave<DRIVER_NUMBER;counter_slave++){
-            //         Target_Position[counter_slave]=180/3.1415926536*values[14*(20000-counter_loop)+counter_slave];
-            //         }
-            //     }
-            //     else if(counter_loop<22000){
-            //         for(counter_slave=0;counter_slave<DRIVER_NUMBER;counter_slave++){
-            //         Target_Position[counter_slave]=180/3.1415926536*values[14*(counter_loop-16000)+counter_slave];
-            //         }
-            //     }
-            //     else{
-            //         counter_loop=22000;
-            //         for(counter_slave=0;counter_slave<DRIVER_NUMBER;counter_slave++){
-            //         Target_Position[counter_slave]=180/3.1415926536*values[14*(counter_loop-16000)+counter_slave];
-            //         }
-            //     }
-
-            //     Target_Position[4]=Target_Position[4]+Target_Position[3];
-            //     Target_Position[5]=Target_Position[5]+Target_Position[3];
-            //     Target_Position[11]=Target_Position[11]+Target_Position[10];
-            //     Target_Position[12]=Target_Position[12]+Target_Position[10];
-            //     for(counter_slave=0;counter_slave<DRIVER_NUMBER;counter_slave++){
-            //         control_pid(counter_slave);
-            //     }
-            // }
-            else if(cmdptr->uservalue.Stage==3){
-                counter_loop=0;
-                stage = 3;
-            }
-            else
-            {
-                // printf("please set the stage correctly\n");
-            }
-            // printf("%d\n",counter_loop);
-                
-
-                // if ( counter_loop % 2 == 0) {
-                //     for(counter_slave=0;counter_slave<7;counter_slave++){
-                //         control_pid(counter_slave);
-                //     }
-                // }
-                // else{
-                //     for(counter_slave=7;counter_slave<14;counter_slave++){
-                //注意腕关节受肘关节自由度影响，需要额外加角度！
-
-
-                //     }
-                // }
-            
-            
-            // printf("target %f %f %f %f %f %f %f  %f %f %f %f %f %f %f\n", Target_Position[0],Target_Position[1],Target_Position[2],Target_Position[3],Target_Position[4],Target_Position[5],
-            //     Target_Position[6],Target_Position[7],Target_Position[8],Target_Position[9],Target_Position[10],Target_Position[11],Target_Position[12],Target_Position[13]);
-            
-
-                break;
-        case 3: printf("******end******\n"); 
-                // EC_WRITE_S32(domain_pd[13]+off_bytes_0x60ff[13],0);
-                for(counter_slave=0;counter_slave<DRIVER_NUMBER;counter_slave++){
-                    control_pid(counter_slave);
-                }
-                stage=4;
-                break;
-        case 4:                
-                for(counter_slave=0;counter_slave<DRIVER_NUMBER;counter_slave++)
-                    {   
-                        if(fabs(pid_controller[counter_slave].getError())<ERROR){
-                                driver_disable(counter_slave);
-                                flag_stop[counter_slave]=1;
-                            }
-                        else{
-                                control_pid(counter_slave);
-                            }
-                    }
-                for(counter_slave=0;counter_slave<DRIVER_NUMBER;counter_slave++){
-                    if(flag_stop[counter_slave]){
-                        flag_stop_all=1;
-                    }
-                    else{
-                        flag_stop_all=0;
+                    if(fabs(pid_controller[i].getError()) > ERROR)
+                    {
+                        reach_target = false;
                         break;
                     }
                 }
-        default: break;
+
+                if(reach_target)
+                {
+                    // 到达目标
+                    printf("reset finished, start moving\n");
+                    for(counter_slave=0;counter_slave<DRIVER_NUMBER;counter_slave++){
+                    pid_controller[counter_slave].setParam(5,0,0);
+                    counter_loop=0;
+                    stage = 2;
+                    }
+                }
+            }
+                break;
+            case 2:
+            {
+                for(counter_slave=0;counter_slave<DRIVER_NUMBER;counter_slave++){
+                    control_pid(counter_slave);
+                }
+            }
+            default: break;
+        }
     }
-}
+    if (cmdptr->uservalue.Stage == 2) {
+        switch (stage){
+            case 2: 
+                printf("stage 2: %d\n",counter_loop);
+                if(cmdptr->uservalue.Stage==2){
+                    counter_loop++;
+                    if(counter_loop<18000){
+                        //for(counter_slave=0;counter_slave<DRIVER_NUMBER;counter_slave++){
+                        // Target_Position[counter_slave]=180/3.1415926536*values[14*counter_loop+counter_slave];
+                        //}
+
+                        //举重
+                        Target_Position[3]=angle[counter_loop];
+                        Target_Position[4]=angle[counter_loop];
+                        Target_Position[5]=angle[counter_loop];
+                        Target_Position[10]=angle[counter_loop];
+                        Target_Position[11]=angle[counter_loop];
+                        Target_Position[12]=angle[counter_loop];
+
+                        //跑步
+                        // Target_Position[3]=angle1[counter_loop];
+                        // Target_Position[4]=angle1[counter_loop];
+                        // Target_Position[5]=angle1[counter_loop];
+                        // Target_Position[10]=angle1[counter_loop];
+                        // Target_Position[11]=angle1[counter_loop];
+                        // Target_Position[12]=angle1[counter_loop];
+                        // Target_Position[0]=-angle2[counter_loop];
+                        // Target_Position[1]=-angle2[counter_loop];
+                        // Target_Position[2]=-angle2[counter_loop];
+                        // Target_Position[7]=angle2[counter_loop];
+                        // Target_Position[8]=angle2[counter_loop];
+                        // Target_Position[9]=angle2[counter_loop];
+
+
+
+                        std::cout << angle[counter_loop] << std::endl;
+                    }  
+                    else{
+                        counter_loop=18000;
+                        for(counter_slave=0;counter_slave<DRIVER_NUMBER;counter_slave++){
+                        // Target_Position[counter_slave]=180/3.1415926536*values[14*counter_loop+counter_slave];
+                        }
+                    }
+
+                    // Target_Position[4]=Target_Position[4]+Target_Position[3];
+                    // Target_Position[5]=Target_Position[5]+Target_Position[3];
+                    // Target_Position[11]=Target_Position[11]+Target_Position[10];
+                    // Target_Position[12]=Target_Position[12]+Target_Position[10];
+                    // if(counter_loop % 10 == 0){
+                    for(counter_slave=0;counter_slave<DRIVER_NUMBER;counter_slave++){
+                        control_pid(counter_slave);
+                    }
+                    //}
+                }
+                // else if(cmdptr->uservalue.Stage==2){
+                //     counter_loop+=2;
+                //     if(counter_loop<10000){
+                // // printf(" target %f %f %f %f %f %f %f\n",values[7*counter_loop],values[7*counter_loop+1],values[7*counter_loop+2]
+                // //        ,values[7*counter_loop+3],values[7*counter_loop+4],values[7*counter_loop+5],values[7*counter_loop+6]);
+                //         for(counter_slave=0;counter_slave<DRIVER_NUMBER;counter_slave++){
+                //         Target_Position[counter_slave]=180/3.1415926536*values[14*(12000-counter_loop)+counter_slave];
+                //         }
+                //     }
+                //     else if(counter_loop<14000){
+                //         for(counter_slave=0;counter_slave<DRIVER_NUMBER;counter_slave++){
+                //         Target_Position[counter_slave]=180/3.1415926536*values[14*(counter_loop-8000)+counter_slave];
+                //         }
+                //     }
+                //     else if(counter_loop<18000){
+                //         for(counter_slave=0;counter_slave<DRIVER_NUMBER;counter_slave++){
+                //         Target_Position[counter_slave]=180/3.1415926536*values[14*(20000-counter_loop)+counter_slave];
+                //         }
+                //     }
+                //     else if(counter_loop<22000){
+                //         for(counter_slave=0;counter_slave<DRIVER_NUMBER;counter_slave++){
+                //         Target_Position[counter_slave]=180/3.1415926536*values[14*(counter_loop-16000)+counter_slave];
+                //         }
+                //     }
+                //     else{
+                //         counter_loop=22000;
+                //         for(counter_slave=0;counter_slave<DRIVER_NUMBER;counter_slave++){
+                //         Target_Position[counter_slave]=180/3.1415926536*values[14*(counter_loop-16000)+counter_slave];
+                //         }
+                //     }
+
+                //     Target_Position[4]=Target_Position[4]+Target_Position[3];
+                //     Target_Position[5]=Target_Position[5]+Target_Position[3];
+                //     Target_Position[11]=Target_Position[11]+Target_Position[10];
+                //     Target_Position[12]=Target_Position[12]+Target_Position[10];
+                //     for(counter_slave=0;counter_slave<DRIVER_NUMBER;counter_slave++){
+                //         control_pid(counter_slave);
+                //     }
+                // }
+                else if(cmdptr->uservalue.Stage==3){
+                    counter_loop=0;
+                    stage = 3;
+                }
+                else
+                {
+                    // printf("please set the stage correctly\n");
+                }
+                // printf("%d\n",counter_loop);
+                    
+
+                    // if ( counter_loop % 2 == 0) {
+                    //     for(counter_slave=0;counter_slave<7;counter_slave++){
+                    //         control_pid(counter_slave);
+                    //     }
+                    // }
+                    // else{
+                    //     for(counter_slave=7;counter_slave<14;counter_slave++){
+                    //注意腕关节受肘关节自由度影响，需要额外加角度！
+
+
+                    //     }
+                    // }
+                
+                
+                // printf("target %f %f %f %f %f %f %f  %f %f %f %f %f %f %f\n", Target_Position[0],Target_Position[1],Target_Position[2],Target_Position[3],Target_Position[4],Target_Position[5],
+                //     Target_Position[6],Target_Position[7],Target_Position[8],Target_Position[9],Target_Position[10],Target_Position[11],Target_Position[12],Target_Position[13]);
+                
+
+                    break;
+            case 3: printf("******end******\n"); 
+                    // EC_WRITE_S32(domain_pd[13]+off_bytes_0x60ff[13],0);
+                    for(counter_slave=0;counter_slave<DRIVER_NUMBER;counter_slave++){
+                        control_pid(counter_slave);
+                    }
+                    stage=4;
+                    break;
+            case 4:                
+                    for(counter_slave=0;counter_slave<DRIVER_NUMBER;counter_slave++)
+                        {   
+                            if(fabs(pid_controller[counter_slave].getError())<ERROR){
+                                    driver_disable(counter_slave);
+                                    flag_stop[counter_slave]=1;
+                                }
+                            else{
+                                    control_pid(counter_slave);
+                                }
+                        }
+                    for(counter_slave=0;counter_slave<DRIVER_NUMBER;counter_slave++){
+                        if(flag_stop[counter_slave]){
+                            flag_stop_all=1;
+                        }
+                        else{
+                            flag_stop_all=0;
+                            break;
+                        }
+                    }
+            default: break;
+        }
+    }
 
 }
 // 手动关节控制处理函数
@@ -960,6 +964,36 @@ void handle_manual_cartesian_control(){
     
     printf("末端位置: X=%.3f, Y=%.3f, Z=%.3f\n", 
            target_position_xyz[0], target_position_xyz[1], target_position_xyz[2]);
+}
+
+//示教读取
+void teaching_record(){
+    joint_trajectory.push_back({ Actual_Position[0], Actual_Position[1],
+                                Actual_Position[2], Actual_Position[3],
+                                Actual_Position[4], Actual_Position[5],
+                                Actual_Position[6], });
+    //printf("%d\n",joint_trajectory.size());
+}
+
+//示教复现
+void replay_record(){
+    // counter_loop=0;
+    if(counter_loop<=joint_trajectory.size()){
+        for(counter_slave=0;counter_slave<7;counter_slave++){
+            Target_Position[counter_slave]=joint_trajectory[counter_loop][counter_slave];
+        }
+        printf("counter:%d %f, %f, %f, %f, %f, %f, %f\n",counter_loop,Target_Position[0],Target_Position[1],Target_Position[2],
+                                                    Target_Position[3],Target_Position[4],
+                                                    Target_Position[5],Target_Position[6]);
+        counter_loop++;
+    }
+    else{
+        printf("replay complete\n");
+    }
+
+    for(counter_slave=0;counter_slave<7;counter_slave++){
+        control_pid(counter_slave);
+    }
 }
 
 // 逆运动学计算函数

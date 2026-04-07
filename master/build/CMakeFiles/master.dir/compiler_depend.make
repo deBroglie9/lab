@@ -2722,6 +2722,7 @@ CMakeFiles/master.dir/main.cpp.o: /home/debian/master/main.cpp \
   /home/debian/master/control/admittance_controller.h \
   /home/debian/master/control/joint_state.h \
   /home/debian/master/control/pid_controller.h \
+  /home/debian/master/control/teaching.h \
   /home/debian/master/feedback/lpf.h \
   /home/debian/master/interface/cmdpanel.h \
   /home/debian/master/interface/enumclass.h \
@@ -2856,8 +2857,10 @@ CMakeFiles/master.dir/main.cpp.o: /home/debian/master/main.cpp \
   /usr/include/aarch64-linux-gnu/bits/wordsize.h \
   /usr/include/aarch64-linux-gnu/bits/xopen_lim.h \
   /usr/include/aarch64-linux-gnu/c++/14/bits/atomic_word.h \
+  /usr/include/aarch64-linux-gnu/c++/14/bits/basic_file.h \
   /usr/include/aarch64-linux-gnu/c++/14/bits/c++allocator.h \
   /usr/include/aarch64-linux-gnu/c++/14/bits/c++config.h \
+  /usr/include/aarch64-linux-gnu/c++/14/bits/c++io.h \
   /usr/include/aarch64-linux-gnu/c++/14/bits/c++locale.h \
   /usr/include/aarch64-linux-gnu/c++/14/bits/cpu_defines.h \
   /usr/include/aarch64-linux-gnu/c++/14/bits/ctype_base.h \
@@ -2865,7 +2868,9 @@ CMakeFiles/master.dir/main.cpp.o: /home/debian/master/main.cpp \
   /usr/include/aarch64-linux-gnu/c++/14/bits/error_constants.h \
   /usr/include/aarch64-linux-gnu/c++/14/bits/gthr-default.h \
   /usr/include/aarch64-linux-gnu/c++/14/bits/gthr.h \
+  /usr/include/aarch64-linux-gnu/c++/14/bits/messages_members.h \
   /usr/include/aarch64-linux-gnu/c++/14/bits/os_defines.h \
+  /usr/include/aarch64-linux-gnu/c++/14/bits/time_members.h \
   /usr/include/aarch64-linux-gnu/gnu/stubs-lp64.h \
   /usr/include/aarch64-linux-gnu/gnu/stubs.h \
   /usr/include/aarch64-linux-gnu/sys/cdefs.h \
@@ -2908,6 +2913,8 @@ CMakeFiles/master.dir/main.cpp.o: /home/debian/master/main.cpp \
   /usr/include/c++/14/bits/basic_string.tcc \
   /usr/include/c++/14/bits/char_traits.h \
   /usr/include/c++/14/bits/charconv.h \
+  /usr/include/c++/14/bits/chrono.h \
+  /usr/include/c++/14/bits/codecvt.h \
   /usr/include/c++/14/bits/concept_check.h \
   /usr/include/c++/14/bits/cpp_type_traits.h \
   /usr/include/c++/14/bits/cxxabi_forced.h \
@@ -2917,6 +2924,7 @@ CMakeFiles/master.dir/main.cpp.o: /home/debian/master/main.cpp \
   /usr/include/c++/14/bits/exception.h \
   /usr/include/c++/14/bits/exception_defines.h \
   /usr/include/c++/14/bits/exception_ptr.h \
+  /usr/include/c++/14/bits/fstream.tcc \
   /usr/include/c++/14/bits/functexcept.h \
   /usr/include/c++/14/bits/functional_hash.h \
   /usr/include/c++/14/bits/hash_bytes.h \
@@ -2927,8 +2935,11 @@ CMakeFiles/master.dir/main.cpp.o: /home/debian/master/main.cpp \
   /usr/include/c++/14/bits/istream.tcc \
   /usr/include/c++/14/bits/locale_classes.h \
   /usr/include/c++/14/bits/locale_classes.tcc \
+  /usr/include/c++/14/bits/locale_conv.h \
   /usr/include/c++/14/bits/locale_facets.h \
   /usr/include/c++/14/bits/locale_facets.tcc \
+  /usr/include/c++/14/bits/locale_facets_nonio.h \
+  /usr/include/c++/14/bits/locale_facets_nonio.tcc \
   /usr/include/c++/14/bits/localefwd.h \
   /usr/include/c++/14/bits/memory_resource.h \
   /usr/include/c++/14/bits/memoryfwd.h \
@@ -2938,9 +2949,11 @@ CMakeFiles/master.dir/main.cpp.o: /home/debian/master/main.cpp \
   /usr/include/c++/14/bits/node_handle.h \
   /usr/include/c++/14/bits/ostream.tcc \
   /usr/include/c++/14/bits/ostream_insert.h \
+  /usr/include/c++/14/bits/parse_numbers.h \
   /usr/include/c++/14/bits/postypes.h \
   /usr/include/c++/14/bits/predefined_ops.h \
   /usr/include/c++/14/bits/ptr_traits.h \
+  /usr/include/c++/14/bits/quoted_string.h \
   /usr/include/c++/14/bits/range_access.h \
   /usr/include/c++/14/bits/refwrap.h \
   /usr/include/c++/14/bits/requires_hosted.h \
@@ -2951,6 +2964,7 @@ CMakeFiles/master.dir/main.cpp.o: /home/debian/master/main.cpp \
   /usr/include/c++/14/bits/sstream.tcc \
   /usr/include/c++/14/bits/std_abs.h \
   /usr/include/c++/14/bits/std_function.h \
+  /usr/include/c++/14/bits/std_thread.h \
   /usr/include/c++/14/bits/stl_algo.h \
   /usr/include/c++/14/bits/stl_algobase.h \
   /usr/include/c++/14/bits/stl_bvector.h \
@@ -2969,6 +2983,7 @@ CMakeFiles/master.dir/main.cpp.o: /home/debian/master/main.cpp \
   /usr/include/c++/14/bits/streambuf_iterator.h \
   /usr/include/c++/14/bits/string_view.tcc \
   /usr/include/c++/14/bits/stringfwd.h \
+  /usr/include/c++/14/bits/this_thread_sleep.h \
   /usr/include/c++/14/bits/uniform_int_dist.h \
   /usr/include/c++/14/bits/unique_ptr.h \
   /usr/include/c++/14/bits/unordered_map.h \
@@ -2980,6 +2995,7 @@ CMakeFiles/master.dir/main.cpp.o: /home/debian/master/main.cpp \
   /usr/include/c++/14/cassert \
   /usr/include/c++/14/cctype \
   /usr/include/c++/14/cerrno \
+  /usr/include/c++/14/chrono \
   /usr/include/c++/14/climits \
   /usr/include/c++/14/clocale \
   /usr/include/c++/14/cmath \
@@ -2991,6 +3007,7 @@ CMakeFiles/master.dir/main.cpp.o: /home/debian/master/main.cpp \
   /usr/include/c++/14/cstdio \
   /usr/include/c++/14/cstdlib \
   /usr/include/c++/14/cstring \
+  /usr/include/c++/14/ctime \
   /usr/include/c++/14/cwchar \
   /usr/include/c++/14/cwctype \
   /usr/include/c++/14/debug/assertions.h \
@@ -3003,13 +3020,16 @@ CMakeFiles/master.dir/main.cpp.o: /home/debian/master/main.cpp \
   /usr/include/c++/14/ext/numeric_traits.h \
   /usr/include/c++/14/ext/string_conversions.h \
   /usr/include/c++/14/ext/type_traits.h \
+  /usr/include/c++/14/fstream \
   /usr/include/c++/14/functional \
   /usr/include/c++/14/initializer_list \
+  /usr/include/c++/14/iomanip \
   /usr/include/c++/14/ios \
   /usr/include/c++/14/iosfwd \
   /usr/include/c++/14/iostream \
   /usr/include/c++/14/istream \
   /usr/include/c++/14/limits \
+  /usr/include/c++/14/locale \
   /usr/include/c++/14/math.h \
   /usr/include/c++/14/memory \
   /usr/include/c++/14/new \
@@ -3018,6 +3038,7 @@ CMakeFiles/master.dir/main.cpp.o: /home/debian/master/main.cpp \
   /usr/include/c++/14/pstl/glue_algorithm_defs.h \
   /usr/include/c++/14/pstl/glue_memory_defs.h \
   /usr/include/c++/14/pstl/pstl_config.h \
+  /usr/include/c++/14/ratio \
   /usr/include/c++/14/sstream \
   /usr/include/c++/14/stdexcept \
   /usr/include/c++/14/stdlib.h \
@@ -3025,6 +3046,7 @@ CMakeFiles/master.dir/main.cpp.o: /home/debian/master/main.cpp \
   /usr/include/c++/14/string \
   /usr/include/c++/14/string_view \
   /usr/include/c++/14/system_error \
+  /usr/include/c++/14/thread \
   /usr/include/c++/14/tr1/bessel_function.tcc \
   /usr/include/c++/14/tr1/beta_function.tcc \
   /usr/include/c++/14/tr1/ell_integral.tcc \
@@ -3048,6 +3070,7 @@ CMakeFiles/master.dir/main.cpp.o: /home/debian/master/main.cpp \
   /usr/include/fcntl.h \
   /usr/include/features-time64.h \
   /usr/include/features.h \
+  /usr/include/libintl.h \
   /usr/include/limits.h \
   /usr/include/linux/close_range.h \
   /usr/include/linux/errno.h \
@@ -3150,8 +3173,6 @@ master: /lib/aarch64-linux-gnu/libc.so.6 \
   CMakeFiles/master.dir/main.cpp.o
 
 
-CMakeFiles/master.dir/main.cpp.o:
-
 CMakeFiles/master.dir/Kinematics/xzlarfg.c.o:
 
 CMakeFiles/master.dir/Kinematics/xnrm2.c.o:
@@ -3212,6 +3233,8 @@ CMakeFiles/master.dir/Kinematics/FK_7DOF_terminate.c.o:
 
 /usr/include/signal.h:
 
+/usr/include/libintl.h:
+
 /usr/include/c++/14/vector:
 
 /usr/include/c++/14/unordered_map:
@@ -3228,6 +3251,12 @@ CMakeFiles/master.dir/Kinematics/FK_7DOF_terminate.c.o:
 
 /usr/include/c++/14/tr1/ell_integral.tcc:
 
+/usr/include/c++/14/thread:
+
+CMakeFiles/master.dir/main.cpp.o:
+
+/usr/include/c++/14/ratio:
+
 /usr/include/c++/14/pstl/glue_memory_defs.h:
 
 CMakeFiles/master.dir/Kinematics/rt_nonfinite.c.o:
@@ -3239,6 +3268,8 @@ CMakeFiles/master.dir/Kinematics/rt_nonfinite.c.o:
 /usr/include/c++/14/tr1/bessel_function.tcc:
 
 /usr/include/c++/14/math.h:
+
+/usr/include/c++/14/locale:
 
 /usr/include/c++/14/limits:
 
@@ -3272,11 +3303,19 @@ CMakeFiles/master.dir/Kinematics/rt_nonfinite.c.o:
 
 /usr/include/c++/14/bits/stl_bvector.h:
 
+/usr/include/c++/14/bits/std_thread.h:
+
 /usr/include/c++/14/bits/std_function.h:
 
 /usr/include/c++/14/bits/shared_ptr_base.h:
 
 /usr/include/c++/14/bits/node_handle.h:
+
+/usr/include/c++/14/bits/locale_facets_nonio.tcc:
+
+/usr/include/c++/14/bits/locale_facets_nonio.h:
+
+/usr/include/c++/14/bits/locale_conv.h:
 
 /usr/include/c++/14/bits/enable_special_members.h:
 
@@ -3306,11 +3345,17 @@ CMakeFiles/master.dir/Kinematics/rtGetInf.c.o:
 
 /usr/include/aarch64-linux-gnu/sys/resource.h:
 
+/usr/include/aarch64-linux-gnu/c++/14/bits/time_members.h:
+
+/usr/include/aarch64-linux-gnu/c++/14/bits/messages_members.h:
+
 /usr/include/aarch64-linux-gnu/bits/types/struct_sigstack.h:
 
 /usr/include/aarch64-linux-gnu/bits/types/struct_osockaddr.h:
 
 /usr/include/aarch64-linux-gnu/bits/types/stack_t.h:
+
+/usr/include/c++/14/bits/this_thread_sleep.h:
 
 /usr/include/aarch64-linux-gnu/bits/types/siginfo_t.h:
 
@@ -3331,6 +3376,8 @@ CMakeFiles/master.dir/Kinematics/rtGetInf.c.o:
 /usr/include/aarch64-linux-gnu/bits/sigthread.h:
 
 /usr/include/aarch64-linux-gnu/bits/sigstksz.h:
+
+/usr/include/c++/14/bits/fstream.tcc:
 
 /usr/include/aarch64-linux-gnu/bits/sigstack.h:
 
@@ -3367,6 +3414,8 @@ CMakeFiles/master.dir/Kinematics/rtGetInf.c.o:
 /home/debian/master/planning/poly_traj.h:
 
 /home/debian/master/main.h:
+
+/home/debian/master/control/teaching.h:
 
 /usr/include/c++/14/bits/postypes.h:
 
@@ -3436,6 +3485,8 @@ CMakeFiles/master.dir/EtherCAT/EtherCAT.cpp.o:
 
 /usr/include/aarch64-linux-gnu/bits/types/struct_itimerspec.h:
 
+/usr/include/aarch64-linux-gnu/c++/14/bits/basic_file.h:
+
 /home/debian/master/Eigen/src/Core/Solve.h:
 
 /usr/include/termios.h:
@@ -3447,6 +3498,8 @@ CMakeFiles/master.dir/EtherCAT/EtherCAT.cpp.o:
 /usr/include/aarch64-linux-gnu/bits/termios-c_lflag.h:
 
 /home/debian/master/Eigen/src/Core/CwiseBinaryOp.h:
+
+/usr/include/aarch64-linux-gnu/c++/14/bits/c++io.h:
 
 /usr/include/aarch64-linux-gnu/bits/termios-c_cflag.h:
 
@@ -3482,6 +3535,8 @@ CMakeFiles/master.dir/EtherCAT/EtherCAT.cpp.o:
 
 /home/debian/master/Eigen/src/Core/IndexedView.h:
 
+/usr/include/c++/14/iomanip:
+
 /home/debian/master/Kinematics/xzlarf.c:
 
 /home/debian/master/Kinematics/xzgehrd.c:
@@ -3511,6 +3566,8 @@ CMakeFiles/master.dir/EtherCAT/EtherCAT.cpp.o:
 /home/debian/master/Kinematics/xdlahqr.c:
 
 /usr/lib/aarch64-linux-gnu/crti.o:
+
+/usr/include/c++/14/bits/codecvt.h:
 
 /home/debian/master/Eigen/src/Core/Transpositions.h:
 
@@ -3712,6 +3769,8 @@ CMakeFiles/master.dir/interface/cmdpanel.cpp.o:
 
 /usr/include/aarch64-linux-gnu/bits/termios-tcflow.h:
 
+/usr/include/c++/14/bits/chrono.h:
+
 /usr/include/c++/14/bits/locale_facets.tcc:
 
 /home/debian/master/Eigen/src/Core/StlIterators.h:
@@ -3769,6 +3828,8 @@ CMakeFiles/master.dir/Kinematics/mtimes.c.o:
 /usr/include/aarch64-linux-gnu/bits/fcntl.h:
 
 /usr/lib/aarch64-linux-gnu/libgcc_s.so.1:
+
+/usr/include/c++/14/chrono:
 
 /usr/lib/gcc/aarch64-linux-gnu/14/include/float.h:
 
@@ -3875,6 +3936,8 @@ CMakeFiles/master.dir/Kinematics/IK_7DOF.c.o:
 /home/debian/master/feedback/lpf.c:
 
 /usr/include/aarch64-linux-gnu/bits/fcntl-linux.h:
+
+/usr/include/c++/14/bits/parse_numbers.h:
 
 /home/debian/master/Eigen/src/plugins/ArrayCwiseUnaryOps.inc:
 
@@ -4025,6 +4088,8 @@ CMakeFiles/master.dir/Kinematics/xzlascl.c.o:
 /usr/include/aarch64-linux-gnu/bits/types/struct_FILE.h:
 
 /usr/include/linux/limits.h:
+
+/usr/include/c++/14/fstream:
 
 /usr/lib/gcc/aarch64-linux-gnu/14/include/limits.h:
 
@@ -4328,6 +4393,8 @@ CMakeFiles/master.dir/Kinematics/xzgebal.c.o:
 
 /home/debian/master/Eigen/src/Core/CwiseNullaryOp.h:
 
+/usr/include/c++/14/bits/quoted_string.h:
+
 /home/debian/master/Eigen/src/Core/products/Parallelizer.h:
 
 /home/debian/master/Eigen/src/Core/CwiseUnaryOp.h:
@@ -4533,6 +4600,8 @@ CMakeFiles/master.dir/Kinematics/FK_7DOF.c.o:
 /home/debian/master/Eigen/src/Geometry/Translation.h:
 
 /home/debian/master/Eigen/src/Geometry/Umeyama.h:
+
+/usr/include/c++/14/ctime:
 
 /usr/include/aarch64-linux-gnu/bits/xopen_lim.h:
 

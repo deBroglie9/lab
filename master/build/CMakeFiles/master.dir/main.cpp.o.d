@@ -532,6 +532,23 @@ CMakeFiles/master.dir/main.cpp.o: /home/debian/master/main.cpp \
  /home/debian/master/interface/enumclass.h \
  /home/debian/master/feedback/lpf.h \
  /home/debian/master/planning/poly_traj.h \
+ /home/debian/master/control/teaching.h /usr/include/c++/14/thread \
+ /usr/include/c++/14/bits/std_thread.h \
+ /usr/include/c++/14/bits/this_thread_sleep.h \
+ /usr/include/c++/14/bits/chrono.h /usr/include/c++/14/ratio \
+ /usr/include/c++/14/ctime /usr/include/c++/14/bits/parse_numbers.h \
+ /usr/include/c++/14/chrono /usr/include/c++/14/iomanip \
+ /usr/include/c++/14/locale \
+ /usr/include/c++/14/bits/locale_facets_nonio.h \
+ /usr/include/aarch64-linux-gnu/c++/14/bits/time_members.h \
+ /usr/include/aarch64-linux-gnu/c++/14/bits/messages_members.h \
+ /usr/include/libintl.h /usr/include/c++/14/bits/codecvt.h \
+ /usr/include/c++/14/bits/locale_facets_nonio.tcc \
+ /usr/include/c++/14/bits/locale_conv.h \
+ /usr/include/c++/14/bits/quoted_string.h /usr/include/c++/14/fstream \
+ /usr/include/aarch64-linux-gnu/c++/14/bits/basic_file.h \
+ /usr/include/aarch64-linux-gnu/c++/14/bits/c++io.h \
+ /usr/include/c++/14/bits/fstream.tcc \
  /home/debian/master/control/joint_state.h \
  /home/debian/master/control/pid_controller.h \
  /home/debian/master/control/admittance_controller.h
