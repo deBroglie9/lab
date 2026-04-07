@@ -326,8 +326,8 @@ int main(int argc, char **argv)
     }
 
     //示教轨迹读取
-    loadTrajectoryFromCSV(joint_trajectory, "trajectory.csv");
-    printf("%d\n",joint_trajectory.size());
+    loadTrajectoryFromCSV(loaded_joint_trajectory, "trajectory.csv");
+    printf("%d\n",loaded_joint_trajectory.size());
     // 打开文件
     // file = fopen("traj_lift.csv", "r");
     // if (file == NULL) {

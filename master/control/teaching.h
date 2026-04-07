@@ -12,7 +12,7 @@
 
 bool saveTrajectoryToCSV(const std::vector<std::array<double, 7>>& trajectory,
                          const std::string& filename) {
-    std::ofstream file(filename);
+    std::ofstream file(filename,std::ios::trunc);
     if (!file.is_open()) {
         std::cerr << "无法打开文件: " << filename << std::endl;
         return false;

@@ -47,7 +47,7 @@
 // Application parameters
 #define FREQUENCY 1000
 #define PRIORITY 1
-#define MAX_VELOCITY_1 90000
+#define MAX_VELOCITY_1 900000
 #define MAX_VELOCITY_2 160000
 #define MAX_VELOCITY_3 112000
 #define PERIODS_PER_SECOND   1000
@@ -72,6 +72,7 @@ std::array<double,6> x_current[2]; // 当前末端位姿
 std::array<double,6> x_target[2];  // 输出目标位姿
 float dt = 0.02;
 std::vector<std::array<double, 7>> joint_trajectory;
+std::vector<std::array<double, 7>> loaded_joint_trajectory;
 
 static float max_velocity[DRIVER_NUMBER]={0.2*MAX_VELOCITY_1,0.2*MAX_VELOCITY_1,0.2*MAX_VELOCITY_1,0.2*MAX_VELOCITY_1,0.2*MAX_VELOCITY_2,0.2*MAX_VELOCITY_2,0.2*MAX_VELOCITY_3,
 0.2*MAX_VELOCITY_1,0.2*MAX_VELOCITY_1,0.2*MAX_VELOCITY_1,0.2*MAX_VELOCITY_1,0.2*MAX_VELOCITY_2,0.2*MAX_VELOCITY_2,0.2*MAX_VELOCITY_3};
@@ -978,9 +979,9 @@ void teaching_record(){
 //示教复现
 void replay_record(){
     // counter_loop=0;
-    if(counter_loop<=joint_trajectory.size()){
+    if(counter_loop<=loaded_joint_trajectory.size()){
         for(counter_slave=0;counter_slave<7;counter_slave++){
-            Target_Position[counter_slave]=joint_trajectory[counter_loop][counter_slave];
+            Target_Position[counter_slave]=loaded_joint_trajectory[counter_loop][counter_slave];
         }
         printf("counter:%d %f, %f, %f, %f, %f, %f, %f\n",counter_loop,Target_Position[0],Target_Position[1],Target_Position[2],
                                                     Target_Position[3],Target_Position[4],
