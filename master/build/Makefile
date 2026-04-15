@@ -129,798 +129,6 @@ master/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/build
 .PHONY : master/fast
 
-EtherCAT/EtherCAT.o: EtherCAT/EtherCAT.cpp.o
-.PHONY : EtherCAT/EtherCAT.o
-
-# target to build an object file
-EtherCAT/EtherCAT.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/EtherCAT/EtherCAT.cpp.o
-.PHONY : EtherCAT/EtherCAT.cpp.o
-
-EtherCAT/EtherCAT.i: EtherCAT/EtherCAT.cpp.i
-.PHONY : EtherCAT/EtherCAT.i
-
-# target to preprocess a source file
-EtherCAT/EtherCAT.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/EtherCAT/EtherCAT.cpp.i
-.PHONY : EtherCAT/EtherCAT.cpp.i
-
-EtherCAT/EtherCAT.s: EtherCAT/EtherCAT.cpp.s
-.PHONY : EtherCAT/EtherCAT.s
-
-# target to generate assembly for a file
-EtherCAT/EtherCAT.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/EtherCAT/EtherCAT.cpp.s
-.PHONY : EtherCAT/EtherCAT.cpp.s
-
-Kinematics/FK_7DOF.o: Kinematics/FK_7DOF.c.o
-.PHONY : Kinematics/FK_7DOF.o
-
-# target to build an object file
-Kinematics/FK_7DOF.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/Kinematics/FK_7DOF.c.o
-.PHONY : Kinematics/FK_7DOF.c.o
-
-Kinematics/FK_7DOF.i: Kinematics/FK_7DOF.c.i
-.PHONY : Kinematics/FK_7DOF.i
-
-# target to preprocess a source file
-Kinematics/FK_7DOF.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/Kinematics/FK_7DOF.c.i
-.PHONY : Kinematics/FK_7DOF.c.i
-
-Kinematics/FK_7DOF.s: Kinematics/FK_7DOF.c.s
-.PHONY : Kinematics/FK_7DOF.s
-
-# target to generate assembly for a file
-Kinematics/FK_7DOF.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/Kinematics/FK_7DOF.c.s
-.PHONY : Kinematics/FK_7DOF.c.s
-
-Kinematics/FK_7DOF_data.o: Kinematics/FK_7DOF_data.c.o
-.PHONY : Kinematics/FK_7DOF_data.o
-
-# target to build an object file
-Kinematics/FK_7DOF_data.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/Kinematics/FK_7DOF_data.c.o
-.PHONY : Kinematics/FK_7DOF_data.c.o
-
-Kinematics/FK_7DOF_data.i: Kinematics/FK_7DOF_data.c.i
-.PHONY : Kinematics/FK_7DOF_data.i
-
-# target to preprocess a source file
-Kinematics/FK_7DOF_data.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/Kinematics/FK_7DOF_data.c.i
-.PHONY : Kinematics/FK_7DOF_data.c.i
-
-Kinematics/FK_7DOF_data.s: Kinematics/FK_7DOF_data.c.s
-.PHONY : Kinematics/FK_7DOF_data.s
-
-# target to generate assembly for a file
-Kinematics/FK_7DOF_data.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/Kinematics/FK_7DOF_data.c.s
-.PHONY : Kinematics/FK_7DOF_data.c.s
-
-Kinematics/FK_7DOF_initialize.o: Kinematics/FK_7DOF_initialize.c.o
-.PHONY : Kinematics/FK_7DOF_initialize.o
-
-# target to build an object file
-Kinematics/FK_7DOF_initialize.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/Kinematics/FK_7DOF_initialize.c.o
-.PHONY : Kinematics/FK_7DOF_initialize.c.o
-
-Kinematics/FK_7DOF_initialize.i: Kinematics/FK_7DOF_initialize.c.i
-.PHONY : Kinematics/FK_7DOF_initialize.i
-
-# target to preprocess a source file
-Kinematics/FK_7DOF_initialize.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/Kinematics/FK_7DOF_initialize.c.i
-.PHONY : Kinematics/FK_7DOF_initialize.c.i
-
-Kinematics/FK_7DOF_initialize.s: Kinematics/FK_7DOF_initialize.c.s
-.PHONY : Kinematics/FK_7DOF_initialize.s
-
-# target to generate assembly for a file
-Kinematics/FK_7DOF_initialize.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/Kinematics/FK_7DOF_initialize.c.s
-.PHONY : Kinematics/FK_7DOF_initialize.c.s
-
-Kinematics/FK_7DOF_terminate.o: Kinematics/FK_7DOF_terminate.c.o
-.PHONY : Kinematics/FK_7DOF_terminate.o
-
-# target to build an object file
-Kinematics/FK_7DOF_terminate.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/Kinematics/FK_7DOF_terminate.c.o
-.PHONY : Kinematics/FK_7DOF_terminate.c.o
-
-Kinematics/FK_7DOF_terminate.i: Kinematics/FK_7DOF_terminate.c.i
-.PHONY : Kinematics/FK_7DOF_terminate.i
-
-# target to preprocess a source file
-Kinematics/FK_7DOF_terminate.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/Kinematics/FK_7DOF_terminate.c.i
-.PHONY : Kinematics/FK_7DOF_terminate.c.i
-
-Kinematics/FK_7DOF_terminate.s: Kinematics/FK_7DOF_terminate.c.s
-.PHONY : Kinematics/FK_7DOF_terminate.s
-
-# target to generate assembly for a file
-Kinematics/FK_7DOF_terminate.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/Kinematics/FK_7DOF_terminate.c.s
-.PHONY : Kinematics/FK_7DOF_terminate.c.s
-
-Kinematics/IK_7DOF.o: Kinematics/IK_7DOF.c.o
-.PHONY : Kinematics/IK_7DOF.o
-
-# target to build an object file
-Kinematics/IK_7DOF.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/Kinematics/IK_7DOF.c.o
-.PHONY : Kinematics/IK_7DOF.c.o
-
-Kinematics/IK_7DOF.i: Kinematics/IK_7DOF.c.i
-.PHONY : Kinematics/IK_7DOF.i
-
-# target to preprocess a source file
-Kinematics/IK_7DOF.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/Kinematics/IK_7DOF.c.i
-.PHONY : Kinematics/IK_7DOF.c.i
-
-Kinematics/IK_7DOF.s: Kinematics/IK_7DOF.c.s
-.PHONY : Kinematics/IK_7DOF.s
-
-# target to generate assembly for a file
-Kinematics/IK_7DOF.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/Kinematics/IK_7DOF.c.s
-.PHONY : Kinematics/IK_7DOF.c.s
-
-Kinematics/IK_7DOF_data.o: Kinematics/IK_7DOF_data.c.o
-.PHONY : Kinematics/IK_7DOF_data.o
-
-# target to build an object file
-Kinematics/IK_7DOF_data.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/Kinematics/IK_7DOF_data.c.o
-.PHONY : Kinematics/IK_7DOF_data.c.o
-
-Kinematics/IK_7DOF_data.i: Kinematics/IK_7DOF_data.c.i
-.PHONY : Kinematics/IK_7DOF_data.i
-
-# target to preprocess a source file
-Kinematics/IK_7DOF_data.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/Kinematics/IK_7DOF_data.c.i
-.PHONY : Kinematics/IK_7DOF_data.c.i
-
-Kinematics/IK_7DOF_data.s: Kinematics/IK_7DOF_data.c.s
-.PHONY : Kinematics/IK_7DOF_data.s
-
-# target to generate assembly for a file
-Kinematics/IK_7DOF_data.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/Kinematics/IK_7DOF_data.c.s
-.PHONY : Kinematics/IK_7DOF_data.c.s
-
-Kinematics/IK_7DOF_initialize.o: Kinematics/IK_7DOF_initialize.c.o
-.PHONY : Kinematics/IK_7DOF_initialize.o
-
-# target to build an object file
-Kinematics/IK_7DOF_initialize.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/Kinematics/IK_7DOF_initialize.c.o
-.PHONY : Kinematics/IK_7DOF_initialize.c.o
-
-Kinematics/IK_7DOF_initialize.i: Kinematics/IK_7DOF_initialize.c.i
-.PHONY : Kinematics/IK_7DOF_initialize.i
-
-# target to preprocess a source file
-Kinematics/IK_7DOF_initialize.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/Kinematics/IK_7DOF_initialize.c.i
-.PHONY : Kinematics/IK_7DOF_initialize.c.i
-
-Kinematics/IK_7DOF_initialize.s: Kinematics/IK_7DOF_initialize.c.s
-.PHONY : Kinematics/IK_7DOF_initialize.s
-
-# target to generate assembly for a file
-Kinematics/IK_7DOF_initialize.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/Kinematics/IK_7DOF_initialize.c.s
-.PHONY : Kinematics/IK_7DOF_initialize.c.s
-
-Kinematics/IK_7DOF_terminate.o: Kinematics/IK_7DOF_terminate.c.o
-.PHONY : Kinematics/IK_7DOF_terminate.o
-
-# target to build an object file
-Kinematics/IK_7DOF_terminate.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/Kinematics/IK_7DOF_terminate.c.o
-.PHONY : Kinematics/IK_7DOF_terminate.c.o
-
-Kinematics/IK_7DOF_terminate.i: Kinematics/IK_7DOF_terminate.c.i
-.PHONY : Kinematics/IK_7DOF_terminate.i
-
-# target to preprocess a source file
-Kinematics/IK_7DOF_terminate.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/Kinematics/IK_7DOF_terminate.c.i
-.PHONY : Kinematics/IK_7DOF_terminate.c.i
-
-Kinematics/IK_7DOF_terminate.s: Kinematics/IK_7DOF_terminate.c.s
-.PHONY : Kinematics/IK_7DOF_terminate.s
-
-# target to generate assembly for a file
-Kinematics/IK_7DOF_terminate.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/Kinematics/IK_7DOF_terminate.c.s
-.PHONY : Kinematics/IK_7DOF_terminate.c.s
-
-Kinematics/atan.o: Kinematics/atan.c.o
-.PHONY : Kinematics/atan.o
-
-# target to build an object file
-Kinematics/atan.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/Kinematics/atan.c.o
-.PHONY : Kinematics/atan.c.o
-
-Kinematics/atan.i: Kinematics/atan.c.i
-.PHONY : Kinematics/atan.i
-
-# target to preprocess a source file
-Kinematics/atan.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/Kinematics/atan.c.i
-.PHONY : Kinematics/atan.c.i
-
-Kinematics/atan.s: Kinematics/atan.c.s
-.PHONY : Kinematics/atan.s
-
-# target to generate assembly for a file
-Kinematics/atan.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/Kinematics/atan.c.s
-.PHONY : Kinematics/atan.c.s
-
-Kinematics/checkStoppingCriteria.o: Kinematics/checkStoppingCriteria.c.o
-.PHONY : Kinematics/checkStoppingCriteria.o
-
-# target to build an object file
-Kinematics/checkStoppingCriteria.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/Kinematics/checkStoppingCriteria.c.o
-.PHONY : Kinematics/checkStoppingCriteria.c.o
-
-Kinematics/checkStoppingCriteria.i: Kinematics/checkStoppingCriteria.c.i
-.PHONY : Kinematics/checkStoppingCriteria.i
-
-# target to preprocess a source file
-Kinematics/checkStoppingCriteria.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/Kinematics/checkStoppingCriteria.c.i
-.PHONY : Kinematics/checkStoppingCriteria.c.i
-
-Kinematics/checkStoppingCriteria.s: Kinematics/checkStoppingCriteria.c.s
-.PHONY : Kinematics/checkStoppingCriteria.s
-
-# target to generate assembly for a file
-Kinematics/checkStoppingCriteria.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/Kinematics/checkStoppingCriteria.c.s
-.PHONY : Kinematics/checkStoppingCriteria.c.s
-
-Kinematics/computeFiniteDifferences.o: Kinematics/computeFiniteDifferences.c.o
-.PHONY : Kinematics/computeFiniteDifferences.o
-
-# target to build an object file
-Kinematics/computeFiniteDifferences.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/Kinematics/computeFiniteDifferences.c.o
-.PHONY : Kinematics/computeFiniteDifferences.c.o
-
-Kinematics/computeFiniteDifferences.i: Kinematics/computeFiniteDifferences.c.i
-.PHONY : Kinematics/computeFiniteDifferences.i
-
-# target to preprocess a source file
-Kinematics/computeFiniteDifferences.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/Kinematics/computeFiniteDifferences.c.i
-.PHONY : Kinematics/computeFiniteDifferences.c.i
-
-Kinematics/computeFiniteDifferences.s: Kinematics/computeFiniteDifferences.c.s
-.PHONY : Kinematics/computeFiniteDifferences.s
-
-# target to generate assembly for a file
-Kinematics/computeFiniteDifferences.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/Kinematics/computeFiniteDifferences.c.s
-.PHONY : Kinematics/computeFiniteDifferences.c.s
-
-Kinematics/driver.o: Kinematics/driver.c.o
-.PHONY : Kinematics/driver.o
-
-# target to build an object file
-Kinematics/driver.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/Kinematics/driver.c.o
-.PHONY : Kinematics/driver.c.o
-
-Kinematics/driver.i: Kinematics/driver.c.i
-.PHONY : Kinematics/driver.i
-
-# target to preprocess a source file
-Kinematics/driver.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/Kinematics/driver.c.i
-.PHONY : Kinematics/driver.c.i
-
-Kinematics/driver.s: Kinematics/driver.c.s
-.PHONY : Kinematics/driver.s
-
-# target to generate assembly for a file
-Kinematics/driver.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/Kinematics/driver.c.s
-.PHONY : Kinematics/driver.c.s
-
-Kinematics/exp.o: Kinematics/exp.c.o
-.PHONY : Kinematics/exp.o
-
-# target to build an object file
-Kinematics/exp.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/Kinematics/exp.c.o
-.PHONY : Kinematics/exp.c.o
-
-Kinematics/exp.i: Kinematics/exp.c.i
-.PHONY : Kinematics/exp.i
-
-# target to preprocess a source file
-Kinematics/exp.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/Kinematics/exp.c.i
-.PHONY : Kinematics/exp.c.i
-
-Kinematics/exp.s: Kinematics/exp.c.s
-.PHONY : Kinematics/exp.s
-
-# target to generate assembly for a file
-Kinematics/exp.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/Kinematics/exp.c.s
-.PHONY : Kinematics/exp.c.s
-
-Kinematics/finDiffEvalAndChkErr.o: Kinematics/finDiffEvalAndChkErr.c.o
-.PHONY : Kinematics/finDiffEvalAndChkErr.o
-
-# target to build an object file
-Kinematics/finDiffEvalAndChkErr.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/Kinematics/finDiffEvalAndChkErr.c.o
-.PHONY : Kinematics/finDiffEvalAndChkErr.c.o
-
-Kinematics/finDiffEvalAndChkErr.i: Kinematics/finDiffEvalAndChkErr.c.i
-.PHONY : Kinematics/finDiffEvalAndChkErr.i
-
-# target to preprocess a source file
-Kinematics/finDiffEvalAndChkErr.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/Kinematics/finDiffEvalAndChkErr.c.i
-.PHONY : Kinematics/finDiffEvalAndChkErr.c.i
-
-Kinematics/finDiffEvalAndChkErr.s: Kinematics/finDiffEvalAndChkErr.c.s
-.PHONY : Kinematics/finDiffEvalAndChkErr.s
-
-# target to generate assembly for a file
-Kinematics/finDiffEvalAndChkErr.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/Kinematics/finDiffEvalAndChkErr.c.s
-.PHONY : Kinematics/finDiffEvalAndChkErr.c.s
-
-Kinematics/linearLeastSquares.o: Kinematics/linearLeastSquares.c.o
-.PHONY : Kinematics/linearLeastSquares.o
-
-# target to build an object file
-Kinematics/linearLeastSquares.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/Kinematics/linearLeastSquares.c.o
-.PHONY : Kinematics/linearLeastSquares.c.o
-
-Kinematics/linearLeastSquares.i: Kinematics/linearLeastSquares.c.i
-.PHONY : Kinematics/linearLeastSquares.i
-
-# target to preprocess a source file
-Kinematics/linearLeastSquares.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/Kinematics/linearLeastSquares.c.i
-.PHONY : Kinematics/linearLeastSquares.c.i
-
-Kinematics/linearLeastSquares.s: Kinematics/linearLeastSquares.c.s
-.PHONY : Kinematics/linearLeastSquares.s
-
-# target to generate assembly for a file
-Kinematics/linearLeastSquares.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/Kinematics/linearLeastSquares.c.s
-.PHONY : Kinematics/linearLeastSquares.c.s
-
-Kinematics/log.o: Kinematics/log.c.o
-.PHONY : Kinematics/log.o
-
-# target to build an object file
-Kinematics/log.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/Kinematics/log.c.o
-.PHONY : Kinematics/log.c.o
-
-Kinematics/log.i: Kinematics/log.c.i
-.PHONY : Kinematics/log.i
-
-# target to preprocess a source file
-Kinematics/log.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/Kinematics/log.c.i
-.PHONY : Kinematics/log.c.i
-
-Kinematics/log.s: Kinematics/log.c.s
-.PHONY : Kinematics/log.s
-
-# target to generate assembly for a file
-Kinematics/log.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/Kinematics/log.c.s
-.PHONY : Kinematics/log.c.s
-
-Kinematics/mtimes.o: Kinematics/mtimes.c.o
-.PHONY : Kinematics/mtimes.o
-
-# target to build an object file
-Kinematics/mtimes.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/Kinematics/mtimes.c.o
-.PHONY : Kinematics/mtimes.c.o
-
-Kinematics/mtimes.i: Kinematics/mtimes.c.i
-.PHONY : Kinematics/mtimes.i
-
-# target to preprocess a source file
-Kinematics/mtimes.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/Kinematics/mtimes.c.i
-.PHONY : Kinematics/mtimes.c.i
-
-Kinematics/mtimes.s: Kinematics/mtimes.c.s
-.PHONY : Kinematics/mtimes.s
-
-# target to generate assembly for a file
-Kinematics/mtimes.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/Kinematics/mtimes.c.s
-.PHONY : Kinematics/mtimes.c.s
-
-Kinematics/norm.o: Kinematics/norm.c.o
-.PHONY : Kinematics/norm.o
-
-# target to build an object file
-Kinematics/norm.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/Kinematics/norm.c.o
-.PHONY : Kinematics/norm.c.o
-
-Kinematics/norm.i: Kinematics/norm.c.i
-.PHONY : Kinematics/norm.i
-
-# target to preprocess a source file
-Kinematics/norm.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/Kinematics/norm.c.i
-.PHONY : Kinematics/norm.c.i
-
-Kinematics/norm.s: Kinematics/norm.c.s
-.PHONY : Kinematics/norm.s
-
-# target to generate assembly for a file
-Kinematics/norm.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/Kinematics/norm.c.s
-.PHONY : Kinematics/norm.c.s
-
-Kinematics/power.o: Kinematics/power.c.o
-.PHONY : Kinematics/power.o
-
-# target to build an object file
-Kinematics/power.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/Kinematics/power.c.o
-.PHONY : Kinematics/power.c.o
-
-Kinematics/power.i: Kinematics/power.c.i
-.PHONY : Kinematics/power.i
-
-# target to preprocess a source file
-Kinematics/power.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/Kinematics/power.c.i
-.PHONY : Kinematics/power.c.i
-
-Kinematics/power.s: Kinematics/power.c.s
-.PHONY : Kinematics/power.s
-
-# target to generate assembly for a file
-Kinematics/power.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/Kinematics/power.c.s
-.PHONY : Kinematics/power.c.s
-
-Kinematics/roots.o: Kinematics/roots.c.o
-.PHONY : Kinematics/roots.o
-
-# target to build an object file
-Kinematics/roots.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/Kinematics/roots.c.o
-.PHONY : Kinematics/roots.c.o
-
-Kinematics/roots.i: Kinematics/roots.c.i
-.PHONY : Kinematics/roots.i
-
-# target to preprocess a source file
-Kinematics/roots.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/Kinematics/roots.c.i
-.PHONY : Kinematics/roots.c.i
-
-Kinematics/roots.s: Kinematics/roots.c.s
-.PHONY : Kinematics/roots.s
-
-# target to generate assembly for a file
-Kinematics/roots.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/Kinematics/roots.c.s
-.PHONY : Kinematics/roots.c.s
-
-Kinematics/rtGetInf.o: Kinematics/rtGetInf.c.o
-.PHONY : Kinematics/rtGetInf.o
-
-# target to build an object file
-Kinematics/rtGetInf.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/Kinematics/rtGetInf.c.o
-.PHONY : Kinematics/rtGetInf.c.o
-
-Kinematics/rtGetInf.i: Kinematics/rtGetInf.c.i
-.PHONY : Kinematics/rtGetInf.i
-
-# target to preprocess a source file
-Kinematics/rtGetInf.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/Kinematics/rtGetInf.c.i
-.PHONY : Kinematics/rtGetInf.c.i
-
-Kinematics/rtGetInf.s: Kinematics/rtGetInf.c.s
-.PHONY : Kinematics/rtGetInf.s
-
-# target to generate assembly for a file
-Kinematics/rtGetInf.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/Kinematics/rtGetInf.c.s
-.PHONY : Kinematics/rtGetInf.c.s
-
-Kinematics/rtGetNaN.o: Kinematics/rtGetNaN.c.o
-.PHONY : Kinematics/rtGetNaN.o
-
-# target to build an object file
-Kinematics/rtGetNaN.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/Kinematics/rtGetNaN.c.o
-.PHONY : Kinematics/rtGetNaN.c.o
-
-Kinematics/rtGetNaN.i: Kinematics/rtGetNaN.c.i
-.PHONY : Kinematics/rtGetNaN.i
-
-# target to preprocess a source file
-Kinematics/rtGetNaN.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/Kinematics/rtGetNaN.c.i
-.PHONY : Kinematics/rtGetNaN.c.i
-
-Kinematics/rtGetNaN.s: Kinematics/rtGetNaN.c.s
-.PHONY : Kinematics/rtGetNaN.s
-
-# target to generate assembly for a file
-Kinematics/rtGetNaN.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/Kinematics/rtGetNaN.c.s
-.PHONY : Kinematics/rtGetNaN.c.s
-
-Kinematics/rt_nonfinite.o: Kinematics/rt_nonfinite.c.o
-.PHONY : Kinematics/rt_nonfinite.o
-
-# target to build an object file
-Kinematics/rt_nonfinite.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/Kinematics/rt_nonfinite.c.o
-.PHONY : Kinematics/rt_nonfinite.c.o
-
-Kinematics/rt_nonfinite.i: Kinematics/rt_nonfinite.c.i
-.PHONY : Kinematics/rt_nonfinite.i
-
-# target to preprocess a source file
-Kinematics/rt_nonfinite.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/Kinematics/rt_nonfinite.c.i
-.PHONY : Kinematics/rt_nonfinite.c.i
-
-Kinematics/rt_nonfinite.s: Kinematics/rt_nonfinite.c.s
-.PHONY : Kinematics/rt_nonfinite.s
-
-# target to generate assembly for a file
-Kinematics/rt_nonfinite.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/Kinematics/rt_nonfinite.c.s
-.PHONY : Kinematics/rt_nonfinite.c.s
-
-Kinematics/rt_wutil.o: Kinematics/rt_wutil.c.o
-.PHONY : Kinematics/rt_wutil.o
-
-# target to build an object file
-Kinematics/rt_wutil.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/Kinematics/rt_wutil.c.o
-.PHONY : Kinematics/rt_wutil.c.o
-
-Kinematics/rt_wutil.i: Kinematics/rt_wutil.c.i
-.PHONY : Kinematics/rt_wutil.i
-
-# target to preprocess a source file
-Kinematics/rt_wutil.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/Kinematics/rt_wutil.c.i
-.PHONY : Kinematics/rt_wutil.c.i
-
-Kinematics/rt_wutil.s: Kinematics/rt_wutil.c.s
-.PHONY : Kinematics/rt_wutil.s
-
-# target to generate assembly for a file
-Kinematics/rt_wutil.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/Kinematics/rt_wutil.c.s
-.PHONY : Kinematics/rt_wutil.c.s
-
-Kinematics/xdlahqr.o: Kinematics/xdlahqr.c.o
-.PHONY : Kinematics/xdlahqr.o
-
-# target to build an object file
-Kinematics/xdlahqr.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/Kinematics/xdlahqr.c.o
-.PHONY : Kinematics/xdlahqr.c.o
-
-Kinematics/xdlahqr.i: Kinematics/xdlahqr.c.i
-.PHONY : Kinematics/xdlahqr.i
-
-# target to preprocess a source file
-Kinematics/xdlahqr.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/Kinematics/xdlahqr.c.i
-.PHONY : Kinematics/xdlahqr.c.i
-
-Kinematics/xdlahqr.s: Kinematics/xdlahqr.c.s
-.PHONY : Kinematics/xdlahqr.s
-
-# target to generate assembly for a file
-Kinematics/xdlahqr.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/Kinematics/xdlahqr.c.s
-.PHONY : Kinematics/xdlahqr.c.s
-
-Kinematics/xdlanv2.o: Kinematics/xdlanv2.c.o
-.PHONY : Kinematics/xdlanv2.o
-
-# target to build an object file
-Kinematics/xdlanv2.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/Kinematics/xdlanv2.c.o
-.PHONY : Kinematics/xdlanv2.c.o
-
-Kinematics/xdlanv2.i: Kinematics/xdlanv2.c.i
-.PHONY : Kinematics/xdlanv2.i
-
-# target to preprocess a source file
-Kinematics/xdlanv2.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/Kinematics/xdlanv2.c.i
-.PHONY : Kinematics/xdlanv2.c.i
-
-Kinematics/xdlanv2.s: Kinematics/xdlanv2.c.s
-.PHONY : Kinematics/xdlanv2.s
-
-# target to generate assembly for a file
-Kinematics/xdlanv2.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/Kinematics/xdlanv2.c.s
-.PHONY : Kinematics/xdlanv2.c.s
-
-Kinematics/xnrm2.o: Kinematics/xnrm2.c.o
-.PHONY : Kinematics/xnrm2.o
-
-# target to build an object file
-Kinematics/xnrm2.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/Kinematics/xnrm2.c.o
-.PHONY : Kinematics/xnrm2.c.o
-
-Kinematics/xnrm2.i: Kinematics/xnrm2.c.i
-.PHONY : Kinematics/xnrm2.i
-
-# target to preprocess a source file
-Kinematics/xnrm2.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/Kinematics/xnrm2.c.i
-.PHONY : Kinematics/xnrm2.c.i
-
-Kinematics/xnrm2.s: Kinematics/xnrm2.c.s
-.PHONY : Kinematics/xnrm2.s
-
-# target to generate assembly for a file
-Kinematics/xnrm2.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/Kinematics/xnrm2.c.s
-.PHONY : Kinematics/xnrm2.c.s
-
-Kinematics/xzgebal.o: Kinematics/xzgebal.c.o
-.PHONY : Kinematics/xzgebal.o
-
-# target to build an object file
-Kinematics/xzgebal.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/Kinematics/xzgebal.c.o
-.PHONY : Kinematics/xzgebal.c.o
-
-Kinematics/xzgebal.i: Kinematics/xzgebal.c.i
-.PHONY : Kinematics/xzgebal.i
-
-# target to preprocess a source file
-Kinematics/xzgebal.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/Kinematics/xzgebal.c.i
-.PHONY : Kinematics/xzgebal.c.i
-
-Kinematics/xzgebal.s: Kinematics/xzgebal.c.s
-.PHONY : Kinematics/xzgebal.s
-
-# target to generate assembly for a file
-Kinematics/xzgebal.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/Kinematics/xzgebal.c.s
-.PHONY : Kinematics/xzgebal.c.s
-
-Kinematics/xzgehrd.o: Kinematics/xzgehrd.c.o
-.PHONY : Kinematics/xzgehrd.o
-
-# target to build an object file
-Kinematics/xzgehrd.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/Kinematics/xzgehrd.c.o
-.PHONY : Kinematics/xzgehrd.c.o
-
-Kinematics/xzgehrd.i: Kinematics/xzgehrd.c.i
-.PHONY : Kinematics/xzgehrd.i
-
-# target to preprocess a source file
-Kinematics/xzgehrd.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/Kinematics/xzgehrd.c.i
-.PHONY : Kinematics/xzgehrd.c.i
-
-Kinematics/xzgehrd.s: Kinematics/xzgehrd.c.s
-.PHONY : Kinematics/xzgehrd.s
-
-# target to generate assembly for a file
-Kinematics/xzgehrd.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/Kinematics/xzgehrd.c.s
-.PHONY : Kinematics/xzgehrd.c.s
-
-Kinematics/xzlarf.o: Kinematics/xzlarf.c.o
-.PHONY : Kinematics/xzlarf.o
-
-# target to build an object file
-Kinematics/xzlarf.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/Kinematics/xzlarf.c.o
-.PHONY : Kinematics/xzlarf.c.o
-
-Kinematics/xzlarf.i: Kinematics/xzlarf.c.i
-.PHONY : Kinematics/xzlarf.i
-
-# target to preprocess a source file
-Kinematics/xzlarf.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/Kinematics/xzlarf.c.i
-.PHONY : Kinematics/xzlarf.c.i
-
-Kinematics/xzlarf.s: Kinematics/xzlarf.c.s
-.PHONY : Kinematics/xzlarf.s
-
-# target to generate assembly for a file
-Kinematics/xzlarf.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/Kinematics/xzlarf.c.s
-.PHONY : Kinematics/xzlarf.c.s
-
-Kinematics/xzlarfg.o: Kinematics/xzlarfg.c.o
-.PHONY : Kinematics/xzlarfg.o
-
-# target to build an object file
-Kinematics/xzlarfg.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/Kinematics/xzlarfg.c.o
-.PHONY : Kinematics/xzlarfg.c.o
-
-Kinematics/xzlarfg.i: Kinematics/xzlarfg.c.i
-.PHONY : Kinematics/xzlarfg.i
-
-# target to preprocess a source file
-Kinematics/xzlarfg.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/Kinematics/xzlarfg.c.i
-.PHONY : Kinematics/xzlarfg.c.i
-
-Kinematics/xzlarfg.s: Kinematics/xzlarfg.c.s
-.PHONY : Kinematics/xzlarfg.s
-
-# target to generate assembly for a file
-Kinematics/xzlarfg.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/Kinematics/xzlarfg.c.s
-.PHONY : Kinematics/xzlarfg.c.s
-
-Kinematics/xzlascl.o: Kinematics/xzlascl.c.o
-.PHONY : Kinematics/xzlascl.o
-
-# target to build an object file
-Kinematics/xzlascl.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/Kinematics/xzlascl.c.o
-.PHONY : Kinematics/xzlascl.c.o
-
-Kinematics/xzlascl.i: Kinematics/xzlascl.c.i
-.PHONY : Kinematics/xzlascl.i
-
-# target to preprocess a source file
-Kinematics/xzlascl.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/Kinematics/xzlascl.c.i
-.PHONY : Kinematics/xzlascl.c.i
-
-Kinematics/xzlascl.s: Kinematics/xzlascl.c.s
-.PHONY : Kinematics/xzlascl.s
-
-# target to generate assembly for a file
-Kinematics/xzlascl.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/Kinematics/xzlascl.c.s
-.PHONY : Kinematics/xzlascl.c.s
-
 demo.o: demo.c.o
 .PHONY : demo.o
 
@@ -945,53 +153,917 @@ demo.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/demo.c.s
 .PHONY : demo.c.s
 
-feedback/lpf.o: feedback/lpf.c.o
-.PHONY : feedback/lpf.o
+lib/EtherCAT/EtherCAT.o: lib/EtherCAT/EtherCAT.cpp.o
+.PHONY : lib/EtherCAT/EtherCAT.o
 
 # target to build an object file
-feedback/lpf.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/feedback/lpf.c.o
-.PHONY : feedback/lpf.c.o
+lib/EtherCAT/EtherCAT.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/EtherCAT/EtherCAT.cpp.o
+.PHONY : lib/EtherCAT/EtherCAT.cpp.o
 
-feedback/lpf.i: feedback/lpf.c.i
-.PHONY : feedback/lpf.i
+lib/EtherCAT/EtherCAT.i: lib/EtherCAT/EtherCAT.cpp.i
+.PHONY : lib/EtherCAT/EtherCAT.i
 
 # target to preprocess a source file
-feedback/lpf.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/feedback/lpf.c.i
-.PHONY : feedback/lpf.c.i
+lib/EtherCAT/EtherCAT.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/EtherCAT/EtherCAT.cpp.i
+.PHONY : lib/EtherCAT/EtherCAT.cpp.i
 
-feedback/lpf.s: feedback/lpf.c.s
-.PHONY : feedback/lpf.s
+lib/EtherCAT/EtherCAT.s: lib/EtherCAT/EtherCAT.cpp.s
+.PHONY : lib/EtherCAT/EtherCAT.s
 
 # target to generate assembly for a file
-feedback/lpf.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/feedback/lpf.c.s
-.PHONY : feedback/lpf.c.s
+lib/EtherCAT/EtherCAT.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/EtherCAT/EtherCAT.cpp.s
+.PHONY : lib/EtherCAT/EtherCAT.cpp.s
 
-interface/cmdpanel.o: interface/cmdpanel.cpp.o
-.PHONY : interface/cmdpanel.o
+lib/Kinematics/FK_7DOF.o: lib/Kinematics/FK_7DOF.c.o
+.PHONY : lib/Kinematics/FK_7DOF.o
 
 # target to build an object file
-interface/cmdpanel.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/interface/cmdpanel.cpp.o
-.PHONY : interface/cmdpanel.cpp.o
+lib/Kinematics/FK_7DOF.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/Kinematics/FK_7DOF.c.o
+.PHONY : lib/Kinematics/FK_7DOF.c.o
 
-interface/cmdpanel.i: interface/cmdpanel.cpp.i
-.PHONY : interface/cmdpanel.i
+lib/Kinematics/FK_7DOF.i: lib/Kinematics/FK_7DOF.c.i
+.PHONY : lib/Kinematics/FK_7DOF.i
 
 # target to preprocess a source file
-interface/cmdpanel.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/interface/cmdpanel.cpp.i
-.PHONY : interface/cmdpanel.cpp.i
+lib/Kinematics/FK_7DOF.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/Kinematics/FK_7DOF.c.i
+.PHONY : lib/Kinematics/FK_7DOF.c.i
 
-interface/cmdpanel.s: interface/cmdpanel.cpp.s
-.PHONY : interface/cmdpanel.s
+lib/Kinematics/FK_7DOF.s: lib/Kinematics/FK_7DOF.c.s
+.PHONY : lib/Kinematics/FK_7DOF.s
 
 # target to generate assembly for a file
-interface/cmdpanel.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/interface/cmdpanel.cpp.s
-.PHONY : interface/cmdpanel.cpp.s
+lib/Kinematics/FK_7DOF.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/Kinematics/FK_7DOF.c.s
+.PHONY : lib/Kinematics/FK_7DOF.c.s
+
+lib/Kinematics/FK_7DOF_data.o: lib/Kinematics/FK_7DOF_data.c.o
+.PHONY : lib/Kinematics/FK_7DOF_data.o
+
+# target to build an object file
+lib/Kinematics/FK_7DOF_data.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/Kinematics/FK_7DOF_data.c.o
+.PHONY : lib/Kinematics/FK_7DOF_data.c.o
+
+lib/Kinematics/FK_7DOF_data.i: lib/Kinematics/FK_7DOF_data.c.i
+.PHONY : lib/Kinematics/FK_7DOF_data.i
+
+# target to preprocess a source file
+lib/Kinematics/FK_7DOF_data.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/Kinematics/FK_7DOF_data.c.i
+.PHONY : lib/Kinematics/FK_7DOF_data.c.i
+
+lib/Kinematics/FK_7DOF_data.s: lib/Kinematics/FK_7DOF_data.c.s
+.PHONY : lib/Kinematics/FK_7DOF_data.s
+
+# target to generate assembly for a file
+lib/Kinematics/FK_7DOF_data.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/Kinematics/FK_7DOF_data.c.s
+.PHONY : lib/Kinematics/FK_7DOF_data.c.s
+
+lib/Kinematics/FK_7DOF_initialize.o: lib/Kinematics/FK_7DOF_initialize.c.o
+.PHONY : lib/Kinematics/FK_7DOF_initialize.o
+
+# target to build an object file
+lib/Kinematics/FK_7DOF_initialize.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/Kinematics/FK_7DOF_initialize.c.o
+.PHONY : lib/Kinematics/FK_7DOF_initialize.c.o
+
+lib/Kinematics/FK_7DOF_initialize.i: lib/Kinematics/FK_7DOF_initialize.c.i
+.PHONY : lib/Kinematics/FK_7DOF_initialize.i
+
+# target to preprocess a source file
+lib/Kinematics/FK_7DOF_initialize.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/Kinematics/FK_7DOF_initialize.c.i
+.PHONY : lib/Kinematics/FK_7DOF_initialize.c.i
+
+lib/Kinematics/FK_7DOF_initialize.s: lib/Kinematics/FK_7DOF_initialize.c.s
+.PHONY : lib/Kinematics/FK_7DOF_initialize.s
+
+# target to generate assembly for a file
+lib/Kinematics/FK_7DOF_initialize.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/Kinematics/FK_7DOF_initialize.c.s
+.PHONY : lib/Kinematics/FK_7DOF_initialize.c.s
+
+lib/Kinematics/FK_7DOF_terminate.o: lib/Kinematics/FK_7DOF_terminate.c.o
+.PHONY : lib/Kinematics/FK_7DOF_terminate.o
+
+# target to build an object file
+lib/Kinematics/FK_7DOF_terminate.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/Kinematics/FK_7DOF_terminate.c.o
+.PHONY : lib/Kinematics/FK_7DOF_terminate.c.o
+
+lib/Kinematics/FK_7DOF_terminate.i: lib/Kinematics/FK_7DOF_terminate.c.i
+.PHONY : lib/Kinematics/FK_7DOF_terminate.i
+
+# target to preprocess a source file
+lib/Kinematics/FK_7DOF_terminate.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/Kinematics/FK_7DOF_terminate.c.i
+.PHONY : lib/Kinematics/FK_7DOF_terminate.c.i
+
+lib/Kinematics/FK_7DOF_terminate.s: lib/Kinematics/FK_7DOF_terminate.c.s
+.PHONY : lib/Kinematics/FK_7DOF_terminate.s
+
+# target to generate assembly for a file
+lib/Kinematics/FK_7DOF_terminate.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/Kinematics/FK_7DOF_terminate.c.s
+.PHONY : lib/Kinematics/FK_7DOF_terminate.c.s
+
+lib/Kinematics/IK_7DOF.o: lib/Kinematics/IK_7DOF.c.o
+.PHONY : lib/Kinematics/IK_7DOF.o
+
+# target to build an object file
+lib/Kinematics/IK_7DOF.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/Kinematics/IK_7DOF.c.o
+.PHONY : lib/Kinematics/IK_7DOF.c.o
+
+lib/Kinematics/IK_7DOF.i: lib/Kinematics/IK_7DOF.c.i
+.PHONY : lib/Kinematics/IK_7DOF.i
+
+# target to preprocess a source file
+lib/Kinematics/IK_7DOF.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/Kinematics/IK_7DOF.c.i
+.PHONY : lib/Kinematics/IK_7DOF.c.i
+
+lib/Kinematics/IK_7DOF.s: lib/Kinematics/IK_7DOF.c.s
+.PHONY : lib/Kinematics/IK_7DOF.s
+
+# target to generate assembly for a file
+lib/Kinematics/IK_7DOF.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/Kinematics/IK_7DOF.c.s
+.PHONY : lib/Kinematics/IK_7DOF.c.s
+
+lib/Kinematics/IK_7DOF_data.o: lib/Kinematics/IK_7DOF_data.c.o
+.PHONY : lib/Kinematics/IK_7DOF_data.o
+
+# target to build an object file
+lib/Kinematics/IK_7DOF_data.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/Kinematics/IK_7DOF_data.c.o
+.PHONY : lib/Kinematics/IK_7DOF_data.c.o
+
+lib/Kinematics/IK_7DOF_data.i: lib/Kinematics/IK_7DOF_data.c.i
+.PHONY : lib/Kinematics/IK_7DOF_data.i
+
+# target to preprocess a source file
+lib/Kinematics/IK_7DOF_data.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/Kinematics/IK_7DOF_data.c.i
+.PHONY : lib/Kinematics/IK_7DOF_data.c.i
+
+lib/Kinematics/IK_7DOF_data.s: lib/Kinematics/IK_7DOF_data.c.s
+.PHONY : lib/Kinematics/IK_7DOF_data.s
+
+# target to generate assembly for a file
+lib/Kinematics/IK_7DOF_data.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/Kinematics/IK_7DOF_data.c.s
+.PHONY : lib/Kinematics/IK_7DOF_data.c.s
+
+lib/Kinematics/IK_7DOF_initialize.o: lib/Kinematics/IK_7DOF_initialize.c.o
+.PHONY : lib/Kinematics/IK_7DOF_initialize.o
+
+# target to build an object file
+lib/Kinematics/IK_7DOF_initialize.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/Kinematics/IK_7DOF_initialize.c.o
+.PHONY : lib/Kinematics/IK_7DOF_initialize.c.o
+
+lib/Kinematics/IK_7DOF_initialize.i: lib/Kinematics/IK_7DOF_initialize.c.i
+.PHONY : lib/Kinematics/IK_7DOF_initialize.i
+
+# target to preprocess a source file
+lib/Kinematics/IK_7DOF_initialize.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/Kinematics/IK_7DOF_initialize.c.i
+.PHONY : lib/Kinematics/IK_7DOF_initialize.c.i
+
+lib/Kinematics/IK_7DOF_initialize.s: lib/Kinematics/IK_7DOF_initialize.c.s
+.PHONY : lib/Kinematics/IK_7DOF_initialize.s
+
+# target to generate assembly for a file
+lib/Kinematics/IK_7DOF_initialize.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/Kinematics/IK_7DOF_initialize.c.s
+.PHONY : lib/Kinematics/IK_7DOF_initialize.c.s
+
+lib/Kinematics/IK_7DOF_terminate.o: lib/Kinematics/IK_7DOF_terminate.c.o
+.PHONY : lib/Kinematics/IK_7DOF_terminate.o
+
+# target to build an object file
+lib/Kinematics/IK_7DOF_terminate.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/Kinematics/IK_7DOF_terminate.c.o
+.PHONY : lib/Kinematics/IK_7DOF_terminate.c.o
+
+lib/Kinematics/IK_7DOF_terminate.i: lib/Kinematics/IK_7DOF_terminate.c.i
+.PHONY : lib/Kinematics/IK_7DOF_terminate.i
+
+# target to preprocess a source file
+lib/Kinematics/IK_7DOF_terminate.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/Kinematics/IK_7DOF_terminate.c.i
+.PHONY : lib/Kinematics/IK_7DOF_terminate.c.i
+
+lib/Kinematics/IK_7DOF_terminate.s: lib/Kinematics/IK_7DOF_terminate.c.s
+.PHONY : lib/Kinematics/IK_7DOF_terminate.s
+
+# target to generate assembly for a file
+lib/Kinematics/IK_7DOF_terminate.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/Kinematics/IK_7DOF_terminate.c.s
+.PHONY : lib/Kinematics/IK_7DOF_terminate.c.s
+
+lib/Kinematics/atan.o: lib/Kinematics/atan.c.o
+.PHONY : lib/Kinematics/atan.o
+
+# target to build an object file
+lib/Kinematics/atan.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/Kinematics/atan.c.o
+.PHONY : lib/Kinematics/atan.c.o
+
+lib/Kinematics/atan.i: lib/Kinematics/atan.c.i
+.PHONY : lib/Kinematics/atan.i
+
+# target to preprocess a source file
+lib/Kinematics/atan.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/Kinematics/atan.c.i
+.PHONY : lib/Kinematics/atan.c.i
+
+lib/Kinematics/atan.s: lib/Kinematics/atan.c.s
+.PHONY : lib/Kinematics/atan.s
+
+# target to generate assembly for a file
+lib/Kinematics/atan.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/Kinematics/atan.c.s
+.PHONY : lib/Kinematics/atan.c.s
+
+lib/Kinematics/checkStoppingCriteria.o: lib/Kinematics/checkStoppingCriteria.c.o
+.PHONY : lib/Kinematics/checkStoppingCriteria.o
+
+# target to build an object file
+lib/Kinematics/checkStoppingCriteria.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/Kinematics/checkStoppingCriteria.c.o
+.PHONY : lib/Kinematics/checkStoppingCriteria.c.o
+
+lib/Kinematics/checkStoppingCriteria.i: lib/Kinematics/checkStoppingCriteria.c.i
+.PHONY : lib/Kinematics/checkStoppingCriteria.i
+
+# target to preprocess a source file
+lib/Kinematics/checkStoppingCriteria.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/Kinematics/checkStoppingCriteria.c.i
+.PHONY : lib/Kinematics/checkStoppingCriteria.c.i
+
+lib/Kinematics/checkStoppingCriteria.s: lib/Kinematics/checkStoppingCriteria.c.s
+.PHONY : lib/Kinematics/checkStoppingCriteria.s
+
+# target to generate assembly for a file
+lib/Kinematics/checkStoppingCriteria.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/Kinematics/checkStoppingCriteria.c.s
+.PHONY : lib/Kinematics/checkStoppingCriteria.c.s
+
+lib/Kinematics/computeFiniteDifferences.o: lib/Kinematics/computeFiniteDifferences.c.o
+.PHONY : lib/Kinematics/computeFiniteDifferences.o
+
+# target to build an object file
+lib/Kinematics/computeFiniteDifferences.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/Kinematics/computeFiniteDifferences.c.o
+.PHONY : lib/Kinematics/computeFiniteDifferences.c.o
+
+lib/Kinematics/computeFiniteDifferences.i: lib/Kinematics/computeFiniteDifferences.c.i
+.PHONY : lib/Kinematics/computeFiniteDifferences.i
+
+# target to preprocess a source file
+lib/Kinematics/computeFiniteDifferences.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/Kinematics/computeFiniteDifferences.c.i
+.PHONY : lib/Kinematics/computeFiniteDifferences.c.i
+
+lib/Kinematics/computeFiniteDifferences.s: lib/Kinematics/computeFiniteDifferences.c.s
+.PHONY : lib/Kinematics/computeFiniteDifferences.s
+
+# target to generate assembly for a file
+lib/Kinematics/computeFiniteDifferences.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/Kinematics/computeFiniteDifferences.c.s
+.PHONY : lib/Kinematics/computeFiniteDifferences.c.s
+
+lib/Kinematics/driver.o: lib/Kinematics/driver.c.o
+.PHONY : lib/Kinematics/driver.o
+
+# target to build an object file
+lib/Kinematics/driver.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/Kinematics/driver.c.o
+.PHONY : lib/Kinematics/driver.c.o
+
+lib/Kinematics/driver.i: lib/Kinematics/driver.c.i
+.PHONY : lib/Kinematics/driver.i
+
+# target to preprocess a source file
+lib/Kinematics/driver.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/Kinematics/driver.c.i
+.PHONY : lib/Kinematics/driver.c.i
+
+lib/Kinematics/driver.s: lib/Kinematics/driver.c.s
+.PHONY : lib/Kinematics/driver.s
+
+# target to generate assembly for a file
+lib/Kinematics/driver.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/Kinematics/driver.c.s
+.PHONY : lib/Kinematics/driver.c.s
+
+lib/Kinematics/exp.o: lib/Kinematics/exp.c.o
+.PHONY : lib/Kinematics/exp.o
+
+# target to build an object file
+lib/Kinematics/exp.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/Kinematics/exp.c.o
+.PHONY : lib/Kinematics/exp.c.o
+
+lib/Kinematics/exp.i: lib/Kinematics/exp.c.i
+.PHONY : lib/Kinematics/exp.i
+
+# target to preprocess a source file
+lib/Kinematics/exp.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/Kinematics/exp.c.i
+.PHONY : lib/Kinematics/exp.c.i
+
+lib/Kinematics/exp.s: lib/Kinematics/exp.c.s
+.PHONY : lib/Kinematics/exp.s
+
+# target to generate assembly for a file
+lib/Kinematics/exp.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/Kinematics/exp.c.s
+.PHONY : lib/Kinematics/exp.c.s
+
+lib/Kinematics/finDiffEvalAndChkErr.o: lib/Kinematics/finDiffEvalAndChkErr.c.o
+.PHONY : lib/Kinematics/finDiffEvalAndChkErr.o
+
+# target to build an object file
+lib/Kinematics/finDiffEvalAndChkErr.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/Kinematics/finDiffEvalAndChkErr.c.o
+.PHONY : lib/Kinematics/finDiffEvalAndChkErr.c.o
+
+lib/Kinematics/finDiffEvalAndChkErr.i: lib/Kinematics/finDiffEvalAndChkErr.c.i
+.PHONY : lib/Kinematics/finDiffEvalAndChkErr.i
+
+# target to preprocess a source file
+lib/Kinematics/finDiffEvalAndChkErr.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/Kinematics/finDiffEvalAndChkErr.c.i
+.PHONY : lib/Kinematics/finDiffEvalAndChkErr.c.i
+
+lib/Kinematics/finDiffEvalAndChkErr.s: lib/Kinematics/finDiffEvalAndChkErr.c.s
+.PHONY : lib/Kinematics/finDiffEvalAndChkErr.s
+
+# target to generate assembly for a file
+lib/Kinematics/finDiffEvalAndChkErr.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/Kinematics/finDiffEvalAndChkErr.c.s
+.PHONY : lib/Kinematics/finDiffEvalAndChkErr.c.s
+
+lib/Kinematics/linearLeastSquares.o: lib/Kinematics/linearLeastSquares.c.o
+.PHONY : lib/Kinematics/linearLeastSquares.o
+
+# target to build an object file
+lib/Kinematics/linearLeastSquares.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/Kinematics/linearLeastSquares.c.o
+.PHONY : lib/Kinematics/linearLeastSquares.c.o
+
+lib/Kinematics/linearLeastSquares.i: lib/Kinematics/linearLeastSquares.c.i
+.PHONY : lib/Kinematics/linearLeastSquares.i
+
+# target to preprocess a source file
+lib/Kinematics/linearLeastSquares.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/Kinematics/linearLeastSquares.c.i
+.PHONY : lib/Kinematics/linearLeastSquares.c.i
+
+lib/Kinematics/linearLeastSquares.s: lib/Kinematics/linearLeastSquares.c.s
+.PHONY : lib/Kinematics/linearLeastSquares.s
+
+# target to generate assembly for a file
+lib/Kinematics/linearLeastSquares.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/Kinematics/linearLeastSquares.c.s
+.PHONY : lib/Kinematics/linearLeastSquares.c.s
+
+lib/Kinematics/log.o: lib/Kinematics/log.c.o
+.PHONY : lib/Kinematics/log.o
+
+# target to build an object file
+lib/Kinematics/log.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/Kinematics/log.c.o
+.PHONY : lib/Kinematics/log.c.o
+
+lib/Kinematics/log.i: lib/Kinematics/log.c.i
+.PHONY : lib/Kinematics/log.i
+
+# target to preprocess a source file
+lib/Kinematics/log.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/Kinematics/log.c.i
+.PHONY : lib/Kinematics/log.c.i
+
+lib/Kinematics/log.s: lib/Kinematics/log.c.s
+.PHONY : lib/Kinematics/log.s
+
+# target to generate assembly for a file
+lib/Kinematics/log.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/Kinematics/log.c.s
+.PHONY : lib/Kinematics/log.c.s
+
+lib/Kinematics/mtimes.o: lib/Kinematics/mtimes.c.o
+.PHONY : lib/Kinematics/mtimes.o
+
+# target to build an object file
+lib/Kinematics/mtimes.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/Kinematics/mtimes.c.o
+.PHONY : lib/Kinematics/mtimes.c.o
+
+lib/Kinematics/mtimes.i: lib/Kinematics/mtimes.c.i
+.PHONY : lib/Kinematics/mtimes.i
+
+# target to preprocess a source file
+lib/Kinematics/mtimes.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/Kinematics/mtimes.c.i
+.PHONY : lib/Kinematics/mtimes.c.i
+
+lib/Kinematics/mtimes.s: lib/Kinematics/mtimes.c.s
+.PHONY : lib/Kinematics/mtimes.s
+
+# target to generate assembly for a file
+lib/Kinematics/mtimes.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/Kinematics/mtimes.c.s
+.PHONY : lib/Kinematics/mtimes.c.s
+
+lib/Kinematics/norm.o: lib/Kinematics/norm.c.o
+.PHONY : lib/Kinematics/norm.o
+
+# target to build an object file
+lib/Kinematics/norm.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/Kinematics/norm.c.o
+.PHONY : lib/Kinematics/norm.c.o
+
+lib/Kinematics/norm.i: lib/Kinematics/norm.c.i
+.PHONY : lib/Kinematics/norm.i
+
+# target to preprocess a source file
+lib/Kinematics/norm.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/Kinematics/norm.c.i
+.PHONY : lib/Kinematics/norm.c.i
+
+lib/Kinematics/norm.s: lib/Kinematics/norm.c.s
+.PHONY : lib/Kinematics/norm.s
+
+# target to generate assembly for a file
+lib/Kinematics/norm.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/Kinematics/norm.c.s
+.PHONY : lib/Kinematics/norm.c.s
+
+lib/Kinematics/power.o: lib/Kinematics/power.c.o
+.PHONY : lib/Kinematics/power.o
+
+# target to build an object file
+lib/Kinematics/power.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/Kinematics/power.c.o
+.PHONY : lib/Kinematics/power.c.o
+
+lib/Kinematics/power.i: lib/Kinematics/power.c.i
+.PHONY : lib/Kinematics/power.i
+
+# target to preprocess a source file
+lib/Kinematics/power.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/Kinematics/power.c.i
+.PHONY : lib/Kinematics/power.c.i
+
+lib/Kinematics/power.s: lib/Kinematics/power.c.s
+.PHONY : lib/Kinematics/power.s
+
+# target to generate assembly for a file
+lib/Kinematics/power.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/Kinematics/power.c.s
+.PHONY : lib/Kinematics/power.c.s
+
+lib/Kinematics/roots.o: lib/Kinematics/roots.c.o
+.PHONY : lib/Kinematics/roots.o
+
+# target to build an object file
+lib/Kinematics/roots.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/Kinematics/roots.c.o
+.PHONY : lib/Kinematics/roots.c.o
+
+lib/Kinematics/roots.i: lib/Kinematics/roots.c.i
+.PHONY : lib/Kinematics/roots.i
+
+# target to preprocess a source file
+lib/Kinematics/roots.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/Kinematics/roots.c.i
+.PHONY : lib/Kinematics/roots.c.i
+
+lib/Kinematics/roots.s: lib/Kinematics/roots.c.s
+.PHONY : lib/Kinematics/roots.s
+
+# target to generate assembly for a file
+lib/Kinematics/roots.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/Kinematics/roots.c.s
+.PHONY : lib/Kinematics/roots.c.s
+
+lib/Kinematics/rtGetInf.o: lib/Kinematics/rtGetInf.c.o
+.PHONY : lib/Kinematics/rtGetInf.o
+
+# target to build an object file
+lib/Kinematics/rtGetInf.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/Kinematics/rtGetInf.c.o
+.PHONY : lib/Kinematics/rtGetInf.c.o
+
+lib/Kinematics/rtGetInf.i: lib/Kinematics/rtGetInf.c.i
+.PHONY : lib/Kinematics/rtGetInf.i
+
+# target to preprocess a source file
+lib/Kinematics/rtGetInf.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/Kinematics/rtGetInf.c.i
+.PHONY : lib/Kinematics/rtGetInf.c.i
+
+lib/Kinematics/rtGetInf.s: lib/Kinematics/rtGetInf.c.s
+.PHONY : lib/Kinematics/rtGetInf.s
+
+# target to generate assembly for a file
+lib/Kinematics/rtGetInf.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/Kinematics/rtGetInf.c.s
+.PHONY : lib/Kinematics/rtGetInf.c.s
+
+lib/Kinematics/rtGetNaN.o: lib/Kinematics/rtGetNaN.c.o
+.PHONY : lib/Kinematics/rtGetNaN.o
+
+# target to build an object file
+lib/Kinematics/rtGetNaN.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/Kinematics/rtGetNaN.c.o
+.PHONY : lib/Kinematics/rtGetNaN.c.o
+
+lib/Kinematics/rtGetNaN.i: lib/Kinematics/rtGetNaN.c.i
+.PHONY : lib/Kinematics/rtGetNaN.i
+
+# target to preprocess a source file
+lib/Kinematics/rtGetNaN.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/Kinematics/rtGetNaN.c.i
+.PHONY : lib/Kinematics/rtGetNaN.c.i
+
+lib/Kinematics/rtGetNaN.s: lib/Kinematics/rtGetNaN.c.s
+.PHONY : lib/Kinematics/rtGetNaN.s
+
+# target to generate assembly for a file
+lib/Kinematics/rtGetNaN.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/Kinematics/rtGetNaN.c.s
+.PHONY : lib/Kinematics/rtGetNaN.c.s
+
+lib/Kinematics/rt_nonfinite.o: lib/Kinematics/rt_nonfinite.c.o
+.PHONY : lib/Kinematics/rt_nonfinite.o
+
+# target to build an object file
+lib/Kinematics/rt_nonfinite.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/Kinematics/rt_nonfinite.c.o
+.PHONY : lib/Kinematics/rt_nonfinite.c.o
+
+lib/Kinematics/rt_nonfinite.i: lib/Kinematics/rt_nonfinite.c.i
+.PHONY : lib/Kinematics/rt_nonfinite.i
+
+# target to preprocess a source file
+lib/Kinematics/rt_nonfinite.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/Kinematics/rt_nonfinite.c.i
+.PHONY : lib/Kinematics/rt_nonfinite.c.i
+
+lib/Kinematics/rt_nonfinite.s: lib/Kinematics/rt_nonfinite.c.s
+.PHONY : lib/Kinematics/rt_nonfinite.s
+
+# target to generate assembly for a file
+lib/Kinematics/rt_nonfinite.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/Kinematics/rt_nonfinite.c.s
+.PHONY : lib/Kinematics/rt_nonfinite.c.s
+
+lib/Kinematics/rt_wutil.o: lib/Kinematics/rt_wutil.c.o
+.PHONY : lib/Kinematics/rt_wutil.o
+
+# target to build an object file
+lib/Kinematics/rt_wutil.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/Kinematics/rt_wutil.c.o
+.PHONY : lib/Kinematics/rt_wutil.c.o
+
+lib/Kinematics/rt_wutil.i: lib/Kinematics/rt_wutil.c.i
+.PHONY : lib/Kinematics/rt_wutil.i
+
+# target to preprocess a source file
+lib/Kinematics/rt_wutil.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/Kinematics/rt_wutil.c.i
+.PHONY : lib/Kinematics/rt_wutil.c.i
+
+lib/Kinematics/rt_wutil.s: lib/Kinematics/rt_wutil.c.s
+.PHONY : lib/Kinematics/rt_wutil.s
+
+# target to generate assembly for a file
+lib/Kinematics/rt_wutil.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/Kinematics/rt_wutil.c.s
+.PHONY : lib/Kinematics/rt_wutil.c.s
+
+lib/Kinematics/xdlahqr.o: lib/Kinematics/xdlahqr.c.o
+.PHONY : lib/Kinematics/xdlahqr.o
+
+# target to build an object file
+lib/Kinematics/xdlahqr.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/Kinematics/xdlahqr.c.o
+.PHONY : lib/Kinematics/xdlahqr.c.o
+
+lib/Kinematics/xdlahqr.i: lib/Kinematics/xdlahqr.c.i
+.PHONY : lib/Kinematics/xdlahqr.i
+
+# target to preprocess a source file
+lib/Kinematics/xdlahqr.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/Kinematics/xdlahqr.c.i
+.PHONY : lib/Kinematics/xdlahqr.c.i
+
+lib/Kinematics/xdlahqr.s: lib/Kinematics/xdlahqr.c.s
+.PHONY : lib/Kinematics/xdlahqr.s
+
+# target to generate assembly for a file
+lib/Kinematics/xdlahqr.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/Kinematics/xdlahqr.c.s
+.PHONY : lib/Kinematics/xdlahqr.c.s
+
+lib/Kinematics/xdlanv2.o: lib/Kinematics/xdlanv2.c.o
+.PHONY : lib/Kinematics/xdlanv2.o
+
+# target to build an object file
+lib/Kinematics/xdlanv2.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/Kinematics/xdlanv2.c.o
+.PHONY : lib/Kinematics/xdlanv2.c.o
+
+lib/Kinematics/xdlanv2.i: lib/Kinematics/xdlanv2.c.i
+.PHONY : lib/Kinematics/xdlanv2.i
+
+# target to preprocess a source file
+lib/Kinematics/xdlanv2.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/Kinematics/xdlanv2.c.i
+.PHONY : lib/Kinematics/xdlanv2.c.i
+
+lib/Kinematics/xdlanv2.s: lib/Kinematics/xdlanv2.c.s
+.PHONY : lib/Kinematics/xdlanv2.s
+
+# target to generate assembly for a file
+lib/Kinematics/xdlanv2.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/Kinematics/xdlanv2.c.s
+.PHONY : lib/Kinematics/xdlanv2.c.s
+
+lib/Kinematics/xnrm2.o: lib/Kinematics/xnrm2.c.o
+.PHONY : lib/Kinematics/xnrm2.o
+
+# target to build an object file
+lib/Kinematics/xnrm2.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/Kinematics/xnrm2.c.o
+.PHONY : lib/Kinematics/xnrm2.c.o
+
+lib/Kinematics/xnrm2.i: lib/Kinematics/xnrm2.c.i
+.PHONY : lib/Kinematics/xnrm2.i
+
+# target to preprocess a source file
+lib/Kinematics/xnrm2.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/Kinematics/xnrm2.c.i
+.PHONY : lib/Kinematics/xnrm2.c.i
+
+lib/Kinematics/xnrm2.s: lib/Kinematics/xnrm2.c.s
+.PHONY : lib/Kinematics/xnrm2.s
+
+# target to generate assembly for a file
+lib/Kinematics/xnrm2.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/Kinematics/xnrm2.c.s
+.PHONY : lib/Kinematics/xnrm2.c.s
+
+lib/Kinematics/xzgebal.o: lib/Kinematics/xzgebal.c.o
+.PHONY : lib/Kinematics/xzgebal.o
+
+# target to build an object file
+lib/Kinematics/xzgebal.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/Kinematics/xzgebal.c.o
+.PHONY : lib/Kinematics/xzgebal.c.o
+
+lib/Kinematics/xzgebal.i: lib/Kinematics/xzgebal.c.i
+.PHONY : lib/Kinematics/xzgebal.i
+
+# target to preprocess a source file
+lib/Kinematics/xzgebal.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/Kinematics/xzgebal.c.i
+.PHONY : lib/Kinematics/xzgebal.c.i
+
+lib/Kinematics/xzgebal.s: lib/Kinematics/xzgebal.c.s
+.PHONY : lib/Kinematics/xzgebal.s
+
+# target to generate assembly for a file
+lib/Kinematics/xzgebal.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/Kinematics/xzgebal.c.s
+.PHONY : lib/Kinematics/xzgebal.c.s
+
+lib/Kinematics/xzgehrd.o: lib/Kinematics/xzgehrd.c.o
+.PHONY : lib/Kinematics/xzgehrd.o
+
+# target to build an object file
+lib/Kinematics/xzgehrd.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/Kinematics/xzgehrd.c.o
+.PHONY : lib/Kinematics/xzgehrd.c.o
+
+lib/Kinematics/xzgehrd.i: lib/Kinematics/xzgehrd.c.i
+.PHONY : lib/Kinematics/xzgehrd.i
+
+# target to preprocess a source file
+lib/Kinematics/xzgehrd.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/Kinematics/xzgehrd.c.i
+.PHONY : lib/Kinematics/xzgehrd.c.i
+
+lib/Kinematics/xzgehrd.s: lib/Kinematics/xzgehrd.c.s
+.PHONY : lib/Kinematics/xzgehrd.s
+
+# target to generate assembly for a file
+lib/Kinematics/xzgehrd.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/Kinematics/xzgehrd.c.s
+.PHONY : lib/Kinematics/xzgehrd.c.s
+
+lib/Kinematics/xzlarf.o: lib/Kinematics/xzlarf.c.o
+.PHONY : lib/Kinematics/xzlarf.o
+
+# target to build an object file
+lib/Kinematics/xzlarf.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/Kinematics/xzlarf.c.o
+.PHONY : lib/Kinematics/xzlarf.c.o
+
+lib/Kinematics/xzlarf.i: lib/Kinematics/xzlarf.c.i
+.PHONY : lib/Kinematics/xzlarf.i
+
+# target to preprocess a source file
+lib/Kinematics/xzlarf.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/Kinematics/xzlarf.c.i
+.PHONY : lib/Kinematics/xzlarf.c.i
+
+lib/Kinematics/xzlarf.s: lib/Kinematics/xzlarf.c.s
+.PHONY : lib/Kinematics/xzlarf.s
+
+# target to generate assembly for a file
+lib/Kinematics/xzlarf.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/Kinematics/xzlarf.c.s
+.PHONY : lib/Kinematics/xzlarf.c.s
+
+lib/Kinematics/xzlarfg.o: lib/Kinematics/xzlarfg.c.o
+.PHONY : lib/Kinematics/xzlarfg.o
+
+# target to build an object file
+lib/Kinematics/xzlarfg.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/Kinematics/xzlarfg.c.o
+.PHONY : lib/Kinematics/xzlarfg.c.o
+
+lib/Kinematics/xzlarfg.i: lib/Kinematics/xzlarfg.c.i
+.PHONY : lib/Kinematics/xzlarfg.i
+
+# target to preprocess a source file
+lib/Kinematics/xzlarfg.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/Kinematics/xzlarfg.c.i
+.PHONY : lib/Kinematics/xzlarfg.c.i
+
+lib/Kinematics/xzlarfg.s: lib/Kinematics/xzlarfg.c.s
+.PHONY : lib/Kinematics/xzlarfg.s
+
+# target to generate assembly for a file
+lib/Kinematics/xzlarfg.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/Kinematics/xzlarfg.c.s
+.PHONY : lib/Kinematics/xzlarfg.c.s
+
+lib/Kinematics/xzlascl.o: lib/Kinematics/xzlascl.c.o
+.PHONY : lib/Kinematics/xzlascl.o
+
+# target to build an object file
+lib/Kinematics/xzlascl.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/Kinematics/xzlascl.c.o
+.PHONY : lib/Kinematics/xzlascl.c.o
+
+lib/Kinematics/xzlascl.i: lib/Kinematics/xzlascl.c.i
+.PHONY : lib/Kinematics/xzlascl.i
+
+# target to preprocess a source file
+lib/Kinematics/xzlascl.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/Kinematics/xzlascl.c.i
+.PHONY : lib/Kinematics/xzlascl.c.i
+
+lib/Kinematics/xzlascl.s: lib/Kinematics/xzlascl.c.s
+.PHONY : lib/Kinematics/xzlascl.s
+
+# target to generate assembly for a file
+lib/Kinematics/xzlascl.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/Kinematics/xzlascl.c.s
+.PHONY : lib/Kinematics/xzlascl.c.s
+
+lib/feedback/lpf.o: lib/feedback/lpf.c.o
+.PHONY : lib/feedback/lpf.o
+
+# target to build an object file
+lib/feedback/lpf.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/feedback/lpf.c.o
+.PHONY : lib/feedback/lpf.c.o
+
+lib/feedback/lpf.i: lib/feedback/lpf.c.i
+.PHONY : lib/feedback/lpf.i
+
+# target to preprocess a source file
+lib/feedback/lpf.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/feedback/lpf.c.i
+.PHONY : lib/feedback/lpf.c.i
+
+lib/feedback/lpf.s: lib/feedback/lpf.c.s
+.PHONY : lib/feedback/lpf.s
+
+# target to generate assembly for a file
+lib/feedback/lpf.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/feedback/lpf.c.s
+.PHONY : lib/feedback/lpf.c.s
+
+lib/interface/cmdpanel.o: lib/interface/cmdpanel.cpp.o
+.PHONY : lib/interface/cmdpanel.o
+
+# target to build an object file
+lib/interface/cmdpanel.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/interface/cmdpanel.cpp.o
+.PHONY : lib/interface/cmdpanel.cpp.o
+
+lib/interface/cmdpanel.i: lib/interface/cmdpanel.cpp.i
+.PHONY : lib/interface/cmdpanel.i
+
+# target to preprocess a source file
+lib/interface/cmdpanel.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/interface/cmdpanel.cpp.i
+.PHONY : lib/interface/cmdpanel.cpp.i
+
+lib/interface/cmdpanel.s: lib/interface/cmdpanel.cpp.s
+.PHONY : lib/interface/cmdpanel.s
+
+# target to generate assembly for a file
+lib/interface/cmdpanel.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/interface/cmdpanel.cpp.s
+.PHONY : lib/interface/cmdpanel.cpp.s
+
+lib/orbbecsdk/utils/utils.o: lib/orbbecsdk/utils/utils.cpp.o
+.PHONY : lib/orbbecsdk/utils/utils.o
+
+# target to build an object file
+lib/orbbecsdk/utils/utils.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/orbbecsdk/utils/utils.cpp.o
+.PHONY : lib/orbbecsdk/utils/utils.cpp.o
+
+lib/orbbecsdk/utils/utils.i: lib/orbbecsdk/utils/utils.cpp.i
+.PHONY : lib/orbbecsdk/utils/utils.i
+
+# target to preprocess a source file
+lib/orbbecsdk/utils/utils.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/orbbecsdk/utils/utils.cpp.i
+.PHONY : lib/orbbecsdk/utils/utils.cpp.i
+
+lib/orbbecsdk/utils/utils.s: lib/orbbecsdk/utils/utils.cpp.s
+.PHONY : lib/orbbecsdk/utils/utils.s
+
+# target to generate assembly for a file
+lib/orbbecsdk/utils/utils.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/orbbecsdk/utils/utils.cpp.s
+.PHONY : lib/orbbecsdk/utils/utils.cpp.s
+
+lib/orbbecsdk/utils/utils_c.o: lib/orbbecsdk/utils/utils_c.c.o
+.PHONY : lib/orbbecsdk/utils/utils_c.o
+
+# target to build an object file
+lib/orbbecsdk/utils/utils_c.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/orbbecsdk/utils/utils_c.c.o
+.PHONY : lib/orbbecsdk/utils/utils_c.c.o
+
+lib/orbbecsdk/utils/utils_c.i: lib/orbbecsdk/utils/utils_c.c.i
+.PHONY : lib/orbbecsdk/utils/utils_c.i
+
+# target to preprocess a source file
+lib/orbbecsdk/utils/utils_c.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/orbbecsdk/utils/utils_c.c.i
+.PHONY : lib/orbbecsdk/utils/utils_c.c.i
+
+lib/orbbecsdk/utils/utils_c.s: lib/orbbecsdk/utils/utils_c.c.s
+.PHONY : lib/orbbecsdk/utils/utils_c.s
+
+# target to generate assembly for a file
+lib/orbbecsdk/utils/utils_c.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/orbbecsdk/utils/utils_c.c.s
+.PHONY : lib/orbbecsdk/utils/utils_c.c.s
+
+lib/orbbecsdk/utils/utils_opencv.o: lib/orbbecsdk/utils/utils_opencv.cpp.o
+.PHONY : lib/orbbecsdk/utils/utils_opencv.o
+
+# target to build an object file
+lib/orbbecsdk/utils/utils_opencv.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/orbbecsdk/utils/utils_opencv.cpp.o
+.PHONY : lib/orbbecsdk/utils/utils_opencv.cpp.o
+
+lib/orbbecsdk/utils/utils_opencv.i: lib/orbbecsdk/utils/utils_opencv.cpp.i
+.PHONY : lib/orbbecsdk/utils/utils_opencv.i
+
+# target to preprocess a source file
+lib/orbbecsdk/utils/utils_opencv.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/orbbecsdk/utils/utils_opencv.cpp.i
+.PHONY : lib/orbbecsdk/utils/utils_opencv.cpp.i
+
+lib/orbbecsdk/utils/utils_opencv.s: lib/orbbecsdk/utils/utils_opencv.cpp.s
+.PHONY : lib/orbbecsdk/utils/utils_opencv.s
+
+# target to generate assembly for a file
+lib/orbbecsdk/utils/utils_opencv.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/master.dir/build.make CMakeFiles/master.dir/lib/orbbecsdk/utils/utils_opencv.cpp.s
+.PHONY : lib/orbbecsdk/utils/utils_opencv.cpp.s
 
 main.o: main.cpp.o
 .PHONY : main.o
@@ -1026,114 +1098,123 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... master"
-	@echo "... EtherCAT/EtherCAT.o"
-	@echo "... EtherCAT/EtherCAT.i"
-	@echo "... EtherCAT/EtherCAT.s"
-	@echo "... Kinematics/FK_7DOF.o"
-	@echo "... Kinematics/FK_7DOF.i"
-	@echo "... Kinematics/FK_7DOF.s"
-	@echo "... Kinematics/FK_7DOF_data.o"
-	@echo "... Kinematics/FK_7DOF_data.i"
-	@echo "... Kinematics/FK_7DOF_data.s"
-	@echo "... Kinematics/FK_7DOF_initialize.o"
-	@echo "... Kinematics/FK_7DOF_initialize.i"
-	@echo "... Kinematics/FK_7DOF_initialize.s"
-	@echo "... Kinematics/FK_7DOF_terminate.o"
-	@echo "... Kinematics/FK_7DOF_terminate.i"
-	@echo "... Kinematics/FK_7DOF_terminate.s"
-	@echo "... Kinematics/IK_7DOF.o"
-	@echo "... Kinematics/IK_7DOF.i"
-	@echo "... Kinematics/IK_7DOF.s"
-	@echo "... Kinematics/IK_7DOF_data.o"
-	@echo "... Kinematics/IK_7DOF_data.i"
-	@echo "... Kinematics/IK_7DOF_data.s"
-	@echo "... Kinematics/IK_7DOF_initialize.o"
-	@echo "... Kinematics/IK_7DOF_initialize.i"
-	@echo "... Kinematics/IK_7DOF_initialize.s"
-	@echo "... Kinematics/IK_7DOF_terminate.o"
-	@echo "... Kinematics/IK_7DOF_terminate.i"
-	@echo "... Kinematics/IK_7DOF_terminate.s"
-	@echo "... Kinematics/atan.o"
-	@echo "... Kinematics/atan.i"
-	@echo "... Kinematics/atan.s"
-	@echo "... Kinematics/checkStoppingCriteria.o"
-	@echo "... Kinematics/checkStoppingCriteria.i"
-	@echo "... Kinematics/checkStoppingCriteria.s"
-	@echo "... Kinematics/computeFiniteDifferences.o"
-	@echo "... Kinematics/computeFiniteDifferences.i"
-	@echo "... Kinematics/computeFiniteDifferences.s"
-	@echo "... Kinematics/driver.o"
-	@echo "... Kinematics/driver.i"
-	@echo "... Kinematics/driver.s"
-	@echo "... Kinematics/exp.o"
-	@echo "... Kinematics/exp.i"
-	@echo "... Kinematics/exp.s"
-	@echo "... Kinematics/finDiffEvalAndChkErr.o"
-	@echo "... Kinematics/finDiffEvalAndChkErr.i"
-	@echo "... Kinematics/finDiffEvalAndChkErr.s"
-	@echo "... Kinematics/linearLeastSquares.o"
-	@echo "... Kinematics/linearLeastSquares.i"
-	@echo "... Kinematics/linearLeastSquares.s"
-	@echo "... Kinematics/log.o"
-	@echo "... Kinematics/log.i"
-	@echo "... Kinematics/log.s"
-	@echo "... Kinematics/mtimes.o"
-	@echo "... Kinematics/mtimes.i"
-	@echo "... Kinematics/mtimes.s"
-	@echo "... Kinematics/norm.o"
-	@echo "... Kinematics/norm.i"
-	@echo "... Kinematics/norm.s"
-	@echo "... Kinematics/power.o"
-	@echo "... Kinematics/power.i"
-	@echo "... Kinematics/power.s"
-	@echo "... Kinematics/roots.o"
-	@echo "... Kinematics/roots.i"
-	@echo "... Kinematics/roots.s"
-	@echo "... Kinematics/rtGetInf.o"
-	@echo "... Kinematics/rtGetInf.i"
-	@echo "... Kinematics/rtGetInf.s"
-	@echo "... Kinematics/rtGetNaN.o"
-	@echo "... Kinematics/rtGetNaN.i"
-	@echo "... Kinematics/rtGetNaN.s"
-	@echo "... Kinematics/rt_nonfinite.o"
-	@echo "... Kinematics/rt_nonfinite.i"
-	@echo "... Kinematics/rt_nonfinite.s"
-	@echo "... Kinematics/rt_wutil.o"
-	@echo "... Kinematics/rt_wutil.i"
-	@echo "... Kinematics/rt_wutil.s"
-	@echo "... Kinematics/xdlahqr.o"
-	@echo "... Kinematics/xdlahqr.i"
-	@echo "... Kinematics/xdlahqr.s"
-	@echo "... Kinematics/xdlanv2.o"
-	@echo "... Kinematics/xdlanv2.i"
-	@echo "... Kinematics/xdlanv2.s"
-	@echo "... Kinematics/xnrm2.o"
-	@echo "... Kinematics/xnrm2.i"
-	@echo "... Kinematics/xnrm2.s"
-	@echo "... Kinematics/xzgebal.o"
-	@echo "... Kinematics/xzgebal.i"
-	@echo "... Kinematics/xzgebal.s"
-	@echo "... Kinematics/xzgehrd.o"
-	@echo "... Kinematics/xzgehrd.i"
-	@echo "... Kinematics/xzgehrd.s"
-	@echo "... Kinematics/xzlarf.o"
-	@echo "... Kinematics/xzlarf.i"
-	@echo "... Kinematics/xzlarf.s"
-	@echo "... Kinematics/xzlarfg.o"
-	@echo "... Kinematics/xzlarfg.i"
-	@echo "... Kinematics/xzlarfg.s"
-	@echo "... Kinematics/xzlascl.o"
-	@echo "... Kinematics/xzlascl.i"
-	@echo "... Kinematics/xzlascl.s"
 	@echo "... demo.o"
 	@echo "... demo.i"
 	@echo "... demo.s"
-	@echo "... feedback/lpf.o"
-	@echo "... feedback/lpf.i"
-	@echo "... feedback/lpf.s"
-	@echo "... interface/cmdpanel.o"
-	@echo "... interface/cmdpanel.i"
-	@echo "... interface/cmdpanel.s"
+	@echo "... lib/EtherCAT/EtherCAT.o"
+	@echo "... lib/EtherCAT/EtherCAT.i"
+	@echo "... lib/EtherCAT/EtherCAT.s"
+	@echo "... lib/Kinematics/FK_7DOF.o"
+	@echo "... lib/Kinematics/FK_7DOF.i"
+	@echo "... lib/Kinematics/FK_7DOF.s"
+	@echo "... lib/Kinematics/FK_7DOF_data.o"
+	@echo "... lib/Kinematics/FK_7DOF_data.i"
+	@echo "... lib/Kinematics/FK_7DOF_data.s"
+	@echo "... lib/Kinematics/FK_7DOF_initialize.o"
+	@echo "... lib/Kinematics/FK_7DOF_initialize.i"
+	@echo "... lib/Kinematics/FK_7DOF_initialize.s"
+	@echo "... lib/Kinematics/FK_7DOF_terminate.o"
+	@echo "... lib/Kinematics/FK_7DOF_terminate.i"
+	@echo "... lib/Kinematics/FK_7DOF_terminate.s"
+	@echo "... lib/Kinematics/IK_7DOF.o"
+	@echo "... lib/Kinematics/IK_7DOF.i"
+	@echo "... lib/Kinematics/IK_7DOF.s"
+	@echo "... lib/Kinematics/IK_7DOF_data.o"
+	@echo "... lib/Kinematics/IK_7DOF_data.i"
+	@echo "... lib/Kinematics/IK_7DOF_data.s"
+	@echo "... lib/Kinematics/IK_7DOF_initialize.o"
+	@echo "... lib/Kinematics/IK_7DOF_initialize.i"
+	@echo "... lib/Kinematics/IK_7DOF_initialize.s"
+	@echo "... lib/Kinematics/IK_7DOF_terminate.o"
+	@echo "... lib/Kinematics/IK_7DOF_terminate.i"
+	@echo "... lib/Kinematics/IK_7DOF_terminate.s"
+	@echo "... lib/Kinematics/atan.o"
+	@echo "... lib/Kinematics/atan.i"
+	@echo "... lib/Kinematics/atan.s"
+	@echo "... lib/Kinematics/checkStoppingCriteria.o"
+	@echo "... lib/Kinematics/checkStoppingCriteria.i"
+	@echo "... lib/Kinematics/checkStoppingCriteria.s"
+	@echo "... lib/Kinematics/computeFiniteDifferences.o"
+	@echo "... lib/Kinematics/computeFiniteDifferences.i"
+	@echo "... lib/Kinematics/computeFiniteDifferences.s"
+	@echo "... lib/Kinematics/driver.o"
+	@echo "... lib/Kinematics/driver.i"
+	@echo "... lib/Kinematics/driver.s"
+	@echo "... lib/Kinematics/exp.o"
+	@echo "... lib/Kinematics/exp.i"
+	@echo "... lib/Kinematics/exp.s"
+	@echo "... lib/Kinematics/finDiffEvalAndChkErr.o"
+	@echo "... lib/Kinematics/finDiffEvalAndChkErr.i"
+	@echo "... lib/Kinematics/finDiffEvalAndChkErr.s"
+	@echo "... lib/Kinematics/linearLeastSquares.o"
+	@echo "... lib/Kinematics/linearLeastSquares.i"
+	@echo "... lib/Kinematics/linearLeastSquares.s"
+	@echo "... lib/Kinematics/log.o"
+	@echo "... lib/Kinematics/log.i"
+	@echo "... lib/Kinematics/log.s"
+	@echo "... lib/Kinematics/mtimes.o"
+	@echo "... lib/Kinematics/mtimes.i"
+	@echo "... lib/Kinematics/mtimes.s"
+	@echo "... lib/Kinematics/norm.o"
+	@echo "... lib/Kinematics/norm.i"
+	@echo "... lib/Kinematics/norm.s"
+	@echo "... lib/Kinematics/power.o"
+	@echo "... lib/Kinematics/power.i"
+	@echo "... lib/Kinematics/power.s"
+	@echo "... lib/Kinematics/roots.o"
+	@echo "... lib/Kinematics/roots.i"
+	@echo "... lib/Kinematics/roots.s"
+	@echo "... lib/Kinematics/rtGetInf.o"
+	@echo "... lib/Kinematics/rtGetInf.i"
+	@echo "... lib/Kinematics/rtGetInf.s"
+	@echo "... lib/Kinematics/rtGetNaN.o"
+	@echo "... lib/Kinematics/rtGetNaN.i"
+	@echo "... lib/Kinematics/rtGetNaN.s"
+	@echo "... lib/Kinematics/rt_nonfinite.o"
+	@echo "... lib/Kinematics/rt_nonfinite.i"
+	@echo "... lib/Kinematics/rt_nonfinite.s"
+	@echo "... lib/Kinematics/rt_wutil.o"
+	@echo "... lib/Kinematics/rt_wutil.i"
+	@echo "... lib/Kinematics/rt_wutil.s"
+	@echo "... lib/Kinematics/xdlahqr.o"
+	@echo "... lib/Kinematics/xdlahqr.i"
+	@echo "... lib/Kinematics/xdlahqr.s"
+	@echo "... lib/Kinematics/xdlanv2.o"
+	@echo "... lib/Kinematics/xdlanv2.i"
+	@echo "... lib/Kinematics/xdlanv2.s"
+	@echo "... lib/Kinematics/xnrm2.o"
+	@echo "... lib/Kinematics/xnrm2.i"
+	@echo "... lib/Kinematics/xnrm2.s"
+	@echo "... lib/Kinematics/xzgebal.o"
+	@echo "... lib/Kinematics/xzgebal.i"
+	@echo "... lib/Kinematics/xzgebal.s"
+	@echo "... lib/Kinematics/xzgehrd.o"
+	@echo "... lib/Kinematics/xzgehrd.i"
+	@echo "... lib/Kinematics/xzgehrd.s"
+	@echo "... lib/Kinematics/xzlarf.o"
+	@echo "... lib/Kinematics/xzlarf.i"
+	@echo "... lib/Kinematics/xzlarf.s"
+	@echo "... lib/Kinematics/xzlarfg.o"
+	@echo "... lib/Kinematics/xzlarfg.i"
+	@echo "... lib/Kinematics/xzlarfg.s"
+	@echo "... lib/Kinematics/xzlascl.o"
+	@echo "... lib/Kinematics/xzlascl.i"
+	@echo "... lib/Kinematics/xzlascl.s"
+	@echo "... lib/feedback/lpf.o"
+	@echo "... lib/feedback/lpf.i"
+	@echo "... lib/feedback/lpf.s"
+	@echo "... lib/interface/cmdpanel.o"
+	@echo "... lib/interface/cmdpanel.i"
+	@echo "... lib/interface/cmdpanel.s"
+	@echo "... lib/orbbecsdk/utils/utils.o"
+	@echo "... lib/orbbecsdk/utils/utils.i"
+	@echo "... lib/orbbecsdk/utils/utils.s"
+	@echo "... lib/orbbecsdk/utils/utils_c.o"
+	@echo "... lib/orbbecsdk/utils/utils_c.i"
+	@echo "... lib/orbbecsdk/utils/utils_c.s"
+	@echo "... lib/orbbecsdk/utils/utils_opencv.o"
+	@echo "... lib/orbbecsdk/utils/utils_opencv.i"
+	@echo "... lib/orbbecsdk/utils/utils_opencv.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

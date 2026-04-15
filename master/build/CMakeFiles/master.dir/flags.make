@@ -5,13 +5,13 @@
 # compile CXX with /usr/bin/c++
 C_DEFINES = 
 
-C_INCLUDES = -I/home/debian/master/interface -I/home/debian/master/EtherCAT -I/home/debian/master/feedback -I/home/debian/master/planning -I/home/debian/master/Kinematics -I/home/debian/master/control -I/home/debian/master/eigen -I/home/debian/master
+C_INCLUDES = -I/home/debian/master -I/home/debian/master/lib -I/home/debian/master/lib/interface -I/home/debian/master/lib/EtherCAT -I/home/debian/master/lib/feedback -I/home/debian/master/lib/planning -I/home/debian/master/lib/Kinematics -I/home/debian/master/lib/control -I/home/debian/master/lib/Eigen -I/home/debian/master/lib/orbbecsdk/utils -isystem /home/debian/master/lib/orbbecsdk/include -isystem /usr/include/opencv4
 
 C_FLAGS = 
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/debian/master/interface -I/home/debian/master/EtherCAT -I/home/debian/master/feedback -I/home/debian/master/planning -I/home/debian/master/Kinematics -I/home/debian/master/control -I/home/debian/master/eigen -I/home/debian/master
+CXX_INCLUDES = -I/home/debian/master -I/home/debian/master/lib -I/home/debian/master/lib/interface -I/home/debian/master/lib/EtherCAT -I/home/debian/master/lib/feedback -I/home/debian/master/lib/planning -I/home/debian/master/lib/Kinematics -I/home/debian/master/lib/control -I/home/debian/master/lib/Eigen -I/home/debian/master/lib/orbbecsdk/utils -isystem /home/debian/master/lib/orbbecsdk/include -isystem /usr/include/opencv4
 
 CXX_FLAGS = 
 

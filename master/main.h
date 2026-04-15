@@ -39,7 +39,8 @@
 #include "joint_state.h"
 #include "pid_controller.h"
 #include "admittance_controller.h"
-
+//camera
+#include "libobsensor/Camera.h"
 // #define NUMBER 350014//350014
 // 任务周期（以 ns 为单位）
 #define MAX_SAFE_STACK (8 * 1024) //保证安全访问而不会出现故障的最大堆栈大小
@@ -91,6 +92,17 @@ static double values[NUMBER];
 static CmdPanel *cmdptr = NULL;
 
 static FILE *fp;
+
+//camera
+// Create a pipeline with default device.
+ob::Pipeline pipeline;
+
+// Configure which streams to enable or disable for the Pipeline by creating a Config.
+std::shared_ptr<ob::Config> config = std::make_shared<ob::Config>();
+
+// Create a format conversion Filter
+ob::FormatConvertFilter formatConvertFilter;
+
 
 //程序状态变量
 static unsigned int counter = 0;
@@ -337,6 +349,23 @@ void reading_force_torque(){
     F_ext[LEFT_ARM][3]=(float)EC_READ_S32(domain_pd[DRIVER_NUMBER+ENCODER_NUMBER] + off_bytes_0x4003[0])/10000.0-F_ext_offset[LEFT_ARM][3];
     F_ext[LEFT_ARM][4]=(float)EC_READ_S32(domain_pd[DRIVER_NUMBER+ENCODER_NUMBER] + off_bytes_0x4004[0])/10000.0-F_ext_offset[LEFT_ARM][4];
     F_ext[LEFT_ARM][5]=(float)EC_READ_S32(domain_pd[DRIVER_NUMBER+ENCODER_NUMBER] + off_bytes_0x4005[0])/10000.0-F_ext_offset[LEFT_ARM][5];
+
+    // Eigen::Matrix3d R_base2end;
+    // Eigen::Matrix3d R_end2tool;
+    // Eigen::Matrix3d R_base2tool;
+    // Eigen::Vector3d F_tool;
+    // Eigen::Vector3d F_base;
+
+    // R_base2end << T_l[0][0],T_l[0][1],T_l[0][2],T_l[1][0],T_l[1][1],T_l[1][2],T_l[2][0],T_l[2][1],T_l[2][2];
+    // R_end2tool << 0,0,1,sin(M_PI/6),cos(M_PI/6),0,-cos(M_PI/6),sin(M_PI/6),0;
+    // R_base2tool << R_base2end * R_end2tool;//base to tool
+
+    // F_tool << F_ext[LEFT_ARM][0],F_ext[LEFT_ARM][1],F_ext[LEFT_ARM][2];
+    // F_base << R_base2tool * F_tool; 
+
+    // F_ext[LEFT_ARM][0]= F_base[0];
+    // F_ext[LEFT_ARM][1]= F_base[1];
+    // F_ext[LEFT_ARM][2]= F_base[2];
     //printf("%f,%f,%f,%f,%f,%f\n",F_ext[LEFT_ARM][0],F_ext[LEFT_ARM][1],F_ext[LEFT_ARM][2],F_ext[LEFT_ARM][3],F_ext[LEFT_ARM][4],F_ext[LEFT_ARM][5]);
 }
 /****************************************************************************/
@@ -712,7 +741,7 @@ void handle_cartesian_trajectory() {
         
         //coordinate of tool
         Position<<T_l[0][3],T_l[1][3],T_l[2][3];
-        Position=R_base2tool.inverse()*Position;
+        // Position=R_base2tool.inverse()*Position;
         Posture=axis_trans(R_base2tool);
 
         //printf("%f,%f,%f\n",Position(0),Position(1),Position(2));
@@ -763,6 +792,9 @@ void handle_cartesian_trajectory() {
         Target_Position[11]=180/3.1415926535*c[4];
         Target_Position[12]=180/3.1415926535*c[5];
         Target_Position[13]=180/3.1415926535*c[6];
+
+        // 突然失力测试
+        //F_ext[1][0],F_ext[1][1],F_ext[1][2]
 
         //重复定位精度测试
         // printf("程序将重复执行函数30次，每次执行前需要按任意键继续...\n");

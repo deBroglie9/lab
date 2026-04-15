@@ -1,10 +1,10 @@
 /*****************************************************************************
- * 2025/4/7
+ * 2025/4/15
  * EtherCAT.h库可使用，不使用可设置CONFIGURE_EC 0，修改节点需要对应修改
  * 重新修改架构，部分代码放入control文件夹下的h文件中，部分放入main.h文件，main.cpp仅包含初始化和循环
  * 加入admittance_controller导纳控制，目前可以实现末端位置导纳
  * 加入示教的读取和复现函数
- * 
+ * 加入相机的读取函数，在Camera.h下，使用OpenCV保存图像，目前保存为png格式，后续可以修改为其他格式
  * 
  * 目前接入1个六维力 2个编码器 14个驱动器 代码目前可连接17个从站，2个六维力+1个编码器+14个驱动器，需要修改 DRIVER_NUMBER ENCODER_NUMBER SENSOR_NUMBER DOMAIN_NUMBER
  * 驱动器顺序为右臂1-7 -> 左臂1-7 -> 采集模块 -> 左臂六维力
@@ -28,6 +28,8 @@
 // // 任务周期（以 ns 为单位）
 /****************************************************************************/
 //控制部分变量
+
+
 
 
 void cyclic_task()
@@ -77,8 +79,20 @@ void cyclic_task()
                 //reading_force_torque();
                 // reading_ssi();
                 // printf("%x\n",cmdptr->uservalue.Starttime);
+                runPipelineAndSave(pipeline); 
         }
 
+
+        //camera
+        // if (g_pipe && g_win) {
+        //     auto frameSet = g_pipe->waitForFrameset(0);
+        //     if (frameSet) {
+        //         auto colorFrame = frameSet->getFrame(OB_FRAME_COLOR);
+        //         if (colorFrame) {
+        //             g_win->pushFramesToView(colorFrame);
+        //         }
+        //     }
+        // }
 
         //初始化通信
         if(time_diff < INIT_TIME){
@@ -101,7 +115,7 @@ void cyclic_task()
                 // flag_init[6] = 1; 
                 // }
                 printf("enabled drivers: \n");
-                for(counter_slave=0;counter_slave<DRIVER_NUMBER;counter_slave++)
+                for(counter_slave=0;counter_slave<7;counter_slave++)
                 {   if(!flag_init[counter_slave]){
                     driver_enable(counter_slave);
                     if((EC_READ_U16(domain_pd[counter_slave]+off_bytes_0x6041[counter_slave]) & 0x037) == 55){
@@ -114,7 +128,7 @@ void cyclic_task()
                 }
                 printf("\n");
 
-                for(counter_slave=0;counter_slave<DRIVER_NUMBER;counter_slave++){
+                for(counter_slave=0;counter_slave<7;counter_slave++){
                     if(flag_init[counter_slave]){
                         flag_init_all=1;
                     }
@@ -263,9 +277,83 @@ void stack_prefault(void)
 }
 /****************************************************************************/
 
+// void printImuValue(OBFloat3D obFloat3d, uint64_t index, uint64_t timeStampUs, float temperature, OBFrameType type, const std::string &unitStr) {
+//     std::cout << "frame index: " <<index << std::endl;
+//     auto typeStr = ob::TypeHelper::convertOBFrameTypeToString(type);
+//     std::cout << typeStr << " Frame: \n\r{\n\r"
+//               << "  tsp = " << timeStampUs << "\n\r"
+//               << "  temperature = " << temperature << "\n\r"
+//               << "  " << typeStr << ".x = " << obFloat3d.x << unitStr << "\n\r"
+//               << "  " << typeStr << ".y = " << obFloat3d.y << unitStr << "\n\r"
+//               << "  " << typeStr << ".z = " << obFloat3d.z << unitStr << "\n\r"
+//               << "}\n\r" << std::endl;
+// }
+
 int main(int argc, char **argv)
 {   
 
+    //camera
+    // Enable color video stream.
+    config->enableVideoStream(OB_STREAM_COLOR);
+    // Start the pipeline with config.
+    pipeline.start(config);
+    
+    // // Create a window for rendering and set the resolution of the window.
+    // ob_smpl::CVWindow win("Color");
+    // int colorCount = 0;
+    // int frameCount = 0;
+    // while(win.run()) {
+    //     // Wait for up to 100ms for a frameset in blocking mode.
+    //     auto frameSet = pipe.waitForFrameset();
+    //     if(frameSet == nullptr) {
+    //         std::cout << "The frameset is null!" << std::endl;
+    //         continue;
+    //     }
+    //     // get color frame from frameset.
+    //     auto colorFrame = frameSet->colorFrame();
+    //     // Render colorFrame.
+    //     win.pushFramesToView(colorFrame);
+
+    //     // Filter the first 5 frames of data, and save it after the data is stable
+    //     if(frameCount < 5) {
+    //         frameCount++;
+    //         continue;
+    //     }
+
+    //     // Get color and depth frames
+    //     if(colorFrame != nullptr && colorCount < 5) {
+    //         // save the colormap
+    //         if(colorFrame->format() != OB_FORMAT_RGB) {
+    //             if(colorFrame->format() == OB_FORMAT_MJPG) {
+    //                 formatConvertFilter.setFormatConvertType(FORMAT_MJPG_TO_RGB888);
+    //             }
+    //             else if(colorFrame->format() == OB_FORMAT_UYVY) {
+    //                 formatConvertFilter.setFormatConvertType(FORMAT_UYVY_TO_RGB888);
+    //             }
+    //             else if(colorFrame->format() == OB_FORMAT_YUYV) {
+    //                 formatConvertFilter.setFormatConvertType(FORMAT_YUYV_TO_RGB888);
+    //             }
+    //             else {
+    //                 std::cout << "Color format is not support!" << std::endl;
+    //                 continue;
+    //             }
+    //             colorFrame = formatConvertFilter.process(colorFrame)->as<ob::ColorFrame>();
+    //         }
+    //         formatConvertFilter.setFormatConvertType(FORMAT_RGB888_TO_BGR);
+    //         colorFrame = formatConvertFilter.process(colorFrame)->as<ob::ColorFrame>();
+    //         saveColor(colorFrame, colorCount);
+    //         colorCount++;
+    //     }
+    //     else{
+    //         std::cout << "Output" << colorCount << "frames" << std::endl;
+    //         continue;
+    //     }
+    // }
+
+    // Stop the Pipeline, no frame data will be generated
+    
+
+    
     Eigen::Vector3d posture_test={0,0,0};        // x,y,z
     Eigen::Matrix3d R_test;          // 旋转矩阵
     Eigen::Vector3d posture_verify;
@@ -377,7 +465,7 @@ int main(int argc, char **argv)
     }
 
         // ⽤宏定义配置master和slave 数字信号输⼊的从站/供应商ID产品代码
-    if(config()){
+    if(EC_config()){
         printf("config fail...\n");
         delete cmdptr;
         system("stty echo");
@@ -442,6 +530,9 @@ int main(int argc, char **argv)
         admittance[counter_slave].setParam(5,99999999999,0,0);
     }
 
+    
+    
+
     //计算时间测试
     // double time1;
     // double time2;
@@ -490,6 +581,7 @@ int main(int argc, char **argv)
             if(time_diff > RUNNING_TIME || flag_stop_all){
                 delete cmdptr;
                 system("stty echo");
+                pipeline.stop();
                 printf("over.\n");return 0;}
         }
         

@@ -72,472 +72,10 @@ include CMakeFiles/master.dir/flags.make
 CMakeFiles/master.dir/codegen:
 .PHONY : CMakeFiles/master.dir/codegen
 
-CMakeFiles/master.dir/EtherCAT/EtherCAT.cpp.o: CMakeFiles/master.dir/flags.make
-CMakeFiles/master.dir/EtherCAT/EtherCAT.cpp.o: /home/debian/master/EtherCAT/EtherCAT.cpp
-CMakeFiles/master.dir/EtherCAT/EtherCAT.cpp.o: CMakeFiles/master.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/debian/master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/master.dir/EtherCAT/EtherCAT.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/master.dir/EtherCAT/EtherCAT.cpp.o -MF CMakeFiles/master.dir/EtherCAT/EtherCAT.cpp.o.d -o CMakeFiles/master.dir/EtherCAT/EtherCAT.cpp.o -c /home/debian/master/EtherCAT/EtherCAT.cpp
-
-CMakeFiles/master.dir/EtherCAT/EtherCAT.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/master.dir/EtherCAT/EtherCAT.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/debian/master/EtherCAT/EtherCAT.cpp > CMakeFiles/master.dir/EtherCAT/EtherCAT.cpp.i
-
-CMakeFiles/master.dir/EtherCAT/EtherCAT.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/master.dir/EtherCAT/EtherCAT.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/debian/master/EtherCAT/EtherCAT.cpp -o CMakeFiles/master.dir/EtherCAT/EtherCAT.cpp.s
-
-CMakeFiles/master.dir/Kinematics/FK_7DOF.c.o: CMakeFiles/master.dir/flags.make
-CMakeFiles/master.dir/Kinematics/FK_7DOF.c.o: /home/debian/master/Kinematics/FK_7DOF.c
-CMakeFiles/master.dir/Kinematics/FK_7DOF.c.o: CMakeFiles/master.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/debian/master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/master.dir/Kinematics/FK_7DOF.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/master.dir/Kinematics/FK_7DOF.c.o -MF CMakeFiles/master.dir/Kinematics/FK_7DOF.c.o.d -o CMakeFiles/master.dir/Kinematics/FK_7DOF.c.o -c /home/debian/master/Kinematics/FK_7DOF.c
-
-CMakeFiles/master.dir/Kinematics/FK_7DOF.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/master.dir/Kinematics/FK_7DOF.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/debian/master/Kinematics/FK_7DOF.c > CMakeFiles/master.dir/Kinematics/FK_7DOF.c.i
-
-CMakeFiles/master.dir/Kinematics/FK_7DOF.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/master.dir/Kinematics/FK_7DOF.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/debian/master/Kinematics/FK_7DOF.c -o CMakeFiles/master.dir/Kinematics/FK_7DOF.c.s
-
-CMakeFiles/master.dir/Kinematics/FK_7DOF_data.c.o: CMakeFiles/master.dir/flags.make
-CMakeFiles/master.dir/Kinematics/FK_7DOF_data.c.o: /home/debian/master/Kinematics/FK_7DOF_data.c
-CMakeFiles/master.dir/Kinematics/FK_7DOF_data.c.o: CMakeFiles/master.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/debian/master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/master.dir/Kinematics/FK_7DOF_data.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/master.dir/Kinematics/FK_7DOF_data.c.o -MF CMakeFiles/master.dir/Kinematics/FK_7DOF_data.c.o.d -o CMakeFiles/master.dir/Kinematics/FK_7DOF_data.c.o -c /home/debian/master/Kinematics/FK_7DOF_data.c
-
-CMakeFiles/master.dir/Kinematics/FK_7DOF_data.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/master.dir/Kinematics/FK_7DOF_data.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/debian/master/Kinematics/FK_7DOF_data.c > CMakeFiles/master.dir/Kinematics/FK_7DOF_data.c.i
-
-CMakeFiles/master.dir/Kinematics/FK_7DOF_data.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/master.dir/Kinematics/FK_7DOF_data.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/debian/master/Kinematics/FK_7DOF_data.c -o CMakeFiles/master.dir/Kinematics/FK_7DOF_data.c.s
-
-CMakeFiles/master.dir/Kinematics/FK_7DOF_initialize.c.o: CMakeFiles/master.dir/flags.make
-CMakeFiles/master.dir/Kinematics/FK_7DOF_initialize.c.o: /home/debian/master/Kinematics/FK_7DOF_initialize.c
-CMakeFiles/master.dir/Kinematics/FK_7DOF_initialize.c.o: CMakeFiles/master.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/debian/master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/master.dir/Kinematics/FK_7DOF_initialize.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/master.dir/Kinematics/FK_7DOF_initialize.c.o -MF CMakeFiles/master.dir/Kinematics/FK_7DOF_initialize.c.o.d -o CMakeFiles/master.dir/Kinematics/FK_7DOF_initialize.c.o -c /home/debian/master/Kinematics/FK_7DOF_initialize.c
-
-CMakeFiles/master.dir/Kinematics/FK_7DOF_initialize.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/master.dir/Kinematics/FK_7DOF_initialize.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/debian/master/Kinematics/FK_7DOF_initialize.c > CMakeFiles/master.dir/Kinematics/FK_7DOF_initialize.c.i
-
-CMakeFiles/master.dir/Kinematics/FK_7DOF_initialize.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/master.dir/Kinematics/FK_7DOF_initialize.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/debian/master/Kinematics/FK_7DOF_initialize.c -o CMakeFiles/master.dir/Kinematics/FK_7DOF_initialize.c.s
-
-CMakeFiles/master.dir/Kinematics/FK_7DOF_terminate.c.o: CMakeFiles/master.dir/flags.make
-CMakeFiles/master.dir/Kinematics/FK_7DOF_terminate.c.o: /home/debian/master/Kinematics/FK_7DOF_terminate.c
-CMakeFiles/master.dir/Kinematics/FK_7DOF_terminate.c.o: CMakeFiles/master.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/debian/master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/master.dir/Kinematics/FK_7DOF_terminate.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/master.dir/Kinematics/FK_7DOF_terminate.c.o -MF CMakeFiles/master.dir/Kinematics/FK_7DOF_terminate.c.o.d -o CMakeFiles/master.dir/Kinematics/FK_7DOF_terminate.c.o -c /home/debian/master/Kinematics/FK_7DOF_terminate.c
-
-CMakeFiles/master.dir/Kinematics/FK_7DOF_terminate.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/master.dir/Kinematics/FK_7DOF_terminate.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/debian/master/Kinematics/FK_7DOF_terminate.c > CMakeFiles/master.dir/Kinematics/FK_7DOF_terminate.c.i
-
-CMakeFiles/master.dir/Kinematics/FK_7DOF_terminate.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/master.dir/Kinematics/FK_7DOF_terminate.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/debian/master/Kinematics/FK_7DOF_terminate.c -o CMakeFiles/master.dir/Kinematics/FK_7DOF_terminate.c.s
-
-CMakeFiles/master.dir/Kinematics/IK_7DOF.c.o: CMakeFiles/master.dir/flags.make
-CMakeFiles/master.dir/Kinematics/IK_7DOF.c.o: /home/debian/master/Kinematics/IK_7DOF.c
-CMakeFiles/master.dir/Kinematics/IK_7DOF.c.o: CMakeFiles/master.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/debian/master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/master.dir/Kinematics/IK_7DOF.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/master.dir/Kinematics/IK_7DOF.c.o -MF CMakeFiles/master.dir/Kinematics/IK_7DOF.c.o.d -o CMakeFiles/master.dir/Kinematics/IK_7DOF.c.o -c /home/debian/master/Kinematics/IK_7DOF.c
-
-CMakeFiles/master.dir/Kinematics/IK_7DOF.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/master.dir/Kinematics/IK_7DOF.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/debian/master/Kinematics/IK_7DOF.c > CMakeFiles/master.dir/Kinematics/IK_7DOF.c.i
-
-CMakeFiles/master.dir/Kinematics/IK_7DOF.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/master.dir/Kinematics/IK_7DOF.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/debian/master/Kinematics/IK_7DOF.c -o CMakeFiles/master.dir/Kinematics/IK_7DOF.c.s
-
-CMakeFiles/master.dir/Kinematics/IK_7DOF_data.c.o: CMakeFiles/master.dir/flags.make
-CMakeFiles/master.dir/Kinematics/IK_7DOF_data.c.o: /home/debian/master/Kinematics/IK_7DOF_data.c
-CMakeFiles/master.dir/Kinematics/IK_7DOF_data.c.o: CMakeFiles/master.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/debian/master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/master.dir/Kinematics/IK_7DOF_data.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/master.dir/Kinematics/IK_7DOF_data.c.o -MF CMakeFiles/master.dir/Kinematics/IK_7DOF_data.c.o.d -o CMakeFiles/master.dir/Kinematics/IK_7DOF_data.c.o -c /home/debian/master/Kinematics/IK_7DOF_data.c
-
-CMakeFiles/master.dir/Kinematics/IK_7DOF_data.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/master.dir/Kinematics/IK_7DOF_data.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/debian/master/Kinematics/IK_7DOF_data.c > CMakeFiles/master.dir/Kinematics/IK_7DOF_data.c.i
-
-CMakeFiles/master.dir/Kinematics/IK_7DOF_data.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/master.dir/Kinematics/IK_7DOF_data.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/debian/master/Kinematics/IK_7DOF_data.c -o CMakeFiles/master.dir/Kinematics/IK_7DOF_data.c.s
-
-CMakeFiles/master.dir/Kinematics/IK_7DOF_initialize.c.o: CMakeFiles/master.dir/flags.make
-CMakeFiles/master.dir/Kinematics/IK_7DOF_initialize.c.o: /home/debian/master/Kinematics/IK_7DOF_initialize.c
-CMakeFiles/master.dir/Kinematics/IK_7DOF_initialize.c.o: CMakeFiles/master.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/debian/master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/master.dir/Kinematics/IK_7DOF_initialize.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/master.dir/Kinematics/IK_7DOF_initialize.c.o -MF CMakeFiles/master.dir/Kinematics/IK_7DOF_initialize.c.o.d -o CMakeFiles/master.dir/Kinematics/IK_7DOF_initialize.c.o -c /home/debian/master/Kinematics/IK_7DOF_initialize.c
-
-CMakeFiles/master.dir/Kinematics/IK_7DOF_initialize.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/master.dir/Kinematics/IK_7DOF_initialize.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/debian/master/Kinematics/IK_7DOF_initialize.c > CMakeFiles/master.dir/Kinematics/IK_7DOF_initialize.c.i
-
-CMakeFiles/master.dir/Kinematics/IK_7DOF_initialize.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/master.dir/Kinematics/IK_7DOF_initialize.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/debian/master/Kinematics/IK_7DOF_initialize.c -o CMakeFiles/master.dir/Kinematics/IK_7DOF_initialize.c.s
-
-CMakeFiles/master.dir/Kinematics/IK_7DOF_terminate.c.o: CMakeFiles/master.dir/flags.make
-CMakeFiles/master.dir/Kinematics/IK_7DOF_terminate.c.o: /home/debian/master/Kinematics/IK_7DOF_terminate.c
-CMakeFiles/master.dir/Kinematics/IK_7DOF_terminate.c.o: CMakeFiles/master.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/debian/master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/master.dir/Kinematics/IK_7DOF_terminate.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/master.dir/Kinematics/IK_7DOF_terminate.c.o -MF CMakeFiles/master.dir/Kinematics/IK_7DOF_terminate.c.o.d -o CMakeFiles/master.dir/Kinematics/IK_7DOF_terminate.c.o -c /home/debian/master/Kinematics/IK_7DOF_terminate.c
-
-CMakeFiles/master.dir/Kinematics/IK_7DOF_terminate.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/master.dir/Kinematics/IK_7DOF_terminate.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/debian/master/Kinematics/IK_7DOF_terminate.c > CMakeFiles/master.dir/Kinematics/IK_7DOF_terminate.c.i
-
-CMakeFiles/master.dir/Kinematics/IK_7DOF_terminate.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/master.dir/Kinematics/IK_7DOF_terminate.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/debian/master/Kinematics/IK_7DOF_terminate.c -o CMakeFiles/master.dir/Kinematics/IK_7DOF_terminate.c.s
-
-CMakeFiles/master.dir/Kinematics/atan.c.o: CMakeFiles/master.dir/flags.make
-CMakeFiles/master.dir/Kinematics/atan.c.o: /home/debian/master/Kinematics/atan.c
-CMakeFiles/master.dir/Kinematics/atan.c.o: CMakeFiles/master.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/debian/master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/master.dir/Kinematics/atan.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/master.dir/Kinematics/atan.c.o -MF CMakeFiles/master.dir/Kinematics/atan.c.o.d -o CMakeFiles/master.dir/Kinematics/atan.c.o -c /home/debian/master/Kinematics/atan.c
-
-CMakeFiles/master.dir/Kinematics/atan.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/master.dir/Kinematics/atan.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/debian/master/Kinematics/atan.c > CMakeFiles/master.dir/Kinematics/atan.c.i
-
-CMakeFiles/master.dir/Kinematics/atan.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/master.dir/Kinematics/atan.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/debian/master/Kinematics/atan.c -o CMakeFiles/master.dir/Kinematics/atan.c.s
-
-CMakeFiles/master.dir/Kinematics/checkStoppingCriteria.c.o: CMakeFiles/master.dir/flags.make
-CMakeFiles/master.dir/Kinematics/checkStoppingCriteria.c.o: /home/debian/master/Kinematics/checkStoppingCriteria.c
-CMakeFiles/master.dir/Kinematics/checkStoppingCriteria.c.o: CMakeFiles/master.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/debian/master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/master.dir/Kinematics/checkStoppingCriteria.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/master.dir/Kinematics/checkStoppingCriteria.c.o -MF CMakeFiles/master.dir/Kinematics/checkStoppingCriteria.c.o.d -o CMakeFiles/master.dir/Kinematics/checkStoppingCriteria.c.o -c /home/debian/master/Kinematics/checkStoppingCriteria.c
-
-CMakeFiles/master.dir/Kinematics/checkStoppingCriteria.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/master.dir/Kinematics/checkStoppingCriteria.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/debian/master/Kinematics/checkStoppingCriteria.c > CMakeFiles/master.dir/Kinematics/checkStoppingCriteria.c.i
-
-CMakeFiles/master.dir/Kinematics/checkStoppingCriteria.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/master.dir/Kinematics/checkStoppingCriteria.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/debian/master/Kinematics/checkStoppingCriteria.c -o CMakeFiles/master.dir/Kinematics/checkStoppingCriteria.c.s
-
-CMakeFiles/master.dir/Kinematics/computeFiniteDifferences.c.o: CMakeFiles/master.dir/flags.make
-CMakeFiles/master.dir/Kinematics/computeFiniteDifferences.c.o: /home/debian/master/Kinematics/computeFiniteDifferences.c
-CMakeFiles/master.dir/Kinematics/computeFiniteDifferences.c.o: CMakeFiles/master.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/debian/master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/master.dir/Kinematics/computeFiniteDifferences.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/master.dir/Kinematics/computeFiniteDifferences.c.o -MF CMakeFiles/master.dir/Kinematics/computeFiniteDifferences.c.o.d -o CMakeFiles/master.dir/Kinematics/computeFiniteDifferences.c.o -c /home/debian/master/Kinematics/computeFiniteDifferences.c
-
-CMakeFiles/master.dir/Kinematics/computeFiniteDifferences.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/master.dir/Kinematics/computeFiniteDifferences.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/debian/master/Kinematics/computeFiniteDifferences.c > CMakeFiles/master.dir/Kinematics/computeFiniteDifferences.c.i
-
-CMakeFiles/master.dir/Kinematics/computeFiniteDifferences.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/master.dir/Kinematics/computeFiniteDifferences.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/debian/master/Kinematics/computeFiniteDifferences.c -o CMakeFiles/master.dir/Kinematics/computeFiniteDifferences.c.s
-
-CMakeFiles/master.dir/Kinematics/driver.c.o: CMakeFiles/master.dir/flags.make
-CMakeFiles/master.dir/Kinematics/driver.c.o: /home/debian/master/Kinematics/driver.c
-CMakeFiles/master.dir/Kinematics/driver.c.o: CMakeFiles/master.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/debian/master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/master.dir/Kinematics/driver.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/master.dir/Kinematics/driver.c.o -MF CMakeFiles/master.dir/Kinematics/driver.c.o.d -o CMakeFiles/master.dir/Kinematics/driver.c.o -c /home/debian/master/Kinematics/driver.c
-
-CMakeFiles/master.dir/Kinematics/driver.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/master.dir/Kinematics/driver.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/debian/master/Kinematics/driver.c > CMakeFiles/master.dir/Kinematics/driver.c.i
-
-CMakeFiles/master.dir/Kinematics/driver.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/master.dir/Kinematics/driver.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/debian/master/Kinematics/driver.c -o CMakeFiles/master.dir/Kinematics/driver.c.s
-
-CMakeFiles/master.dir/Kinematics/exp.c.o: CMakeFiles/master.dir/flags.make
-CMakeFiles/master.dir/Kinematics/exp.c.o: /home/debian/master/Kinematics/exp.c
-CMakeFiles/master.dir/Kinematics/exp.c.o: CMakeFiles/master.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/debian/master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/master.dir/Kinematics/exp.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/master.dir/Kinematics/exp.c.o -MF CMakeFiles/master.dir/Kinematics/exp.c.o.d -o CMakeFiles/master.dir/Kinematics/exp.c.o -c /home/debian/master/Kinematics/exp.c
-
-CMakeFiles/master.dir/Kinematics/exp.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/master.dir/Kinematics/exp.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/debian/master/Kinematics/exp.c > CMakeFiles/master.dir/Kinematics/exp.c.i
-
-CMakeFiles/master.dir/Kinematics/exp.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/master.dir/Kinematics/exp.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/debian/master/Kinematics/exp.c -o CMakeFiles/master.dir/Kinematics/exp.c.s
-
-CMakeFiles/master.dir/Kinematics/finDiffEvalAndChkErr.c.o: CMakeFiles/master.dir/flags.make
-CMakeFiles/master.dir/Kinematics/finDiffEvalAndChkErr.c.o: /home/debian/master/Kinematics/finDiffEvalAndChkErr.c
-CMakeFiles/master.dir/Kinematics/finDiffEvalAndChkErr.c.o: CMakeFiles/master.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/debian/master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object CMakeFiles/master.dir/Kinematics/finDiffEvalAndChkErr.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/master.dir/Kinematics/finDiffEvalAndChkErr.c.o -MF CMakeFiles/master.dir/Kinematics/finDiffEvalAndChkErr.c.o.d -o CMakeFiles/master.dir/Kinematics/finDiffEvalAndChkErr.c.o -c /home/debian/master/Kinematics/finDiffEvalAndChkErr.c
-
-CMakeFiles/master.dir/Kinematics/finDiffEvalAndChkErr.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/master.dir/Kinematics/finDiffEvalAndChkErr.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/debian/master/Kinematics/finDiffEvalAndChkErr.c > CMakeFiles/master.dir/Kinematics/finDiffEvalAndChkErr.c.i
-
-CMakeFiles/master.dir/Kinematics/finDiffEvalAndChkErr.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/master.dir/Kinematics/finDiffEvalAndChkErr.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/debian/master/Kinematics/finDiffEvalAndChkErr.c -o CMakeFiles/master.dir/Kinematics/finDiffEvalAndChkErr.c.s
-
-CMakeFiles/master.dir/Kinematics/linearLeastSquares.c.o: CMakeFiles/master.dir/flags.make
-CMakeFiles/master.dir/Kinematics/linearLeastSquares.c.o: /home/debian/master/Kinematics/linearLeastSquares.c
-CMakeFiles/master.dir/Kinematics/linearLeastSquares.c.o: CMakeFiles/master.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/debian/master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object CMakeFiles/master.dir/Kinematics/linearLeastSquares.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/master.dir/Kinematics/linearLeastSquares.c.o -MF CMakeFiles/master.dir/Kinematics/linearLeastSquares.c.o.d -o CMakeFiles/master.dir/Kinematics/linearLeastSquares.c.o -c /home/debian/master/Kinematics/linearLeastSquares.c
-
-CMakeFiles/master.dir/Kinematics/linearLeastSquares.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/master.dir/Kinematics/linearLeastSquares.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/debian/master/Kinematics/linearLeastSquares.c > CMakeFiles/master.dir/Kinematics/linearLeastSquares.c.i
-
-CMakeFiles/master.dir/Kinematics/linearLeastSquares.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/master.dir/Kinematics/linearLeastSquares.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/debian/master/Kinematics/linearLeastSquares.c -o CMakeFiles/master.dir/Kinematics/linearLeastSquares.c.s
-
-CMakeFiles/master.dir/Kinematics/log.c.o: CMakeFiles/master.dir/flags.make
-CMakeFiles/master.dir/Kinematics/log.c.o: /home/debian/master/Kinematics/log.c
-CMakeFiles/master.dir/Kinematics/log.c.o: CMakeFiles/master.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/debian/master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object CMakeFiles/master.dir/Kinematics/log.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/master.dir/Kinematics/log.c.o -MF CMakeFiles/master.dir/Kinematics/log.c.o.d -o CMakeFiles/master.dir/Kinematics/log.c.o -c /home/debian/master/Kinematics/log.c
-
-CMakeFiles/master.dir/Kinematics/log.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/master.dir/Kinematics/log.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/debian/master/Kinematics/log.c > CMakeFiles/master.dir/Kinematics/log.c.i
-
-CMakeFiles/master.dir/Kinematics/log.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/master.dir/Kinematics/log.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/debian/master/Kinematics/log.c -o CMakeFiles/master.dir/Kinematics/log.c.s
-
-CMakeFiles/master.dir/Kinematics/mtimes.c.o: CMakeFiles/master.dir/flags.make
-CMakeFiles/master.dir/Kinematics/mtimes.c.o: /home/debian/master/Kinematics/mtimes.c
-CMakeFiles/master.dir/Kinematics/mtimes.c.o: CMakeFiles/master.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/debian/master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object CMakeFiles/master.dir/Kinematics/mtimes.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/master.dir/Kinematics/mtimes.c.o -MF CMakeFiles/master.dir/Kinematics/mtimes.c.o.d -o CMakeFiles/master.dir/Kinematics/mtimes.c.o -c /home/debian/master/Kinematics/mtimes.c
-
-CMakeFiles/master.dir/Kinematics/mtimes.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/master.dir/Kinematics/mtimes.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/debian/master/Kinematics/mtimes.c > CMakeFiles/master.dir/Kinematics/mtimes.c.i
-
-CMakeFiles/master.dir/Kinematics/mtimes.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/master.dir/Kinematics/mtimes.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/debian/master/Kinematics/mtimes.c -o CMakeFiles/master.dir/Kinematics/mtimes.c.s
-
-CMakeFiles/master.dir/Kinematics/norm.c.o: CMakeFiles/master.dir/flags.make
-CMakeFiles/master.dir/Kinematics/norm.c.o: /home/debian/master/Kinematics/norm.c
-CMakeFiles/master.dir/Kinematics/norm.c.o: CMakeFiles/master.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/debian/master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object CMakeFiles/master.dir/Kinematics/norm.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/master.dir/Kinematics/norm.c.o -MF CMakeFiles/master.dir/Kinematics/norm.c.o.d -o CMakeFiles/master.dir/Kinematics/norm.c.o -c /home/debian/master/Kinematics/norm.c
-
-CMakeFiles/master.dir/Kinematics/norm.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/master.dir/Kinematics/norm.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/debian/master/Kinematics/norm.c > CMakeFiles/master.dir/Kinematics/norm.c.i
-
-CMakeFiles/master.dir/Kinematics/norm.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/master.dir/Kinematics/norm.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/debian/master/Kinematics/norm.c -o CMakeFiles/master.dir/Kinematics/norm.c.s
-
-CMakeFiles/master.dir/Kinematics/power.c.o: CMakeFiles/master.dir/flags.make
-CMakeFiles/master.dir/Kinematics/power.c.o: /home/debian/master/Kinematics/power.c
-CMakeFiles/master.dir/Kinematics/power.c.o: CMakeFiles/master.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/debian/master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object CMakeFiles/master.dir/Kinematics/power.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/master.dir/Kinematics/power.c.o -MF CMakeFiles/master.dir/Kinematics/power.c.o.d -o CMakeFiles/master.dir/Kinematics/power.c.o -c /home/debian/master/Kinematics/power.c
-
-CMakeFiles/master.dir/Kinematics/power.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/master.dir/Kinematics/power.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/debian/master/Kinematics/power.c > CMakeFiles/master.dir/Kinematics/power.c.i
-
-CMakeFiles/master.dir/Kinematics/power.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/master.dir/Kinematics/power.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/debian/master/Kinematics/power.c -o CMakeFiles/master.dir/Kinematics/power.c.s
-
-CMakeFiles/master.dir/Kinematics/roots.c.o: CMakeFiles/master.dir/flags.make
-CMakeFiles/master.dir/Kinematics/roots.c.o: /home/debian/master/Kinematics/roots.c
-CMakeFiles/master.dir/Kinematics/roots.c.o: CMakeFiles/master.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/debian/master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object CMakeFiles/master.dir/Kinematics/roots.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/master.dir/Kinematics/roots.c.o -MF CMakeFiles/master.dir/Kinematics/roots.c.o.d -o CMakeFiles/master.dir/Kinematics/roots.c.o -c /home/debian/master/Kinematics/roots.c
-
-CMakeFiles/master.dir/Kinematics/roots.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/master.dir/Kinematics/roots.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/debian/master/Kinematics/roots.c > CMakeFiles/master.dir/Kinematics/roots.c.i
-
-CMakeFiles/master.dir/Kinematics/roots.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/master.dir/Kinematics/roots.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/debian/master/Kinematics/roots.c -o CMakeFiles/master.dir/Kinematics/roots.c.s
-
-CMakeFiles/master.dir/Kinematics/rtGetInf.c.o: CMakeFiles/master.dir/flags.make
-CMakeFiles/master.dir/Kinematics/rtGetInf.c.o: /home/debian/master/Kinematics/rtGetInf.c
-CMakeFiles/master.dir/Kinematics/rtGetInf.c.o: CMakeFiles/master.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/debian/master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object CMakeFiles/master.dir/Kinematics/rtGetInf.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/master.dir/Kinematics/rtGetInf.c.o -MF CMakeFiles/master.dir/Kinematics/rtGetInf.c.o.d -o CMakeFiles/master.dir/Kinematics/rtGetInf.c.o -c /home/debian/master/Kinematics/rtGetInf.c
-
-CMakeFiles/master.dir/Kinematics/rtGetInf.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/master.dir/Kinematics/rtGetInf.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/debian/master/Kinematics/rtGetInf.c > CMakeFiles/master.dir/Kinematics/rtGetInf.c.i
-
-CMakeFiles/master.dir/Kinematics/rtGetInf.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/master.dir/Kinematics/rtGetInf.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/debian/master/Kinematics/rtGetInf.c -o CMakeFiles/master.dir/Kinematics/rtGetInf.c.s
-
-CMakeFiles/master.dir/Kinematics/rtGetNaN.c.o: CMakeFiles/master.dir/flags.make
-CMakeFiles/master.dir/Kinematics/rtGetNaN.c.o: /home/debian/master/Kinematics/rtGetNaN.c
-CMakeFiles/master.dir/Kinematics/rtGetNaN.c.o: CMakeFiles/master.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/debian/master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building C object CMakeFiles/master.dir/Kinematics/rtGetNaN.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/master.dir/Kinematics/rtGetNaN.c.o -MF CMakeFiles/master.dir/Kinematics/rtGetNaN.c.o.d -o CMakeFiles/master.dir/Kinematics/rtGetNaN.c.o -c /home/debian/master/Kinematics/rtGetNaN.c
-
-CMakeFiles/master.dir/Kinematics/rtGetNaN.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/master.dir/Kinematics/rtGetNaN.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/debian/master/Kinematics/rtGetNaN.c > CMakeFiles/master.dir/Kinematics/rtGetNaN.c.i
-
-CMakeFiles/master.dir/Kinematics/rtGetNaN.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/master.dir/Kinematics/rtGetNaN.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/debian/master/Kinematics/rtGetNaN.c -o CMakeFiles/master.dir/Kinematics/rtGetNaN.c.s
-
-CMakeFiles/master.dir/Kinematics/rt_nonfinite.c.o: CMakeFiles/master.dir/flags.make
-CMakeFiles/master.dir/Kinematics/rt_nonfinite.c.o: /home/debian/master/Kinematics/rt_nonfinite.c
-CMakeFiles/master.dir/Kinematics/rt_nonfinite.c.o: CMakeFiles/master.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/debian/master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building C object CMakeFiles/master.dir/Kinematics/rt_nonfinite.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/master.dir/Kinematics/rt_nonfinite.c.o -MF CMakeFiles/master.dir/Kinematics/rt_nonfinite.c.o.d -o CMakeFiles/master.dir/Kinematics/rt_nonfinite.c.o -c /home/debian/master/Kinematics/rt_nonfinite.c
-
-CMakeFiles/master.dir/Kinematics/rt_nonfinite.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/master.dir/Kinematics/rt_nonfinite.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/debian/master/Kinematics/rt_nonfinite.c > CMakeFiles/master.dir/Kinematics/rt_nonfinite.c.i
-
-CMakeFiles/master.dir/Kinematics/rt_nonfinite.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/master.dir/Kinematics/rt_nonfinite.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/debian/master/Kinematics/rt_nonfinite.c -o CMakeFiles/master.dir/Kinematics/rt_nonfinite.c.s
-
-CMakeFiles/master.dir/Kinematics/rt_wutil.c.o: CMakeFiles/master.dir/flags.make
-CMakeFiles/master.dir/Kinematics/rt_wutil.c.o: /home/debian/master/Kinematics/rt_wutil.c
-CMakeFiles/master.dir/Kinematics/rt_wutil.c.o: CMakeFiles/master.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/debian/master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building C object CMakeFiles/master.dir/Kinematics/rt_wutil.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/master.dir/Kinematics/rt_wutil.c.o -MF CMakeFiles/master.dir/Kinematics/rt_wutil.c.o.d -o CMakeFiles/master.dir/Kinematics/rt_wutil.c.o -c /home/debian/master/Kinematics/rt_wutil.c
-
-CMakeFiles/master.dir/Kinematics/rt_wutil.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/master.dir/Kinematics/rt_wutil.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/debian/master/Kinematics/rt_wutil.c > CMakeFiles/master.dir/Kinematics/rt_wutil.c.i
-
-CMakeFiles/master.dir/Kinematics/rt_wutil.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/master.dir/Kinematics/rt_wutil.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/debian/master/Kinematics/rt_wutil.c -o CMakeFiles/master.dir/Kinematics/rt_wutil.c.s
-
-CMakeFiles/master.dir/Kinematics/xdlahqr.c.o: CMakeFiles/master.dir/flags.make
-CMakeFiles/master.dir/Kinematics/xdlahqr.c.o: /home/debian/master/Kinematics/xdlahqr.c
-CMakeFiles/master.dir/Kinematics/xdlahqr.c.o: CMakeFiles/master.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/debian/master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building C object CMakeFiles/master.dir/Kinematics/xdlahqr.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/master.dir/Kinematics/xdlahqr.c.o -MF CMakeFiles/master.dir/Kinematics/xdlahqr.c.o.d -o CMakeFiles/master.dir/Kinematics/xdlahqr.c.o -c /home/debian/master/Kinematics/xdlahqr.c
-
-CMakeFiles/master.dir/Kinematics/xdlahqr.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/master.dir/Kinematics/xdlahqr.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/debian/master/Kinematics/xdlahqr.c > CMakeFiles/master.dir/Kinematics/xdlahqr.c.i
-
-CMakeFiles/master.dir/Kinematics/xdlahqr.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/master.dir/Kinematics/xdlahqr.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/debian/master/Kinematics/xdlahqr.c -o CMakeFiles/master.dir/Kinematics/xdlahqr.c.s
-
-CMakeFiles/master.dir/Kinematics/xdlanv2.c.o: CMakeFiles/master.dir/flags.make
-CMakeFiles/master.dir/Kinematics/xdlanv2.c.o: /home/debian/master/Kinematics/xdlanv2.c
-CMakeFiles/master.dir/Kinematics/xdlanv2.c.o: CMakeFiles/master.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/debian/master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building C object CMakeFiles/master.dir/Kinematics/xdlanv2.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/master.dir/Kinematics/xdlanv2.c.o -MF CMakeFiles/master.dir/Kinematics/xdlanv2.c.o.d -o CMakeFiles/master.dir/Kinematics/xdlanv2.c.o -c /home/debian/master/Kinematics/xdlanv2.c
-
-CMakeFiles/master.dir/Kinematics/xdlanv2.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/master.dir/Kinematics/xdlanv2.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/debian/master/Kinematics/xdlanv2.c > CMakeFiles/master.dir/Kinematics/xdlanv2.c.i
-
-CMakeFiles/master.dir/Kinematics/xdlanv2.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/master.dir/Kinematics/xdlanv2.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/debian/master/Kinematics/xdlanv2.c -o CMakeFiles/master.dir/Kinematics/xdlanv2.c.s
-
-CMakeFiles/master.dir/Kinematics/xnrm2.c.o: CMakeFiles/master.dir/flags.make
-CMakeFiles/master.dir/Kinematics/xnrm2.c.o: /home/debian/master/Kinematics/xnrm2.c
-CMakeFiles/master.dir/Kinematics/xnrm2.c.o: CMakeFiles/master.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/debian/master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building C object CMakeFiles/master.dir/Kinematics/xnrm2.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/master.dir/Kinematics/xnrm2.c.o -MF CMakeFiles/master.dir/Kinematics/xnrm2.c.o.d -o CMakeFiles/master.dir/Kinematics/xnrm2.c.o -c /home/debian/master/Kinematics/xnrm2.c
-
-CMakeFiles/master.dir/Kinematics/xnrm2.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/master.dir/Kinematics/xnrm2.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/debian/master/Kinematics/xnrm2.c > CMakeFiles/master.dir/Kinematics/xnrm2.c.i
-
-CMakeFiles/master.dir/Kinematics/xnrm2.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/master.dir/Kinematics/xnrm2.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/debian/master/Kinematics/xnrm2.c -o CMakeFiles/master.dir/Kinematics/xnrm2.c.s
-
-CMakeFiles/master.dir/Kinematics/xzgebal.c.o: CMakeFiles/master.dir/flags.make
-CMakeFiles/master.dir/Kinematics/xzgebal.c.o: /home/debian/master/Kinematics/xzgebal.c
-CMakeFiles/master.dir/Kinematics/xzgebal.c.o: CMakeFiles/master.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/debian/master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building C object CMakeFiles/master.dir/Kinematics/xzgebal.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/master.dir/Kinematics/xzgebal.c.o -MF CMakeFiles/master.dir/Kinematics/xzgebal.c.o.d -o CMakeFiles/master.dir/Kinematics/xzgebal.c.o -c /home/debian/master/Kinematics/xzgebal.c
-
-CMakeFiles/master.dir/Kinematics/xzgebal.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/master.dir/Kinematics/xzgebal.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/debian/master/Kinematics/xzgebal.c > CMakeFiles/master.dir/Kinematics/xzgebal.c.i
-
-CMakeFiles/master.dir/Kinematics/xzgebal.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/master.dir/Kinematics/xzgebal.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/debian/master/Kinematics/xzgebal.c -o CMakeFiles/master.dir/Kinematics/xzgebal.c.s
-
-CMakeFiles/master.dir/Kinematics/xzgehrd.c.o: CMakeFiles/master.dir/flags.make
-CMakeFiles/master.dir/Kinematics/xzgehrd.c.o: /home/debian/master/Kinematics/xzgehrd.c
-CMakeFiles/master.dir/Kinematics/xzgehrd.c.o: CMakeFiles/master.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/debian/master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building C object CMakeFiles/master.dir/Kinematics/xzgehrd.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/master.dir/Kinematics/xzgehrd.c.o -MF CMakeFiles/master.dir/Kinematics/xzgehrd.c.o.d -o CMakeFiles/master.dir/Kinematics/xzgehrd.c.o -c /home/debian/master/Kinematics/xzgehrd.c
-
-CMakeFiles/master.dir/Kinematics/xzgehrd.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/master.dir/Kinematics/xzgehrd.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/debian/master/Kinematics/xzgehrd.c > CMakeFiles/master.dir/Kinematics/xzgehrd.c.i
-
-CMakeFiles/master.dir/Kinematics/xzgehrd.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/master.dir/Kinematics/xzgehrd.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/debian/master/Kinematics/xzgehrd.c -o CMakeFiles/master.dir/Kinematics/xzgehrd.c.s
-
-CMakeFiles/master.dir/Kinematics/xzlarf.c.o: CMakeFiles/master.dir/flags.make
-CMakeFiles/master.dir/Kinematics/xzlarf.c.o: /home/debian/master/Kinematics/xzlarf.c
-CMakeFiles/master.dir/Kinematics/xzlarf.c.o: CMakeFiles/master.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/debian/master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building C object CMakeFiles/master.dir/Kinematics/xzlarf.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/master.dir/Kinematics/xzlarf.c.o -MF CMakeFiles/master.dir/Kinematics/xzlarf.c.o.d -o CMakeFiles/master.dir/Kinematics/xzlarf.c.o -c /home/debian/master/Kinematics/xzlarf.c
-
-CMakeFiles/master.dir/Kinematics/xzlarf.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/master.dir/Kinematics/xzlarf.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/debian/master/Kinematics/xzlarf.c > CMakeFiles/master.dir/Kinematics/xzlarf.c.i
-
-CMakeFiles/master.dir/Kinematics/xzlarf.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/master.dir/Kinematics/xzlarf.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/debian/master/Kinematics/xzlarf.c -o CMakeFiles/master.dir/Kinematics/xzlarf.c.s
-
-CMakeFiles/master.dir/Kinematics/xzlarfg.c.o: CMakeFiles/master.dir/flags.make
-CMakeFiles/master.dir/Kinematics/xzlarfg.c.o: /home/debian/master/Kinematics/xzlarfg.c
-CMakeFiles/master.dir/Kinematics/xzlarfg.c.o: CMakeFiles/master.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/debian/master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building C object CMakeFiles/master.dir/Kinematics/xzlarfg.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/master.dir/Kinematics/xzlarfg.c.o -MF CMakeFiles/master.dir/Kinematics/xzlarfg.c.o.d -o CMakeFiles/master.dir/Kinematics/xzlarfg.c.o -c /home/debian/master/Kinematics/xzlarfg.c
-
-CMakeFiles/master.dir/Kinematics/xzlarfg.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/master.dir/Kinematics/xzlarfg.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/debian/master/Kinematics/xzlarfg.c > CMakeFiles/master.dir/Kinematics/xzlarfg.c.i
-
-CMakeFiles/master.dir/Kinematics/xzlarfg.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/master.dir/Kinematics/xzlarfg.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/debian/master/Kinematics/xzlarfg.c -o CMakeFiles/master.dir/Kinematics/xzlarfg.c.s
-
-CMakeFiles/master.dir/Kinematics/xzlascl.c.o: CMakeFiles/master.dir/flags.make
-CMakeFiles/master.dir/Kinematics/xzlascl.c.o: /home/debian/master/Kinematics/xzlascl.c
-CMakeFiles/master.dir/Kinematics/xzlascl.c.o: CMakeFiles/master.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/debian/master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building C object CMakeFiles/master.dir/Kinematics/xzlascl.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/master.dir/Kinematics/xzlascl.c.o -MF CMakeFiles/master.dir/Kinematics/xzlascl.c.o.d -o CMakeFiles/master.dir/Kinematics/xzlascl.c.o -c /home/debian/master/Kinematics/xzlascl.c
-
-CMakeFiles/master.dir/Kinematics/xzlascl.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/master.dir/Kinematics/xzlascl.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/debian/master/Kinematics/xzlascl.c > CMakeFiles/master.dir/Kinematics/xzlascl.c.i
-
-CMakeFiles/master.dir/Kinematics/xzlascl.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/master.dir/Kinematics/xzlascl.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/debian/master/Kinematics/xzlascl.c -o CMakeFiles/master.dir/Kinematics/xzlascl.c.s
-
 CMakeFiles/master.dir/demo.c.o: CMakeFiles/master.dir/flags.make
 CMakeFiles/master.dir/demo.c.o: /home/debian/master/demo.c
 CMakeFiles/master.dir/demo.c.o: CMakeFiles/master.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/debian/master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building C object CMakeFiles/master.dir/demo.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/debian/master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/master.dir/demo.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/master.dir/demo.c.o -MF CMakeFiles/master.dir/demo.c.o.d -o CMakeFiles/master.dir/demo.c.o -c /home/debian/master/demo.c
 
 CMakeFiles/master.dir/demo.c.i: cmake_force
@@ -548,38 +86,542 @@ CMakeFiles/master.dir/demo.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/master.dir/demo.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/debian/master/demo.c -o CMakeFiles/master.dir/demo.c.s
 
-CMakeFiles/master.dir/feedback/lpf.c.o: CMakeFiles/master.dir/flags.make
-CMakeFiles/master.dir/feedback/lpf.c.o: /home/debian/master/feedback/lpf.c
-CMakeFiles/master.dir/feedback/lpf.c.o: CMakeFiles/master.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/debian/master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building C object CMakeFiles/master.dir/feedback/lpf.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/master.dir/feedback/lpf.c.o -MF CMakeFiles/master.dir/feedback/lpf.c.o.d -o CMakeFiles/master.dir/feedback/lpf.c.o -c /home/debian/master/feedback/lpf.c
+CMakeFiles/master.dir/lib/EtherCAT/EtherCAT.cpp.o: CMakeFiles/master.dir/flags.make
+CMakeFiles/master.dir/lib/EtherCAT/EtherCAT.cpp.o: /home/debian/master/lib/EtherCAT/EtherCAT.cpp
+CMakeFiles/master.dir/lib/EtherCAT/EtherCAT.cpp.o: CMakeFiles/master.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/debian/master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/master.dir/lib/EtherCAT/EtherCAT.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/master.dir/lib/EtherCAT/EtherCAT.cpp.o -MF CMakeFiles/master.dir/lib/EtherCAT/EtherCAT.cpp.o.d -o CMakeFiles/master.dir/lib/EtherCAT/EtherCAT.cpp.o -c /home/debian/master/lib/EtherCAT/EtherCAT.cpp
 
-CMakeFiles/master.dir/feedback/lpf.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/master.dir/feedback/lpf.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/debian/master/feedback/lpf.c > CMakeFiles/master.dir/feedback/lpf.c.i
+CMakeFiles/master.dir/lib/EtherCAT/EtherCAT.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/master.dir/lib/EtherCAT/EtherCAT.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/debian/master/lib/EtherCAT/EtherCAT.cpp > CMakeFiles/master.dir/lib/EtherCAT/EtherCAT.cpp.i
 
-CMakeFiles/master.dir/feedback/lpf.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/master.dir/feedback/lpf.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/debian/master/feedback/lpf.c -o CMakeFiles/master.dir/feedback/lpf.c.s
+CMakeFiles/master.dir/lib/EtherCAT/EtherCAT.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/master.dir/lib/EtherCAT/EtherCAT.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/debian/master/lib/EtherCAT/EtherCAT.cpp -o CMakeFiles/master.dir/lib/EtherCAT/EtherCAT.cpp.s
 
-CMakeFiles/master.dir/interface/cmdpanel.cpp.o: CMakeFiles/master.dir/flags.make
-CMakeFiles/master.dir/interface/cmdpanel.cpp.o: /home/debian/master/interface/cmdpanel.cpp
-CMakeFiles/master.dir/interface/cmdpanel.cpp.o: CMakeFiles/master.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/debian/master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building CXX object CMakeFiles/master.dir/interface/cmdpanel.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/master.dir/interface/cmdpanel.cpp.o -MF CMakeFiles/master.dir/interface/cmdpanel.cpp.o.d -o CMakeFiles/master.dir/interface/cmdpanel.cpp.o -c /home/debian/master/interface/cmdpanel.cpp
+CMakeFiles/master.dir/lib/Kinematics/FK_7DOF.c.o: CMakeFiles/master.dir/flags.make
+CMakeFiles/master.dir/lib/Kinematics/FK_7DOF.c.o: /home/debian/master/lib/Kinematics/FK_7DOF.c
+CMakeFiles/master.dir/lib/Kinematics/FK_7DOF.c.o: CMakeFiles/master.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/debian/master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/master.dir/lib/Kinematics/FK_7DOF.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/master.dir/lib/Kinematics/FK_7DOF.c.o -MF CMakeFiles/master.dir/lib/Kinematics/FK_7DOF.c.o.d -o CMakeFiles/master.dir/lib/Kinematics/FK_7DOF.c.o -c /home/debian/master/lib/Kinematics/FK_7DOF.c
 
-CMakeFiles/master.dir/interface/cmdpanel.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/master.dir/interface/cmdpanel.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/debian/master/interface/cmdpanel.cpp > CMakeFiles/master.dir/interface/cmdpanel.cpp.i
+CMakeFiles/master.dir/lib/Kinematics/FK_7DOF.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/master.dir/lib/Kinematics/FK_7DOF.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/debian/master/lib/Kinematics/FK_7DOF.c > CMakeFiles/master.dir/lib/Kinematics/FK_7DOF.c.i
 
-CMakeFiles/master.dir/interface/cmdpanel.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/master.dir/interface/cmdpanel.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/debian/master/interface/cmdpanel.cpp -o CMakeFiles/master.dir/interface/cmdpanel.cpp.s
+CMakeFiles/master.dir/lib/Kinematics/FK_7DOF.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/master.dir/lib/Kinematics/FK_7DOF.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/debian/master/lib/Kinematics/FK_7DOF.c -o CMakeFiles/master.dir/lib/Kinematics/FK_7DOF.c.s
+
+CMakeFiles/master.dir/lib/Kinematics/FK_7DOF_data.c.o: CMakeFiles/master.dir/flags.make
+CMakeFiles/master.dir/lib/Kinematics/FK_7DOF_data.c.o: /home/debian/master/lib/Kinematics/FK_7DOF_data.c
+CMakeFiles/master.dir/lib/Kinematics/FK_7DOF_data.c.o: CMakeFiles/master.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/debian/master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/master.dir/lib/Kinematics/FK_7DOF_data.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/master.dir/lib/Kinematics/FK_7DOF_data.c.o -MF CMakeFiles/master.dir/lib/Kinematics/FK_7DOF_data.c.o.d -o CMakeFiles/master.dir/lib/Kinematics/FK_7DOF_data.c.o -c /home/debian/master/lib/Kinematics/FK_7DOF_data.c
+
+CMakeFiles/master.dir/lib/Kinematics/FK_7DOF_data.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/master.dir/lib/Kinematics/FK_7DOF_data.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/debian/master/lib/Kinematics/FK_7DOF_data.c > CMakeFiles/master.dir/lib/Kinematics/FK_7DOF_data.c.i
+
+CMakeFiles/master.dir/lib/Kinematics/FK_7DOF_data.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/master.dir/lib/Kinematics/FK_7DOF_data.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/debian/master/lib/Kinematics/FK_7DOF_data.c -o CMakeFiles/master.dir/lib/Kinematics/FK_7DOF_data.c.s
+
+CMakeFiles/master.dir/lib/Kinematics/FK_7DOF_initialize.c.o: CMakeFiles/master.dir/flags.make
+CMakeFiles/master.dir/lib/Kinematics/FK_7DOF_initialize.c.o: /home/debian/master/lib/Kinematics/FK_7DOF_initialize.c
+CMakeFiles/master.dir/lib/Kinematics/FK_7DOF_initialize.c.o: CMakeFiles/master.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/debian/master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/master.dir/lib/Kinematics/FK_7DOF_initialize.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/master.dir/lib/Kinematics/FK_7DOF_initialize.c.o -MF CMakeFiles/master.dir/lib/Kinematics/FK_7DOF_initialize.c.o.d -o CMakeFiles/master.dir/lib/Kinematics/FK_7DOF_initialize.c.o -c /home/debian/master/lib/Kinematics/FK_7DOF_initialize.c
+
+CMakeFiles/master.dir/lib/Kinematics/FK_7DOF_initialize.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/master.dir/lib/Kinematics/FK_7DOF_initialize.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/debian/master/lib/Kinematics/FK_7DOF_initialize.c > CMakeFiles/master.dir/lib/Kinematics/FK_7DOF_initialize.c.i
+
+CMakeFiles/master.dir/lib/Kinematics/FK_7DOF_initialize.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/master.dir/lib/Kinematics/FK_7DOF_initialize.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/debian/master/lib/Kinematics/FK_7DOF_initialize.c -o CMakeFiles/master.dir/lib/Kinematics/FK_7DOF_initialize.c.s
+
+CMakeFiles/master.dir/lib/Kinematics/FK_7DOF_terminate.c.o: CMakeFiles/master.dir/flags.make
+CMakeFiles/master.dir/lib/Kinematics/FK_7DOF_terminate.c.o: /home/debian/master/lib/Kinematics/FK_7DOF_terminate.c
+CMakeFiles/master.dir/lib/Kinematics/FK_7DOF_terminate.c.o: CMakeFiles/master.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/debian/master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/master.dir/lib/Kinematics/FK_7DOF_terminate.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/master.dir/lib/Kinematics/FK_7DOF_terminate.c.o -MF CMakeFiles/master.dir/lib/Kinematics/FK_7DOF_terminate.c.o.d -o CMakeFiles/master.dir/lib/Kinematics/FK_7DOF_terminate.c.o -c /home/debian/master/lib/Kinematics/FK_7DOF_terminate.c
+
+CMakeFiles/master.dir/lib/Kinematics/FK_7DOF_terminate.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/master.dir/lib/Kinematics/FK_7DOF_terminate.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/debian/master/lib/Kinematics/FK_7DOF_terminate.c > CMakeFiles/master.dir/lib/Kinematics/FK_7DOF_terminate.c.i
+
+CMakeFiles/master.dir/lib/Kinematics/FK_7DOF_terminate.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/master.dir/lib/Kinematics/FK_7DOF_terminate.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/debian/master/lib/Kinematics/FK_7DOF_terminate.c -o CMakeFiles/master.dir/lib/Kinematics/FK_7DOF_terminate.c.s
+
+CMakeFiles/master.dir/lib/Kinematics/IK_7DOF.c.o: CMakeFiles/master.dir/flags.make
+CMakeFiles/master.dir/lib/Kinematics/IK_7DOF.c.o: /home/debian/master/lib/Kinematics/IK_7DOF.c
+CMakeFiles/master.dir/lib/Kinematics/IK_7DOF.c.o: CMakeFiles/master.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/debian/master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/master.dir/lib/Kinematics/IK_7DOF.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/master.dir/lib/Kinematics/IK_7DOF.c.o -MF CMakeFiles/master.dir/lib/Kinematics/IK_7DOF.c.o.d -o CMakeFiles/master.dir/lib/Kinematics/IK_7DOF.c.o -c /home/debian/master/lib/Kinematics/IK_7DOF.c
+
+CMakeFiles/master.dir/lib/Kinematics/IK_7DOF.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/master.dir/lib/Kinematics/IK_7DOF.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/debian/master/lib/Kinematics/IK_7DOF.c > CMakeFiles/master.dir/lib/Kinematics/IK_7DOF.c.i
+
+CMakeFiles/master.dir/lib/Kinematics/IK_7DOF.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/master.dir/lib/Kinematics/IK_7DOF.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/debian/master/lib/Kinematics/IK_7DOF.c -o CMakeFiles/master.dir/lib/Kinematics/IK_7DOF.c.s
+
+CMakeFiles/master.dir/lib/Kinematics/IK_7DOF_data.c.o: CMakeFiles/master.dir/flags.make
+CMakeFiles/master.dir/lib/Kinematics/IK_7DOF_data.c.o: /home/debian/master/lib/Kinematics/IK_7DOF_data.c
+CMakeFiles/master.dir/lib/Kinematics/IK_7DOF_data.c.o: CMakeFiles/master.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/debian/master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/master.dir/lib/Kinematics/IK_7DOF_data.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/master.dir/lib/Kinematics/IK_7DOF_data.c.o -MF CMakeFiles/master.dir/lib/Kinematics/IK_7DOF_data.c.o.d -o CMakeFiles/master.dir/lib/Kinematics/IK_7DOF_data.c.o -c /home/debian/master/lib/Kinematics/IK_7DOF_data.c
+
+CMakeFiles/master.dir/lib/Kinematics/IK_7DOF_data.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/master.dir/lib/Kinematics/IK_7DOF_data.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/debian/master/lib/Kinematics/IK_7DOF_data.c > CMakeFiles/master.dir/lib/Kinematics/IK_7DOF_data.c.i
+
+CMakeFiles/master.dir/lib/Kinematics/IK_7DOF_data.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/master.dir/lib/Kinematics/IK_7DOF_data.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/debian/master/lib/Kinematics/IK_7DOF_data.c -o CMakeFiles/master.dir/lib/Kinematics/IK_7DOF_data.c.s
+
+CMakeFiles/master.dir/lib/Kinematics/IK_7DOF_initialize.c.o: CMakeFiles/master.dir/flags.make
+CMakeFiles/master.dir/lib/Kinematics/IK_7DOF_initialize.c.o: /home/debian/master/lib/Kinematics/IK_7DOF_initialize.c
+CMakeFiles/master.dir/lib/Kinematics/IK_7DOF_initialize.c.o: CMakeFiles/master.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/debian/master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/master.dir/lib/Kinematics/IK_7DOF_initialize.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/master.dir/lib/Kinematics/IK_7DOF_initialize.c.o -MF CMakeFiles/master.dir/lib/Kinematics/IK_7DOF_initialize.c.o.d -o CMakeFiles/master.dir/lib/Kinematics/IK_7DOF_initialize.c.o -c /home/debian/master/lib/Kinematics/IK_7DOF_initialize.c
+
+CMakeFiles/master.dir/lib/Kinematics/IK_7DOF_initialize.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/master.dir/lib/Kinematics/IK_7DOF_initialize.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/debian/master/lib/Kinematics/IK_7DOF_initialize.c > CMakeFiles/master.dir/lib/Kinematics/IK_7DOF_initialize.c.i
+
+CMakeFiles/master.dir/lib/Kinematics/IK_7DOF_initialize.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/master.dir/lib/Kinematics/IK_7DOF_initialize.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/debian/master/lib/Kinematics/IK_7DOF_initialize.c -o CMakeFiles/master.dir/lib/Kinematics/IK_7DOF_initialize.c.s
+
+CMakeFiles/master.dir/lib/Kinematics/IK_7DOF_terminate.c.o: CMakeFiles/master.dir/flags.make
+CMakeFiles/master.dir/lib/Kinematics/IK_7DOF_terminate.c.o: /home/debian/master/lib/Kinematics/IK_7DOF_terminate.c
+CMakeFiles/master.dir/lib/Kinematics/IK_7DOF_terminate.c.o: CMakeFiles/master.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/debian/master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/master.dir/lib/Kinematics/IK_7DOF_terminate.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/master.dir/lib/Kinematics/IK_7DOF_terminate.c.o -MF CMakeFiles/master.dir/lib/Kinematics/IK_7DOF_terminate.c.o.d -o CMakeFiles/master.dir/lib/Kinematics/IK_7DOF_terminate.c.o -c /home/debian/master/lib/Kinematics/IK_7DOF_terminate.c
+
+CMakeFiles/master.dir/lib/Kinematics/IK_7DOF_terminate.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/master.dir/lib/Kinematics/IK_7DOF_terminate.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/debian/master/lib/Kinematics/IK_7DOF_terminate.c > CMakeFiles/master.dir/lib/Kinematics/IK_7DOF_terminate.c.i
+
+CMakeFiles/master.dir/lib/Kinematics/IK_7DOF_terminate.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/master.dir/lib/Kinematics/IK_7DOF_terminate.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/debian/master/lib/Kinematics/IK_7DOF_terminate.c -o CMakeFiles/master.dir/lib/Kinematics/IK_7DOF_terminate.c.s
+
+CMakeFiles/master.dir/lib/Kinematics/atan.c.o: CMakeFiles/master.dir/flags.make
+CMakeFiles/master.dir/lib/Kinematics/atan.c.o: /home/debian/master/lib/Kinematics/atan.c
+CMakeFiles/master.dir/lib/Kinematics/atan.c.o: CMakeFiles/master.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/debian/master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/master.dir/lib/Kinematics/atan.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/master.dir/lib/Kinematics/atan.c.o -MF CMakeFiles/master.dir/lib/Kinematics/atan.c.o.d -o CMakeFiles/master.dir/lib/Kinematics/atan.c.o -c /home/debian/master/lib/Kinematics/atan.c
+
+CMakeFiles/master.dir/lib/Kinematics/atan.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/master.dir/lib/Kinematics/atan.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/debian/master/lib/Kinematics/atan.c > CMakeFiles/master.dir/lib/Kinematics/atan.c.i
+
+CMakeFiles/master.dir/lib/Kinematics/atan.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/master.dir/lib/Kinematics/atan.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/debian/master/lib/Kinematics/atan.c -o CMakeFiles/master.dir/lib/Kinematics/atan.c.s
+
+CMakeFiles/master.dir/lib/Kinematics/checkStoppingCriteria.c.o: CMakeFiles/master.dir/flags.make
+CMakeFiles/master.dir/lib/Kinematics/checkStoppingCriteria.c.o: /home/debian/master/lib/Kinematics/checkStoppingCriteria.c
+CMakeFiles/master.dir/lib/Kinematics/checkStoppingCriteria.c.o: CMakeFiles/master.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/debian/master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/master.dir/lib/Kinematics/checkStoppingCriteria.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/master.dir/lib/Kinematics/checkStoppingCriteria.c.o -MF CMakeFiles/master.dir/lib/Kinematics/checkStoppingCriteria.c.o.d -o CMakeFiles/master.dir/lib/Kinematics/checkStoppingCriteria.c.o -c /home/debian/master/lib/Kinematics/checkStoppingCriteria.c
+
+CMakeFiles/master.dir/lib/Kinematics/checkStoppingCriteria.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/master.dir/lib/Kinematics/checkStoppingCriteria.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/debian/master/lib/Kinematics/checkStoppingCriteria.c > CMakeFiles/master.dir/lib/Kinematics/checkStoppingCriteria.c.i
+
+CMakeFiles/master.dir/lib/Kinematics/checkStoppingCriteria.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/master.dir/lib/Kinematics/checkStoppingCriteria.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/debian/master/lib/Kinematics/checkStoppingCriteria.c -o CMakeFiles/master.dir/lib/Kinematics/checkStoppingCriteria.c.s
+
+CMakeFiles/master.dir/lib/Kinematics/computeFiniteDifferences.c.o: CMakeFiles/master.dir/flags.make
+CMakeFiles/master.dir/lib/Kinematics/computeFiniteDifferences.c.o: /home/debian/master/lib/Kinematics/computeFiniteDifferences.c
+CMakeFiles/master.dir/lib/Kinematics/computeFiniteDifferences.c.o: CMakeFiles/master.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/debian/master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/master.dir/lib/Kinematics/computeFiniteDifferences.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/master.dir/lib/Kinematics/computeFiniteDifferences.c.o -MF CMakeFiles/master.dir/lib/Kinematics/computeFiniteDifferences.c.o.d -o CMakeFiles/master.dir/lib/Kinematics/computeFiniteDifferences.c.o -c /home/debian/master/lib/Kinematics/computeFiniteDifferences.c
+
+CMakeFiles/master.dir/lib/Kinematics/computeFiniteDifferences.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/master.dir/lib/Kinematics/computeFiniteDifferences.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/debian/master/lib/Kinematics/computeFiniteDifferences.c > CMakeFiles/master.dir/lib/Kinematics/computeFiniteDifferences.c.i
+
+CMakeFiles/master.dir/lib/Kinematics/computeFiniteDifferences.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/master.dir/lib/Kinematics/computeFiniteDifferences.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/debian/master/lib/Kinematics/computeFiniteDifferences.c -o CMakeFiles/master.dir/lib/Kinematics/computeFiniteDifferences.c.s
+
+CMakeFiles/master.dir/lib/Kinematics/driver.c.o: CMakeFiles/master.dir/flags.make
+CMakeFiles/master.dir/lib/Kinematics/driver.c.o: /home/debian/master/lib/Kinematics/driver.c
+CMakeFiles/master.dir/lib/Kinematics/driver.c.o: CMakeFiles/master.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/debian/master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/master.dir/lib/Kinematics/driver.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/master.dir/lib/Kinematics/driver.c.o -MF CMakeFiles/master.dir/lib/Kinematics/driver.c.o.d -o CMakeFiles/master.dir/lib/Kinematics/driver.c.o -c /home/debian/master/lib/Kinematics/driver.c
+
+CMakeFiles/master.dir/lib/Kinematics/driver.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/master.dir/lib/Kinematics/driver.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/debian/master/lib/Kinematics/driver.c > CMakeFiles/master.dir/lib/Kinematics/driver.c.i
+
+CMakeFiles/master.dir/lib/Kinematics/driver.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/master.dir/lib/Kinematics/driver.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/debian/master/lib/Kinematics/driver.c -o CMakeFiles/master.dir/lib/Kinematics/driver.c.s
+
+CMakeFiles/master.dir/lib/Kinematics/exp.c.o: CMakeFiles/master.dir/flags.make
+CMakeFiles/master.dir/lib/Kinematics/exp.c.o: /home/debian/master/lib/Kinematics/exp.c
+CMakeFiles/master.dir/lib/Kinematics/exp.c.o: CMakeFiles/master.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/debian/master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object CMakeFiles/master.dir/lib/Kinematics/exp.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/master.dir/lib/Kinematics/exp.c.o -MF CMakeFiles/master.dir/lib/Kinematics/exp.c.o.d -o CMakeFiles/master.dir/lib/Kinematics/exp.c.o -c /home/debian/master/lib/Kinematics/exp.c
+
+CMakeFiles/master.dir/lib/Kinematics/exp.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/master.dir/lib/Kinematics/exp.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/debian/master/lib/Kinematics/exp.c > CMakeFiles/master.dir/lib/Kinematics/exp.c.i
+
+CMakeFiles/master.dir/lib/Kinematics/exp.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/master.dir/lib/Kinematics/exp.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/debian/master/lib/Kinematics/exp.c -o CMakeFiles/master.dir/lib/Kinematics/exp.c.s
+
+CMakeFiles/master.dir/lib/Kinematics/finDiffEvalAndChkErr.c.o: CMakeFiles/master.dir/flags.make
+CMakeFiles/master.dir/lib/Kinematics/finDiffEvalAndChkErr.c.o: /home/debian/master/lib/Kinematics/finDiffEvalAndChkErr.c
+CMakeFiles/master.dir/lib/Kinematics/finDiffEvalAndChkErr.c.o: CMakeFiles/master.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/debian/master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object CMakeFiles/master.dir/lib/Kinematics/finDiffEvalAndChkErr.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/master.dir/lib/Kinematics/finDiffEvalAndChkErr.c.o -MF CMakeFiles/master.dir/lib/Kinematics/finDiffEvalAndChkErr.c.o.d -o CMakeFiles/master.dir/lib/Kinematics/finDiffEvalAndChkErr.c.o -c /home/debian/master/lib/Kinematics/finDiffEvalAndChkErr.c
+
+CMakeFiles/master.dir/lib/Kinematics/finDiffEvalAndChkErr.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/master.dir/lib/Kinematics/finDiffEvalAndChkErr.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/debian/master/lib/Kinematics/finDiffEvalAndChkErr.c > CMakeFiles/master.dir/lib/Kinematics/finDiffEvalAndChkErr.c.i
+
+CMakeFiles/master.dir/lib/Kinematics/finDiffEvalAndChkErr.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/master.dir/lib/Kinematics/finDiffEvalAndChkErr.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/debian/master/lib/Kinematics/finDiffEvalAndChkErr.c -o CMakeFiles/master.dir/lib/Kinematics/finDiffEvalAndChkErr.c.s
+
+CMakeFiles/master.dir/lib/Kinematics/linearLeastSquares.c.o: CMakeFiles/master.dir/flags.make
+CMakeFiles/master.dir/lib/Kinematics/linearLeastSquares.c.o: /home/debian/master/lib/Kinematics/linearLeastSquares.c
+CMakeFiles/master.dir/lib/Kinematics/linearLeastSquares.c.o: CMakeFiles/master.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/debian/master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object CMakeFiles/master.dir/lib/Kinematics/linearLeastSquares.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/master.dir/lib/Kinematics/linearLeastSquares.c.o -MF CMakeFiles/master.dir/lib/Kinematics/linearLeastSquares.c.o.d -o CMakeFiles/master.dir/lib/Kinematics/linearLeastSquares.c.o -c /home/debian/master/lib/Kinematics/linearLeastSquares.c
+
+CMakeFiles/master.dir/lib/Kinematics/linearLeastSquares.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/master.dir/lib/Kinematics/linearLeastSquares.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/debian/master/lib/Kinematics/linearLeastSquares.c > CMakeFiles/master.dir/lib/Kinematics/linearLeastSquares.c.i
+
+CMakeFiles/master.dir/lib/Kinematics/linearLeastSquares.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/master.dir/lib/Kinematics/linearLeastSquares.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/debian/master/lib/Kinematics/linearLeastSquares.c -o CMakeFiles/master.dir/lib/Kinematics/linearLeastSquares.c.s
+
+CMakeFiles/master.dir/lib/Kinematics/log.c.o: CMakeFiles/master.dir/flags.make
+CMakeFiles/master.dir/lib/Kinematics/log.c.o: /home/debian/master/lib/Kinematics/log.c
+CMakeFiles/master.dir/lib/Kinematics/log.c.o: CMakeFiles/master.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/debian/master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object CMakeFiles/master.dir/lib/Kinematics/log.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/master.dir/lib/Kinematics/log.c.o -MF CMakeFiles/master.dir/lib/Kinematics/log.c.o.d -o CMakeFiles/master.dir/lib/Kinematics/log.c.o -c /home/debian/master/lib/Kinematics/log.c
+
+CMakeFiles/master.dir/lib/Kinematics/log.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/master.dir/lib/Kinematics/log.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/debian/master/lib/Kinematics/log.c > CMakeFiles/master.dir/lib/Kinematics/log.c.i
+
+CMakeFiles/master.dir/lib/Kinematics/log.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/master.dir/lib/Kinematics/log.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/debian/master/lib/Kinematics/log.c -o CMakeFiles/master.dir/lib/Kinematics/log.c.s
+
+CMakeFiles/master.dir/lib/Kinematics/mtimes.c.o: CMakeFiles/master.dir/flags.make
+CMakeFiles/master.dir/lib/Kinematics/mtimes.c.o: /home/debian/master/lib/Kinematics/mtimes.c
+CMakeFiles/master.dir/lib/Kinematics/mtimes.c.o: CMakeFiles/master.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/debian/master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object CMakeFiles/master.dir/lib/Kinematics/mtimes.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/master.dir/lib/Kinematics/mtimes.c.o -MF CMakeFiles/master.dir/lib/Kinematics/mtimes.c.o.d -o CMakeFiles/master.dir/lib/Kinematics/mtimes.c.o -c /home/debian/master/lib/Kinematics/mtimes.c
+
+CMakeFiles/master.dir/lib/Kinematics/mtimes.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/master.dir/lib/Kinematics/mtimes.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/debian/master/lib/Kinematics/mtimes.c > CMakeFiles/master.dir/lib/Kinematics/mtimes.c.i
+
+CMakeFiles/master.dir/lib/Kinematics/mtimes.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/master.dir/lib/Kinematics/mtimes.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/debian/master/lib/Kinematics/mtimes.c -o CMakeFiles/master.dir/lib/Kinematics/mtimes.c.s
+
+CMakeFiles/master.dir/lib/Kinematics/norm.c.o: CMakeFiles/master.dir/flags.make
+CMakeFiles/master.dir/lib/Kinematics/norm.c.o: /home/debian/master/lib/Kinematics/norm.c
+CMakeFiles/master.dir/lib/Kinematics/norm.c.o: CMakeFiles/master.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/debian/master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object CMakeFiles/master.dir/lib/Kinematics/norm.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/master.dir/lib/Kinematics/norm.c.o -MF CMakeFiles/master.dir/lib/Kinematics/norm.c.o.d -o CMakeFiles/master.dir/lib/Kinematics/norm.c.o -c /home/debian/master/lib/Kinematics/norm.c
+
+CMakeFiles/master.dir/lib/Kinematics/norm.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/master.dir/lib/Kinematics/norm.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/debian/master/lib/Kinematics/norm.c > CMakeFiles/master.dir/lib/Kinematics/norm.c.i
+
+CMakeFiles/master.dir/lib/Kinematics/norm.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/master.dir/lib/Kinematics/norm.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/debian/master/lib/Kinematics/norm.c -o CMakeFiles/master.dir/lib/Kinematics/norm.c.s
+
+CMakeFiles/master.dir/lib/Kinematics/power.c.o: CMakeFiles/master.dir/flags.make
+CMakeFiles/master.dir/lib/Kinematics/power.c.o: /home/debian/master/lib/Kinematics/power.c
+CMakeFiles/master.dir/lib/Kinematics/power.c.o: CMakeFiles/master.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/debian/master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object CMakeFiles/master.dir/lib/Kinematics/power.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/master.dir/lib/Kinematics/power.c.o -MF CMakeFiles/master.dir/lib/Kinematics/power.c.o.d -o CMakeFiles/master.dir/lib/Kinematics/power.c.o -c /home/debian/master/lib/Kinematics/power.c
+
+CMakeFiles/master.dir/lib/Kinematics/power.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/master.dir/lib/Kinematics/power.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/debian/master/lib/Kinematics/power.c > CMakeFiles/master.dir/lib/Kinematics/power.c.i
+
+CMakeFiles/master.dir/lib/Kinematics/power.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/master.dir/lib/Kinematics/power.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/debian/master/lib/Kinematics/power.c -o CMakeFiles/master.dir/lib/Kinematics/power.c.s
+
+CMakeFiles/master.dir/lib/Kinematics/roots.c.o: CMakeFiles/master.dir/flags.make
+CMakeFiles/master.dir/lib/Kinematics/roots.c.o: /home/debian/master/lib/Kinematics/roots.c
+CMakeFiles/master.dir/lib/Kinematics/roots.c.o: CMakeFiles/master.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/debian/master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object CMakeFiles/master.dir/lib/Kinematics/roots.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/master.dir/lib/Kinematics/roots.c.o -MF CMakeFiles/master.dir/lib/Kinematics/roots.c.o.d -o CMakeFiles/master.dir/lib/Kinematics/roots.c.o -c /home/debian/master/lib/Kinematics/roots.c
+
+CMakeFiles/master.dir/lib/Kinematics/roots.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/master.dir/lib/Kinematics/roots.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/debian/master/lib/Kinematics/roots.c > CMakeFiles/master.dir/lib/Kinematics/roots.c.i
+
+CMakeFiles/master.dir/lib/Kinematics/roots.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/master.dir/lib/Kinematics/roots.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/debian/master/lib/Kinematics/roots.c -o CMakeFiles/master.dir/lib/Kinematics/roots.c.s
+
+CMakeFiles/master.dir/lib/Kinematics/rtGetInf.c.o: CMakeFiles/master.dir/flags.make
+CMakeFiles/master.dir/lib/Kinematics/rtGetInf.c.o: /home/debian/master/lib/Kinematics/rtGetInf.c
+CMakeFiles/master.dir/lib/Kinematics/rtGetInf.c.o: CMakeFiles/master.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/debian/master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building C object CMakeFiles/master.dir/lib/Kinematics/rtGetInf.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/master.dir/lib/Kinematics/rtGetInf.c.o -MF CMakeFiles/master.dir/lib/Kinematics/rtGetInf.c.o.d -o CMakeFiles/master.dir/lib/Kinematics/rtGetInf.c.o -c /home/debian/master/lib/Kinematics/rtGetInf.c
+
+CMakeFiles/master.dir/lib/Kinematics/rtGetInf.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/master.dir/lib/Kinematics/rtGetInf.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/debian/master/lib/Kinematics/rtGetInf.c > CMakeFiles/master.dir/lib/Kinematics/rtGetInf.c.i
+
+CMakeFiles/master.dir/lib/Kinematics/rtGetInf.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/master.dir/lib/Kinematics/rtGetInf.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/debian/master/lib/Kinematics/rtGetInf.c -o CMakeFiles/master.dir/lib/Kinematics/rtGetInf.c.s
+
+CMakeFiles/master.dir/lib/Kinematics/rtGetNaN.c.o: CMakeFiles/master.dir/flags.make
+CMakeFiles/master.dir/lib/Kinematics/rtGetNaN.c.o: /home/debian/master/lib/Kinematics/rtGetNaN.c
+CMakeFiles/master.dir/lib/Kinematics/rtGetNaN.c.o: CMakeFiles/master.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/debian/master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building C object CMakeFiles/master.dir/lib/Kinematics/rtGetNaN.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/master.dir/lib/Kinematics/rtGetNaN.c.o -MF CMakeFiles/master.dir/lib/Kinematics/rtGetNaN.c.o.d -o CMakeFiles/master.dir/lib/Kinematics/rtGetNaN.c.o -c /home/debian/master/lib/Kinematics/rtGetNaN.c
+
+CMakeFiles/master.dir/lib/Kinematics/rtGetNaN.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/master.dir/lib/Kinematics/rtGetNaN.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/debian/master/lib/Kinematics/rtGetNaN.c > CMakeFiles/master.dir/lib/Kinematics/rtGetNaN.c.i
+
+CMakeFiles/master.dir/lib/Kinematics/rtGetNaN.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/master.dir/lib/Kinematics/rtGetNaN.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/debian/master/lib/Kinematics/rtGetNaN.c -o CMakeFiles/master.dir/lib/Kinematics/rtGetNaN.c.s
+
+CMakeFiles/master.dir/lib/Kinematics/rt_nonfinite.c.o: CMakeFiles/master.dir/flags.make
+CMakeFiles/master.dir/lib/Kinematics/rt_nonfinite.c.o: /home/debian/master/lib/Kinematics/rt_nonfinite.c
+CMakeFiles/master.dir/lib/Kinematics/rt_nonfinite.c.o: CMakeFiles/master.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/debian/master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building C object CMakeFiles/master.dir/lib/Kinematics/rt_nonfinite.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/master.dir/lib/Kinematics/rt_nonfinite.c.o -MF CMakeFiles/master.dir/lib/Kinematics/rt_nonfinite.c.o.d -o CMakeFiles/master.dir/lib/Kinematics/rt_nonfinite.c.o -c /home/debian/master/lib/Kinematics/rt_nonfinite.c
+
+CMakeFiles/master.dir/lib/Kinematics/rt_nonfinite.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/master.dir/lib/Kinematics/rt_nonfinite.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/debian/master/lib/Kinematics/rt_nonfinite.c > CMakeFiles/master.dir/lib/Kinematics/rt_nonfinite.c.i
+
+CMakeFiles/master.dir/lib/Kinematics/rt_nonfinite.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/master.dir/lib/Kinematics/rt_nonfinite.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/debian/master/lib/Kinematics/rt_nonfinite.c -o CMakeFiles/master.dir/lib/Kinematics/rt_nonfinite.c.s
+
+CMakeFiles/master.dir/lib/Kinematics/rt_wutil.c.o: CMakeFiles/master.dir/flags.make
+CMakeFiles/master.dir/lib/Kinematics/rt_wutil.c.o: /home/debian/master/lib/Kinematics/rt_wutil.c
+CMakeFiles/master.dir/lib/Kinematics/rt_wutil.c.o: CMakeFiles/master.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/debian/master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building C object CMakeFiles/master.dir/lib/Kinematics/rt_wutil.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/master.dir/lib/Kinematics/rt_wutil.c.o -MF CMakeFiles/master.dir/lib/Kinematics/rt_wutil.c.o.d -o CMakeFiles/master.dir/lib/Kinematics/rt_wutil.c.o -c /home/debian/master/lib/Kinematics/rt_wutil.c
+
+CMakeFiles/master.dir/lib/Kinematics/rt_wutil.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/master.dir/lib/Kinematics/rt_wutil.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/debian/master/lib/Kinematics/rt_wutil.c > CMakeFiles/master.dir/lib/Kinematics/rt_wutil.c.i
+
+CMakeFiles/master.dir/lib/Kinematics/rt_wutil.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/master.dir/lib/Kinematics/rt_wutil.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/debian/master/lib/Kinematics/rt_wutil.c -o CMakeFiles/master.dir/lib/Kinematics/rt_wutil.c.s
+
+CMakeFiles/master.dir/lib/Kinematics/xdlahqr.c.o: CMakeFiles/master.dir/flags.make
+CMakeFiles/master.dir/lib/Kinematics/xdlahqr.c.o: /home/debian/master/lib/Kinematics/xdlahqr.c
+CMakeFiles/master.dir/lib/Kinematics/xdlahqr.c.o: CMakeFiles/master.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/debian/master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building C object CMakeFiles/master.dir/lib/Kinematics/xdlahqr.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/master.dir/lib/Kinematics/xdlahqr.c.o -MF CMakeFiles/master.dir/lib/Kinematics/xdlahqr.c.o.d -o CMakeFiles/master.dir/lib/Kinematics/xdlahqr.c.o -c /home/debian/master/lib/Kinematics/xdlahqr.c
+
+CMakeFiles/master.dir/lib/Kinematics/xdlahqr.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/master.dir/lib/Kinematics/xdlahqr.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/debian/master/lib/Kinematics/xdlahqr.c > CMakeFiles/master.dir/lib/Kinematics/xdlahqr.c.i
+
+CMakeFiles/master.dir/lib/Kinematics/xdlahqr.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/master.dir/lib/Kinematics/xdlahqr.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/debian/master/lib/Kinematics/xdlahqr.c -o CMakeFiles/master.dir/lib/Kinematics/xdlahqr.c.s
+
+CMakeFiles/master.dir/lib/Kinematics/xdlanv2.c.o: CMakeFiles/master.dir/flags.make
+CMakeFiles/master.dir/lib/Kinematics/xdlanv2.c.o: /home/debian/master/lib/Kinematics/xdlanv2.c
+CMakeFiles/master.dir/lib/Kinematics/xdlanv2.c.o: CMakeFiles/master.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/debian/master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building C object CMakeFiles/master.dir/lib/Kinematics/xdlanv2.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/master.dir/lib/Kinematics/xdlanv2.c.o -MF CMakeFiles/master.dir/lib/Kinematics/xdlanv2.c.o.d -o CMakeFiles/master.dir/lib/Kinematics/xdlanv2.c.o -c /home/debian/master/lib/Kinematics/xdlanv2.c
+
+CMakeFiles/master.dir/lib/Kinematics/xdlanv2.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/master.dir/lib/Kinematics/xdlanv2.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/debian/master/lib/Kinematics/xdlanv2.c > CMakeFiles/master.dir/lib/Kinematics/xdlanv2.c.i
+
+CMakeFiles/master.dir/lib/Kinematics/xdlanv2.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/master.dir/lib/Kinematics/xdlanv2.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/debian/master/lib/Kinematics/xdlanv2.c -o CMakeFiles/master.dir/lib/Kinematics/xdlanv2.c.s
+
+CMakeFiles/master.dir/lib/Kinematics/xnrm2.c.o: CMakeFiles/master.dir/flags.make
+CMakeFiles/master.dir/lib/Kinematics/xnrm2.c.o: /home/debian/master/lib/Kinematics/xnrm2.c
+CMakeFiles/master.dir/lib/Kinematics/xnrm2.c.o: CMakeFiles/master.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/debian/master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building C object CMakeFiles/master.dir/lib/Kinematics/xnrm2.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/master.dir/lib/Kinematics/xnrm2.c.o -MF CMakeFiles/master.dir/lib/Kinematics/xnrm2.c.o.d -o CMakeFiles/master.dir/lib/Kinematics/xnrm2.c.o -c /home/debian/master/lib/Kinematics/xnrm2.c
+
+CMakeFiles/master.dir/lib/Kinematics/xnrm2.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/master.dir/lib/Kinematics/xnrm2.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/debian/master/lib/Kinematics/xnrm2.c > CMakeFiles/master.dir/lib/Kinematics/xnrm2.c.i
+
+CMakeFiles/master.dir/lib/Kinematics/xnrm2.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/master.dir/lib/Kinematics/xnrm2.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/debian/master/lib/Kinematics/xnrm2.c -o CMakeFiles/master.dir/lib/Kinematics/xnrm2.c.s
+
+CMakeFiles/master.dir/lib/Kinematics/xzgebal.c.o: CMakeFiles/master.dir/flags.make
+CMakeFiles/master.dir/lib/Kinematics/xzgebal.c.o: /home/debian/master/lib/Kinematics/xzgebal.c
+CMakeFiles/master.dir/lib/Kinematics/xzgebal.c.o: CMakeFiles/master.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/debian/master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building C object CMakeFiles/master.dir/lib/Kinematics/xzgebal.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/master.dir/lib/Kinematics/xzgebal.c.o -MF CMakeFiles/master.dir/lib/Kinematics/xzgebal.c.o.d -o CMakeFiles/master.dir/lib/Kinematics/xzgebal.c.o -c /home/debian/master/lib/Kinematics/xzgebal.c
+
+CMakeFiles/master.dir/lib/Kinematics/xzgebal.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/master.dir/lib/Kinematics/xzgebal.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/debian/master/lib/Kinematics/xzgebal.c > CMakeFiles/master.dir/lib/Kinematics/xzgebal.c.i
+
+CMakeFiles/master.dir/lib/Kinematics/xzgebal.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/master.dir/lib/Kinematics/xzgebal.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/debian/master/lib/Kinematics/xzgebal.c -o CMakeFiles/master.dir/lib/Kinematics/xzgebal.c.s
+
+CMakeFiles/master.dir/lib/Kinematics/xzgehrd.c.o: CMakeFiles/master.dir/flags.make
+CMakeFiles/master.dir/lib/Kinematics/xzgehrd.c.o: /home/debian/master/lib/Kinematics/xzgehrd.c
+CMakeFiles/master.dir/lib/Kinematics/xzgehrd.c.o: CMakeFiles/master.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/debian/master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building C object CMakeFiles/master.dir/lib/Kinematics/xzgehrd.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/master.dir/lib/Kinematics/xzgehrd.c.o -MF CMakeFiles/master.dir/lib/Kinematics/xzgehrd.c.o.d -o CMakeFiles/master.dir/lib/Kinematics/xzgehrd.c.o -c /home/debian/master/lib/Kinematics/xzgehrd.c
+
+CMakeFiles/master.dir/lib/Kinematics/xzgehrd.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/master.dir/lib/Kinematics/xzgehrd.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/debian/master/lib/Kinematics/xzgehrd.c > CMakeFiles/master.dir/lib/Kinematics/xzgehrd.c.i
+
+CMakeFiles/master.dir/lib/Kinematics/xzgehrd.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/master.dir/lib/Kinematics/xzgehrd.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/debian/master/lib/Kinematics/xzgehrd.c -o CMakeFiles/master.dir/lib/Kinematics/xzgehrd.c.s
+
+CMakeFiles/master.dir/lib/Kinematics/xzlarf.c.o: CMakeFiles/master.dir/flags.make
+CMakeFiles/master.dir/lib/Kinematics/xzlarf.c.o: /home/debian/master/lib/Kinematics/xzlarf.c
+CMakeFiles/master.dir/lib/Kinematics/xzlarf.c.o: CMakeFiles/master.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/debian/master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building C object CMakeFiles/master.dir/lib/Kinematics/xzlarf.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/master.dir/lib/Kinematics/xzlarf.c.o -MF CMakeFiles/master.dir/lib/Kinematics/xzlarf.c.o.d -o CMakeFiles/master.dir/lib/Kinematics/xzlarf.c.o -c /home/debian/master/lib/Kinematics/xzlarf.c
+
+CMakeFiles/master.dir/lib/Kinematics/xzlarf.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/master.dir/lib/Kinematics/xzlarf.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/debian/master/lib/Kinematics/xzlarf.c > CMakeFiles/master.dir/lib/Kinematics/xzlarf.c.i
+
+CMakeFiles/master.dir/lib/Kinematics/xzlarf.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/master.dir/lib/Kinematics/xzlarf.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/debian/master/lib/Kinematics/xzlarf.c -o CMakeFiles/master.dir/lib/Kinematics/xzlarf.c.s
+
+CMakeFiles/master.dir/lib/Kinematics/xzlarfg.c.o: CMakeFiles/master.dir/flags.make
+CMakeFiles/master.dir/lib/Kinematics/xzlarfg.c.o: /home/debian/master/lib/Kinematics/xzlarfg.c
+CMakeFiles/master.dir/lib/Kinematics/xzlarfg.c.o: CMakeFiles/master.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/debian/master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building C object CMakeFiles/master.dir/lib/Kinematics/xzlarfg.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/master.dir/lib/Kinematics/xzlarfg.c.o -MF CMakeFiles/master.dir/lib/Kinematics/xzlarfg.c.o.d -o CMakeFiles/master.dir/lib/Kinematics/xzlarfg.c.o -c /home/debian/master/lib/Kinematics/xzlarfg.c
+
+CMakeFiles/master.dir/lib/Kinematics/xzlarfg.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/master.dir/lib/Kinematics/xzlarfg.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/debian/master/lib/Kinematics/xzlarfg.c > CMakeFiles/master.dir/lib/Kinematics/xzlarfg.c.i
+
+CMakeFiles/master.dir/lib/Kinematics/xzlarfg.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/master.dir/lib/Kinematics/xzlarfg.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/debian/master/lib/Kinematics/xzlarfg.c -o CMakeFiles/master.dir/lib/Kinematics/xzlarfg.c.s
+
+CMakeFiles/master.dir/lib/Kinematics/xzlascl.c.o: CMakeFiles/master.dir/flags.make
+CMakeFiles/master.dir/lib/Kinematics/xzlascl.c.o: /home/debian/master/lib/Kinematics/xzlascl.c
+CMakeFiles/master.dir/lib/Kinematics/xzlascl.c.o: CMakeFiles/master.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/debian/master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building C object CMakeFiles/master.dir/lib/Kinematics/xzlascl.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/master.dir/lib/Kinematics/xzlascl.c.o -MF CMakeFiles/master.dir/lib/Kinematics/xzlascl.c.o.d -o CMakeFiles/master.dir/lib/Kinematics/xzlascl.c.o -c /home/debian/master/lib/Kinematics/xzlascl.c
+
+CMakeFiles/master.dir/lib/Kinematics/xzlascl.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/master.dir/lib/Kinematics/xzlascl.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/debian/master/lib/Kinematics/xzlascl.c > CMakeFiles/master.dir/lib/Kinematics/xzlascl.c.i
+
+CMakeFiles/master.dir/lib/Kinematics/xzlascl.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/master.dir/lib/Kinematics/xzlascl.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/debian/master/lib/Kinematics/xzlascl.c -o CMakeFiles/master.dir/lib/Kinematics/xzlascl.c.s
+
+CMakeFiles/master.dir/lib/feedback/lpf.c.o: CMakeFiles/master.dir/flags.make
+CMakeFiles/master.dir/lib/feedback/lpf.c.o: /home/debian/master/lib/feedback/lpf.c
+CMakeFiles/master.dir/lib/feedback/lpf.c.o: CMakeFiles/master.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/debian/master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building C object CMakeFiles/master.dir/lib/feedback/lpf.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/master.dir/lib/feedback/lpf.c.o -MF CMakeFiles/master.dir/lib/feedback/lpf.c.o.d -o CMakeFiles/master.dir/lib/feedback/lpf.c.o -c /home/debian/master/lib/feedback/lpf.c
+
+CMakeFiles/master.dir/lib/feedback/lpf.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/master.dir/lib/feedback/lpf.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/debian/master/lib/feedback/lpf.c > CMakeFiles/master.dir/lib/feedback/lpf.c.i
+
+CMakeFiles/master.dir/lib/feedback/lpf.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/master.dir/lib/feedback/lpf.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/debian/master/lib/feedback/lpf.c -o CMakeFiles/master.dir/lib/feedback/lpf.c.s
+
+CMakeFiles/master.dir/lib/interface/cmdpanel.cpp.o: CMakeFiles/master.dir/flags.make
+CMakeFiles/master.dir/lib/interface/cmdpanel.cpp.o: /home/debian/master/lib/interface/cmdpanel.cpp
+CMakeFiles/master.dir/lib/interface/cmdpanel.cpp.o: CMakeFiles/master.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/debian/master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building CXX object CMakeFiles/master.dir/lib/interface/cmdpanel.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/master.dir/lib/interface/cmdpanel.cpp.o -MF CMakeFiles/master.dir/lib/interface/cmdpanel.cpp.o.d -o CMakeFiles/master.dir/lib/interface/cmdpanel.cpp.o -c /home/debian/master/lib/interface/cmdpanel.cpp
+
+CMakeFiles/master.dir/lib/interface/cmdpanel.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/master.dir/lib/interface/cmdpanel.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/debian/master/lib/interface/cmdpanel.cpp > CMakeFiles/master.dir/lib/interface/cmdpanel.cpp.i
+
+CMakeFiles/master.dir/lib/interface/cmdpanel.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/master.dir/lib/interface/cmdpanel.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/debian/master/lib/interface/cmdpanel.cpp -o CMakeFiles/master.dir/lib/interface/cmdpanel.cpp.s
+
+CMakeFiles/master.dir/lib/orbbecsdk/utils/utils.cpp.o: CMakeFiles/master.dir/flags.make
+CMakeFiles/master.dir/lib/orbbecsdk/utils/utils.cpp.o: /home/debian/master/lib/orbbecsdk/utils/utils.cpp
+CMakeFiles/master.dir/lib/orbbecsdk/utils/utils.cpp.o: CMakeFiles/master.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/debian/master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building CXX object CMakeFiles/master.dir/lib/orbbecsdk/utils/utils.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/master.dir/lib/orbbecsdk/utils/utils.cpp.o -MF CMakeFiles/master.dir/lib/orbbecsdk/utils/utils.cpp.o.d -o CMakeFiles/master.dir/lib/orbbecsdk/utils/utils.cpp.o -c /home/debian/master/lib/orbbecsdk/utils/utils.cpp
+
+CMakeFiles/master.dir/lib/orbbecsdk/utils/utils.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/master.dir/lib/orbbecsdk/utils/utils.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/debian/master/lib/orbbecsdk/utils/utils.cpp > CMakeFiles/master.dir/lib/orbbecsdk/utils/utils.cpp.i
+
+CMakeFiles/master.dir/lib/orbbecsdk/utils/utils.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/master.dir/lib/orbbecsdk/utils/utils.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/debian/master/lib/orbbecsdk/utils/utils.cpp -o CMakeFiles/master.dir/lib/orbbecsdk/utils/utils.cpp.s
+
+CMakeFiles/master.dir/lib/orbbecsdk/utils/utils_c.c.o: CMakeFiles/master.dir/flags.make
+CMakeFiles/master.dir/lib/orbbecsdk/utils/utils_c.c.o: /home/debian/master/lib/orbbecsdk/utils/utils_c.c
+CMakeFiles/master.dir/lib/orbbecsdk/utils/utils_c.c.o: CMakeFiles/master.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/debian/master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building C object CMakeFiles/master.dir/lib/orbbecsdk/utils/utils_c.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/master.dir/lib/orbbecsdk/utils/utils_c.c.o -MF CMakeFiles/master.dir/lib/orbbecsdk/utils/utils_c.c.o.d -o CMakeFiles/master.dir/lib/orbbecsdk/utils/utils_c.c.o -c /home/debian/master/lib/orbbecsdk/utils/utils_c.c
+
+CMakeFiles/master.dir/lib/orbbecsdk/utils/utils_c.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/master.dir/lib/orbbecsdk/utils/utils_c.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/debian/master/lib/orbbecsdk/utils/utils_c.c > CMakeFiles/master.dir/lib/orbbecsdk/utils/utils_c.c.i
+
+CMakeFiles/master.dir/lib/orbbecsdk/utils/utils_c.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/master.dir/lib/orbbecsdk/utils/utils_c.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/debian/master/lib/orbbecsdk/utils/utils_c.c -o CMakeFiles/master.dir/lib/orbbecsdk/utils/utils_c.c.s
+
+CMakeFiles/master.dir/lib/orbbecsdk/utils/utils_opencv.cpp.o: CMakeFiles/master.dir/flags.make
+CMakeFiles/master.dir/lib/orbbecsdk/utils/utils_opencv.cpp.o: /home/debian/master/lib/orbbecsdk/utils/utils_opencv.cpp
+CMakeFiles/master.dir/lib/orbbecsdk/utils/utils_opencv.cpp.o: CMakeFiles/master.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/debian/master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building CXX object CMakeFiles/master.dir/lib/orbbecsdk/utils/utils_opencv.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/master.dir/lib/orbbecsdk/utils/utils_opencv.cpp.o -MF CMakeFiles/master.dir/lib/orbbecsdk/utils/utils_opencv.cpp.o.d -o CMakeFiles/master.dir/lib/orbbecsdk/utils/utils_opencv.cpp.o -c /home/debian/master/lib/orbbecsdk/utils/utils_opencv.cpp
+
+CMakeFiles/master.dir/lib/orbbecsdk/utils/utils_opencv.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/master.dir/lib/orbbecsdk/utils/utils_opencv.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/debian/master/lib/orbbecsdk/utils/utils_opencv.cpp > CMakeFiles/master.dir/lib/orbbecsdk/utils/utils_opencv.cpp.i
+
+CMakeFiles/master.dir/lib/orbbecsdk/utils/utils_opencv.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/master.dir/lib/orbbecsdk/utils/utils_opencv.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/debian/master/lib/orbbecsdk/utils/utils_opencv.cpp -o CMakeFiles/master.dir/lib/orbbecsdk/utils/utils_opencv.cpp.s
 
 CMakeFiles/master.dir/main.cpp.o: CMakeFiles/master.dir/flags.make
 CMakeFiles/master.dir/main.cpp.o: /home/debian/master/main.cpp
 CMakeFiles/master.dir/main.cpp.o: CMakeFiles/master.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/debian/master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building CXX object CMakeFiles/master.dir/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/debian/master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building CXX object CMakeFiles/master.dir/main.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/master.dir/main.cpp.o -MF CMakeFiles/master.dir/main.cpp.o.d -o CMakeFiles/master.dir/main.cpp.o -c /home/debian/master/main.cpp
 
 CMakeFiles/master.dir/main.cpp.i: cmake_force
@@ -592,89 +634,151 @@ CMakeFiles/master.dir/main.cpp.s: cmake_force
 
 # Object files for target master
 master_OBJECTS = \
-"CMakeFiles/master.dir/EtherCAT/EtherCAT.cpp.o" \
-"CMakeFiles/master.dir/Kinematics/FK_7DOF.c.o" \
-"CMakeFiles/master.dir/Kinematics/FK_7DOF_data.c.o" \
-"CMakeFiles/master.dir/Kinematics/FK_7DOF_initialize.c.o" \
-"CMakeFiles/master.dir/Kinematics/FK_7DOF_terminate.c.o" \
-"CMakeFiles/master.dir/Kinematics/IK_7DOF.c.o" \
-"CMakeFiles/master.dir/Kinematics/IK_7DOF_data.c.o" \
-"CMakeFiles/master.dir/Kinematics/IK_7DOF_initialize.c.o" \
-"CMakeFiles/master.dir/Kinematics/IK_7DOF_terminate.c.o" \
-"CMakeFiles/master.dir/Kinematics/atan.c.o" \
-"CMakeFiles/master.dir/Kinematics/checkStoppingCriteria.c.o" \
-"CMakeFiles/master.dir/Kinematics/computeFiniteDifferences.c.o" \
-"CMakeFiles/master.dir/Kinematics/driver.c.o" \
-"CMakeFiles/master.dir/Kinematics/exp.c.o" \
-"CMakeFiles/master.dir/Kinematics/finDiffEvalAndChkErr.c.o" \
-"CMakeFiles/master.dir/Kinematics/linearLeastSquares.c.o" \
-"CMakeFiles/master.dir/Kinematics/log.c.o" \
-"CMakeFiles/master.dir/Kinematics/mtimes.c.o" \
-"CMakeFiles/master.dir/Kinematics/norm.c.o" \
-"CMakeFiles/master.dir/Kinematics/power.c.o" \
-"CMakeFiles/master.dir/Kinematics/roots.c.o" \
-"CMakeFiles/master.dir/Kinematics/rtGetInf.c.o" \
-"CMakeFiles/master.dir/Kinematics/rtGetNaN.c.o" \
-"CMakeFiles/master.dir/Kinematics/rt_nonfinite.c.o" \
-"CMakeFiles/master.dir/Kinematics/rt_wutil.c.o" \
-"CMakeFiles/master.dir/Kinematics/xdlahqr.c.o" \
-"CMakeFiles/master.dir/Kinematics/xdlanv2.c.o" \
-"CMakeFiles/master.dir/Kinematics/xnrm2.c.o" \
-"CMakeFiles/master.dir/Kinematics/xzgebal.c.o" \
-"CMakeFiles/master.dir/Kinematics/xzgehrd.c.o" \
-"CMakeFiles/master.dir/Kinematics/xzlarf.c.o" \
-"CMakeFiles/master.dir/Kinematics/xzlarfg.c.o" \
-"CMakeFiles/master.dir/Kinematics/xzlascl.c.o" \
 "CMakeFiles/master.dir/demo.c.o" \
-"CMakeFiles/master.dir/feedback/lpf.c.o" \
-"CMakeFiles/master.dir/interface/cmdpanel.cpp.o" \
+"CMakeFiles/master.dir/lib/EtherCAT/EtherCAT.cpp.o" \
+"CMakeFiles/master.dir/lib/Kinematics/FK_7DOF.c.o" \
+"CMakeFiles/master.dir/lib/Kinematics/FK_7DOF_data.c.o" \
+"CMakeFiles/master.dir/lib/Kinematics/FK_7DOF_initialize.c.o" \
+"CMakeFiles/master.dir/lib/Kinematics/FK_7DOF_terminate.c.o" \
+"CMakeFiles/master.dir/lib/Kinematics/IK_7DOF.c.o" \
+"CMakeFiles/master.dir/lib/Kinematics/IK_7DOF_data.c.o" \
+"CMakeFiles/master.dir/lib/Kinematics/IK_7DOF_initialize.c.o" \
+"CMakeFiles/master.dir/lib/Kinematics/IK_7DOF_terminate.c.o" \
+"CMakeFiles/master.dir/lib/Kinematics/atan.c.o" \
+"CMakeFiles/master.dir/lib/Kinematics/checkStoppingCriteria.c.o" \
+"CMakeFiles/master.dir/lib/Kinematics/computeFiniteDifferences.c.o" \
+"CMakeFiles/master.dir/lib/Kinematics/driver.c.o" \
+"CMakeFiles/master.dir/lib/Kinematics/exp.c.o" \
+"CMakeFiles/master.dir/lib/Kinematics/finDiffEvalAndChkErr.c.o" \
+"CMakeFiles/master.dir/lib/Kinematics/linearLeastSquares.c.o" \
+"CMakeFiles/master.dir/lib/Kinematics/log.c.o" \
+"CMakeFiles/master.dir/lib/Kinematics/mtimes.c.o" \
+"CMakeFiles/master.dir/lib/Kinematics/norm.c.o" \
+"CMakeFiles/master.dir/lib/Kinematics/power.c.o" \
+"CMakeFiles/master.dir/lib/Kinematics/roots.c.o" \
+"CMakeFiles/master.dir/lib/Kinematics/rtGetInf.c.o" \
+"CMakeFiles/master.dir/lib/Kinematics/rtGetNaN.c.o" \
+"CMakeFiles/master.dir/lib/Kinematics/rt_nonfinite.c.o" \
+"CMakeFiles/master.dir/lib/Kinematics/rt_wutil.c.o" \
+"CMakeFiles/master.dir/lib/Kinematics/xdlahqr.c.o" \
+"CMakeFiles/master.dir/lib/Kinematics/xdlanv2.c.o" \
+"CMakeFiles/master.dir/lib/Kinematics/xnrm2.c.o" \
+"CMakeFiles/master.dir/lib/Kinematics/xzgebal.c.o" \
+"CMakeFiles/master.dir/lib/Kinematics/xzgehrd.c.o" \
+"CMakeFiles/master.dir/lib/Kinematics/xzlarf.c.o" \
+"CMakeFiles/master.dir/lib/Kinematics/xzlarfg.c.o" \
+"CMakeFiles/master.dir/lib/Kinematics/xzlascl.c.o" \
+"CMakeFiles/master.dir/lib/feedback/lpf.c.o" \
+"CMakeFiles/master.dir/lib/interface/cmdpanel.cpp.o" \
+"CMakeFiles/master.dir/lib/orbbecsdk/utils/utils.cpp.o" \
+"CMakeFiles/master.dir/lib/orbbecsdk/utils/utils_c.c.o" \
+"CMakeFiles/master.dir/lib/orbbecsdk/utils/utils_opencv.cpp.o" \
 "CMakeFiles/master.dir/main.cpp.o"
 
 # External object files for target master
 master_EXTERNAL_OBJECTS =
 
-master: CMakeFiles/master.dir/EtherCAT/EtherCAT.cpp.o
-master: CMakeFiles/master.dir/Kinematics/FK_7DOF.c.o
-master: CMakeFiles/master.dir/Kinematics/FK_7DOF_data.c.o
-master: CMakeFiles/master.dir/Kinematics/FK_7DOF_initialize.c.o
-master: CMakeFiles/master.dir/Kinematics/FK_7DOF_terminate.c.o
-master: CMakeFiles/master.dir/Kinematics/IK_7DOF.c.o
-master: CMakeFiles/master.dir/Kinematics/IK_7DOF_data.c.o
-master: CMakeFiles/master.dir/Kinematics/IK_7DOF_initialize.c.o
-master: CMakeFiles/master.dir/Kinematics/IK_7DOF_terminate.c.o
-master: CMakeFiles/master.dir/Kinematics/atan.c.o
-master: CMakeFiles/master.dir/Kinematics/checkStoppingCriteria.c.o
-master: CMakeFiles/master.dir/Kinematics/computeFiniteDifferences.c.o
-master: CMakeFiles/master.dir/Kinematics/driver.c.o
-master: CMakeFiles/master.dir/Kinematics/exp.c.o
-master: CMakeFiles/master.dir/Kinematics/finDiffEvalAndChkErr.c.o
-master: CMakeFiles/master.dir/Kinematics/linearLeastSquares.c.o
-master: CMakeFiles/master.dir/Kinematics/log.c.o
-master: CMakeFiles/master.dir/Kinematics/mtimes.c.o
-master: CMakeFiles/master.dir/Kinematics/norm.c.o
-master: CMakeFiles/master.dir/Kinematics/power.c.o
-master: CMakeFiles/master.dir/Kinematics/roots.c.o
-master: CMakeFiles/master.dir/Kinematics/rtGetInf.c.o
-master: CMakeFiles/master.dir/Kinematics/rtGetNaN.c.o
-master: CMakeFiles/master.dir/Kinematics/rt_nonfinite.c.o
-master: CMakeFiles/master.dir/Kinematics/rt_wutil.c.o
-master: CMakeFiles/master.dir/Kinematics/xdlahqr.c.o
-master: CMakeFiles/master.dir/Kinematics/xdlanv2.c.o
-master: CMakeFiles/master.dir/Kinematics/xnrm2.c.o
-master: CMakeFiles/master.dir/Kinematics/xzgebal.c.o
-master: CMakeFiles/master.dir/Kinematics/xzgehrd.c.o
-master: CMakeFiles/master.dir/Kinematics/xzlarf.c.o
-master: CMakeFiles/master.dir/Kinematics/xzlarfg.c.o
-master: CMakeFiles/master.dir/Kinematics/xzlascl.c.o
 master: CMakeFiles/master.dir/demo.c.o
-master: CMakeFiles/master.dir/feedback/lpf.c.o
-master: CMakeFiles/master.dir/interface/cmdpanel.cpp.o
+master: CMakeFiles/master.dir/lib/EtherCAT/EtherCAT.cpp.o
+master: CMakeFiles/master.dir/lib/Kinematics/FK_7DOF.c.o
+master: CMakeFiles/master.dir/lib/Kinematics/FK_7DOF_data.c.o
+master: CMakeFiles/master.dir/lib/Kinematics/FK_7DOF_initialize.c.o
+master: CMakeFiles/master.dir/lib/Kinematics/FK_7DOF_terminate.c.o
+master: CMakeFiles/master.dir/lib/Kinematics/IK_7DOF.c.o
+master: CMakeFiles/master.dir/lib/Kinematics/IK_7DOF_data.c.o
+master: CMakeFiles/master.dir/lib/Kinematics/IK_7DOF_initialize.c.o
+master: CMakeFiles/master.dir/lib/Kinematics/IK_7DOF_terminate.c.o
+master: CMakeFiles/master.dir/lib/Kinematics/atan.c.o
+master: CMakeFiles/master.dir/lib/Kinematics/checkStoppingCriteria.c.o
+master: CMakeFiles/master.dir/lib/Kinematics/computeFiniteDifferences.c.o
+master: CMakeFiles/master.dir/lib/Kinematics/driver.c.o
+master: CMakeFiles/master.dir/lib/Kinematics/exp.c.o
+master: CMakeFiles/master.dir/lib/Kinematics/finDiffEvalAndChkErr.c.o
+master: CMakeFiles/master.dir/lib/Kinematics/linearLeastSquares.c.o
+master: CMakeFiles/master.dir/lib/Kinematics/log.c.o
+master: CMakeFiles/master.dir/lib/Kinematics/mtimes.c.o
+master: CMakeFiles/master.dir/lib/Kinematics/norm.c.o
+master: CMakeFiles/master.dir/lib/Kinematics/power.c.o
+master: CMakeFiles/master.dir/lib/Kinematics/roots.c.o
+master: CMakeFiles/master.dir/lib/Kinematics/rtGetInf.c.o
+master: CMakeFiles/master.dir/lib/Kinematics/rtGetNaN.c.o
+master: CMakeFiles/master.dir/lib/Kinematics/rt_nonfinite.c.o
+master: CMakeFiles/master.dir/lib/Kinematics/rt_wutil.c.o
+master: CMakeFiles/master.dir/lib/Kinematics/xdlahqr.c.o
+master: CMakeFiles/master.dir/lib/Kinematics/xdlanv2.c.o
+master: CMakeFiles/master.dir/lib/Kinematics/xnrm2.c.o
+master: CMakeFiles/master.dir/lib/Kinematics/xzgebal.c.o
+master: CMakeFiles/master.dir/lib/Kinematics/xzgehrd.c.o
+master: CMakeFiles/master.dir/lib/Kinematics/xzlarf.c.o
+master: CMakeFiles/master.dir/lib/Kinematics/xzlarfg.c.o
+master: CMakeFiles/master.dir/lib/Kinematics/xzlascl.c.o
+master: CMakeFiles/master.dir/lib/feedback/lpf.c.o
+master: CMakeFiles/master.dir/lib/interface/cmdpanel.cpp.o
+master: CMakeFiles/master.dir/lib/orbbecsdk/utils/utils.cpp.o
+master: CMakeFiles/master.dir/lib/orbbecsdk/utils/utils_c.c.o
+master: CMakeFiles/master.dir/lib/orbbecsdk/utils/utils_opencv.cpp.o
 master: CMakeFiles/master.dir/main.cpp.o
 master: CMakeFiles/master.dir/build.make
 master: CMakeFiles/master.dir/compiler_depend.ts
+master: /home/debian/master/lib/orbbecsdk/lib/libOrbbecSDK.so.2.6.3
+master: /usr/lib/aarch64-linux-gnu/libopencv_stitching.so.4.10.0
+master: /usr/lib/aarch64-linux-gnu/libopencv_alphamat.so.4.10.0
+master: /usr/lib/aarch64-linux-gnu/libopencv_aruco.so.4.10.0
+master: /usr/lib/aarch64-linux-gnu/libopencv_bgsegm.so.4.10.0
+master: /usr/lib/aarch64-linux-gnu/libopencv_bioinspired.so.4.10.0
+master: /usr/lib/aarch64-linux-gnu/libopencv_ccalib.so.4.10.0
+master: /usr/lib/aarch64-linux-gnu/libopencv_cvv.so.4.10.0
+master: /usr/lib/aarch64-linux-gnu/libopencv_dnn_objdetect.so.4.10.0
+master: /usr/lib/aarch64-linux-gnu/libopencv_dnn_superres.so.4.10.0
+master: /usr/lib/aarch64-linux-gnu/libopencv_dpm.so.4.10.0
+master: /usr/lib/aarch64-linux-gnu/libopencv_face.so.4.10.0
+master: /usr/lib/aarch64-linux-gnu/libopencv_freetype.so.4.10.0
+master: /usr/lib/aarch64-linux-gnu/libopencv_fuzzy.so.4.10.0
+master: /usr/lib/aarch64-linux-gnu/libopencv_hdf.so.4.10.0
+master: /usr/lib/aarch64-linux-gnu/libopencv_hfs.so.4.10.0
+master: /usr/lib/aarch64-linux-gnu/libopencv_img_hash.so.4.10.0
+master: /usr/lib/aarch64-linux-gnu/libopencv_intensity_transform.so.4.10.0
+master: /usr/lib/aarch64-linux-gnu/libopencv_line_descriptor.so.4.10.0
+master: /usr/lib/aarch64-linux-gnu/libopencv_mcc.so.4.10.0
+master: /usr/lib/aarch64-linux-gnu/libopencv_quality.so.4.10.0
+master: /usr/lib/aarch64-linux-gnu/libopencv_rapid.so.4.10.0
+master: /usr/lib/aarch64-linux-gnu/libopencv_reg.so.4.10.0
+master: /usr/lib/aarch64-linux-gnu/libopencv_rgbd.so.4.10.0
+master: /usr/lib/aarch64-linux-gnu/libopencv_saliency.so.4.10.0
+master: /usr/lib/aarch64-linux-gnu/libopencv_shape.so.4.10.0
+master: /usr/lib/aarch64-linux-gnu/libopencv_signal.so.4.10.0
+master: /usr/lib/aarch64-linux-gnu/libopencv_stereo.so.4.10.0
+master: /usr/lib/aarch64-linux-gnu/libopencv_structured_light.so.4.10.0
+master: /usr/lib/aarch64-linux-gnu/libopencv_superres.so.4.10.0
+master: /usr/lib/aarch64-linux-gnu/libopencv_surface_matching.so.4.10.0
+master: /usr/lib/aarch64-linux-gnu/libopencv_tracking.so.4.10.0
+master: /usr/lib/aarch64-linux-gnu/libopencv_videostab.so.4.10.0
+master: /usr/lib/aarch64-linux-gnu/libopencv_viz.so.4.10.0
+master: /usr/lib/aarch64-linux-gnu/libopencv_wechat_qrcode.so.4.10.0
+master: /usr/lib/aarch64-linux-gnu/libopencv_xobjdetect.so.4.10.0
+master: /usr/lib/aarch64-linux-gnu/libopencv_xphoto.so.4.10.0
 master: /usr/local/lib/libethercat.so
+master: /usr/lib/aarch64-linux-gnu/libopencv_highgui.so.4.10.0
+master: /usr/lib/aarch64-linux-gnu/libopencv_datasets.so.4.10.0
+master: /usr/lib/aarch64-linux-gnu/libopencv_plot.so.4.10.0
+master: /usr/lib/aarch64-linux-gnu/libopencv_text.so.4.10.0
+master: /usr/lib/aarch64-linux-gnu/libopencv_ml.so.4.10.0
+master: /usr/lib/aarch64-linux-gnu/libopencv_phase_unwrapping.so.4.10.0
+master: /usr/lib/aarch64-linux-gnu/libopencv_optflow.so.4.10.0
+master: /usr/lib/aarch64-linux-gnu/libopencv_ximgproc.so.4.10.0
+master: /usr/lib/aarch64-linux-gnu/libopencv_video.so.4.10.0
+master: /usr/lib/aarch64-linux-gnu/libopencv_videoio.so.4.10.0
+master: /usr/lib/aarch64-linux-gnu/libopencv_imgcodecs.so.4.10.0
+master: /usr/lib/aarch64-linux-gnu/libopencv_objdetect.so.4.10.0
+master: /usr/lib/aarch64-linux-gnu/libopencv_calib3d.so.4.10.0
+master: /usr/lib/aarch64-linux-gnu/libopencv_dnn.so.4.10.0
+master: /usr/lib/aarch64-linux-gnu/libopencv_features2d.so.4.10.0
+master: /usr/lib/aarch64-linux-gnu/libopencv_flann.so.4.10.0
+master: /usr/lib/aarch64-linux-gnu/libopencv_photo.so.4.10.0
+master: /usr/lib/aarch64-linux-gnu/libopencv_imgproc.so.4.10.0
+master: /usr/lib/aarch64-linux-gnu/libopencv_core.so.4.10.0
 master: CMakeFiles/master.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/debian/master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Linking CXX executable master"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/debian/master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Linking CXX executable master"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/master.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
